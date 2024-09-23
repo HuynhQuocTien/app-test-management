@@ -3,7 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\app-test-management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\GitHub\\HuynhQuocTien\\Test_Management\\GUI\\DangNhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fdangnhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -14,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,15 +73,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\HuynhQuocTien\\Test_Management\\GUI\\DangNhap.cs",
+              "RelativeDocumentMoniker": "..\\..\\HuynhQuocTien\\Test_Management\\GUI\\DangNhap.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\HuynhQuocTien\\Test_Management\\GUI\\DangNhap.cs",
+              "RelativeToolTip": "..\\..\\HuynhQuocTien\\Test_Management\\GUI\\DangNhap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T03:52:03.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fDangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T03:51:58.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fDangNhap.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.Designer.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.Designer.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAuwO4AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T03:50:47.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "fDangNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fDangNhap.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T03:50:40.298Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\Class1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\Class1.cs",
+              "RelativeToolTip": "..\\GUI\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T03:50:25.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T03:38:21.678Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-09-23T03:38:21.678Z"
             }
           ]
         }
