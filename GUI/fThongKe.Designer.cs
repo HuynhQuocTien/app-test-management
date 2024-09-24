@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class ThongKeAdminUserControl
+    partial class fThongKe
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeAdminUserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThongKe));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -376,13 +376,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(1537, 439);
             this.dataGridView1.TabIndex = 0;
             // 
-            // ThongKeAdminUserControl
+            // fThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ThongKeAdminUserControl";
+            this.Name = "fThongKe";
             this.Size = new System.Drawing.Size(1565, 706);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();

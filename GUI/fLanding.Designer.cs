@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    partial class Landing
+    partial class fLanding
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Landing));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLanding));
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.informationContainerPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -373,13 +373,13 @@ namespace GUI
             this.label6.Text = "Phần mềm quản lý thi trắc nghiệm";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Langding
+            // fLanding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Langding";
+            this.Name = "fLanding";
             this.Size = new System.Drawing.Size(1573, 826);
             this.mainPanel.ResumeLayout(false);
             this.informationContainerPanel.ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ThongKeAdminUserControl : UserControl
+    public partial class fThongKe : UserControl
     {
-        public ThongKeAdminUserControl()
+        public fThongKe()
         {
             InitializeComponent();
         }

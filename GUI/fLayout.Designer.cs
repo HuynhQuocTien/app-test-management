@@ -11,9 +11,9 @@ namespace GUI
     partial class fLayout
     {
         /// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -55,12 +55,13 @@ namespace GUI
             this.btnDeThi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.containerPanel = new System.Windows.Forms.Panel();
-            this.landingPanel = new GUI.Landing();
+            this.homePanel = new GUI.fLanding();
             this.lopHocPanel = new GUI.LopHoc.LopHocControl();
+            this.monHocPanel = new GUI.MonHoc.MonHocControl();
             this.cauHoiPanel = new GUI.CauHoi.CauHoiControl();
             this.deThiPanel = new GUI.DeThi.DeThiControl();
             this.userPanel = new GUI.Users.UsersControl();
-            this.thongKePanel = new GUI.ThongKeAdminUserControl();
+            this.thongKePanel = new GUI.fThongKe();
             this.containerBtnPanel.SuspendLayout();
             this.infoPanelBox.SuspendLayout();
             this.infoOwnerPanel.SuspendLayout();
@@ -125,12 +126,12 @@ namespace GUI
             this.lblOwnerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblOwnerName.AutoSize = true;
             this.lblOwnerName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblOwnerName.Location = new System.Drawing.Point(5, 33);
+            this.lblOwnerName.Location = new System.Drawing.Point(5, 28);
             this.lblOwnerName.Margin = new System.Windows.Forms.Padding(5, 20, 0, 0);
             this.lblOwnerName.Name = "lblOwnerName";
-            this.lblOwnerName.Size = new System.Drawing.Size(129, 20);
+            this.lblOwnerName.Size = new System.Drawing.Size(174, 25);
             this.lblOwnerName.TabIndex = 0;
-            this.lblOwnerName.Text = "Huynh Quoc Tien";
+            this.lblOwnerName.Text = "Nguyễn Anh Khoa";
             this.lblOwnerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
@@ -168,7 +169,7 @@ namespace GUI
             this.lblOwnerRule.Location = new System.Drawing.Point(5, 0);
             this.lblOwnerRule.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
             this.lblOwnerRule.Name = "lblOwnerRule";
-            this.lblOwnerRule.Size = new System.Drawing.Size(49, 19);
+            this.lblOwnerRule.Size = new System.Drawing.Size(60, 23);
             this.lblOwnerRule.TabIndex = 2;
             this.lblOwnerRule.Text = "Admin";
             this.lblOwnerRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,8 +378,9 @@ namespace GUI
             // 
             // containerPanel
             // 
-            this.containerPanel.Controls.Add(this.landingPanel);
+            this.containerPanel.Controls.Add(this.homePanel);
             this.containerPanel.Controls.Add(this.lopHocPanel);
+            this.containerPanel.Controls.Add(this.monHocPanel);
             this.containerPanel.Controls.Add(this.cauHoiPanel);
             this.containerPanel.Controls.Add(this.deThiPanel);
             this.containerPanel.Controls.Add(this.userPanel);
@@ -390,14 +392,14 @@ namespace GUI
             this.containerPanel.Size = new System.Drawing.Size(1210, 845);
             this.containerPanel.TabIndex = 0;
             // 
-            // landingPanel
+            // homePanel
             // 
-            this.landingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.landingPanel.Location = new System.Drawing.Point(0, 0);
-            this.landingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.landingPanel.Name = "landingPanel";
-            this.landingPanel.Size = new System.Drawing.Size(1210, 845);
-            this.landingPanel.TabIndex = 0;
+            this.homePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homePanel.Location = new System.Drawing.Point(0, 0);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(1210, 845);
+            this.homePanel.TabIndex = 0;
             // 
             // lopHocPanel
             // 
@@ -407,6 +409,15 @@ namespace GUI
             this.lopHocPanel.Name = "lopHocPanel";
             this.lopHocPanel.Size = new System.Drawing.Size(1210, 845);
             this.lopHocPanel.TabIndex = 1;
+            // 
+            // monHocPanel
+            // 
+            this.monHocPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocPanel.Location = new System.Drawing.Point(0, 0);
+            this.monHocPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.monHocPanel.Name = "monHocPanel";
+            this.monHocPanel.Size = new System.Drawing.Size(1210, 845);
+            this.monHocPanel.TabIndex = 2;
             // 
             // cauHoiPanel
             // 
@@ -445,7 +456,7 @@ namespace GUI
             this.thongKePanel.Size = new System.Drawing.Size(1210, 845);
             this.thongKePanel.TabIndex = 4;
             // 
-            // fLayout
+            // UserForm
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1540, 845);
@@ -453,10 +464,10 @@ namespace GUI
             this.Controls.Add(this.containerBtnPanel);
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(700, 550);
-            this.Name = "fLayout";
+            this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fLayout_FormClosed);
-            this.Load += new System.EventHandler(this.fLayout_Load_1);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserForm_FormClosed);
+            this.Load += new System.EventHandler(this.UserForm_Load_1);
             this.containerBtnPanel.ResumeLayout(false);
             this.infoPanelBox.ResumeLayout(false);
             this.infoOwnerPanel.ResumeLayout(false);
@@ -490,7 +501,7 @@ namespace GUI
         private TableLayoutPanel infoOwnerPanel;
         private Label lblOwnerName;
         private TableLayoutPanel tableLayoutPanel2;
-        private Landing landingPanel;
+        private fLanding homePanel;
         private LopHocControl lopHocPanel;
         private MonHocControl monHocPanel;
         private CauHoiControl cauHoiPanel;
@@ -498,7 +509,7 @@ namespace GUI
         private Panel containerPanel;
         private Button btnNguoiDung;
         private UsersControl userPanel;
-        private ThongKeAdminUserControl thongKePanel;
+        private fThongKe thongKePanel;
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblOwnerRule;
         private Button btnSetting;
