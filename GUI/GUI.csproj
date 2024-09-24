@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="DeThi\DeThiControl.cs" />
+    <Compile Include="CauHoi\CauHoiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CauHoi\CauHoiControl.Designer.cs">
+      <DependentUpon>CauHoiControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeThi\DeThiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="DeThi\DeThiControl.Designer.cs" />
     <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
@@ -52,14 +59,58 @@
     <Compile Include="fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLayout.cs" />
+    <Compile Include="fLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="fLayout.Designer.cs" />
-    <Compile Include="Landing.cs" />
+    <Compile Include="Landing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Landing.Designer.cs" />
+    <Compile Include="LopHoc\LopHocControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LopHoc\LopHocControl.Designer.cs">
+      <DependentUpon>LopHocControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonHoc\MonHocControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MonHoc\MonHocControl.Designer.cs">
+      <DependentUpon>MonHocControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThongKeAdminUserControl.cs" />
+    <Compile Include="ThongKeAdminUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ThongKeAdminUserControl.Designer.cs" />
+    <Compile Include="Users\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\InfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\InfoUser.Designer.cs">
+      <DependentUpon>InfoUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UsersControl.Designer.cs">
+      <DependentUpon>UsersControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CauHoi\CauHoiControl.resx">
+      <DependentUpon>CauHoiControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PhanCong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

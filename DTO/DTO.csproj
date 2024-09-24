@@ -45,7 +45,7 @@
     <Compile Include="CauTraLoiDTO.cs" />
     <Compile Include="ChiTietLopDTO.cs" />
     <Compile Include="ChiTietQuyenDTO.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="DanhMucChucNang.cs" />
     <Compile Include="DeThiDTO.cs" />
     <Compile Include="KetQuaDTO.cs" />
     <Compile Include="LopDTO.cs" />

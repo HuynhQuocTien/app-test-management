@@ -30,7 +30,6 @@ namespace GUI.CauHoi
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CauHoiControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -136,7 +135,6 @@ namespace GUI.CauHoi
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(567, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnLamMoi.Name = "btnLamMoi";
@@ -156,7 +154,6 @@ namespace GUI.CauHoi
             this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnChiTiet.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnChiTiet.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Image")));
             this.btnChiTiet.Location = new System.Drawing.Point(315, 0);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnChiTiet.Name = "btnChiTiet";
@@ -176,7 +173,6 @@ namespace GUI.CauHoi
             this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatFile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXuatFile.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnXuatFile.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatFile.Image")));
             this.btnXuatFile.Location = new System.Drawing.Point(441, 0);
             this.btnXuatFile.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnXuatFile.Name = "btnXuatFile";
@@ -196,7 +192,6 @@ namespace GUI.CauHoi
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(210, 0);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnXoa.Name = "btnXoa";
@@ -216,7 +211,6 @@ namespace GUI.CauHoi
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.Location = new System.Drawing.Point(105, 0);
             this.btnSua.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnSua.Name = "btnSua";
@@ -236,7 +230,6 @@ namespace GUI.CauHoi
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(0, 0);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnThem.Name = "btnThem";
@@ -266,8 +259,8 @@ namespace GUI.CauHoi
             // 
             // comboBoxMonHoc
             // 
-            this.comboBoxMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.comboBoxMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxMonHoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -312,7 +305,7 @@ namespace GUI.CauHoi
             // 
             // textBoxTimKiem
             // 
-            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
             this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
@@ -329,7 +322,6 @@ namespace GUI.CauHoi
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.Location = new System.Drawing.Point(962, 0);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -387,14 +379,13 @@ namespace GUI.CauHoi
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(5, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.button2.Name = "button2";
@@ -406,13 +397,13 @@ namespace GUI.CauHoi
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // CauHoiUserControl
+            // CauHoiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CauHoiUserControl";
+            this.Name = "CauHoiControl";
             this.Size = new System.Drawing.Size(1180, 671);
             this.mainPanel.ResumeLayout(false);
             this.headingPanel.ResumeLayout(false);

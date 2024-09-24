@@ -52,8 +52,8 @@ namespace GUI
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                DangNhap dangNhap = new DangNhap();
-                dangNhap.Show();
+                fDangNhap fdangNhap = new fDangNhap();
+                fdangNhap.Show();
                 this.Close();
             }
         }

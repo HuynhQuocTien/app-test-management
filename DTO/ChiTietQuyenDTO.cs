@@ -11,12 +11,15 @@ namespace DTO
         private int MaChiTietQuyen {  get; set; }
         private int MaNhomQuyen { get; set; }
         private string ChucNang {  get; set; }
+        private string HanhDong { get; set; }
         public ChiTietQuyenDTO() { }
-        public ChiTietQuyenDTO(int maChiTietQuyen, int maNhomQuyen, string chucNang)
+
+        public ChiTietQuyenDTO(int maChiTietQuyen, int maNhomQuyen, string chucNang, string hanhDong)
         {
             MaChiTietQuyen = maChiTietQuyen;
             MaNhomQuyen = maNhomQuyen;
             ChucNang = chucNang;
+            HanhDong = hanhDong;
         }
     }
 }
