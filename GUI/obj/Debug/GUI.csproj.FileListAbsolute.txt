@@ -11,3 +11,5 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DTO.pdb
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.pdb
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.fDangNhap.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Properties.Resources.resources

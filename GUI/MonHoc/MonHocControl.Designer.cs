@@ -30,7 +30,6 @@ namespace GUI.MonHoc
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHocControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,22 +56,17 @@ namespace GUI.MonHoc
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.mainPanel.ColumnCount = 1;
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainPanel.Controls.Add(this.headingPanel, 0, 0);
             this.mainPanel.Controls.Add(this.dataGridView1, 0, 1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(17, 18, 17, 18);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.RowCount = 2;
-            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.87899F));
-            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.12101F));
+            this.mainPanel.RowCount = 3;
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.87875F));
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.32313F));
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.79812F));
             this.mainPanel.Size = new System.Drawing.Size(1180, 671);
             this.mainPanel.TabIndex = 0;
             // 
@@ -91,7 +85,7 @@ namespace GUI.MonHoc
             this.headingPanel.RowCount = 2;
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.23404F));
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.76596F));
-            this.headingPanel.Size = new System.Drawing.Size(1164, 152);
+            this.headingPanel.Size = new System.Drawing.Size(1164, 139);
             this.headingPanel.TabIndex = 0;
             // 
             // containerBtnPanel
@@ -112,7 +106,7 @@ namespace GUI.MonHoc
             this.containerBtnPanel.Name = "containerBtnPanel";
             this.containerBtnPanel.RowCount = 1;
             this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.containerBtnPanel.Size = new System.Drawing.Size(1164, 102);
+            this.containerBtnPanel.Size = new System.Drawing.Size(1164, 93);
             this.containerBtnPanel.TabIndex = 0;
             // 
             // btnLamMoi
@@ -124,7 +118,6 @@ namespace GUI.MonHoc
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(845, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnLamMoi.Name = "btnLamMoi";
@@ -144,7 +137,6 @@ namespace GUI.MonHoc
             this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatFile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXuatFile.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnXuatFile.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatFile.Image")));
             this.btnXuatFile.Location = new System.Drawing.Point(528, 0);
             this.btnXuatFile.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnXuatFile.Name = "btnXuatFile";
@@ -164,7 +156,6 @@ namespace GUI.MonHoc
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.Location = new System.Drawing.Point(264, 0);
             this.btnSua.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnSua.Name = "btnSua";
@@ -184,7 +175,6 @@ namespace GUI.MonHoc
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(0, 0);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnThem.Name = "btnThem";
@@ -203,18 +193,18 @@ namespace GUI.MonHoc
             this.containerTimKiemPanel.Controls.Add(this.textBoxTimKiem, 0, 0);
             this.containerTimKiemPanel.Controls.Add(this.btnTimKiem, 1, 0);
             this.containerTimKiemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 107);
+            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 98);
             this.containerTimKiemPanel.Margin = new System.Windows.Forms.Padding(0, 5, 17, 5);
             this.containerTimKiemPanel.Name = "containerTimKiemPanel";
             this.containerTimKiemPanel.RowCount = 1;
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerTimKiemPanel.Size = new System.Drawing.Size(1147, 40);
+            this.containerTimKiemPanel.Size = new System.Drawing.Size(1147, 36);
             this.containerTimKiemPanel.TabIndex = 1;
             // 
             // textBoxTimKiem
             // 
-            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
             this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
@@ -234,7 +224,7 @@ namespace GUI.MonHoc
             this.btnTimKiem.Location = new System.Drawing.Point(962, 0);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(185, 40);
+            this.btnTimKiem.Size = new System.Drawing.Size(185, 36);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = " TÌM KIẾM";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -267,21 +257,21 @@ namespace GUI.MonHoc
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 179);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 166);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1164, 479);
+            this.dataGridView1.Size = new System.Drawing.Size(1164, 419);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -298,13 +288,13 @@ namespace GUI.MonHoc
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // MonHocUserControl
+            // MonHocControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "MonHocUserControl";
+            this.Name = "MonHocControl";
             this.Size = new System.Drawing.Size(1180, 671);
             this.mainPanel.ResumeLayout(false);
             this.headingPanel.ResumeLayout(false);
