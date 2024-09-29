@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.headingPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.containerTimKiemPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
+            this.containerTimKiemPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.textBoxTimKiem = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mainPanel.SuspendLayout();
             this.headingPanel.SuspendLayout();
             this.containerTimKiemPanel.SuspendLayout();
@@ -79,6 +79,24 @@
             this.headingPanel.Size = new System.Drawing.Size(1164, 58);
             this.headingPanel.TabIndex = 0;
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.White;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnThem.Location = new System.Drawing.Point(970, 0);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(192, 58);
+            this.btnThem.TabIndex = 3;
+            this.btnThem.Text = "THÊM";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
             // containerTimKiemPanel
             // 
             this.containerTimKiemPanel.ColumnCount = 2;
@@ -96,17 +114,6 @@
             this.containerTimKiemPanel.Size = new System.Drawing.Size(953, 48);
             this.containerTimKiemPanel.TabIndex = 1;
             // 
-            // textBoxTimKiem
-            // 
-            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
-            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(15, 1, 22, 0);
-            this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(763, 36);
-            this.textBoxTimKiem.TabIndex = 0;
-            // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.White;
@@ -122,6 +129,17 @@
             this.btnTimKiem.Text = " TÌM KIẾM";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // textBoxTimKiem
+            // 
+            this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
+            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(15, 1, 22, 0);
+            this.textBoxTimKiem.Name = "textBoxTimKiem";
+            this.textBoxTimKiem.Size = new System.Drawing.Size(763, 36);
+            this.textBoxTimKiem.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -158,24 +176,6 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1164, 486);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.White;
-            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnThem.Location = new System.Drawing.Point(970, 0);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(192, 58);
-            this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "THÊM";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnThem.UseVisualStyleBackColor = false;
             // 
             // PhanCongControl
             // 

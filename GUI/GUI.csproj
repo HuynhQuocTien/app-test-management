@@ -31,16 +31,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\DocumentFormat.OpenXml.3.1.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\DocumentFormat.OpenXml.Framework.3.1.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CauHoi\CauHoiControl.cs">
@@ -49,15 +69,53 @@
     <Compile Include="CauHoi\CauHoiControl.Designer.cs">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CauHoi\fThemCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fThemCauHoi.Designer.cs">
+      <DependentUpon>fThemCauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeThi\DeThiControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DeThi\DeThiControl.Designer.cs" />
+    <Compile Include="DeThi\DeThiControl.Designer.cs">
+      <DependentUpon>DeThiControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeThi\fThemChiTietDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeThi\fThemChiTietDeThi.Designer.cs">
+      <DependentUpon>fThemChiTietDeThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeThi\fThemDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeThi\fThemDeThi.Designer.cs">
+      <DependentUpon>fThemDeThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBaiThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBaiThi.Designer.cs">
+      <DependentUpon>fBaiThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGetOTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGetOTP.Designer.cs">
+      <DependentUpon>fGetOTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKetQua.Designer.cs">
+      <DependentUpon>fKetQua.cs</DependentUpon>
     </Compile>
     <Compile Include="fLanding.cs">
       <SubType>UserControl</SubType>
@@ -71,11 +129,65 @@
     <Compile Include="fLayout.Designer.cs">
       <DependentUpon>fLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMatKhauMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMatKhauMoi.Designer.cs">
+      <DependentUpon>fMatKhauMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhapInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhapInfo.Designer.cs">
+      <DependentUpon>fNhapInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNhapOTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNhapOTP.Designer.cs">
+      <DependentUpon>fNhapOTP.cs</DependentUpon>
+    </Compile>
     <Compile Include="fThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="fThongKe.Designer.cs">
       <DependentUpon>fThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fChiTietLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fChiTietLop.Designer.cs">
+      <DependentUpon>fChiTietLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fDanhSachDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fDanhSachDeThi.Designer.cs">
+      <DependentUpon>fDanhSachDeThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fDanhSachSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fDanhSachSV.Designer.cs">
+      <DependentUpon>fDanhSachSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fThemDeThiCuaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fThemDeThiCuaLop.Designer.cs">
+      <DependentUpon>fThemDeThiCuaLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fThemLop.Designer.cs">
+      <DependentUpon>fThemLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LopHoc\fXemDeThiCuaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fXemDeThiCuaLop.Designer.cs">
+      <DependentUpon>fXemDeThiCuaLop.cs</DependentUpon>
     </Compile>
     <Compile Include="LopHoc\LopHocControl.cs">
       <SubType>UserControl</SubType>
@@ -83,11 +195,35 @@
     <Compile Include="LopHoc\LopHocControl.Designer.cs">
       <DependentUpon>LopHocControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc\fThemMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonHoc\fThemMonHoc.Designer.cs">
+      <DependentUpon>fThemMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonHoc\MonHocControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MonHoc\MonHocControl.Designer.cs">
       <DependentUpon>MonHocControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhomQuyen\AddNhomQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhomQuyen\AddNhomQuyen.Designer.cs">
+      <DependentUpon>AddNhomQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhomQuyen\NhomQuyenControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhomQuyen\NhomQuyenControl.Designer.cs">
+      <DependentUpon>NhomQuyenControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCong\fAddPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong\fAddPhanCong.Designer.cs">
+      <DependentUpon>fAddPhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="PhanCong\PhanCongControl.cs">
       <SubType>UserControl</SubType>
@@ -124,11 +260,44 @@
     <EmbeddedResource Include="CauHoi\CauHoiControl.resx">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fThemCauHoi.resx">
+      <DependentUpon>fThemCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeThi\fThemChiTietDeThi.resx">
+      <DependentUpon>fThemChiTietDeThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeThi\fThemDeThi.resx">
+      <DependentUpon>fThemDeThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBaiThi.resx">
+      <DependentUpon>fBaiThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fKetQua.resx">
+      <DependentUpon>fKetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLayout.resx">
+      <DependentUpon>fLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc\fDanhSachSV.resx">
+      <DependentUpon>fDanhSachSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonHoc\fThemMonHoc.resx">
+      <DependentUpon>fThemMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonHoc\MonHocControl.resx">
       <DependentUpon>MonHocControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhomQuyen\AddNhomQuyen.resx">
+      <DependentUpon>AddNhomQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhomQuyen\NhomQuyenControl.resx">
+      <DependentUpon>NhomQuyenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanCong\fAddPhanCong.resx">
+      <DependentUpon>fAddPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanCong\PhanCongControl.resx">
       <DependentUpon>PhanCongControl.cs</DependentUpon>
@@ -143,8 +312,13 @@
     <EmbeddedResource Include="Users\InfoUser.resx">
       <DependentUpon>InfoUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\UsersControl.resx">
+      <DependentUpon>UsersControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3224fc6b-69e8-41f3-b65d-d128d95c005d}</Project>

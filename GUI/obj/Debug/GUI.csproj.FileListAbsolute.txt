@@ -13,3 +13,10 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.pdb
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.fDangNhap.resources
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.fLayout.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.MonHoc.MonHocControl.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.NhomQuyen.NhomQuyenControl.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.PhanCong.PhanCongControl.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.AddUser.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.InfoUser.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.UsersControl.resources

@@ -36,7 +36,6 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLayout));
             this.containerBtnPanel = new System.Windows.Forms.TableLayoutPanel();
             this.infoPanelBox = new System.Windows.Forms.TableLayoutPanel();
             this.infoOwnerPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -55,13 +54,10 @@ namespace GUI
             this.btnDeThi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.containerPanel = new System.Windows.Forms.Panel();
-            this.homePanel = new GUI.fLanding();
             this.lopHocPanel = new GUI.LopHoc.LopHocControl();
-            this.monHocPanel = new GUI.MonHoc.MonHocControl();
             this.cauHoiPanel = new GUI.CauHoi.CauHoiControl();
             this.deThiPanel = new GUI.DeThi.DeThiControl();
             this.userPanel = new GUI.Users.UsersControl();
-            this.thongKePanel = new GUI.fThongKe();
             this.containerBtnPanel.SuspendLayout();
             this.infoPanelBox.SuspendLayout();
             this.infoOwnerPanel.SuspendLayout();
@@ -129,9 +125,9 @@ namespace GUI
             this.lblOwnerName.Location = new System.Drawing.Point(5, 28);
             this.lblOwnerName.Margin = new System.Windows.Forms.Padding(5, 20, 0, 0);
             this.lblOwnerName.Name = "lblOwnerName";
-            this.lblOwnerName.Size = new System.Drawing.Size(174, 25);
+            this.lblOwnerName.Size = new System.Drawing.Size(167, 25);
             this.lblOwnerName.TabIndex = 0;
-            this.lblOwnerName.Text = "Nguyễn Anh Khoa";
+            this.lblOwnerName.Text = "Huynh Quoc Tien";
             this.lblOwnerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
@@ -154,7 +150,6 @@ namespace GUI
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetting.FlatAppearance.BorderSize = 0;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
             this.btnSetting.Location = new System.Drawing.Point(137, 3);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(65, 40);
@@ -176,7 +171,6 @@ namespace GUI
             // 
             // pictureOwner
             // 
-            this.pictureOwner.Image = ((System.Drawing.Image)(resources.GetObject("pictureOwner.Image")));
             this.pictureOwner.InitialImage = null;
             this.pictureOwner.Location = new System.Drawing.Point(2, 2);
             this.pictureOwner.Margin = new System.Windows.Forms.Padding(2);
@@ -194,7 +188,6 @@ namespace GUI
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(10, 115);
             this.btnHome.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -215,7 +208,6 @@ namespace GUI
             this.btnNguoiDung.FlatAppearance.BorderSize = 0;
             this.btnNguoiDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNguoiDung.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnNguoiDung.Image = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.Image")));
             this.btnNguoiDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNguoiDung.Location = new System.Drawing.Point(10, 185);
             this.btnNguoiDung.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -236,7 +228,6 @@ namespace GUI
             this.btnMonHoc.FlatAppearance.BorderSize = 0;
             this.btnMonHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMonHoc.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnMonHoc.Image = ((System.Drawing.Image)(resources.GetObject("btnMonHoc.Image")));
             this.btnMonHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMonHoc.Location = new System.Drawing.Point(10, 291);
             this.btnMonHoc.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -257,7 +248,6 @@ namespace GUI
             this.btnThongKe.FlatAppearance.BorderSize = 0;
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.Location = new System.Drawing.Point(10, 529);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -280,7 +270,6 @@ namespace GUI
             this.btnCauHoi.FlatAppearance.BorderSize = 0;
             this.btnCauHoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCauHoi.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnCauHoi.Image = ((System.Drawing.Image)(resources.GetObject("btnCauHoi.Image")));
             this.btnCauHoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCauHoi.Location = new System.Drawing.Point(10, 371);
             this.btnCauHoi.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -301,7 +290,6 @@ namespace GUI
             this.btnLopHoc.FlatAppearance.BorderSize = 0;
             this.btnLopHoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLopHoc.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnLopHoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLopHoc.Image")));
             this.btnLopHoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLopHoc.Location = new System.Drawing.Point(10, 212);
             this.btnLopHoc.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -323,7 +311,6 @@ namespace GUI
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 13.2F);
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(10, 767);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -344,7 +331,6 @@ namespace GUI
             this.btnDeThi.FlatAppearance.BorderSize = 0;
             this.btnDeThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeThi.Font = new System.Drawing.Font("Segoe UI", 13.2F);
-            this.btnDeThi.Image = ((System.Drawing.Image)(resources.GetObject("btnDeThi.Image")));
             this.btnDeThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeThi.Location = new System.Drawing.Point(10, 451);
             this.btnDeThi.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -378,28 +364,16 @@ namespace GUI
             // 
             // containerPanel
             // 
-            this.containerPanel.Controls.Add(this.homePanel);
             this.containerPanel.Controls.Add(this.lopHocPanel);
-            this.containerPanel.Controls.Add(this.monHocPanel);
             this.containerPanel.Controls.Add(this.cauHoiPanel);
             this.containerPanel.Controls.Add(this.deThiPanel);
             this.containerPanel.Controls.Add(this.userPanel);
-            this.containerPanel.Controls.Add(this.thongKePanel);
             this.containerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerPanel.Location = new System.Drawing.Point(0, 0);
             this.containerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.containerPanel.Name = "containerPanel";
             this.containerPanel.Size = new System.Drawing.Size(1210, 845);
             this.containerPanel.TabIndex = 0;
-            // 
-            // homePanel
-            // 
-            this.homePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homePanel.Location = new System.Drawing.Point(0, 0);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1210, 845);
-            this.homePanel.TabIndex = 0;
             // 
             // lopHocPanel
             // 
@@ -409,15 +383,6 @@ namespace GUI
             this.lopHocPanel.Name = "lopHocPanel";
             this.lopHocPanel.Size = new System.Drawing.Size(1210, 845);
             this.lopHocPanel.TabIndex = 1;
-            // 
-            // monHocPanel
-            // 
-            this.monHocPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monHocPanel.Location = new System.Drawing.Point(0, 0);
-            this.monHocPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.monHocPanel.Name = "monHocPanel";
-            this.monHocPanel.Size = new System.Drawing.Size(1210, 845);
-            this.monHocPanel.TabIndex = 2;
             // 
             // cauHoiPanel
             // 
@@ -447,16 +412,7 @@ namespace GUI
             this.userPanel.Size = new System.Drawing.Size(1210, 845);
             this.userPanel.TabIndex = 6;
             // 
-            // thongKePanel
-            // 
-            this.thongKePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongKePanel.Location = new System.Drawing.Point(0, 0);
-            this.thongKePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.thongKePanel.Name = "thongKePanel";
-            this.thongKePanel.Size = new System.Drawing.Size(1210, 845);
-            this.thongKePanel.TabIndex = 4;
-            // 
-            // UserForm
+            // fLayout
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1540, 845);
@@ -464,7 +420,7 @@ namespace GUI
             this.Controls.Add(this.containerBtnPanel);
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(700, 550);
-            this.Name = "UserForm";
+            this.Name = "fLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserForm_FormClosed);
             this.Load += new System.EventHandler(this.UserForm_Load_1);

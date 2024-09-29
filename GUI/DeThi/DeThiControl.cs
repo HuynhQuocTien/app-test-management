@@ -17,21 +17,9 @@ namespace GUI.DeThi
         {
             InitializeComponent();
         }
-        private void lblTenDeThi_Click(object sender, EventArgs e, DeThiDTO obj)
-        {
-        }
-        private void buttonXoa_Click(object sender, EventArgs e, DeThiDTO obj)
-        { 
-        }
-        private void btnThemCauHoiVaoDe_Click(object sender, EventArgs e, DeThiDTO obj)
-        {
-           
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-                    
-        }
 
+        }
     }
 }

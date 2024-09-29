@@ -148,13 +148,13 @@ namespace GUI.DeThi
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // DeThiUserControl
+            // DeThiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "DeThiUserControl";
+            this.Name = "DeThiControl";
             this.Size = new System.Drawing.Size(1573, 826);
             this.mainPanel.ResumeLayout(false);
             this.panelHeading.ResumeLayout(false);
