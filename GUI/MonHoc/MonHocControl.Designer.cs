@@ -30,6 +30,7 @@ namespace GUI.MonHoc
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHocControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -118,6 +119,7 @@ namespace GUI.MonHoc
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.Location = new System.Drawing.Point(845, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnLamMoi.Name = "btnLamMoi";
@@ -137,6 +139,7 @@ namespace GUI.MonHoc
             this.btnXuatFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatFile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXuatFile.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnXuatFile.Image = global::GUI.Properties.Resources.export_file1;
             this.btnXuatFile.Location = new System.Drawing.Point(528, 0);
             this.btnXuatFile.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnXuatFile.Name = "btnXuatFile";
@@ -156,6 +159,7 @@ namespace GUI.MonHoc
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.Location = new System.Drawing.Point(264, 0);
             this.btnSua.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnSua.Name = "btnSua";
@@ -175,6 +179,7 @@ namespace GUI.MonHoc
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(0, 0);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.btnThem.Name = "btnThem";

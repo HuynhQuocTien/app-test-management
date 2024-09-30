@@ -12,13 +12,16 @@ namespace DTO
         private int MaLop { get; set; }
         private int MaSV {  get; set; }
         private int TrangThai { get; set; }
+        private int is_delete { get; set; }
         public ChiTietLopDTO() { }
-        public ChiTietLopDTO(int maChiTietLop, int maLop, int maSV, int trangThai)
+        private ChiTietLopDTO(int maChiTietLop, int maLop, int maSV, int trangThai, int is_delete)
         {
             MaChiTietLop = maChiTietLop;
             MaLop = maLop;
             MaSV = maSV;
             TrangThai = trangThai;
+            this.is_delete = is_delete;
         }
+        
     }
 }

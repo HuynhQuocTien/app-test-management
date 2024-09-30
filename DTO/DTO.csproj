@@ -47,6 +47,7 @@
     <Compile Include="ChiTietQuyenDTO.cs" />
     <Compile Include="DanhMucChucNang.cs" />
     <Compile Include="DeThiDTO.cs" />
+    <Compile Include="GiaoDeThiDTO.cs" />
     <Compile Include="KetQuaDTO.cs" />
     <Compile Include="LopDTO.cs" />
     <Compile Include="MonHocDTO.cs" />

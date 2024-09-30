@@ -238,7 +238,7 @@
             this.lblTenLop.AutoSize = true;
             this.lblTenLop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTenLop.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenLop.Image = ((System.Drawing.Image)(resources.GetObject("lblTenLop.Image")));
+            this.lblTenLop.Image = global::GUI.Properties.Resources.book_arrangement_45;
             this.lblTenLop.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTenLop.Location = new System.Drawing.Point(8, 8);
             this.lblTenLop.Margin = new System.Windows.Forms.Padding(8, 8, 2, 0);

@@ -17,9 +17,10 @@ namespace DTO
         private string SDT { get; set; }
         private int MaNhomQuyen { get; set; }
         private int TrangThai { get; set; }
+        private int is_delete { get; set; }
         public NguoiDungDTO() { }
 
-        public NguoiDungDTO(int maNguoiDung, string hoTen, string email, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, int maNhomQuyen, int trangThai)
+        public NguoiDungDTO(int maNguoiDung, string hoTen, string email, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, int maNhomQuyen, int trangThai, int is_delete)
         {
             MaNguoiDung = maNguoiDung;
             HoTen = hoTen;
@@ -30,6 +31,7 @@ namespace DTO
             SDT = sDT;
             MaNhomQuyen = maNhomQuyen;
             TrangThai = trangThai;
+            this.is_delete = is_delete;
         }
     }
 }

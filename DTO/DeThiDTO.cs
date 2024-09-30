@@ -16,9 +16,10 @@ namespace DTO
         private DateTime ThoiGianKetThuc {  get; set; }
         private int NguoiTao { get; set; }
         private int TrangThai {  get; set; }
+        private int is_delete { get; set; }
         public DeThiDTO() { }
 
-        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, int nguoiTao, int trangThai)
+        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, int nguoiTao, int trangThai, int is_delete)
         {
             MaDe = maDe;
             MaMonHoc = maMonHoc;
@@ -28,6 +29,7 @@ namespace DTO
             ThoiGianKetThuc = thoiGianKetThuc;
             NguoiTao = nguoiTao;
             TrangThai = trangThai;
+            this.is_delete = is_delete;
         }
     }
 }

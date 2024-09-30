@@ -11,9 +11,9 @@ namespace GUI
     partial class fLayout
     {
         /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -36,6 +36,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLayout));
             this.containerBtnPanel = new System.Windows.Forms.TableLayoutPanel();
             this.infoPanelBox = new System.Windows.Forms.TableLayoutPanel();
             this.infoOwnerPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -55,6 +56,7 @@ namespace GUI
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.containerPanel = new System.Windows.Forms.Panel();
             this.lopHocPanel = new GUI.LopHoc.LopHocControl();
+            this.monHocPanel = new GUI.MonHoc.MonHocControl();
             this.cauHoiPanel = new GUI.CauHoi.CauHoiControl();
             this.deThiPanel = new GUI.DeThi.DeThiControl();
             this.userPanel = new GUI.Users.UsersControl();
@@ -122,12 +124,12 @@ namespace GUI
             this.lblOwnerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblOwnerName.AutoSize = true;
             this.lblOwnerName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblOwnerName.Location = new System.Drawing.Point(5, 28);
+            this.lblOwnerName.Location = new System.Drawing.Point(5, 33);
             this.lblOwnerName.Margin = new System.Windows.Forms.Padding(5, 20, 0, 0);
             this.lblOwnerName.Name = "lblOwnerName";
-            this.lblOwnerName.Size = new System.Drawing.Size(167, 25);
+            this.lblOwnerName.Size = new System.Drawing.Size(129, 20);
             this.lblOwnerName.TabIndex = 0;
-            this.lblOwnerName.Text = "Huynh Quoc Tien";
+            this.lblOwnerName.Text = "Huỳnh Quốc Tiến";
             this.lblOwnerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
@@ -150,6 +152,7 @@ namespace GUI
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetting.FlatAppearance.BorderSize = 0;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
             this.btnSetting.Location = new System.Drawing.Point(137, 3);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(65, 40);
@@ -164,13 +167,14 @@ namespace GUI
             this.lblOwnerRule.Location = new System.Drawing.Point(5, 0);
             this.lblOwnerRule.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
             this.lblOwnerRule.Name = "lblOwnerRule";
-            this.lblOwnerRule.Size = new System.Drawing.Size(60, 23);
+            this.lblOwnerRule.Size = new System.Drawing.Size(49, 19);
             this.lblOwnerRule.TabIndex = 2;
             this.lblOwnerRule.Text = "Admin";
             this.lblOwnerRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureOwner
             // 
+            this.pictureOwner.Image = ((System.Drawing.Image)(resources.GetObject("pictureOwner.Image")));
             this.pictureOwner.InitialImage = null;
             this.pictureOwner.Location = new System.Drawing.Point(2, 2);
             this.pictureOwner.Margin = new System.Windows.Forms.Padding(2);
@@ -365,6 +369,7 @@ namespace GUI
             // containerPanel
             // 
             this.containerPanel.Controls.Add(this.lopHocPanel);
+            this.containerPanel.Controls.Add(this.monHocPanel);
             this.containerPanel.Controls.Add(this.cauHoiPanel);
             this.containerPanel.Controls.Add(this.deThiPanel);
             this.containerPanel.Controls.Add(this.userPanel);
@@ -383,6 +388,15 @@ namespace GUI
             this.lopHocPanel.Name = "lopHocPanel";
             this.lopHocPanel.Size = new System.Drawing.Size(1210, 845);
             this.lopHocPanel.TabIndex = 1;
+            // 
+            // monHocPanel
+            // 
+            this.monHocPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monHocPanel.Location = new System.Drawing.Point(0, 0);
+            this.monHocPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.monHocPanel.Name = "monHocPanel";
+            this.monHocPanel.Size = new System.Drawing.Size(1210, 845);
+            this.monHocPanel.TabIndex = 2;
             // 
             // cauHoiPanel
             // 
@@ -464,10 +478,10 @@ namespace GUI
         private DeThiControl deThiPanel;
         private Panel containerPanel;
         private Button btnNguoiDung;
-        private UsersControl userPanel;
         private fThongKe thongKePanel;
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblOwnerRule;
         private Button btnSetting;
+        private UsersControl userPanel;
     }
 }

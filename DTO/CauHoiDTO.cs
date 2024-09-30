@@ -14,12 +14,11 @@ namespace DTO
         public int MaNguoiTao { get; set; }
         public string DoKho { get; set; }
         public int TrangThai { get; set; }
-
+        private int is_delete { get; set; }
         public CauHoiDTO()
         {
         }
-
-        public CauHoiDTO(int maCauHoi, string noiDung, int maMonHoc, int maNguoiTao, string doKho, int trangThai)
+        public CauHoiDTO(int maCauHoi, string noiDung, int maMonHoc, int maNguoiTao, string doKho, int trangThai, int is_delete)
         {
             MaCauHoi = maCauHoi;
             NoiDung = noiDung;
@@ -27,6 +26,7 @@ namespace DTO
             MaNguoiTao = maNguoiTao;
             DoKho = doKho;
             TrangThai = trangThai;
+            this.is_delete = is_delete;
         }
     }
 }

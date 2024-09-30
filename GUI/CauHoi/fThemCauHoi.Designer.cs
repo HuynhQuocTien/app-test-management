@@ -454,7 +454,7 @@
             this.cbSoDapAn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSoDapAn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSoDapAn.FormattingEnabled = true;
-            this.cbSoDapAn.Location = new System.Drawing.Point(154, 2);
+            this.cbSoDapAn.Location = new System.Drawing.Point(154, 6);
             this.cbSoDapAn.Margin = new System.Windows.Forms.Padding(2);
             this.cbSoDapAn.Name = "cbSoDapAn";
             this.cbSoDapAn.Size = new System.Drawing.Size(100, 29);
