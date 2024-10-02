@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Size = System.Drawing.Size;
 
 namespace GUI.LopHoc
 {
@@ -20,6 +21,7 @@ namespace GUI.LopHoc
         {
             InitializeComponent();
             CreatePanel();
+            CreatePanelSV();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -193,6 +195,100 @@ namespace GUI.LopHoc
             btnDong.Enabled = false;            
             panelHead.BackColor = GetRandomColor();
             panelHead.Enabled = true;
+        }
+        private void CreatePanelSV()
+        {
+            Panel panelContain = new Panel
+            {
+                Location = new Point(3, 3),
+                Name = "panelContain",
+                Size = new Size(390, 350),
+                TabIndex = 0,
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(10, 10, 10, 10),
+            };
+
+            Panel panelHead = new Panel
+            {
+                Location = new Point(0, 0),
+                Name = "panelHead",
+                Size = new Size(390, 290),
+                TabIndex = 1,
+                BackColor = GetRandomColor()
+            };
+
+            Label lblTenDeThi = new Label
+            {
+                AutoSize = false,
+                Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
+                Location = new Point(10, 9),
+                Name = "lblTenDeThi",
+                Size = new Size(300, 200),
+                TabIndex = 0,
+                Text = "Đề thi môn ABCxzy",
+                AutoEllipsis = true
+            };
+            toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
+
+
+
+            Label lblMonHoc = new Label
+            {
+                AutoSize = true,
+                Location = new Point(20, 220),
+                Name = "lblMonHoc1",
+                Size = new Size(110, 13),
+                TabIndex = 1,
+                Text = "Môn học: AAA",
+                Font = new Font("Segoe UI", 10, FontStyle.Regular)
+
+            };
+
+            Label lblThoiGianLamBai = new Label
+            {
+                AutoSize = true,
+                Location = new Point(20, 250),
+                Name = "lblThoiGianLamBai",
+                Size = new Size(140, 13),
+                TabIndex = 2,
+                Text = "Thời gian làm bài: 60 phút",
+                Font = new Font("Segoe UI", 10, FontStyle.Regular)
+
+            };
+
+            System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
+            {
+                Location = new Point(10, 300),
+                Name = "button2",
+                Size = new Size(120, 41),
+                TabIndex = 2,
+                Text = "Làm bài thi",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+                Enabled = true,
+            };
+            System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
+            {
+                Location = new Point(145, 300),
+                Name = "button2",
+                Size = new Size(120, 41),
+                TabIndex = 2,
+                Text = "Kết quả",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+                Visible = true,
+            };
+            panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
+
+            panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
+            flowLayoutPanel1.Controls.Add(panelContain);
+            panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemKq });
+
+            flowLayoutPanel1.AutoScroll = true;
         }
     }
 }

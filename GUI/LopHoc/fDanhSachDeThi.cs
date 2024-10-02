@@ -127,6 +127,45 @@ namespace GUI.LopHoc
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
 
+            System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
+            {
+                Location = new Point(10, 300),
+                Name = "button2",
+                Size = new Size(120, 41),
+                TabIndex = 2,
+                Text = "Làm bài thi",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+                Enabled = true,
+            };
+            System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
+            {
+                Location = new Point(145, 300),
+                Name = "button2",
+                Size = new Size(120, 41),
+                TabIndex = 2,
+                Text = "Kết quả",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+                Visible = true,
+            };
+
+            System.Windows.Forms.Button btnDong = new System.Windows.Forms.Button
+            {
+                Location = new Point(280, 300),
+                Name = "button2",
+                Size = new Size(100, 41),
+                TabIndex = 2,
+                Text = "Đóng",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
+            };
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);

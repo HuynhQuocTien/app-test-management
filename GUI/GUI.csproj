@@ -177,6 +177,12 @@
     <Compile Include="LopHoc\fThemDeThiCuaLop.Designer.cs">
       <DependentUpon>fThemDeThiCuaLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc\fThamGiaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fThamGiaLop.Designer.cs">
+      <DependentUpon>fThamGiaLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="LopHoc\fThemLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LopHoc\fDanhSachSV.resx">
       <DependentUpon>fDanhSachSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc\fThamGiaLop.resx">
+      <DependentUpon>fThamGiaLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LopHoc\fThemLop.resx">
       <DependentUpon>fThemLop.cs</DependentUpon>
