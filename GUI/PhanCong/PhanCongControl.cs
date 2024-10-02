@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.MonHoc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace GUI.PhanCong
         public PhanCongControl()
         {
             InitializeComponent();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            fAddPhanCong fthemPhanCong = new fAddPhanCong();
+            fthemPhanCong.ShowDialog();
         }
     }
 }

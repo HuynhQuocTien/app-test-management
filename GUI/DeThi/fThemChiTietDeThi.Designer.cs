@@ -256,7 +256,7 @@
             this.Controls.Add(this.btnLeftToRight);
             this.Controls.Add(this.lbDeThi);
             this.Controls.Add(this.lbCauHoi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(962, 662);
             this.MinimumSize = new System.Drawing.Size(962, 662);
             this.Name = "fThemChiTietDeThi";

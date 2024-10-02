@@ -275,6 +275,9 @@
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fGetOTP.resx">
+      <DependentUpon>fGetOTP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fKetQua.resx">
       <DependentUpon>fKetQua.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LopHoc\fChiTietLop.resx">
       <DependentUpon>fChiTietLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc\fDanhSachDeThi.resx">
+      <DependentUpon>fDanhSachDeThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LopHoc\fDanhSachSV.resx">
       <DependentUpon>fDanhSachSV.cs</DependentUpon>

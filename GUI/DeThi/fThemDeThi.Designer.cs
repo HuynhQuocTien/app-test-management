@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 281);
+            this.ClientSize = new System.Drawing.Size(509, 309);
             this.Controls.Add(this.cbMonHoc);
             this.Controls.Add(this.lblChonMonHoc);
             this.Controls.Add(this.nud);

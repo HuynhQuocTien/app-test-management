@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI.MonHoc;
+using GUI.PhanCong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,12 @@ namespace GUI.NhomQuyen
         public NhomQuyenControl()
         {
             InitializeComponent();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            AddNhomQuyen fthemNhomQuyen = new AddNhomQuyen();
+            fthemNhomQuyen.ShowDialog();
         }
     }
 }

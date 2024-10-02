@@ -56,6 +56,30 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "LiveCharts.WinForms/0.9.7.1": {
+        "runtime": {
+          "LiveCharts.WinForms.dll": {
+            "assemblyVersion": "0.9.7.1",
+            "fileVersion": "0.9.7.1"
+          }
+        }
+      },
+      "LiveCharts.Wpf/0.9.7.0": {
+        "runtime": {
+          "LiveCharts.Wpf.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          }
+        }
+      },
+      "LiveCharts/0.9.7.0": {
+        "runtime": {
+          "LiveCharts.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          }
+        }
       }
     }
   },
@@ -82,6 +106,21 @@
     },
     "GUI/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveCharts.WinForms/0.9.7.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveCharts.Wpf/0.9.7.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LiveCharts/0.9.7.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

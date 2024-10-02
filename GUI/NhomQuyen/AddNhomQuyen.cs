@@ -16,5 +16,21 @@ namespace GUI.NhomQuyen
         {
             InitializeComponent();
         }
+
+        private void thamgiathi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thamgiathi.Checked)
+            {
+                thamgiaday.Checked = false;
+            }
+        }
+
+        private void thamgiaday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thamgiaday.Checked)
+            {
+                thamgiathi.Checked = false;
+            }
+        }
     }
 }

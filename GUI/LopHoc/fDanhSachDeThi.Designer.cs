@@ -58,7 +58,7 @@
             this.mainPanel.RowCount = 2;
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.7366F));
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.2634F));
-            this.mainPanel.Size = new System.Drawing.Size(1283, 478);
+            this.mainPanel.Size = new System.Drawing.Size(1283, 578);
             this.mainPanel.TabIndex = 0;
             // 
             // headingPanel
@@ -75,7 +75,7 @@
             this.headingPanel.RowCount = 1;
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.headingPanel.Size = new System.Drawing.Size(1277, 109);
+            this.headingPanel.Size = new System.Drawing.Size(1277, 133);
             this.headingPanel.TabIndex = 0;
             // 
             // lblHeading
@@ -95,7 +95,7 @@
             this.searchPanel.ColumnCount = 3;
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.81227F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.18773F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.searchPanel.Controls.Add(this.lblTenDeThi, 0, 0);
             this.searchPanel.Controls.Add(this.lblMonHoc, 0, 1);
             this.searchPanel.Controls.Add(this.txtDeThi, 1, 0);
@@ -140,7 +140,7 @@
             this.txtDeThi.Location = new System.Drawing.Point(143, 8);
             this.txtDeThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeThi.Name = "txtDeThi";
-            this.txtDeThi.Size = new System.Drawing.Size(399, 34);
+            this.txtDeThi.Size = new System.Drawing.Size(398, 34);
             this.txtDeThi.TabIndex = 1;
             this.txtDeThi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeThi_KeyPress);
             // 
@@ -154,7 +154,7 @@
             this.cbMonHoc.Location = new System.Drawing.Point(143, 57);
             this.cbMonHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMonHoc.Name = "cbMonHoc";
-            this.cbMonHoc.Size = new System.Drawing.Size(399, 36);
+            this.cbMonHoc.Size = new System.Drawing.Size(398, 36);
             this.cbMonHoc.TabIndex = 2;
             this.cbMonHoc.SelectedValueChanged += new System.EventHandler(this.cbMonHoc_SelectedValueChanged);
             // 
@@ -189,18 +189,18 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 115);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 139);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1277, 361);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1277, 437);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // fDanhSachDeThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 478);
+            this.ClientSize = new System.Drawing.Size(1283, 578);
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDanhSachDeThi";

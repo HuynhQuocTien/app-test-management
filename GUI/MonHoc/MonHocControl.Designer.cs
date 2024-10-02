@@ -46,11 +46,19 @@ namespace GUI.MonHoc
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.mainPanel.SuspendLayout();
             this.headingPanel.SuspendLayout();
             this.containerBtnPanel.SuspendLayout();
             this.containerTimKiemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -58,6 +66,7 @@ namespace GUI.MonHoc
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.mainPanel.ColumnCount = 1;
             this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainPanel.Controls.Add(this.tableLayoutPanel6, 0, 2);
             this.mainPanel.Controls.Add(this.headingPanel, 0, 0);
             this.mainPanel.Controls.Add(this.dataGridView1, 0, 1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -293,6 +302,60 @@ namespace GUI.MonHoc
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 601);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.10448F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.89552F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1174, 67);
+            this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(590, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(581, 47);
+            this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.Location = new System.Drawing.Point(153, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "trên tổng ... trang";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Trang";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.numericUpDown1.Location = new System.Drawing.Point(64, 12);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDown1.TabIndex = 0;
+            // 
             // MonHocControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +370,10 @@ namespace GUI.MonHoc
             this.containerTimKiemPanel.ResumeLayout(false);
             this.containerTimKiemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +392,10 @@ namespace GUI.MonHoc
         private TextBox textBoxTimKiem;
         private Button btnTimKiem;
         private DataGridView dataGridView1;
+        private TableLayoutPanel tableLayoutPanel6;
+        private Panel panel1;
+        private Label label2;
+        private Label label1;
+        private NumericUpDown numericUpDown1;
     }
 }
