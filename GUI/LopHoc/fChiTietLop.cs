@@ -23,7 +23,8 @@ namespace GUI.LopHoc
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            fDanhSachDeThi f = new fDanhSachDeThi();
+            f.ShowDialog();
         }
         private void lblTenLop_Click_1(object sender, EventArgs e)
         {

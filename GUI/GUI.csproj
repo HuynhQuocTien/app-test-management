@@ -299,6 +299,9 @@
     <EmbeddedResource Include="LopHoc\fDanhSachSV.resx">
       <DependentUpon>fDanhSachSV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc\fThemLop.resx">
+      <DependentUpon>fThemLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonHoc\fThemMonHoc.resx">
       <DependentUpon>fThemMonHoc.cs</DependentUpon>
     </EmbeddedResource>

@@ -103,7 +103,11 @@ namespace GUI.LopHoc
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Visible = true
-            };            
+            };
+            buttonThamGia.Click += (s, ev) =>
+            {
+                buttonThamGia_Click(s, ev);
+            };
             panelHead.Controls.AddRange(new Control[] { labelMonhoc });
             panelContain.Controls.AddRange(new Control[] { buttonThamGia, buttonXoa, panelHead });
 
@@ -112,6 +116,11 @@ namespace GUI.LopHoc
 
             flowLayoutPanel1.AutoScroll = true;
 
+        }
+        private void buttonThamGia_Click(object sender, EventArgs e)
+        {
+            fChiTietLop fct = new fChiTietLop();
+            fct.ShowDialog();
         }
 
     }
