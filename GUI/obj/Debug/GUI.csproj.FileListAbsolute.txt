@@ -48,3 +48,4 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.Phan
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.fGetOTP.resources
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fDanhSachDeThi.resources
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fThemLop.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fThamGiaLop.resources
