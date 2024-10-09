@@ -49,3 +49,6 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.fGet
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fDanhSachDeThi.resources
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fThemLop.resources
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fThamGiaLop.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\obj\Debug\GUI.LopHoc.fThemSVvaoLop.resources
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

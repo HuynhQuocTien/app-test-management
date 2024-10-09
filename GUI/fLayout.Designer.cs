@@ -391,7 +391,6 @@ namespace GUI
             this.btnPhanQuyen.Text = "  Phân quyền";
             this.btnPhanQuyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhanQuyen.UseVisualStyleBackColor = false;
-            this.btnPhanQuyen.Click += new System.EventHandler(this.btnPhanQuyen_Click);
             // 
             // btnThongKe
             // 

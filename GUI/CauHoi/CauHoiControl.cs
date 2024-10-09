@@ -18,10 +18,6 @@ namespace GUI.CauHoi
         {
             InitializeComponent();
         }
-         private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnXuatFile_Click(object sender, EventArgs e)
         {
@@ -75,6 +71,11 @@ namespace GUI.CauHoi
         private void textBoxTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

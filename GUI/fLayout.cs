@@ -25,9 +25,9 @@ namespace GUI
             this.containerBtnPanel.Controls.Add(this.btnDeThi, 0, 5);
             this.containerBtnPanel.Controls.Add(this.btnNguoiDung, 0, 6);
             this.containerBtnPanel.Controls.Add(this.btnPhanCong, 0, 7);
-            this.containerBtnPanel.Controls.Add(this.btnPhanQuyen, 0, 8);
-            this.containerBtnPanel.Controls.Add(this.btnThongKe, 0, 9);
-            this.containerBtnPanel.Controls.Add(this.btnThoat, 0, 10);
+            //this.containerBtnPanel.Controls.Add(this.btnPhanQuyen, 0, 8);
+            this.containerBtnPanel.Controls.Add(this.btnThongKe, 0, 8);
+            this.containerBtnPanel.Controls.Add(this.btnThoat, 0, 9);
             AddColorChange(btnHome, hoverColor, hoverColor);
             AddColorChange(btnCauHoi, hoverColor, hoverColor);
             AddColorChange(btnMonHoc, hoverColor, hoverColor);
@@ -36,7 +36,7 @@ namespace GUI
             AddColorChange(btnThongKe, hoverColor, hoverColor);
             AddColorChange(btnThoat, hoverColor, hoverColor);
             AddColorChange(btnPhanCong, hoverColor, hoverColor);
-            AddColorChange(btnPhanQuyen, hoverColor, hoverColor);
+            //AddColorChange(btnPhanQuyen, hoverColor, hoverColor);
 
         }
         private void HideAllUserControls()
@@ -145,12 +145,12 @@ namespace GUI
             info.Visible = true;
 
         }
-        private void btnPhanQuyen_Click(object sender, EventArgs e)
-        {
-            ShowUserControl(nhomQuyenPanel);
-            this.Text = "Phân quyền";
+        //private void btnPhanQuyen_Click(object sender, EventArgs e)
+        //{
+        //    ShowUserControl(nhomQuyenPanel);
+        //    this.Text = "Phân quyền";
 
-        }
+        //}
 
         private void btnPhanCong_Click(object sender, EventArgs e)
         {

@@ -163,7 +163,7 @@ namespace GUI.LopHoc
                 Name = "button2",
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
-                Text = "Kết quả",
+                Text = "Mở đáp án",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -269,9 +269,9 @@ namespace GUI.LopHoc
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
                 Enabled = true,
             };
-            System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
+            System.Windows.Forms.Button btnXemDa = new System.Windows.Forms.Button
             {
-                Location = new Point(145, 300),
+                Location = new Point(135, 300),
                 Name = "button2",
                 Size = new Size(120, 41),
                 TabIndex = 2,
@@ -282,13 +282,33 @@ namespace GUI.LopHoc
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
                 Visible = true,
             };
+            System.Windows.Forms.Button btnXemLai = new System.Windows.Forms.Button
+            {
+                Location = new Point(260, 300),
+                Name = "button2",
+                Size = new Size(120, 41),
+                TabIndex = 2,
+                Text = "Xem lại",
+                UseVisualStyleBackColor = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+                Enabled = true,
+                Visible = true,
+            };
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
             flowLayoutPanel1.Controls.Add(panelContain);
-            panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemKq });
+            panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemDa, btnXemLai });
 
             flowLayoutPanel1.AutoScroll = true;
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            fThemSVvaoLop fAddSV = new fThemSVvaoLop();
+            fAddSV.ShowDialog();
         }
     }
 }

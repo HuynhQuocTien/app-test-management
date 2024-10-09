@@ -46,6 +46,7 @@
             this.lblChuThichMo = new System.Windows.Forms.Label();
             this.lblChuThichDong = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnImport = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.headingPanel.SuspendLayout();
             this.containerlbl.SuspendLayout();
@@ -161,18 +162,19 @@
             // 
             // containerBtn
             // 
-            this.containerBtn.ColumnCount = 2;
-            this.containerBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerBtn.Controls.Add(this.btnXemDSSV, 1, 0);
+            this.containerBtn.ColumnCount = 3;
+            this.containerBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.3222F));
+            this.containerBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.36754F));
+            this.containerBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.31026F));
+            this.containerBtn.Controls.Add(this.btnImport, 1, 0);
+            this.containerBtn.Controls.Add(this.btnXemDSSV, 2, 0);
             this.containerBtn.Controls.Add(this.btnThem, 0, 0);
             this.containerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerBtn.Location = new System.Drawing.Point(525, 118);
             this.containerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.containerBtn.Name = "containerBtn";
             this.containerBtn.RowCount = 1;
-            this.containerBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.containerBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.containerBtn.Size = new System.Drawing.Size(419, 54);
             this.containerBtn.TabIndex = 2;
             // 
@@ -198,7 +200,7 @@
             this.btnThem.Location = new System.Drawing.Point(2, 9);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(175, 36);
+            this.btnThem.Size = new System.Drawing.Size(144, 36);
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm đề thi vào lớp";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -301,6 +303,20 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(946, 428);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Location = new System.Drawing.Point(150, 9);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(139, 36);
+            this.btnImport.TabIndex = 2;
+            this.btnImport.Text = "Thêm SV vào lớp";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // fChiTietLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +359,6 @@
         private System.Windows.Forms.Label lblChuThichMo;
         private System.Windows.Forms.Label lblChuThichDong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnImport;
     }
 }
