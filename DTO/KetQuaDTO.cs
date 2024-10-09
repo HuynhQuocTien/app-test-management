@@ -10,7 +10,7 @@ namespace DTO
     {
         private int MaKetQua {  get; set; }
         private int MaDe {  get; set; }
-        private int MaNguoiDung { get; set; }
+        private int MaNguoiDung { get; set; } //MaSV
         private int Diem {  get; set; }
         private int SoCauDung { get; set; }
         private int SoCauSai {  get; set; }

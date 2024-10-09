@@ -18,6 +18,7 @@ namespace GUI.LopHoc
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

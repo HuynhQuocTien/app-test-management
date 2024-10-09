@@ -25,7 +25,6 @@ namespace GUI.DeThi
         private void btnThem_Click(object sender, EventArgs e)
         {
             fThemDeThi themLop = new fThemDeThi();
-
             themLop.ShowDialog();
         }
         private void CreatePanel()

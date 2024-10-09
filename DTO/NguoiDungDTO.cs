@@ -9,27 +9,25 @@ namespace DTO
     public class NguoiDungDTO
     {
         private int MaNguoiDung {  get; set; }
-        private string HoTen {  get; set; }
-        private string Email { get; set; }
+        private string HoTen {  get; set; } //Database: Ten
         private string GioiTinh { get; set; }
         private DateTime NgaySinh { get; set; }
         private string Avatar { get; set; }
         private string SDT { get; set; }
-        private int MaNhomQuyen { get; set; }
+        private DateTime NgayTao { get; set; }
         private int TrangThai { get; set; }
         private int is_delete { get; set; }
         public NguoiDungDTO() { }
 
-        public NguoiDungDTO(int maNguoiDung, string hoTen, string email, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, int maNhomQuyen, int trangThai, int is_delete)
+        public NguoiDungDTO(int maNguoiDung, string hoTen, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)
         {
             MaNguoiDung = maNguoiDung;
             HoTen = hoTen;
-            Email = email;
             GioiTinh = gioiTinh;
             NgaySinh = ngaySinh;
             Avatar = avatar;
             SDT = sDT;
-            MaNhomQuyen = maNhomQuyen;
+            NgayTao = ngayTao;
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
