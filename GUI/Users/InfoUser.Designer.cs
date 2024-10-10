@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using DAL;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace GUI.Users
 {
@@ -500,6 +502,8 @@ namespace GUI.Users
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 29);
             this.comboBox1.TabIndex = 10;
+
+            
             // 
             // InfoUser
             // 

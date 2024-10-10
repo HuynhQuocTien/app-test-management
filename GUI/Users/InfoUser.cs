@@ -18,11 +18,20 @@ namespace GUI.Users
         public InfoUser()
         {
             InitializeComponent();
-            this.Load += new EventHandler(InfoUser_Load);
-        }
+            SqlConnection conn = GetConnectionDb.GetConnectionString();
+            string query = "SELECT * FROM NhomQuyen";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
 
-        private void InfoUser_Load(object sender, EventArgs e)
-        {
+            // Xóa các mục hiện có trong ComboBox (nếu cần)
+            comboBox1.Items.Clear();
+
+            // Thêm các mục mới từ SQL Server
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader["TenQuyen"].ToString());
+            }
+            reader.Close();
             LoadUserInfo();
         }
 
@@ -33,11 +42,9 @@ namespace GUI.Users
             {
                 try
                 {
-                    string query = "SELECT * FROM Users WHERE UserID = @UserID";
+                    string query = "SELECT * FROM TaiKhoan INNER JOIN NguoiDung ON TaiKhoan.Username = NguoiDung.MaNguoiDung INNER JOIN NhomQuyen ON NhomQuyen.MaNhomQuyen = TaiKhoan.MaNhomQuyen  WHERE TaiKhoan.Username=@UserID;";
                     SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Giả sử bạn có cách để lấy userId từ một nguồn nào đó
-                    string userId = "1";  // Thay thế bằng UserID thực tế
+                    string userId = "3121410111";  //UserID tạm thời
                     cmd.Parameters.AddWithValue("@UserID", userId);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -47,8 +54,41 @@ namespace GUI.Users
                     // Hiển thị thông tin người dùng lên form nếu có dữ liệu
                     if (dt.Rows.Count > 0)
                     {
-                        label1.Text = dt.Rows[0]["Name"].ToString();
+                        textBoxID.Text = dt.Rows[0]["MaNguoiDung"].ToString();
                         textBoxEmail.Text = dt.Rows[0]["Email"].ToString();
+                        textBoxName.Text = dt.Rows[0]["Ten"].ToString();
+                        dateTimePicker1.Value = Convert.ToDateTime(dt.Rows[0]["NgaySinh"]);
+                        if (dt.Rows[0]["GioiTinh"].ToString() == "1")
+                        {
+                            rbNam.Checked = true;
+                            RbNu.Checked = false;
+                        }
+                        else
+                        {
+                            rbNam.Checked = false;
+                            RbNu.Checked = true;
+                        }
+                        txtPass.Text= dt.Rows[0]["Password"].ToString();
+                        textBox2.Text= dt.Rows[0]["SDT"].ToString();
+                        string tenQuyen = dt.Rows[0]["TenQuyen"].ToString();
+                        int index = comboBox1.FindStringExact(tenQuyen);
+
+                        if (index != -1)
+                        {
+                            // Nếu tìm thấy, chọn item đó trong ComboBox
+                            comboBox1.SelectedIndex = index;
+                        }
+                        else
+                        {
+                            comboBox1.SelectedIndex = -1;
+                        }
+                        if (dt.Rows[0]["TrangThai"].ToString() == "1")
+                        {
+                            radioButtonStatus.Checked = true;
+                        } else
+                        {
+                            radioButtonStatus.Checked = false;
+                        }
                         // Và các trường khác tương tự
                     }
                     else

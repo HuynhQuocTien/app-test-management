@@ -66,3 +66,9 @@ C:\Users\huynh\source\repos\app-test-management\app-test-management\obj\Debug\ne
 C:\Users\huynh\source\repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.pdb
 C:\Users\huynh\source\repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.genruntimeconfig.cache
 C:\Users\huynh\source\repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\ref\app-test-management.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

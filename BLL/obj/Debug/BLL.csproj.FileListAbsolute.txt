@@ -20,3 +20,5 @@ C:\Users\huynh\source\repos\app-test-management\BLL\obj\Debug\BLL.csproj.CoreCom
 C:\Users\huynh\source\repos\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\huynh\source\repos\app-test-management\BLL\obj\Debug\BLL.dll
 C:\Users\huynh\source\repos\app-test-management\BLL\obj\Debug\BLL.pdb
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.xml
