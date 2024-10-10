@@ -104,6 +104,10 @@ namespace GUI.Users
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
+            buttonUpImg.Visible = true;
+            textBoxName.Enabled = true;
+            textBoxEmail.Enabled = true;
+            textBox2.Enabled = true;
 
         }
         private void button1_Click_1(object sender, EventArgs e)
