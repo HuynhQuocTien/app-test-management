@@ -9,20 +9,18 @@ namespace DAL
 {
     public static class GetConnectionDb
     {
+        // Phương thức trả về SqlConnection đã được mở
         public static SqlConnection GetConnectionString()
         {
-            string connectionsString = "Data Source=LAPTOP-C31A5C9P;Initial Catalog=Test_Management_Db;Integrated Security=True";
+            string connectionString = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=Database;Integrated Security=True";
 
-            var sqlConn = new SqlConnection(connectionsString);
+            var sqlConn = new SqlConnection(connectionString);
             if (sqlConn.State == System.Data.ConnectionState.Closed)
             {
                 sqlConn.Open();
             }
-            else
-            {
-                sqlConn.Close();
-            }
-            return sqlConn;
+
+            return sqlConn; // Trả về kết nối đã được mở
         }
     }
 }
