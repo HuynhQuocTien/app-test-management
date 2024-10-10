@@ -20,10 +20,7 @@
           "DTO": "1.0.0"
         },
         "runtime": {
-          "BLL.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "BLL.dll": {}
         }
       },
       "DAL/1.0.0": {
@@ -31,18 +28,12 @@
           "DTO": "1.0.0"
         },
         "runtime": {
-          "DAL.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DAL.dll": {}
         }
       },
       "DTO/1.0.0": {
         "runtime": {
-          "DTO.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DTO.dll": {}
         }
       },
       "GUI/1.0.0": {
@@ -51,10 +42,7 @@
           "DTO": "1.0.0"
         },
         "runtime": {
-          "GUI.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GUI.dll": {}
         }
       },
       "LiveCharts.WinForms/0.9.7.1": {
