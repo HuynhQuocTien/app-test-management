@@ -440,5 +440,8 @@
   <ItemGroup>
     <None Include="Resources\setting-syncing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Avatar_IMG\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

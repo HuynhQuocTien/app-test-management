@@ -120,7 +120,24 @@ namespace GUI.Users
         }
         private void buttonUpImg_Click_1(object sender, EventArgs e)
         {
+            // Tạo hộp thoại mở file
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            // Tùy chọn bộ lọc file (chỉ cho phép các định dạng ảnh)
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+
+            // Hiển thị hộp thoại và kiểm tra xem người dùng có chọn file hay không
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Lấy đường dẫn của file đã chọn
+                string selectedFilePath = openFileDialog.FileName;
+
+                // Xử lý file đã chọn (ví dụ: hiển thị ảnh trên form)
+                MessageBox.Show("File được chọn: " + selectedFilePath);
+
+                // Bạn có thể tải file hoặc hiển thị file trong một PictureBox:
+                pictureBox1.Image = Image.FromFile(selectedFilePath);
+            }
         }
 
     }

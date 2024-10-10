@@ -497,12 +497,12 @@ namespace GUI.Users
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 278);
+            this.comboBox1.Location = new System.Drawing.Point(35, 282);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 29);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.Enabled = false;
             // 
             // InfoUser
             // 

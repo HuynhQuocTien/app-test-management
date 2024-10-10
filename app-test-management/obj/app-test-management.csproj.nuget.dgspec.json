@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj": {}
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj": {
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
         "projectName": "app-test-management",
-        "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
         "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\obj\\",
         "projectStyle": "PackageReference",
@@ -33,8 +33,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj"
               }
             }
           }
@@ -82,19 +82,19 @@
         }
       }
     },
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\BLL\\BLL.csproj": {
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -104,16 +104,16 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj": {
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -123,11 +123,11 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj": {
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj",
+        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -138,22 +138,22 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj": {
+    "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj",
+        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\BLL\\BLL.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DAL\\DAL.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }

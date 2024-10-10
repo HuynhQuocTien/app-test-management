@@ -545,9 +545,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
       "projectName": "app-test-management",
-      "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
       "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\obj\\",
       "projectStyle": "PackageReference",
@@ -571,8 +571,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj": {
-              "projectPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj"
+            "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
+              "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj"
             }
           }
         }
