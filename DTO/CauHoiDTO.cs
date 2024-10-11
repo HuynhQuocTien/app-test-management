@@ -14,7 +14,7 @@ namespace DTO
         public int MaNguoiTao { get; set; }
         public string DoKho { get; set; }
         public int TrangThai { get; set; }
-        private int is_delete { get; set; }
+        public int is_delete { get; set; }
         public CauHoiDTO()
         {
         }

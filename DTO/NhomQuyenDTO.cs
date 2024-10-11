@@ -8,9 +8,9 @@ namespace DTO
 {
     public class NhomQuyenDTO
     {
-        private int MaNhomQuyen {  get; set; }
-        private string TenQuyen { get; set; }
-        private int Level {  get; set; }     
+        public int MaNhomQuyen {  get; set; }
+        public string TenQuyen { get; set; }
+        public int Level {  get; set; }     
 
         public NhomQuyenDTO() { }
 

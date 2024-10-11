@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,21 @@ namespace GUI.LopHoc
     public partial class LopHocControl : UserControl
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+        LopBLL lopBLL;
+        List<LopDTO> listlop;
 
         public LopHocControl()
         {
             InitializeComponent();
+            lopBLL = new LopBLL();
+            listlop = new List<LopDTO>();
             CreatePanel();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            fThemLop themLop = new fThemLop(this,GenerateRandomCode(10));
 
+            themLop.ShowDialog();
         }
         private Color GetRandomColor()
         {
@@ -121,6 +128,28 @@ namespace GUI.LopHoc
         {
             fChiTietLop fct = new fChiTietLop();
             fct.ShowDialog();
+        }
+        private string GenerateRandomCode(int length)//randomMaMoi Còn lỗi
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789"; // Các ký tự và số có thể sử dụng
+            Random random = new Random();
+            StringBuilder code = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                // sinh số ngẫu nhiên dựa theo độ dài của mảng ký tự
+                int index = random.Next(chars.Length);
+                code.Append(chars[index]);
+            }
+
+            return code.ToString();
+        }
+
+        public void AddLop(LopDTO obj)
+        {
+            listlop.Add(obj);
+            lopBLL.Add(obj);
+            CreatePanel();
         }
 
     }

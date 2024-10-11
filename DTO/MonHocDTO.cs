@@ -8,13 +8,13 @@ namespace DTO
 {
     public class MonHocDTO
     {
-        private int MaMonHoc { set; get; }
-        private string TenMonHoc { set; get; }
-        private int SoTC {  set; get; }
-        private int SoTietLT { set; get; }
-        private int SoTietTH { set; get; }
-        private int TrangThai { set; get; }
-        private int is_delete { get; set; }
+        public int MaMonHoc { set; get; }
+        public string TenMonHoc { set; get; }
+        public int SoTC {  set; get; }
+        public int SoTietLT { set; get; }
+        public int SoTietTH { set; get; }
+        public int TrangThai { set; get; }
+        public int is_delete { get; set; }
         public MonHocDTO() { }
         public MonHocDTO(int maMonHoc, string tenMonHoc, int soTC, int soTietLT, int soTietTH, int trangThai, int is_delete)
         {

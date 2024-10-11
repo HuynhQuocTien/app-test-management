@@ -8,10 +8,10 @@ namespace DTO
 {
     public class CauTraLoiDTO
     {
-        private int MaCauTL {  get; set; }
-        private int MaCauHoi { get; set; }
-        private string NoiDung { get; set; }
-        private int is_DapAn {  get; set; }
+        public int MaCauTL {  get; set; }
+        public int MaCauHoi { get; set; }
+        public string NoiDung { get; set; }
+        public int is_DapAn {  get; set; }
 
         public CauTraLoiDTO()
         {

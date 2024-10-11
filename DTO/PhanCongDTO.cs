@@ -8,9 +8,9 @@ namespace DTO
 {
     public class PhanCongDTO
     {
-        private int MaPhanCong {  get; set; }
-        private int MaMonHoc { get; set; }
-        private int MaGV {  get; set; }
+        public int MaPhanCong {  get; set; }
+        public int MaMonHoc { get; set; }
+        public int MaGV {  get; set; }
 
         public PhanCongDTO() { }
 

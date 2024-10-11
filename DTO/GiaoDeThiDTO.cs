@@ -8,10 +8,10 @@ namespace DTO
 {
     public class GiaoDeThiDTO
     {
-        private int MaDe { get; set; }
-        private int MaLop { get; set; }
-        private int NguoiGiao { get; set; }
-        private int is_delete { get; set; }
+        public int MaDe { get; set; }
+        public int MaLop { get; set; }
+        public int NguoiGiao { get; set; }
+        public int is_delete { get; set; }
         public GiaoDeThiDTO() { }
         public GiaoDeThiDTO(int maDe, int maLop, int nguoiGiao, int is_delete)
         {
