@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class NhomQuyenDAL : IUnitDAL<NhomQuyenDTO>
+    public class NhomQuyenDAL : IUnitDAL<NhomQuyenDTO>
     {
         public static NhomQuyenDAL getInstance()
         {

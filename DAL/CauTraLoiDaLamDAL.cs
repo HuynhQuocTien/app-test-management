@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class CauTraLoiDaLamDAL : IUnitDAL<CauTraLoiDaLamDTO>
+    public class CauTraLoiDaLamDAL : IUnitDAL<CauTraLoiDaLamDTO>
     {
         public static CauTraLoiDaLamDAL getInstance()
         {

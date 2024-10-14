@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class MonHocDAL : IUnitDAL<MonHocDTO>
+    public class MonHocDAL : IUnitDAL<MonHocDTO>
     {
         public static MonHocDAL getInstance()
         {

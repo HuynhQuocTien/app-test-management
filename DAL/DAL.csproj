@@ -48,6 +48,9 @@
     <Compile Include="CauHoiDaLamDAL.cs" />
     <Compile Include="CauTraLoiDAL.cs" />
     <Compile Include="CauTraLoiDaLamDAL.cs" />
+    <Compile Include="CauTraLoiDienChoTrongDAL.cs" />
+    <Compile Include="CauTraLoiDienChoTrongDaLamDAL.cs" />
+    <Compile Include="ChiTietDeDAL.cs" />
     <Compile Include="ChiTietLopDAL.cs" />
     <Compile Include="ChiTietDeDaLamDAL.cs" />
     <Compile Include="DeThiDAL.cs" />
@@ -58,6 +61,10 @@
     <Compile Include="LopDAL.cs" />
     <Compile Include="MonHocDAL.cs" />
     <Compile Include="NhomQuyenDAL.cs" />
+    <Compile Include="NoiCauDAL.cs" />
+    <Compile Include="NoiCauDaLamDAL.cs" />
+    <Compile Include="NoiCauTraLoiDAL.cs" />
+    <Compile Include="NoiCauTraLoiDaLamDAL.cs" />
     <Compile Include="PhanCongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanDAL.cs" />

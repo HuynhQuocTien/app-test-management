@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class GiaoDeThiDAL : IUnitDAL<GiaoDeThiDTO>
+    public class GiaoDeThiDAL : IUnitDAL<GiaoDeThiDTO>
     {
         public static GiaoDeThiDAL getInstance()
         {

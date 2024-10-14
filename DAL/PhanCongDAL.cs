@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class PhanCongDAL : IUnitDAL<PhanCongDTO>
+    public class PhanCongDAL : IUnitDAL<PhanCongDTO>
     {
         public static PhanCongDAL getInstance()
         {

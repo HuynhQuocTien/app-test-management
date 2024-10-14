@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class TaiKhoanDAL : IUnitDAL<TaiKhoanDTO>
+    public class TaiKhoanDAL : IUnitDAL<TaiKhoanDTO>
     {
         public static TaiKhoanDAL getInstance()
         {

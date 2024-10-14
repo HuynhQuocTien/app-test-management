@@ -124,8 +124,7 @@
               "RelativeToolTip": "..\\DAL\\GetConnectionDb.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwC0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T09:47:34.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T09:47:34.666Z"
             },
             {
               "$type": "Document",
@@ -147,7 +146,7 @@
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\LopHocControl.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
               "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAIwI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T02:59:54.301Z",
               "EditorCaption": ""
@@ -186,8 +185,7 @@
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:51:14.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T02:51:14.319Z"
             },
             {
               "$type": "Document",
@@ -198,8 +196,7 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:51:13.264Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-10T02:51:13.264Z"
             }
           ]
         }

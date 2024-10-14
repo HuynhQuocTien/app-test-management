@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class KetQuaDAL : IUnitDAL<KetQuaDTO>
+    public class KetQuaDAL : IUnitDAL<KetQuaDTO>
     {
         public static KetQuaDAL getInstance()
         {

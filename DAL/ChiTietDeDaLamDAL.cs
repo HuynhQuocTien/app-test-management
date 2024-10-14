@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    internal class ChiTietDeDaLamDAL : IUnitDAL<ChiTietDeDaLamDTO>
+    public class ChiTietDeDaLamDAL : IUnitDAL<ChiTietDeDaLamDTO>
     {
         public static ChiTietDeDaLamDAL getInstance()
         {

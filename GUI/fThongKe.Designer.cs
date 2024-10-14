@@ -89,6 +89,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -103,6 +104,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -110,10 +112,8 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -465,7 +465,7 @@
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 99.99999F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 288F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(568, 288);
             this.tableLayoutPanel20.TabIndex = 2;
             // 
@@ -913,6 +913,15 @@
             this.dataGridView2.Size = new System.Drawing.Size(551, 288);
             this.dataGridView2.TabIndex = 1;
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart1.Location = new System.Drawing.Point(558, 3);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(583, 286);
+            this.cartesianChart1.TabIndex = 2;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // tableLayoutPanel18
             // 
             this.tableLayoutPanel18.ColumnCount = 2;
@@ -1097,6 +1106,15 @@
             this.dataGridView3.Size = new System.Drawing.Size(551, 371);
             this.dataGridView3.TabIndex = 1;
             // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart2.Location = new System.Drawing.Point(558, 3);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(583, 369);
+            this.cartesianChart2.TabIndex = 2;
+            this.cartesianChart2.Text = "cartesianChart2";
+            // 
             // tableLayoutPanel30
             // 
             this.tableLayoutPanel30.ColumnCount = 2;
@@ -1162,51 +1180,35 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.comboBox5);
-            this.panel5.Controls.Add(this.comboBox6);
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(571, 43);
             this.panel5.TabIndex = 0;
             // 
-            // comboBox5
+            // radioButton1
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Theo lớp"});
-            this.comboBox5.Location = new System.Drawing.Point(250, 14);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(233, 29);
-            this.comboBox5.TabIndex = 1;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(67, 13);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(127, 25);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Theo môn học";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // radioButton2
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Theo môn học"});
-            this.comboBox6.Location = new System.Drawing.Point(22, 14);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(195, 29);
-            this.comboBox6.TabIndex = 0;
-            // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cartesianChart1.Location = new System.Drawing.Point(558, 3);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(583, 286);
-            this.cartesianChart1.TabIndex = 2;
-            this.cartesianChart1.Text = "cartesianChart1";
-            // 
-            // cartesianChart2
-            // 
-            this.cartesianChart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cartesianChart2.Location = new System.Drawing.Point(558, 3);
-            this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(583, 369);
-            this.cartesianChart2.TabIndex = 2;
-            this.cartesianChart2.Text = "cartesianChart2";
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(294, 10);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(89, 25);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Theo lớp";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // fThongKe
             // 
@@ -1270,6 +1272,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1350,10 +1353,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
         private LiveCharts.WinForms.PieChart pieChart1;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private LiveCharts.WinForms.CartesianChart cartesianChart2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
