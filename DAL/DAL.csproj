@@ -44,12 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHoiDAL.cs" />
+    <Compile Include="CauHoiDaLamDAL.cs" />
+    <Compile Include="CauTraLoiDAL.cs" />
+    <Compile Include="CauTraLoiDaLamDAL.cs" />
     <Compile Include="ChiTietLopDAL.cs" />
+    <Compile Include="ChiTietDeDaLamDAL.cs" />
     <Compile Include="DeThiDAL.cs" />
     <Compile Include="GetConnectionDb.cs" />
+    <Compile Include="GiaoDeThiDAL.cs" />
     <Compile Include="IUnitDAL.cs" />
+    <Compile Include="KetQuaDAL.cs" />
     <Compile Include="LopDAL.cs" />
+    <Compile Include="MonHocDAL.cs" />
+    <Compile Include="NhomQuyenDAL.cs" />
+    <Compile Include="PhanCongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

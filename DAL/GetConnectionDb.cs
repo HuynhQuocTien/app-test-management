@@ -26,49 +26,6 @@ namespace DAL
 
             return sqlConn;
         }
-        private static bool IsServerConnected()
-        {
-            string connectionsString = "Data Source=localhost;Initial Catalog=Test_Management_Db;User ID=sa;Password=123456;Trust Server Certificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionsString))
-            {
-                try
-                {
-                    connection.Open();
-                    return true;
-                }
-                catch (SqlException)
-                {
-                    return false;
-                }
-            }
-        }
-        public static DataTable ExecuteQuery(string query)
-        {
-            using (var connection = GetConnection())
-            {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    using (var adapter = new SqlDataAdapter(command))
-                    {
-                        var dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        return dataTable;
-                    }                    
-                }
-            }
-        }
-
-        public static int ExecuteNonQuery(string query)
-        {
-            using (var connection = GetConnection())
-            {
-                using (var command = new SqlCommand(query, connection))
-                {
-                    return command.ExecuteNonQuery();
-                }
-            }
-        }
     }
    
 }

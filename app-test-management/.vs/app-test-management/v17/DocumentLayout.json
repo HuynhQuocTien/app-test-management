@@ -3,13 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\lophoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\lophoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\fthemlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\fthemlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\bll\\lopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -18,16 +24,10 @@
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\lopdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\lophoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\dethidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\bll\\chitietlopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\lophoc\\fthemlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
@@ -40,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -80,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DeThiDAL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DeThiDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DeThiDAL.cs",
@@ -88,12 +88,11 @@
               "RelativeToolTip": "..\\DAL\\DeThiDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T19:51:59.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T19:51:59.559Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ChiTietLopBLL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\ChiTietLopBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\ChiTietLopBLL.cs",
@@ -101,12 +100,11 @@
               "RelativeToolTip": "..\\BLL\\ChiTietLopBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T19:51:52.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T19:51:52.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "LopHocControl.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\LopHocControl.cs",
@@ -118,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GetConnectionDb.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
               "RelativeDocumentMoniker": "..\\DAL\\GetConnectionDb.cs",
@@ -126,8 +124,7 @@
               "RelativeToolTip": "..\\DAL\\GetConnectionDb.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwC0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T09:47:34.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T09:47:34.666Z"
             },
             {
               "$type": "Document",
@@ -139,25 +136,24 @@
               "RelativeToolTip": "..\\GUI\\app.config",
               "ViewState": "AgIAABEAAAAAAAAAAAAYwCkAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-10T03:08:53.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T03:08:53.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LopHocControl.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\LopHocControl.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
               "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAewFQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAIwI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T02:59:54.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "LopDAL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\LopDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\LopDAL.cs",
@@ -165,12 +161,11 @@
               "RelativeToolTip": "..\\DAL\\LopDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:59:30.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T02:59:30.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "LopBLL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\LopBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\LopBLL.cs",
@@ -178,8 +173,7 @@
               "RelativeToolTip": "..\\BLL\\LopBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:51:29.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T02:51:29.255Z"
             },
             {
               "$type": "Document",
@@ -189,22 +183,20 @@
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fThemLop.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemLop.cs",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAEwCwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:51:14.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T02:51:14.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "fThemLop.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fThemLop.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:51:13.264Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-10T02:51:13.264Z"
             }
           ]
         }
