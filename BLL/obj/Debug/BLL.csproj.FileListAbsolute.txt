@@ -11,3 +11,16 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.cspr
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.pdb
+D:\app-test-management\BLL\bin\Debug\BLL.dll
+D:\app-test-management\BLL\bin\Debug\BLL.pdb
+D:\app-test-management\BLL\bin\Debug\DAL.dll
+D:\app-test-management\BLL\bin\Debug\DTO.dll
+D:\app-test-management\BLL\bin\Debug\System.Data.SqlClient.dll
+D:\app-test-management\BLL\bin\Debug\DAL.pdb
+D:\app-test-management\BLL\bin\Debug\DTO.pdb
+D:\app-test-management\BLL\bin\Debug\System.Data.SqlClient.xml
+D:\app-test-management\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\app-test-management\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\app-test-management\BLL\obj\Debug\BLL.dll
+D:\app-test-management\BLL\obj\Debug\BLL.pdb

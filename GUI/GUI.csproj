@@ -409,6 +409,9 @@
     <EmbeddedResource Include="fLayout.resx">
       <DependentUpon>fLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fNhapOTP.resx">
+      <DependentUpon>fNhapOTP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fThongKe.resx">
       <DependentUpon>fThongKe.cs</DependentUpon>
     </EmbeddedResource>
