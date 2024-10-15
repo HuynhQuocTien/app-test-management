@@ -3,13 +3,22 @@
   "WorkspaceRootPath": "D:\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fnhapotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fmatkhaumoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\fmatkhaumoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,15 +36,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "fNhapInfo.cs",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\fNhapInfo.cs",
               "RelativeDocumentMoniker": "..\\GUI\\fNhapInfo.cs",
               "ToolTip": "D:\\app-test-management\\GUI\\fNhapInfo.cs",
               "RelativeToolTip": "..\\GUI\\fNhapInfo.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:13:43.75Z",
+              "WhenOpened": "2024-10-15T09:22:38.384Z",
               "EditorCaption": ""
             },
             {
@@ -47,21 +56,58 @@
               "ToolTip": "D:\\app-test-management\\GUI\\fNhapInfo.cs [Design]",
               "RelativeToolTip": "..\\GUI\\fNhapInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:13:41.904Z",
+              "WhenOpened": "2024-10-15T09:22:36.444Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "fNhapOTP.cs",
-              "DocumentMoniker": "D:\\app-test-management\\GUI\\fNhapOTP.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fNhapOTP.cs",
-              "ToolTip": "D:\\app-test-management\\GUI\\fNhapOTP.cs",
-              "RelativeToolTip": "..\\GUI\\fNhapOTP.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowF4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "fDangNhap.cs",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAADwv1QAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:10:14.544Z",
+              "WhenOpened": "2024-10-15T09:22:20.588Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fDangNhap.cs [Design]",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\fDangNhap.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:22:18.592Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fMatKhauMoi.cs",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\fMatKhauMoi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fMatKhauMoi.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\fMatKhauMoi.cs",
+              "RelativeToolTip": "..\\GUI\\fMatKhauMoi.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:22:00.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "fMatKhauMoi.cs [Design]",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\fMatKhauMoi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fMatKhauMoi.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\fMatKhauMoi.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fMatKhauMoi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:21:58.456Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

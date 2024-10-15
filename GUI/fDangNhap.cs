@@ -81,8 +81,8 @@ namespace GUI
         {
             string taiKhoan = textBox1.Text;
             string matKhau = textBox2.Text;
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            string thongbBao = nguoiDungBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
+            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+            string thongbBao = taiKhoanBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
             if (thongbBao.Equals("Đăng nhập thành công!"))
             {
                 MessageBox.Show(thongbBao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

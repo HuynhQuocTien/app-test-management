@@ -19,9 +19,9 @@ namespace GUI
         }
         private void btnGui_Click(object sender, EventArgs e)
         {
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
             string email = txtEmailorUsername.Text;
-            string thongBao = nguoiDungBLL.kiemTraEmailNguoiDung(email);
+            string thongBao = taiKhoanBLL.kiemTraEmailNguoiDung(email);
             if (thongBao.Equals("Oke"))
             {
                 fNhapOTP form = new fNhapOTP(email);
