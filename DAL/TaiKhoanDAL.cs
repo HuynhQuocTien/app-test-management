@@ -20,7 +20,7 @@ namespace DAL
         // Kiểm tra gmail có trong db không
         public bool kiemTraEmailNguoiDung(string email)
         {
-            string query = $"SELECT COUNT(*) FROM NguoiDung WHERE Email = @email";
+            string query = $"SELECT COUNT(*) FROM TaiKhoan WHERE Email = @email";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, conn))
@@ -42,7 +42,7 @@ namespace DAL
         }
         public bool kiemTraTaiKhoan(string taiKhoan, string matKhau)
         {
-            string query = $"SELECT Password FROM NguoiDung WHERE MaNguoiDung = @TaiKhoan";
+            string query = $"SELECT Password FROM TaiKhoan WHERE Username = @TaiKhoan";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, conn))
@@ -81,7 +81,7 @@ namespace DAL
         }
         public bool suaMatKhauNguoiDung(string email, string matKhau)
         {
-            string query = "UPDATE NguoiDung SET Password = @MatKhau WHERE Email = @Email";
+            string query = "UPDATE TaiKhoan SET Password = @MatKhau WHERE Email = @Email";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, conn))
