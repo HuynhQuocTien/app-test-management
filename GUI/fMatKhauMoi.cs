@@ -25,8 +25,8 @@ namespace GUI
         {
             //txtNhapMK.Text
             //txtXacNhan.Text
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            string thongBao = nguoiDungBLL.suaMatKhauNguoiDung(email, txtNhapMK.Text, txtXacNhan.Text);
+            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+            string thongBao = taiKhoanBLL.suaMatKhauNguoiDung(email, txtNhapMK.Text, txtXacNhan.Text);
             MessageBox.Show(thongBao, "Thông báo", MessageBoxButtons.OK);
             if (thongBao.Equals("Oke"))
             {

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class NguoiDungBLL
+    public class TaiKhoanBLL
     {
-        private NguoiDungDAL nguoiDungDAL;
-        public NguoiDungBLL()
+        private TaiKhoanDAL taiKhoanDAL;
+        public TaiKhoanBLL()
         {
-            nguoiDungDAL = new NguoiDungDAL();  // Khởi tạo đối tượng DAL để truy cập dữ liệu
+            taiKhoanDAL = new TaiKhoanDAL();  // Khởi tạo đối tượng DAL để truy cập dữ liệu
         }
         public string kiemTraEmailNguoiDung(string email)
         {
@@ -20,7 +20,7 @@ namespace BLL
             {
                 return "Không được để trống";
             }
-            return nguoiDungDAL.kiemTraEmailNguoiDung(email) ? "Oke" : "Gmail không tồn tại";
+            return taiKhoanDAL.kiemTraEmailNguoiDung(email) ? "Oke" : "Gmail không tồn tại";
         }
         public string kiemTraTaiKhoan(string taiKhoan, string matKhau)
         {
@@ -33,7 +33,7 @@ namespace BLL
                 }
 
                 // Gọi lớp DAL để kiểm tra tài khoản và mật khẩu trong cơ sở dữ liệu
-                return nguoiDungDAL.kiemTraTaiKhoan(taiKhoan, matKhau)
+                return taiKhoanDAL.kiemTraTaiKhoan(taiKhoan, matKhau)
                        ? "Đăng nhập thành công!"
                        : "Tài khoản hoặc mật khẩu không chính xác.";
             }
@@ -58,7 +58,7 @@ namespace BLL
             {
                 return "Mật khẩu phải ít nhất 8 ký tự";
             }
-            return nguoiDungDAL.suaMatKhauNguoiDung(email, matKhau) ? "Oke" : "Lỗi DAL";
+            return taiKhoanDAL.suaMatKhauNguoiDung(email, matKhau) ? "Oke" : "Lỗi DAL";
         }
     }
 }
