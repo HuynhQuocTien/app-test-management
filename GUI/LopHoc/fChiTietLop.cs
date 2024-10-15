@@ -16,6 +16,7 @@ namespace GUI.LopHoc
     public partial class fChiTietLop : Form
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+        private int counter = 1;
 
         public fChiTietLop()
         {
