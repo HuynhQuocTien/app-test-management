@@ -40,7 +40,7 @@
             // txtNhapMa
             // 
             this.txtNhapMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapMa.Location = new System.Drawing.Point(21, 65);
+            this.txtNhapMa.Location = new System.Drawing.Point(13, 65);
             this.txtNhapMa.Margin = new System.Windows.Forms.Padding(4);
             this.txtNhapMa.Name = "txtNhapMa";
             this.txtNhapMa.Size = new System.Drawing.Size(271, 34);
@@ -50,7 +50,7 @@
             // 
             this.btnXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(300, 158);
+            this.btnXacNhan.Location = new System.Drawing.Point(13, 128);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(163, 46);
@@ -63,12 +63,12 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(16, 32);
+            this.lblEmail.Location = new System.Drawing.Point(8, 33);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(65, 28);
+            this.lblEmail.Size = new System.Drawing.Size(100, 28);
             this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "label1";
+            this.lblEmail.Text = "Nhập OTP";
             // 
             // lblTime
             // 
@@ -81,13 +81,12 @@
             // btnGuilaiOTP
             // 
             this.btnGuilaiOTP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuilaiOTP.Location = new System.Drawing.Point(134, 158);
+            this.btnGuilaiOTP.Location = new System.Drawing.Point(317, 60);
             this.btnGuilaiOTP.Name = "btnGuilaiOTP";
             this.btnGuilaiOTP.Size = new System.Drawing.Size(158, 45);
             this.btnGuilaiOTP.TabIndex = 5;
             this.btnGuilaiOTP.Text = "Gửi lại OTP";
             this.btnGuilaiOTP.UseVisualStyleBackColor = true;
-            this.btnGuilaiOTP.Visible = false;
             this.btnGuilaiOTP.Click += new System.EventHandler(this.btnGuilaiOTP_Click);
             // 
             // fNhapOTP

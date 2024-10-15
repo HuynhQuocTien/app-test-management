@@ -60,6 +60,7 @@
     <Compile Include="KetQuaDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="MonHocDAL.cs" />
+    <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="NhomQuyenDAL.cs" />
     <Compile Include="NoiCauDAL.cs" />
     <Compile Include="NoiCauDaLamDAL.cs" />

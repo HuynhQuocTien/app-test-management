@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace GUI
 {
     public partial class fDangNhap : Form
     {
+        private NguoiDungDTO nguoiDungDTO = new NguoiDungDTO();
+
         private Size formOriginalSize;
         private Rectangle recLab1;
         private Rectangle recLab2;
@@ -71,13 +75,37 @@ namespace GUI
             }
             c.Font = new Font(c.Font.FontFamily, newFontSize);
         }
+
+        // Đăng nhập btn
         private void button1_Click_1(object sender, EventArgs e)
         {
+            string taiKhoan = textBox1.Text;
+            string matKhau = textBox2.Text;
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            string thongbBao = nguoiDungBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
+            if (thongbBao.Equals("Đăng nhập thành công!"))
+            {
+                MessageBox.Show(thongbBao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(thongbBao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBox1.Text = "";
+                textBox2.Text = "";
+            }
         }
 
         private void checkBox1_Click(object sender, EventArgs e)
         {
-
+            if (textBox2.PasswordChar == '*' && checkBox1.Checked)
+            {
+                textBox2.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
+            }
         }
         private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -88,6 +116,13 @@ namespace GUI
 
         }
         private void lblQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            fNhapInfo form = new fNhapInfo();
+            form.Show();
+        }
+
+        // Ẩn hiện mk
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

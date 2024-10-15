@@ -7,3 +7,12 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\DTO\obj\Debug\DTO.cspr
 C:\Users\Administrator\Desktop\GitHub\app-test-management\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\Administrator\Desktop\GitHub\app-test-management\DTO\obj\Debug\DTO.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\DTO\obj\Debug\DTO.pdb
+D:\app-test-management\DTO\bin\Debug\DTO.dll
+D:\app-test-management\DTO\bin\Debug\DTO.pdb
+D:\app-test-management\DTO\bin\Debug\System.Data.SqlClient.dll
+D:\app-test-management\DTO\bin\Debug\System.Data.SqlClient.xml
+D:\app-test-management\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\app-test-management\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\app-test-management\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\app-test-management\DTO\obj\Debug\DTO.dll
+D:\app-test-management\DTO\obj\Debug\DTO.pdb
