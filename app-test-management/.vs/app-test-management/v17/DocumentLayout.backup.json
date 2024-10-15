@@ -1,7 +1,17 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\bll\\nguoidungbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\nguoidungdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,6 +56,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NguoiDungBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\NguoiDungBLL.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
+              "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:41:05.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NguoiDungDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\NguoiDungDAL.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
+              "RelativeToolTip": "..\\DAL\\NguoiDungDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:40:17.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetConnectionDb.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\GetConnectionDb.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
+              "RelativeToolTip": "..\\DAL\\GetConnectionDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:40:12.043Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

@@ -3,13 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\bll\\nguoidungbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\nguoidungdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fmatkhaumoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fnhapotp.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\administrator\\desktop\\github\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,41 +69,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NguoiDungBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\NguoiDungBLL.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
-              "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowBoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:41:05.598Z",
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAiwAkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-15T09:50:17.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "fMatKhauMoi.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fMatKhauMoi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fMatKhauMoi.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fMatKhauMoi.cs",
+              "RelativeToolTip": "..\\GUI\\fMatKhauMoi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:46:30.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fNhapOTP.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fNhapOTP.Designer.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fNhapOTP.Designer.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fNhapOTP.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\fNhapOTP.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:46:29.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "fNhapInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fNhapInfo.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs",
+              "RelativeToolTip": "..\\GUI\\fNhapInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:46:28.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "NguoiDungDAL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\NguoiDungDAL.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
               "RelativeToolTip": "..\\DAL\\NguoiDungDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:40:17.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T09:45:13.669Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetConnectionDb.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\GetConnectionDb.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
-              "RelativeToolTip": "..\\DAL\\GetConnectionDb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "TaiKhoanDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\TaiKhoanDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\TaiKhoanDAL.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\TaiKhoanDAL.cs",
+              "RelativeToolTip": "..\\DAL\\TaiKhoanDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T08:40:12.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T09:42:48.9Z"
             },
             {
               "$type": "Bookmark",
