@@ -47,6 +47,7 @@
     <Compile Include="ChiTietLopBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="LopBLL.cs" />
+    <Compile Include="NguoiDungBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
