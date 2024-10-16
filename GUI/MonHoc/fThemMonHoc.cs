@@ -18,6 +18,7 @@ namespace GUI.MonHoc
     {
         private MonHocControl monHocControl;
         private string chucNang;
+        // này là DTO truyền vào từ datagridview
         private MonHocDTO monHocDTO;
 
         public fThemMonHoc(MonHocControl form, MonHocDTO monHocDTO, string chucNang)
@@ -76,7 +77,11 @@ namespace GUI.MonHoc
         private void suaMonHoc()
         {
             MonHocBLL monHocBLL = new MonHocBLL();
-            string thongBao = monHocBLL.Update(this.getInfo());
+            // Sửa lại mã môn học
+            MonHocDTO monHoc = this.getInfo();
+            monHoc.MaMonHoc = this.monHocDTO.MaMonHoc;
+            monHoc.is_delete = this.monHocDTO.is_delete;
+            string thongBao = monHocBLL.Update(monHoc);
             MessageBox.Show(thongBao, "Thông báo sửa", MessageBoxButtons.OK);
         }
         private void themMonHoc()
