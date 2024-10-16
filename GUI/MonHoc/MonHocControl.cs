@@ -94,6 +94,10 @@ namespace GUI.MonHoc
                 }
             }
             // style
+            application.Cells.HorizontalAlignment = Excell.XlHAlign.xlHAlignCenter;
+            application.Cells.VerticalAlignment = Excell.XlVAlign.xlVAlignCenter;
+            Excell.Range headerRange = application.Rows[1];
+            headerRange.Font.Bold = true;
             application.Columns.AutoFit();
             application.ActiveWorkbook.SaveCopyAs(path);
             application.ActiveWorkbook.Saved = true;
