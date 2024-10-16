@@ -10,6 +10,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using OfficeOpenXml;
+using Excell = Microsoft.Office.Interop.Excel;
 
 namespace GUI.MonHoc
 {
@@ -68,9 +71,37 @@ namespace GUI.MonHoc
                 this.monHocDTO = new MonHocDTO(maMonHoc, tenMonHoc, soTC, soTietLT, soTietTH, trangThai, trangThaiXoa);
             }
         }
+
+        private void importExcell(string path)
+        {
+
+        }
+        private void exportExcell(string path)
+        {
+            Excell.Application application = new Excell.Application();
+            application.Application.Workbooks.Add(Type.Missing);
+            // Tiêu đề cột
+            for(int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                application.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+            }
+            // Dòng
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for(int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    application.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value;
+                }
+            }
+            // style
+            application.Columns.AutoFit();
+            application.ActiveWorkbook.SaveCopyAs(path);
+            application.ActiveWorkbook.Saved = true;
+
+        }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            
+            render();
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -82,7 +113,22 @@ namespace GUI.MonHoc
         }
         private void btnXuatFile_Click(object sender, EventArgs e)
         {
-            
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Môn học";
+            // Đuôi file
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    exportExcell(saveFileDialog.FileName);
+                    MessageBox.Show("Export Thành công");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Export Thất bại");
+                }
+            }
         }
         private void textBoxTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
