@@ -3,34 +3,22 @@
   "WorkspaceRootPath": "D:\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\fthemmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\fthemmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\fthemmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|d:\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|d:\\app-test-management\\dal\\monhocdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|d:\\app-test-management\\dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|d:\\app-test-management\\app-test-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|d:\\app-test-management\\app-test-management\\app-test-management.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|solutionrelative:app-test-management.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
->>>>>>> 9a4d64f363da30c64e88113b6b592e71bd5a589d
     }
   ],
   "DocumentGroupContainers": [
@@ -49,31 +37,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-<<<<<<< HEAD
               "Title": "fThemMonHoc.cs",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\fThemMonHoc.cs",
               "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs",
               "RelativeToolTip": "..\\GUI\\MonHoc\\fThemMonHoc.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwCMAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T14:01:45.114Z",
-=======
-              "Title": "TaiKhoanDAL.cs",
-              "DocumentMoniker": "D:\\app-test-management\\DAL\\TaiKhoanDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\TaiKhoanDAL.cs",
-              "ToolTip": "D:\\app-test-management\\DAL\\TaiKhoanDAL.cs",
-              "RelativeToolTip": "..\\DAL\\TaiKhoanDAL.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwCwAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:23:54.727Z",
->>>>>>> 9a4d64f363da30c64e88113b6b592e71bd5a589d
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "fThemMonHoc.cs [Design]",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\fThemMonHoc.cs",
@@ -89,21 +65,21 @@
               "Title": "MonHocControl.cs",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs*",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs*",
-              "ViewState": "AgIAABIAAAAAAAAAAIAywBYAAAAaAAAAAAAAAA==",
+              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAApwDQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:44:25.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MonHocControl.cs [Design]",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]*",
+              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:44:24.598Z",
               "EditorCaption": " [Design]"
@@ -116,7 +92,7 @@
               "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
               "ToolTip": "D:\\app-test-management\\BLL\\MonHocBLL.cs",
               "RelativeToolTip": "..\\BLL\\MonHocBLL.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowB0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA6wCUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:43:55.332Z",
               "EditorCaption": ""
@@ -129,33 +105,9 @@
               "RelativeDocumentMoniker": "..\\DAL\\MonHocDAL.cs",
               "ToolTip": "D:\\app-test-management\\DAL\\MonHocDAL.cs",
               "RelativeToolTip": "..\\DAL\\MonHocDAL.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAADwv0AAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAUwHwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:52:22.392Z",
-=======
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\app-test-management\\app-test-management\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\app-test-management\\app-test-management\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:22:29.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "app-test-management",
-              "DocumentMoniker": "D:\\app-test-management\\app-test-management\\app-test-management.csproj",
-              "RelativeDocumentMoniker": "app-test-management.csproj",
-              "ToolTip": "D:\\app-test-management\\app-test-management\\app-test-management.csproj",
-              "RelativeToolTip": "app-test-management.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-15T12:22:27.177Z",
->>>>>>> 9a4d64f363da30c64e88113b6b592e71bd5a589d
               "EditorCaption": ""
             }
           ]

@@ -15,6 +15,7 @@ namespace GUI.MonHoc
 {
     public partial class MonHocControl : UserControl
     {
+        private MonHocDTO monHocDTO;
         public MonHocControl()
         {
             InitializeComponent();
@@ -34,7 +35,6 @@ namespace GUI.MonHoc
             dataGridView1.Columns["SoTietTH"].HeaderText = "Số tiết thực hành";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
             dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
-
         }
         private void loadDataGridView()
         {
@@ -44,16 +44,29 @@ namespace GUI.MonHoc
         private void btnThem_Click(object sender, EventArgs e)
         {
             string chucNang = "Add";
-            fThemMonHoc form = new fThemMonHoc(this, chucNang);
-            form.Show();
+            fThemMonHoc themMonHoc = new fThemMonHoc(this, chucNang);
+            themMonHoc.Show();
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-        
+            string chungNang = "Update";
+            fThemMonHoc suaMonHoc = new fThemMonHoc(this, monHocDTO, chungNang);
+            suaMonHoc.Show();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                int maMonHoc = int.Parse(selectedRow.Cells["MaMonHoc"].Value.ToString());
+                string tenMonHoc = selectedRow.Cells["TenMonHoc"].Value.ToString();
+                int soTC = int.Parse(selectedRow.Cells["SoTC"].Value.ToString());
+                int soTietLT = int.Parse(selectedRow.Cells["SoTietLT"].Value.ToString());
+                int soTietTH = int.Parse(selectedRow.Cells["SoTietTH"].Value.ToString());
+                int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
+                int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
+                this.monHocDTO = new MonHocDTO(maMonHoc, tenMonHoc, soTC, soTietLT, soTietTH, trangThai, trangThaiXoa);
+            }
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {

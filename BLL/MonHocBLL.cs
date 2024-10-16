@@ -29,5 +29,13 @@ namespace BLL
             }
             return "Thêm thất bại";
         }
+        public string Update(MonHocDTO monHoc) 
+        {
+            if (monHocDAL.Update(monHoc))
+            {
+                return "Sửa thành công";
+            }
+            return "Sửa thất bại";
+        }
     }
 }
