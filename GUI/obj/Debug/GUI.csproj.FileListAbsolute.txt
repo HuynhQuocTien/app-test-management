@@ -125,3 +125,10 @@ D:\app-test-management\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\app-test-management\GUI\obj\Debug\GUI.dll
 D:\app-test-management\GUI\obj\Debug\GUI.pdb
+D:\app-test-management\GUI\bin\Debug\EPPlus.dll
+D:\app-test-management\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\app-test-management\GUI\bin\Debug\EPPlus.System.Drawing.dll
+D:\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\app-test-management\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+D:\app-test-management\GUI\bin\Debug\EPPlus.xml
+D:\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

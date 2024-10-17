@@ -14,7 +14,8 @@ namespace app_test_management
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new fDangNhap());
+            //Application.Run(new fDangNhap());
+            Application.Run(new fLayout());
         }
     }
 }
