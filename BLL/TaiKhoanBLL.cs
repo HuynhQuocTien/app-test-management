@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,14 @@ namespace BLL
         {
             taiKhoanDAL = new TaiKhoanDAL();  // Khởi tạo đối tượng DAL để truy cập dữ liệu
         }
+
+        public TaiKhoanDTO getTaiKhoanById(long username)
+        {
+            TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
+            taiKhoan.Username = username;
+            return taiKhoanDAL.GetById(taiKhoan);
+        }
+
         public string kiemTraEmailNguoiDung(string email)
         {
             if (string.IsNullOrEmpty(email))

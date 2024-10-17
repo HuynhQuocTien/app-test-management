@@ -77,7 +77,7 @@ namespace DAL
                             {
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
-                                NguoiGiao = Convert.ToInt32(reader["NguoiGiao"]),
+                                NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
                                 IsDelete = Convert.ToInt32(reader["IsDelete"])
                             };
                             giaoDeThiList.Add(giaoDeThi);
@@ -106,7 +106,7 @@ namespace DAL
                             {
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
-                                NguoiGiao = Convert.ToInt32(reader["NguoiGiao"]),
+                                NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
                                 IsDelete = Convert.ToInt32(reader["IsDelete"])
                             };
                         }

@@ -151,6 +151,5 @@ namespace GUI.LopHoc
             lopBLL.Add(obj);
             CreatePanel();
         }
-
     }
 }

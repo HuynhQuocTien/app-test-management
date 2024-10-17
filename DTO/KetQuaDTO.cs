@@ -10,7 +10,7 @@ namespace DTO
     {
         public int MaKetQua {  get; set; }
         public int MaDe {  get; set; }
-        public int MaNguoiDung { get; set; } //MaSV
+        public long MaNguoiDung { get; set; } //MaSV
         public decimal Diem {  get; set; }
         public int SoCauDung { get; set; }
         public int SoCauSai {  get; set; }
@@ -18,7 +18,7 @@ namespace DTO
         public int is_delete { get; set; }
         public KetQuaDTO() { }
 
-        public KetQuaDTO(int maKetQua, int maDe, int maNguoiDung, decimal diem, int soCauDung, int soCauSai, int trangThai, int is_delete)
+        public KetQuaDTO(int maKetQua, int maDe, long maNguoiDung, decimal diem, int soCauDung, int soCauSai, int trangThai, int is_delete)
         {
             MaKetQua = maKetQua;
             MaDe = maDe;

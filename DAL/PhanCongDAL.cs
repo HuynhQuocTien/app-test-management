@@ -73,7 +73,7 @@ namespace DAL
                             {
                                 MaPhanCong = Convert.ToInt32(reader["MaPhanCong"]),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                MaGV = Convert.ToInt32(reader["MaGV"])
+                                MaGV = Convert.ToInt64(reader["MaGV"])
                             };
                             phanCongList.Add(phanCong);
                         }
@@ -100,7 +100,7 @@ namespace DAL
                             {
                                 MaPhanCong = Convert.ToInt32(reader["MaPhanCong"]),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                MaGV = Convert.ToInt32(reader["MaGV"])
+                                MaGV = Convert.ToInt64(reader["MaGV"])
                             };
                         }
                     }

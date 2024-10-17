@@ -79,7 +79,7 @@ namespace DAL
                             {
                                 MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
-                                MaNguoiDung = Convert.ToInt32(reader["MaNguoiDung"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
                                 Diem = Convert.ToInt32(reader["Diem"]),
                                 SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
                                 SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
@@ -111,7 +111,7 @@ namespace DAL
                             {
                                 MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
-                                MaNguoiDung = Convert.ToInt32(reader["MaNguoiDung"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
                                 Diem = Convert.ToInt32(reader["Diem"]),
                                 SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
                                 SoCauSai = Convert.ToInt32(reader["SoCauSai"]),

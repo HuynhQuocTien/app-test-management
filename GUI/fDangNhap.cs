@@ -15,6 +15,11 @@ namespace GUI
     public partial class fDangNhap : Form
     {
         private NguoiDungDTO nguoiDungDTO = new NguoiDungDTO();
+        private TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+        private NhomQuyenDTO nhomQuyenDTO = new NhomQuyenDTO();
+        private NguoiDungBLL nguoiDungBLL;
+        private NhomQuyenBLL nhomQuyenBLL;
+
 
         private Size formOriginalSize;
         private Rectangle recLab1;
@@ -40,6 +45,8 @@ namespace GUI
             recCBox1 = new Rectangle(checkBox1.Location, checkBox1.Size);
             textBox1.Multiline = true;
             textBox2.Multiline = true;
+            nguoiDungBLL = new NguoiDungBLL();
+            nhomQuyenBLL = new NhomQuyenBLL();
         }
         private void Form1_Resiz(object sender, EventArgs e)
         {
@@ -85,8 +92,12 @@ namespace GUI
             string thongbBao = taiKhoanBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
             if (thongbBao.Equals("Đăng nhập thành công!"))
             {
-                MessageBox.Show(thongbBao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                nguoiDungDTO = nguoiDungBLL.getUserLoginById(Convert.ToInt64(taiKhoan));
+                taiKhoanDTO = taiKhoanBLL.getTaiKhoanById(Convert.ToInt64(taiKhoan));
+                nhomQuyenDTO = nhomQuyenBLL.getNhomQuyenById(taiKhoanDTO.MaNhomQuyen);
+                fLayout formLayout = new fLayout(nguoiDungDTO, taiKhoanDTO,nhomQuyenDTO);
+                formLayout.Show();
+                this.Hide();
             }
             else
             {

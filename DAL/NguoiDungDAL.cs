@@ -114,8 +114,8 @@ namespace DAL
                         {
                             result = new NguoiDungDTO
                             {
-                                MaNguoiDung = Convert.ToInt32(reader["MaNguoiDung"]),
-                                HoTen = reader["HoTen"].ToString(),
+                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                HoTen = reader["Ten"].ToString(),
                                 GioiTinh = reader["GioiTinh"].ToString(),
                                 NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
                                 Avatar = reader["Avatar"].ToString(),

@@ -80,7 +80,7 @@ namespace DAL
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                MaNguoiTao = Convert.ToInt32(reader["MaNguoiTao"]),
+                                MaNguoiTao = Convert.ToInt64(reader["MaNguoiTao"]),
                                 DoKho = reader["DoKho"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
@@ -111,7 +111,7 @@ namespace DAL
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                MaNguoiTao = Convert.ToInt32(reader["MaNguoiTao"]),
+                                MaNguoiTao = Convert.ToInt64(reader["MaNguoiTao"]),
                                 DoKho = reader["DoKho"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])

@@ -10,11 +10,11 @@ namespace DTO
     {
         public int MaPhanCong {  get; set; }
         public int MaMonHoc { get; set; }
-        public int MaGV {  get; set; }
+        public long MaGV {  get; set; }
 
         public PhanCongDTO() { }
 
-        public PhanCongDTO(int maPhanCong, int maMonHoc, int maGV)
+        public PhanCongDTO(int maPhanCong, int maMonHoc, long maGV)
         {
             MaPhanCong = maPhanCong;
             MaMonHoc = maMonHoc;

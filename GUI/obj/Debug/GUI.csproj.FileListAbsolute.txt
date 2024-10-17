@@ -134,6 +134,9 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\BLL.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DTO.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\EPPlus.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\EPPlus.System.Drawing.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.WinForms.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.Wpf.dll
@@ -147,8 +150,10 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsof
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Buffers.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.ClientModel.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -173,6 +178,7 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Azure.Co
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Azure.Identity.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\EPPlus.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.pdb
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\LiveCharts.WinForms.pdb
@@ -189,6 +195,7 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsof
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Buffers.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.ClientModel.xml
 C:\Users\Administrator\Desktop\GitHub\app-test-management\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml

@@ -10,10 +10,10 @@ namespace DTO
     {
         public int MaDe { get; set; }
         public int MaLop { get; set; }
-        public int NguoiGiao { get; set; }
+        public long NguoiGiao { get; set; }
         public int IsDelete { get; set; }
         public GiaoDeThiDTO() { }
-        public GiaoDeThiDTO(int maDe, int maLop, int nguoiGiao, int is_delete)
+        public GiaoDeThiDTO(int maDe, int maLop, long nguoiGiao, int is_delete)
         {
             MaDe = maDe;
             MaLop = maLop;

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\app-test-management\\app-test-management\\app-test-management.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj": {}
   },
   "projects": {
-    "D:\\app-test-management\\app-test-management\\app-test-management.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
         "projectName": "app-test-management",
-        "projectPath": "D:\\app-test-management\\app-test-management\\app-test-management.csproj",
-        "packagesPath": "C:\\Users\\antra\\.nuget\\packages\\",
-        "outputPath": "D:\\app-test-management\\app-test-management\\obj\\",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\app-test-management\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\antra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +29,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\app-test-management\\GUI\\GUI.csproj": {
-                "projectPath": "D:\\app-test-management\\GUI\\GUI.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\GUI.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\GUI.csproj"
               }
             }
           }
@@ -78,19 +78,19 @@
         }
       }
     },
-    "D:\\app-test-management\\BLL\\BLL.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\BLL.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\app-test-management\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\app-test-management\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\BLL.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "D:\\app-test-management\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\app-test-management\\DAL\\DAL.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DAL.csproj"
               },
-              "D:\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -100,16 +100,16 @@
         "net472": {}
       }
     },
-    "D:\\app-test-management\\DAL\\DAL.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DAL.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\app-test-management\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\app-test-management\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DAL\\DAL.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "D:\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -119,11 +119,11 @@
         "net472": {}
       }
     },
-    "D:\\app-test-management\\DTO\\DTO.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\app-test-management\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "D:\\app-test-management\\DTO\\DTO.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -134,19 +134,19 @@
         "net472": {}
       }
     },
-    "D:\\app-test-management\\GUI\\GUI.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\GUI.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\app-test-management\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "D:\\app-test-management\\GUI\\GUI.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\GUI.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "D:\\app-test-management\\BLL\\BLL.csproj": {
-                "projectPath": "D:\\app-test-management\\BLL\\BLL.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\BLL.csproj"
               },
-              "D:\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "D:\\app-test-management\\DTO\\DTO.csproj"
+              "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }

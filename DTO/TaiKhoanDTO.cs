@@ -10,11 +10,11 @@ namespace DTO
     {
         public long Username { get; set; } //Noi voi ID cua nguoi dung la` MSSV hoac MSGV
         public string Password { get; set; }
-        public int Email { get; set; }
+        public string Email { get; set; }
         public int MaNhomQuyen { get; set; }
         public int TrangThai { get; set; }
         public TaiKhoanDTO() { }
-        public TaiKhoanDTO(long username, string password, int email, int maNhomQuyen, int trangThai)
+        public TaiKhoanDTO(long username, string password, string email, int maNhomQuyen, int trangThai)
         {
             Username = username;
             Password = password;

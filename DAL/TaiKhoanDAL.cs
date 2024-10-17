@@ -169,7 +169,7 @@ namespace DAL
                             {
                                 Username = Convert.ToInt64(reader["Username"]),
                                 Password = reader["Password"].ToString(),
-                                Email = Convert.ToInt32(reader["Email"]),
+                                Email = reader["Email"].ToString(),
                                 MaNhomQuyen = Convert.ToInt32(reader["MaNhomQuyen"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"])
                             };
@@ -198,7 +198,7 @@ namespace DAL
                             {
                                 Username = Convert.ToInt64(reader["Username"]),
                                 Password = reader["Password"].ToString(),
-                                Email = Convert.ToInt32(reader["Email"]),
+                                Email = reader["Email"].ToString(),
                                 MaNhomQuyen = Convert.ToInt32(reader["MaNhomQuyen"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"])
                             };

@@ -15,7 +15,7 @@ namespace app_test_management
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new fDangNhap());
-            Application.Run(new fLayout());
+            Application.Run(new fDangNhap());
         }
     }
 }

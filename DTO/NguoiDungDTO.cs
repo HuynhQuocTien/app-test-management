@@ -8,7 +8,7 @@ namespace DTO
 {
     public class NguoiDungDTO
     {
-        public int MaNguoiDung {  get; set; }
+        public long MaNguoiDung {  get; set; }
         public string HoTen {  get; set; } //Database: Ten
         public string GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }

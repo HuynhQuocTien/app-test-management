@@ -113,7 +113,7 @@ namespace DAL
                             result = new LopDTO
                             {
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
-                                MaGV = Convert.ToInt32(reader["MaGV"]),
+                                MaGV = Convert.ToInt64(reader["MaGV"]),
                                 TenLop = reader["TenLop"].ToString(),
                                 MaMoi = reader["MaMoi"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
@@ -163,7 +163,7 @@ namespace DAL
                             LopDTO lop = new LopDTO
                             {
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
-                                MaGV = Convert.ToInt32(reader["MaGV"]),
+                                MaGV = Convert.ToInt64(reader["MaGV"]),
                                 TenLop = reader["TenLop"].ToString(),
                                 MaMoi = reader["MaMoi"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
