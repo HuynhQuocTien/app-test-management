@@ -8,13 +8,13 @@ namespace DTO
 {
     public class ChiTietLopDTO
     {
-        private int MaChiTietLop {  get; set; }
-        private int MaLop { get; set; }
-        private int MaSV {  get; set; }
-        private int TrangThai { get; set; }
-        private int is_delete { get; set; }
+        public int MaChiTietLop {  get; set; }
+        public int MaLop { get; set; }
+        public long MaSV {  get; set; }
+        public int TrangThai { get; set; }
+        public int is_delete { get; set; }
         public ChiTietLopDTO() { }
-        private ChiTietLopDTO(int maChiTietLop, int maLop, int maSV, int trangThai, int is_delete)
+        public ChiTietLopDTO(int maChiTietLop, int maLop, long maSV, int trangThai, int is_delete)
         {
             MaChiTietLop = maChiTietLop;
             MaLop = maLop;

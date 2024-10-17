@@ -74,23 +74,23 @@ namespace GUI.CauHoi
             this.mainPanel.ColumnCount = 1;
             this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.mainPanel.Controls.Add(this.tableLayoutPanel6, 0, 2);
             this.mainPanel.Controls.Add(this.headingPanel, 0, 0);
             this.mainPanel.Controls.Add(this.dataGridView1, 0, 1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(17, 18, 17, 18);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(23, 22, 23, 22);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.RowCount = 3;
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.35465F));
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.64535F));
-            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.mainPanel.Size = new System.Drawing.Size(1180, 768);
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.mainPanel.Size = new System.Drawing.Size(1573, 945);
             this.mainPanel.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -100,12 +100,13 @@ namespace GUI.CauHoi
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 698);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 859);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.10448F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.89552F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1174, 67);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1565, 82);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // panel1
@@ -114,18 +115,20 @@ namespace GUI.CauHoi
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(590, 3);
+            this.panel1.Location = new System.Drawing.Point(786, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 47);
+            this.panel1.Size = new System.Drawing.Size(775, 56);
             this.panel1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(153, 15);
+            this.label2.Location = new System.Drawing.Point(204, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.Size = new System.Drawing.Size(163, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "trên tổng ... trang";
             // 
@@ -133,18 +136,20 @@ namespace GUI.CauHoi
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.Size = new System.Drawing.Size(60, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trang";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(64, 12);
+            this.numericUpDown1.Location = new System.Drawing.Point(85, 15);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDown1.Size = new System.Drawing.Size(93, 34);
             this.numericUpDown1.TabIndex = 0;
             // 
             // headingPanel
@@ -156,14 +161,14 @@ namespace GUI.CauHoi
             this.headingPanel.Controls.Add(this.containerBtnPanel, 0, 0);
             this.headingPanel.Controls.Add(this.containerTimKiemPanel, 0, 2);
             this.headingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.headingPanel.Location = new System.Drawing.Point(8, 7);
-            this.headingPanel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.headingPanel.Location = new System.Drawing.Point(11, 9);
+            this.headingPanel.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.headingPanel.Name = "headingPanel";
             this.headingPanel.RowCount = 3;
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.23404F));
-            this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.76596F));
-            this.headingPanel.Size = new System.Drawing.Size(1164, 243);
+            this.headingPanel.Size = new System.Drawing.Size(1551, 298);
             this.headingPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -174,13 +179,13 @@ namespace GUI.CauHoi
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 114);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(17, 8, 17, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 139);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(23, 10, 23, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(370, 69);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 85);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // comboBox1
@@ -194,10 +199,10 @@ namespace GUI.CauHoi
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Chọn môn học"});
-            this.comboBox1.Location = new System.Drawing.Point(2, 2);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(3, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(366, 29);
+            this.comboBox1.Size = new System.Drawing.Size(487, 36);
             this.comboBox1.TabIndex = 0;
             // 
             // comboBox2
@@ -208,10 +213,10 @@ namespace GUI.CauHoi
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Chọn độ khó"});
-            this.comboBox2.Location = new System.Drawing.Point(2, 36);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Location = new System.Drawing.Point(3, 44);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(111, 29);
+            this.comboBox2.Size = new System.Drawing.Size(147, 36);
             this.comboBox2.TabIndex = 1;
             // 
             // containerBtnPanel
@@ -237,8 +242,8 @@ namespace GUI.CauHoi
             this.containerBtnPanel.Margin = new System.Windows.Forms.Padding(0);
             this.containerBtnPanel.Name = "containerBtnPanel";
             this.containerBtnPanel.RowCount = 1;
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
-            this.containerBtnPanel.Size = new System.Drawing.Size(1164, 106);
+            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.containerBtnPanel.Size = new System.Drawing.Size(1551, 129);
             this.containerBtnPanel.TabIndex = 0;
             // 
             // btnLamMoi
@@ -251,10 +256,10 @@ namespace GUI.CauHoi
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.Location = new System.Drawing.Point(870, 0);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnLamMoi.Location = new System.Drawing.Point(1158, 0);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(143, 106);
+            this.btnLamMoi.Size = new System.Drawing.Size(190, 130);
             this.btnLamMoi.TabIndex = 7;
             this.btnLamMoi.Text = "LÀM MỚI";
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -272,10 +277,10 @@ namespace GUI.CauHoi
             this.btnImport.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
             this.btnImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImport.Location = new System.Drawing.Point(725, 0);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnImport.Location = new System.Drawing.Point(965, 0);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(143, 106);
+            this.btnImport.Size = new System.Drawing.Size(190, 130);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "   IMPORT";
             this.btnImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -291,10 +296,10 @@ namespace GUI.CauHoi
             this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnChiTiet.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnChiTiet.Image = global::GUI.Properties.Resources.warning_symbol;
-            this.btnChiTiet.Location = new System.Drawing.Point(435, 0);
-            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnChiTiet.Location = new System.Drawing.Point(579, 0);
+            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(143, 106);
+            this.btnChiTiet.Size = new System.Drawing.Size(190, 130);
             this.btnChiTiet.TabIndex = 4;
             this.btnChiTiet.Text = "CHI TIẾT";
             this.btnChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -311,10 +316,10 @@ namespace GUI.CauHoi
             this.btnXuatFile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXuatFile.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnXuatFile.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatFile.Image")));
-            this.btnXuatFile.Location = new System.Drawing.Point(580, 0);
-            this.btnXuatFile.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnXuatFile.Location = new System.Drawing.Point(772, 0);
+            this.btnXuatFile.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnXuatFile.Name = "btnXuatFile";
-            this.btnXuatFile.Size = new System.Drawing.Size(143, 106);
+            this.btnXuatFile.Size = new System.Drawing.Size(190, 130);
             this.btnXuatFile.TabIndex = 3;
             this.btnXuatFile.Text = "XUẤT FILE";
             this.btnXuatFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -331,10 +336,10 @@ namespace GUI.CauHoi
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(290, 0);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnXoa.Location = new System.Drawing.Point(386, 0);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(143, 106);
+            this.btnXoa.Size = new System.Drawing.Size(190, 130);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -351,10 +356,10 @@ namespace GUI.CauHoi
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(145, 0);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnSua.Location = new System.Drawing.Point(193, 0);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(143, 106);
+            this.btnSua.Size = new System.Drawing.Size(190, 130);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "SỬA";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -372,9 +377,9 @@ namespace GUI.CauHoi
             this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(0, 0);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(143, 106);
+            this.btnThem.Size = new System.Drawing.Size(190, 130);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -389,13 +394,13 @@ namespace GUI.CauHoi
             this.containerTimKiemPanel.Controls.Add(this.textBoxTimKiem, 0, 0);
             this.containerTimKiemPanel.Controls.Add(this.btnTimKiem, 1, 0);
             this.containerTimKiemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 196);
-            this.containerTimKiemPanel.Margin = new System.Windows.Forms.Padding(0, 5, 17, 5);
+            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 240);
+            this.containerTimKiemPanel.Margin = new System.Windows.Forms.Padding(0, 6, 23, 6);
             this.containerTimKiemPanel.Name = "containerTimKiemPanel";
             this.containerTimKiemPanel.RowCount = 1;
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerTimKiemPanel.Size = new System.Drawing.Size(1147, 42);
+            this.containerTimKiemPanel.Size = new System.Drawing.Size(1528, 52);
             this.containerTimKiemPanel.TabIndex = 1;
             // 
             // textBoxTimKiem
@@ -403,10 +408,10 @@ namespace GUI.CauHoi
             this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
-            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(15, 1, 22, 0);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(20, 1);
+            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(20, 1, 29, 0);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(925, 36);
+            this.textBoxTimKiem.Size = new System.Drawing.Size(1232, 43);
             this.textBoxTimKiem.TabIndex = 0;
             this.textBoxTimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTimKiem_KeyPress);
             // 
@@ -417,10 +422,10 @@ namespace GUI.CauHoi
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(962, 0);
+            this.btnTimKiem.Location = new System.Drawing.Point(1282, 0);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(185, 42);
+            this.btnTimKiem.Size = new System.Drawing.Size(246, 52);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = " TÌM KIẾM";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -452,8 +457,8 @@ namespace GUI.CauHoi
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 270);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 332);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(11, 16, 11, 16);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -468,18 +473,18 @@ namespace GUI.CauHoi
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1164, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(1551, 499);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // CauHoiControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CauHoiControl";
-            this.Size = new System.Drawing.Size(1180, 768);
+            this.Size = new System.Drawing.Size(1573, 945);
             this.mainPanel.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

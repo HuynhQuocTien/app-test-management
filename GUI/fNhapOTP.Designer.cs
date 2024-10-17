@@ -40,20 +40,18 @@
             // txtNhapMa
             // 
             this.txtNhapMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapMa.Location = new System.Drawing.Point(21, 65);
-            this.txtNhapMa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNhapMa.Location = new System.Drawing.Point(10, 53);
             this.txtNhapMa.Name = "txtNhapMa";
-            this.txtNhapMa.Size = new System.Drawing.Size(271, 34);
+            this.txtNhapMa.Size = new System.Drawing.Size(204, 29);
             this.txtNhapMa.TabIndex = 0;
             // 
             // btnXacNhan
             // 
             this.btnXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(300, 158);
-            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXacNhan.Location = new System.Drawing.Point(10, 104);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(163, 46);
+            this.btnXacNhan.Size = new System.Drawing.Size(122, 37);
             this.btnXacNhan.TabIndex = 2;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
@@ -63,49 +61,49 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(16, 32);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Location = new System.Drawing.Point(6, 27);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(65, 28);
+            this.lblEmail.Size = new System.Drawing.Size(80, 21);
             this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "label1";
+            this.lblEmail.Text = "Nhập OTP";
             // 
             // lblTime
             // 
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(332, 55);
+            this.lblTime.Location = new System.Drawing.Point(249, 45);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(143, 56);
+            this.lblTime.Size = new System.Drawing.Size(107, 46);
             this.lblTime.TabIndex = 4;
             // 
             // btnGuilaiOTP
             // 
             this.btnGuilaiOTP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuilaiOTP.Location = new System.Drawing.Point(134, 158);
+            this.btnGuilaiOTP.Location = new System.Drawing.Point(238, 49);
+            this.btnGuilaiOTP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuilaiOTP.Name = "btnGuilaiOTP";
-            this.btnGuilaiOTP.Size = new System.Drawing.Size(158, 45);
+            this.btnGuilaiOTP.Size = new System.Drawing.Size(118, 37);
             this.btnGuilaiOTP.TabIndex = 5;
             this.btnGuilaiOTP.Text = "Gửi lại OTP";
             this.btnGuilaiOTP.UseVisualStyleBackColor = true;
-            this.btnGuilaiOTP.Visible = false;
             this.btnGuilaiOTP.Click += new System.EventHandler(this.btnGuilaiOTP_Click);
             // 
             // fNhapOTP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 217);
+            this.ClientSize = new System.Drawing.Size(424, 183);
             this.Controls.Add(this.btnGuilaiOTP);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.txtNhapMa);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(581, 264);
-            this.MinimumSize = new System.Drawing.Size(581, 264);
+            this.MaximumSize = new System.Drawing.Size(440, 222);
+            this.MinimumSize = new System.Drawing.Size(440, 222);
             this.Name = "fNhapOTP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập OTP";
+            this.Load += new System.EventHandler(this.fNhapOTP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

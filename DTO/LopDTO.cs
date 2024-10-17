@@ -8,14 +8,14 @@ namespace DTO
 {
     public class LopDTO
     {
-        private int MaLop {  get; set; }
-        private int MaGV { get; set; }
-        private string TenLop { get; set; }
+        public int MaLop {  get; set; }
+        public long MaGV { get; set; }
+        public string TenLop { get; set; }
         public string MaMoi { get; set; }
         public int TrangThai { get; set; }
-        private int is_delete { get; set; }
+        public int is_delete { get; set; }
         public LopDTO() { }
-        public LopDTO(int maLop, int maGV, string tenLop, string maMoi, int trangThai, int is_delete)
+        public LopDTO(int maLop, long maGV, string tenLop, string maMoi, int trangThai, int is_delete)
         {
             MaLop = maLop;
             MaGV = maGV;

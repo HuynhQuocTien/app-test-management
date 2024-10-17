@@ -8,15 +8,15 @@ namespace DTO
 {
     public class NguoiDungDTO
     {
-        private int MaNguoiDung {  get; set; }
-        private string HoTen {  get; set; } //Database: Ten
-        private string GioiTinh { get; set; }
-        private DateTime NgaySinh { get; set; }
-        private string Avatar { get; set; }
-        private string SDT { get; set; }
-        private DateTime NgayTao { get; set; }
-        private int TrangThai { get; set; }
-        private int is_delete { get; set; }
+        public int MaNguoiDung {  get; set; }
+        public string HoTen {  get; set; } //Database: Ten
+        public string GioiTinh { get; set; }
+        public DateTime NgaySinh { get; set; }
+        public string Avatar { get; set; }
+        public string SDT { get; set; }
+        public DateTime NgayTao { get; set; }
+        public int TrangThai { get; set; }
+        public int is_delete { get; set; }
         public NguoiDungDTO() { }
 
         public NguoiDungDTO(int maNguoiDung, string hoTen, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)

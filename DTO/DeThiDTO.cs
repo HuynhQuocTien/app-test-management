@@ -8,18 +8,18 @@ namespace DTO
 {
     public class DeThiDTO
     {
-        private int MaDe {  get; set; }
-        private int MaMonHoc { get; set; }
-        private string TenDe { get; set; }
-        private DateTime ThoiGianTao { get; set; }
-        private DateTime ThoiGianBatDau { get; set; }
-        private DateTime ThoiGianKetThuc {  get; set; }
-        private int NguoiTao { get; set; }
-        private int TrangThai {  get; set; }
-        private int is_delete { get; set; }
+        public int MaDe {  get; set; }
+        public int MaMonHoc { get; set; }
+        public string TenDe { get; set; }
+        public DateTime ThoiGianTao { get; set; }
+        public DateTime ThoiGianBatDau { get; set; }
+        public DateTime ThoiGianKetThuc {  get; set; }
+        public long NguoiTao { get; set; }
+        public int TrangThai {  get; set; }
+        public int is_delete { get; set; }
         public DeThiDTO() { }
 
-        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, int nguoiTao, int trangThai, int is_delete)
+        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, long nguoiTao, int trangThai, int is_delete)
         {
             MaDe = maDe;
             MaMonHoc = maMonHoc;

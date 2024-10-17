@@ -8,11 +8,11 @@ namespace DTO
 {
     public class TaiKhoanDTO
     {
-        private long Username { get; set; } //Noi voi ID cua nguoi dung la` MSSV hoac MSGV
-        private string Password { get; set; }
-        private int Email { get; set; }
-        private int MaNhomQuyen { get; set; }
-        private int TrangThai { get; set; }
+        public long Username { get; set; } //Noi voi ID cua nguoi dung la` MSSV hoac MSGV
+        public string Password { get; set; }
+        public int Email { get; set; }
+        public int MaNhomQuyen { get; set; }
+        public int TrangThai { get; set; }
         public TaiKhoanDTO() { }
         public TaiKhoanDTO(long username, string password, int email, int maNhomQuyen, int trangThai)
         {
