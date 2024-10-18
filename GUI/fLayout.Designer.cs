@@ -140,10 +140,10 @@ namespace GUI
             this.lblOwnerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblOwnerName.AutoSize = true;
             this.lblOwnerName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblOwnerName.Location = new System.Drawing.Point(5, 33);
+            this.lblOwnerName.Location = new System.Drawing.Point(5, 28);
             this.lblOwnerName.Margin = new System.Windows.Forms.Padding(5, 20, 0, 0);
             this.lblOwnerName.Name = "lblOwnerName";
-            this.lblOwnerName.Size = new System.Drawing.Size(129, 20);
+            this.lblOwnerName.Size = new System.Drawing.Size(167, 25);
             this.lblOwnerName.TabIndex = 0;
             this.lblOwnerName.Text = "Huỳnh Quốc Tiến";
             this.lblOwnerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +183,7 @@ namespace GUI
             this.lblOwnerRule.Location = new System.Drawing.Point(5, 0);
             this.lblOwnerRule.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
             this.lblOwnerRule.Name = "lblOwnerRule";
-            this.lblOwnerRule.Size = new System.Drawing.Size(49, 19);
+            this.lblOwnerRule.Size = new System.Drawing.Size(60, 23);
             this.lblOwnerRule.TabIndex = 2;
             this.lblOwnerRule.Text = "Admin";
             this.lblOwnerRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -462,6 +462,7 @@ namespace GUI
             // 
             this.phanCongPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phanCongPanel.Location = new System.Drawing.Point(0, 0);
+            this.phanCongPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phanCongPanel.Name = "phanCongPanel";
             this.phanCongPanel.Size = new System.Drawing.Size(1210, 845);
             this.phanCongPanel.TabIndex = 5;
@@ -470,6 +471,7 @@ namespace GUI
             // 
             this.nhomQuyenPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nhomQuyenPanel.Location = new System.Drawing.Point(0, 0);
+            this.nhomQuyenPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nhomQuyenPanel.Name = "nhomQuyenPanel";
             this.nhomQuyenPanel.Size = new System.Drawing.Size(1210, 845);
             this.nhomQuyenPanel.TabIndex = 6;
@@ -515,7 +517,7 @@ namespace GUI
             this.userPanel.AutoSize = true;
             this.userPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userPanel.Location = new System.Drawing.Point(0, 0);
-            this.userPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.userPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(1210, 845);
             this.userPanel.TabIndex = 8;
@@ -524,6 +526,7 @@ namespace GUI
             // 
             this.thongKePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.thongKePanel.Location = new System.Drawing.Point(0, 0);
+            this.thongKePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.thongKePanel.Name = "thongKePanel";
             this.thongKePanel.Size = new System.Drawing.Size(1210, 845);
             this.thongKePanel.TabIndex = 9;
@@ -539,6 +542,7 @@ namespace GUI
             this.Name = "fLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserForm_FormClosed);
             this.Load += new System.EventHandler(this.UserForm_Load_1);
             this.containerBtnPanel.ResumeLayout(false);

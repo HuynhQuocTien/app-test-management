@@ -14,8 +14,12 @@ D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\DAL.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\DTO.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\GUI.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.dll
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.dll
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\GUI.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\GUI.dll.config
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\BLL.pdb
@@ -23,10 +27,12 @@ D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\DAL.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\DTO.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.xml
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.xml
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.xml
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.pdb
 D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.xml
+D:\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.xml
 D:\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.AssemblyReference.cache
 D:\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.GeneratedMSBuildEditorConfig.editorconfig
 D:\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfoInputs.cache

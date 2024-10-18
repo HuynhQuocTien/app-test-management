@@ -141,6 +141,14 @@
           }
         }
       },
+      "EPPlus/7.4.1.0": {
+        "runtime": {
+          "EPPlus.dll": {
+            "assemblyVersion": "7.4.1.0",
+            "fileVersion": "7.4.1.0"
+          }
+        }
+      },
       "LiveCharts.Wpf/0.9.7.0": {
         "runtime": {
           "LiveCharts.Wpf.dll": {
@@ -154,6 +162,30 @@
           "LiveCharts.dll": {
             "assemblyVersion": "0.9.7.0",
             "fileVersion": "0.9.7.0"
+          }
+        }
+      },
+      "EPPlus.Interfaces/6.1.1.0": {
+        "runtime": {
+          "EPPlus.Interfaces.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "EPPlus.System.Drawing/6.1.1.0": {
+        "runtime": {
+          "EPPlus.System.Drawing.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "Microsoft.IO.RecyclableMemoryStream/3.0.1.0": {
+        "runtime": {
+          "Microsoft.IO.RecyclableMemoryStream.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
           }
         }
       }
@@ -253,12 +285,32 @@
       "serviceable": false,
       "sha512": ""
     },
+    "EPPlus/7.4.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "LiveCharts.Wpf/0.9.7.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "LiveCharts/0.9.7.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EPPlus.Interfaces/6.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EPPlus.System.Drawing/6.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.IO.RecyclableMemoryStream/3.0.1.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

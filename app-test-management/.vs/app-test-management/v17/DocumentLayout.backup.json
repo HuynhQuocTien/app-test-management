@@ -6,13 +6,16 @@
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|d:\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|d:\\app-test-management\\gui\\monhoc\\fthemmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|d:\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|d:\\app-test-management\\dal\\monhocdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -33,7 +36,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "fLayout.cs [Design]",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\fLayout.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fLayout.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T03:53:31.816Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MonHocControl.cs",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAkwH0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:44:25.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MonHocControl.cs [Design]",
+              "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
+              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:44:24.598Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "fThemMonHoc.cs",
               "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\fThemMonHoc.cs",
@@ -46,51 +86,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MonHocControl.cs",
-              "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAA9wHYAAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T13:44:25.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MonHocControl.cs [Design]",
-              "DocumentMoniker": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "D:\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T13:44:24.598Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MonHocBLL.cs",
               "DocumentMoniker": "D:\\app-test-management\\BLL\\MonHocBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
               "ToolTip": "D:\\app-test-management\\BLL\\MonHocBLL.cs",
               "RelativeToolTip": "..\\BLL\\MonHocBLL.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAIAywCEAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowB8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:43:55.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MonHocDAL.cs",
               "DocumentMoniker": "D:\\app-test-management\\DAL\\MonHocDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\MonHocDAL.cs",
               "ToolTip": "D:\\app-test-management\\DAL\\MonHocDAL.cs",
               "RelativeToolTip": "..\\DAL\\MonHocDAL.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAewHwAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAkwDEAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T13:52:22.392Z",
               "EditorCaption": ""

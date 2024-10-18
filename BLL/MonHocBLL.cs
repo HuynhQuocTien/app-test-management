@@ -29,6 +29,14 @@ namespace BLL
             }
             return "Thêm thất bại";
         }
+        public string Import(MonHocDTO monHoc)
+        {
+            if (monHocDAL.Import(monHoc))
+            {
+                return "Thêm thành công";
+            }
+            return "Thêm thất bại";
+        }
         public string Update(MonHocDTO monHoc) 
         {
             if (monHocDAL.Update(monHoc))
@@ -36,6 +44,14 @@ namespace BLL
                 return "Sửa thành công";
             }
             return "Sửa thất bại";
+        }
+        public string Delete(MonHocDTO monHoc)
+        {
+            if (monHocDAL.Delete(monHoc))
+            {
+                return "Xoá thành công";
+            }
+            return "Xóa thất bại";
         }
     }
 }
