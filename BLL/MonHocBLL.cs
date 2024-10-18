@@ -29,13 +29,9 @@ namespace BLL
             }
             return "Thêm thất bại";
         }
-        public string Import(MonHocDTO monHoc)
+        public bool checkMaMonHoc(MonHocDTO monHoc)
         {
-            if (monHocDAL.Import(monHoc))
-            {
-                return "Thêm thành công";
-            }
-            return "Thêm thất bại";
+            return monHocDAL.checkMaMonHoc(monHoc);
         }
         public string Update(MonHocDTO monHoc) 
         {

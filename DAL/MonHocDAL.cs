@@ -39,30 +39,23 @@ namespace DAL
                 return false;
             }
         }
-        public bool Import(MonHocDTO monHoc)
+        public bool checkMaMonHoc(MonHocDTO monHoc)
         {
             try
             {
-                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                using (SqlConnection conn = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO MonHoc (MaMonHoc, TenMonHoc, SoTC, SoTietLT, SoTietTH, TrangThai, is_delete)" +
-                        "VALUES (@TenMonHoc, @SoTC, @SoTietLT, @SoTietTH, @TrangThai, @is_delete);";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    string query = "SELECT COUNT(*) FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+                    using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("@TenMonHoc", monHoc.TenMonHoc);
-                        command.Parameters.AddWithValue("@SoTC", monHoc.SoTC);
-                        command.Parameters.AddWithValue("@SoTietLT", monHoc.SoTietLT);
-                        command.Parameters.AddWithValue("@SoTietTH", monHoc.SoTietTH);
-                        command.Parameters.AddWithValue("@TrangThai", monHoc.TrangThai);
-                        command.Parameters.AddWithValue("@is_delete", monHoc.is_delete);
-                        int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
+                        command.Parameters.AddWithValue("@MaMonHoc", monHoc.MaMonHoc);
+                        int count = (int)command.ExecuteScalar();
+                        return count > 0;
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                Console.WriteLine(ex.ToString());
                 return false;
             }
         }
@@ -72,7 +65,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+                    string query = "UPDATE MonHoc SET is_delete = 1 WHERE MaMonHoc = @MaMonHoc";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaMonHoc", monHoc.MaMonHoc);
@@ -93,7 +86,7 @@ namespace DAL
             List<MonHocDTO> monHocList = new List<MonHocDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM MonHoc";
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

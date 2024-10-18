@@ -38,7 +38,8 @@ namespace GUI.MonHoc
             dataGridView1.Columns["SoTietLT"].HeaderText = "Số tiết lý thuyết";
             dataGridView1.Columns["SoTietTH"].HeaderText = "Số tiết thực hành";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
-            dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
+            //dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
+            dataGridView1.Columns["is_delete"].Visible = false;
         }
         private void loadDataGridView()
         {
@@ -123,7 +124,24 @@ namespace GUI.MonHoc
                     //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
 
                     // Add vào database
-                    string tb = monHocBLL.Import(monHoc);
+                    
+                    if (monHocBLL.checkMaMonHoc(monHoc))
+                    {
+                        DialogResult result = System.Windows.Forms.MessageBox.Show($" Bạn có muốn update Môn học có mã {monHoc.MaMonHoc}", "Thông báo", MessageBoxButtons.YesNo);
+                        if(result == DialogResult.Yes)
+                        {
+                            System.Windows.Forms.MessageBox.Show(monHocBLL.Update(monHoc), "Thông báo");
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        monHocBLL.Add(monHoc);
+                    }
+
                     
                 }
 
