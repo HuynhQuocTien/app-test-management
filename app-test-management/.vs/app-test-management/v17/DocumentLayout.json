@@ -3,19 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\faddphancong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\faddphancong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\faddphancong.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\phancongcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\phancongcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\phancong\\phancongcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\users\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,65 +79,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PhanCongControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
-              "RelativeToolTip": "..\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
-              "ViewState": "AQIAANcAAAAAAAAAAAAYwPUAAABYAAAA",
+              "Title": "fAddPhanCong.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAowGEBAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T07:24:23.244Z",
+              "WhenOpened": "2024-10-18T08:00:30.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fAddPhanCong.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "RelativeToolTip": "..\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T08:00:20.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PhanCongControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\PhanCongControl.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\PhanCong\\PhanCongControl.cs [Design]",
+              "Title": "fAddPhanCong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\fAddPhanCong.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\PhanCong\\fAddPhanCong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T07:23:57.483Z",
+              "WhenOpened": "2024-10-18T07:55:26.7Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PhanCongControl.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\PhanCong\\PhanCongControl.cs",
               "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs",
               "RelativeToolTip": "..\\GUI\\PhanCong\\PhanCongControl.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T07:20:44.488Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InfoUser.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\InfoUser.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
-              "RelativeToolTip": "..\\GUI\\Users\\InfoUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T06:18:46.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\Session.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\Session.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\Session.cs",
-              "RelativeToolTip": "..\\GUI\\Users\\Session.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T06:17:03.721Z"
             }
           ]
         }
