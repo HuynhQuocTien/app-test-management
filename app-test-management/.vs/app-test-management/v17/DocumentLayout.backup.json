@@ -171,8 +171,8 @@
               "Title": "MonHocControl.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs*",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs*",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs",
               "ViewState": "AgIAAM0AAAAAAAAAAAAYwOIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T16:52:04.295Z",
@@ -184,8 +184,8 @@
               "Title": "MonHocControl.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]*",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T16:52:03.074Z",
               "EditorCaption": " [Design]"
@@ -196,8 +196,8 @@
               "Title": "MonHocControl.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.Designer.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.Designer.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.Designer.cs*",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.Designer.cs*",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\MonHoc\\MonHocControl.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.Designer.cs",
               "ViewState": "AgIAAHUBAAAAAAAAAAAYwHwBAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T16:47:27.929Z",
@@ -264,7 +264,8 @@
               "RelativeToolTip": "..\\DTO\\EnumHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:26:19.484Z"
+              "WhenOpened": "2024-10-18T08:26:19.484Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -276,7 +277,8 @@
               "RelativeToolTip": "..\\DTO\\DeThiDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:22:44.141Z"
+              "WhenOpened": "2024-10-18T08:22:44.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -288,7 +290,8 @@
               "RelativeToolTip": "..\\DTO\\EnumDoKho.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:22:12.826Z"
+              "WhenOpened": "2024-10-18T08:22:12.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -300,7 +303,8 @@
               "RelativeToolTip": "..\\DTO\\EnumLoaiCauHoi.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:21:49.825Z"
+              "WhenOpened": "2024-10-18T08:21:49.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -312,7 +316,8 @@
               "RelativeToolTip": "..\\DAL\\ChiTietDeDAL.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAmwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:14:33.398Z"
+              "WhenOpened": "2024-10-18T08:14:33.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -324,7 +329,8 @@
               "RelativeToolTip": "..\\BLL\\ChiTietDeBLL.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAnwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:10:17.365Z"
+              "WhenOpened": "2024-10-18T08:10:17.365Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -336,7 +342,8 @@
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemDeThiCuaLop.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwCoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:02:44.404Z"
+              "WhenOpened": "2024-10-18T08:02:44.404Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -347,7 +354,8 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemDeThiCuaLop.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemDeThiCuaLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:02:42.687Z"
+              "WhenOpened": "2024-10-18T08:02:42.687Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -359,7 +367,8 @@
               "RelativeToolTip": "..\\GUI\\fKetQua.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:01:22.813Z"
+              "WhenOpened": "2024-10-18T08:01:22.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -370,7 +379,8 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\fKetQua.cs [Design]",
               "RelativeToolTip": "..\\GUI\\fKetQua.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T08:01:20.855Z"
+              "WhenOpened": "2024-10-18T08:01:20.855Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -404,8 +414,8 @@
               "Title": "MonHocBLL.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\MonHocBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\MonHocBLL.cs*",
-              "RelativeToolTip": "..\\BLL\\MonHocBLL.cs*",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\BLL\\MonHocBLL.cs",
+              "RelativeToolTip": "..\\BLL\\MonHocBLL.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAuwCAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T07:29:36.125Z",
@@ -421,7 +431,8 @@
               "RelativeToolTip": "..\\DAL\\DeThiDAL.cs",
               "ViewState": "AgIAAPgAAAAAAAAAAAAqwAkBAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T07:19:00.56Z"
+              "WhenOpened": "2024-10-18T07:19:00.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -433,7 +444,8 @@
               "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T06:53:03.042Z"
+              "WhenOpened": "2024-10-18T06:53:03.042Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -483,7 +495,8 @@
               "RelativeToolTip": "..\\BLL\\PhanCongBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:19:37.081Z"
+              "WhenOpened": "2024-10-17T19:19:37.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -495,7 +508,8 @@
               "RelativeToolTip": "..\\BLL\\GiaoDeThiBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:17:31.947Z"
+              "WhenOpened": "2024-10-17T19:17:31.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -507,7 +521,8 @@
               "RelativeToolTip": "..\\BLL\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:11:02.774Z"
+              "WhenOpened": "2024-10-17T19:11:02.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -532,7 +547,8 @@
               "RelativeToolTip": "..\\BLL\\LopBLL.cs",
               "ViewState": "AgIAABoAAAAAAAAAAIAwwDkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:55:14.952Z"
+              "WhenOpened": "2024-10-17T17:55:14.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -544,7 +560,8 @@
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:53:02.596Z"
+              "WhenOpened": "2024-10-17T17:53:02.596Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -555,7 +572,8 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fThemLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:53:01.413Z"
+              "WhenOpened": "2024-10-17T17:53:01.413Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -567,7 +585,8 @@
               "RelativeToolTip": "..\\GUI\\LopHoc\\fDanhSachDeThi.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:43:43.748Z"
+              "WhenOpened": "2024-10-17T17:43:43.748Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -578,7 +597,8 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachDeThi.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fDanhSachDeThi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:43:41.045Z"
+              "WhenOpened": "2024-10-17T17:43:41.045Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -615,7 +635,8 @@
               "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:01:22.938Z"
+              "WhenOpened": "2024-10-17T17:01:22.938Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -626,7 +647,8 @@
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs [Design]",
               "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:01:21.695Z"
+              "WhenOpened": "2024-10-17T17:01:21.695Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -638,7 +660,8 @@
               "RelativeToolTip": "..\\GUI\\fLayout.Designer.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAmwD4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:01:14.166Z"
+              "WhenOpened": "2024-10-17T17:01:14.166Z",
+              "EditorCaption": ""
             }
           ]
         }
