@@ -1,6 +1,8 @@
 ﻿using DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -227,6 +229,61 @@ namespace DAL
                 Console.WriteLine(ex);
             }
             return result + 1;
+        }
+
+        public List<DeThiDTO> GetAllDeThiCuaLop(LopDTO lop)
+        {
+            List<DeThiDTO> dtList = new List<DeThiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT DeThi.* FROM DeThi JOIN GiaoDeThi ON DeThi.MaDe = GiaoDeThi.MaDe WHERE GiaoDeThi.is_delete = 0 AND GiaoDeThi.MaLop = " + lop.MaLop;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DeThiDTO dt = new DeThiDTO
+                            {
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenDe = reader["TenDe"].ToString(),
+                                ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
+                                ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
+                                ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            dtList.Add(dt);
+                        }
+                    }
+
+                }
+            }
+            return dtList;
+        }
+        public bool DeleteByMaDeThi(LopDTO lop, DeThiDTO deThi)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE DeThi SET TrangThai = @TrangThai WHERE MaDe = @MaDe";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaDe", deThi.MaDe);
+                        command.Parameters.AddWithValue("@TrangThai", 0);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
         }
     }
 }

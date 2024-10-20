@@ -37,5 +37,12 @@ namespace BLL
             }
             return "Sửa thất bại";
         }
+
+        public MonHocDTO GetMonHocById(int maMonHoc)
+        {
+            MonHocDTO monHoc = new MonHocDTO();
+            monHoc.MaMonHoc = maMonHoc;
+            return monHocDAL.GetById(monHoc);
+        }
     }
 }

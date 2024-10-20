@@ -16,10 +16,14 @@ namespace GUI.LopHoc
     public partial class fDanhSachDeThi : Form
     {
         private System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
-        public fDanhSachDeThi()
+        fChiTietLop fctl;
+        LopDTO lop;
+        public fDanhSachDeThi(fChiTietLop fctl,LopDTO lop)
         {
             InitializeComponent();
             CreatePanel();
+            this.fctl = fctl;
+            this.lop = lop;
         }
         private Color GetRandomColor()
         {

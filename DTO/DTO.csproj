@@ -54,6 +54,8 @@
     <Compile Include="ChiTietDeDTO.cs" />
     <Compile Include="ChiTietLopDTO.cs" />
     <Compile Include="DeThiDTO.cs" />
+    <Compile Include="EnumDoKho.cs" />
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="GiaoDeThiDTO.cs" />
     <Compile Include="KetQuaDTO.cs" />
     <Compile Include="EnumLoaiCauHoi.cs" />

@@ -1,14 +1,18 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using BLL;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Spreadsheet;
 using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Control = System.Windows.Forms.Control;
 using Size = System.Drawing.Size;
 
 namespace GUI.LopHoc
@@ -16,17 +20,51 @@ namespace GUI.LopHoc
     public partial class fChiTietLop : Form
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+        private LopHocControl lopHocControl;
+        private LopDTO lopDTO;
         private int counter = 1;
+        DeThiBLL deThiBLL;
+        List<DeThiDTO> listDeThi;
+        MonHocBLL monHocBLL;
+        GiaoDeThiBLL giaoDeThiBLL;
+        PhanCongBLL phanCongBLL;
+        KetQuaBLL ketQuaBLL;
+        NguoiDungBLL nguoiDungBLL;
+        ChiTietDeBLL chiTietDeBLL;
 
-        public fChiTietLop()
+        public fChiTietLop(LopHocControl lopHocControl, LopDTO lopDTO)
         {
-            InitializeComponent();
-            CreatePanel();
-            CreatePanelSV();
+            InitializeComponent();            
+            this.lopHocControl = lopHocControl;
+            this.lopDTO = lopDTO;
+            deThiBLL = new DeThiBLL();
+            monHocBLL = new MonHocBLL();
+            giaoDeThiBLL = new GiaoDeThiBLL();
+            phanCongBLL = new PhanCongBLL();
+            ketQuaBLL = new KetQuaBLL();
+            nguoiDungBLL = new NguoiDungBLL();
+            chiTietDeBLL = new ChiTietDeBLL();
+            RenderInfoLop();
+        }
+        public void RenderDeThi()
+        {
+            listDeThi = deThiBLL.GetAllDeThiCuaLop(lopDTO);
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var item in listDeThi)
+            {
+                DeThiDTO dt = deThiBLL.GetById(item);
+                CreatePanel(dt);
+            }
+        }
+        public void RenderInfoLop()
+        {
+            lblMaMoi.Text = lopDTO.MaMoi;
+            lblTenLop.Text = lopDTO.TenLop + "   ";
+            lblTenGV.Text = nguoiDungBLL.getUserLoginById(lopDTO.MaGV).HoTen;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            fDanhSachDeThi f = new fDanhSachDeThi();
+            fDanhSachDeThi f = new fDanhSachDeThi(this, lopDTO);
             f.ShowDialog();
         }
         private void lblTenLop_Click_1(object sender, EventArgs e)
@@ -40,9 +78,14 @@ namespace GUI.LopHoc
         }
         private void lblMaMoi_Click(object sender, EventArgs e)
         {
+            Label clickedLabel = (Label)sender;
+            string labelText = clickedLabel.Text;
 
+            // Sao chép nội dung của Label vào Clipboard
+            Clipboard.SetText(labelText);
+            MessageBox.Show("Đã sao chép: " + labelText);
         }
-        private Color GetRandomColor()
+        private System.Drawing.Color GetRandomColor()
         {
             Random random = new Random();
             int r = random.Next(256);
@@ -63,15 +106,15 @@ namespace GUI.LopHoc
             {
                 return GetRandomColor();
             }
-            return Color.FromArgb(r, g, b);
+            return System.Drawing.Color.FromArgb(r, g, b);
         }
 
-        private void CreatePanel()
+        private void CreatePanel(DeThiDTO deThi)
         {
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
-                Name = "panelContain",
+                Name = "panelContain" +counter.ToString(),
                 Size = new System.Drawing.Size(390, 350),
                 TabIndex = 0,
                 BorderStyle = BorderStyle.FixedSingle,
@@ -91,12 +134,12 @@ namespace GUI.LopHoc
             Label lblTenDeThi = new Label
             {
                 AutoSize = false,
-                Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
+                Font = new System.Drawing.Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
                 Location = new Point(10, 9),
-                Name = "lblTenDeThi",
+                Name = "lblTenDeThi" +counter.ToString(),
                 Size = new System.Drawing.Size(300, 200),
                 TabIndex = 0,
-                Text = "Đề thi môn toán",
+                Text = deThi.TenDe,
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
@@ -108,23 +151,23 @@ namespace GUI.LopHoc
             {
                 AutoSize = true,
                 Location = new Point(20, 190),
-                Name = "lblMonHoc1",
+                Name = "lblMonHoc1" + counter,
                 Size = new System.Drawing.Size(110, 13),
                 TabIndex = 1,
-                Text = "Môn học: Lập trình C#",
-                Font = new Font("Segoe UI", 10, FontStyle.Regular)
+                Text = "Môn học: " + monHocBLL.GetMonHocById(deThi.MaMonHoc).TenMonHoc,
+                Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
 
             };
-
+            TimeSpan thoiGiamLamBai = deThi.ThoiGianKetThuc.Subtract(deThi.ThoiGianBatDau);
             Label lblThoiGianLamBai = new Label
             {
                 AutoSize = true,
                 Location = new Point(20, 220),
-                Name = "lblThoiGianLamBai",
+                Name = "lblThoiGianLamBai" + counter,
                 Size = new System.Drawing.Size(140, 13),
                 TabIndex = 2,
-                Text = "Thời gian làm bài: 120 phút",
-                Font = new Font("Segoe UI", 10, FontStyle.Regular)
+                Text = "Thời gian làm bài: " + thoiGiamLamBai + " phút",
+                Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
 
             };
 
@@ -132,59 +175,89 @@ namespace GUI.LopHoc
             {
                 AutoSize = true,
                 Location = new Point(20, 250),
-                Name = "lblMonHoc1",
+                Name = "lblMonHoc1" + counter,
                 Size = new System.Drawing.Size(110, 13),
                 TabIndex = 1,
-                Font = new Font("Segoe UI", 10, FontStyle.Regular)
+                Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
 
             };
+            TimeSpan khoangThoiGian = deThi.ThoiGianKetThuc - DateTime.Now;
+			string thoiGianText = "";
 
-            string thoiGianText = "Còn 12p";
-            
-            lblTrangThai.Text = "Trạng thái: Đang mở";
+			if (khoangThoiGian.Days > 0)
+			{
+				thoiGianText = $"Còn {khoangThoiGian.Days} ngày";
+			}
+			else if (khoangThoiGian.Hours > 0)
+			{
+				thoiGianText = $"Còn {khoangThoiGian.Hours} giờ {khoangThoiGian.Minutes} phút";
+			}
+			else if (khoangThoiGian.Minutes > 0)
+			{
+				thoiGianText = $"Còn {khoangThoiGian.Minutes} phút";
+			}
+			else
+			{
+				thoiGianText = "Hết hạn";
+				//dtclBus.DeleteByMaLopAndMaDeThi(lop.MaLop, baiThi.MaDeThi);
+				deThi.TrangThai = 0;
+			}
+			lblTrangThai.Text = deThi.TrangThai == 1 ? $"Trạng thái: Đang mở ({thoiGianText})" : "Trạng thái: Đã đóng";
+			KetQuaDTO ketQua = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
 
             System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
             {
                 Location = new Point(10, 300),
-                Name = "button2",
+                Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
                 Text = "Làm bài thi",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
+                Enabled = deThi.TrangThai == 0 ? false : true,
             };
 
             
             System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
             {
                 Location = new Point(145, 300),
-                Name = "button2",
+                Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
                 Text = "Mở đáp án",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = true ,
+                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên") ? true : false,
             };
 
             System.Windows.Forms.Button btnDong = new System.Windows.Forms.Button
             {
                 Location = new Point(280, 300),
-                Name = "button2",
+                Name = "button2" + counter,
                 Size = new System.Drawing.Size(100, 41),
                 TabIndex = 2,
                 Text = "Đóng",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
-            
+            btnXemKq.Click += (s, ev) =>
+            {
+                btnXemKq_Click(s, ev,  deThi);
+            };
+            btnDong.Click += (s, ev) =>
+            {
+                btnDong_Click(s, ev, deThi, lopDTO);
+            };
+            btnLamBai.Click += (s, ev) =>
+            {
+                btnLamBai_Click(s, ev, deThi, lopDTO);
+            };
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, lblTrangThai });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
@@ -197,115 +270,181 @@ namespace GUI.LopHoc
             panelHead.BackColor = GetRandomColor();
             panelHead.Enabled = true;
         }
-        private void CreatePanelSV()
+        private void btnXemKq_Click(object s, EventArgs ev, DeThiDTO obj)
         {
-            Panel panelContain = new Panel
+            //xemkq
+            KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe,fDangNhap.nguoiDungDTO.MaNguoiDung);
+            if (kq != null)
             {
-                Location = new Point(3, 3),
-                Name = "panelContain",
-                Size = new Size(390, 350),
-                TabIndex = 0,
-                BorderStyle = BorderStyle.FixedSingle,
-                Margin = new Padding(10, 10, 10, 10),
-            };
-
-            Panel panelHead = new Panel
+                fKetQua f = new fKetQua(obj, lopDTO, kq);
+                f.ShowDialog();
+            }
+            else
             {
-                Location = new Point(0, 0),
-                Name = "panelHead",
-                Size = new Size(390, 290),
-                TabIndex = 1,
-                BackColor = GetRandomColor()
-            };
-
-            Label lblTenDeThi = new Label
-            {
-                AutoSize = false,
-                Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
-                Location = new Point(10, 9),
-                Name = "lblTenDeThi",
-                Size = new Size(300, 200),
-                TabIndex = 0,
-                Text = "Đề thi môn ABCxzy",
-                AutoEllipsis = true
-            };
-            toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
-
-
-
-            Label lblMonHoc = new Label
-            {
-                AutoSize = true,
-                Location = new Point(20, 220),
-                Name = "lblMonHoc1",
-                Size = new Size(110, 13),
-                TabIndex = 1,
-                Text = "Môn học: AAA",
-                Font = new Font("Segoe UI", 10, FontStyle.Regular)
-
-            };
-
-            Label lblThoiGianLamBai = new Label
-            {
-                AutoSize = true,
-                Location = new Point(20, 250),
-                Name = "lblThoiGianLamBai",
-                Size = new Size(140, 13),
-                TabIndex = 2,
-                Text = "Thời gian làm bài: 60 phút",
-                Font = new Font("Segoe UI", 10, FontStyle.Regular)
-
-            };
-
-            System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
-            {
-                Location = new Point(10, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Làm bài thi",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
-            };
-            System.Windows.Forms.Button btnXemDa = new System.Windows.Forms.Button
-            {
-                Location = new Point(135, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Kết quả",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = true,
-            };
-            System.Windows.Forms.Button btnXemLai = new System.Windows.Forms.Button
-            {
-                Location = new Point(260, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Xem lại",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
-                Visible = true,
-            };
-            panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
-
-            panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
-            flowLayoutPanel1.Controls.Add(panelContain);
-            panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemDa, btnXemLai });
-
-            flowLayoutPanel1.AutoScroll = true;
+                MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
+        private void btnLamBai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
+        {
+            // thực hiện chức năng mở đề thi khi de thi dang dong
+            if (obj.TrangThai == 0)
+            {
+                fThemDeThiCuaLop f = new fThemDeThiCuaLop(obj, lop, this, "edit");
+                f.ShowDialog();
+            }
+            else // thực hiện chức năng làm bài
+            {
+                List<CauHoiDTO> listCauHoi = chiTietDeBLL.GetAllCauHoiOfDeThi(obj);
+                // check xem trong đề thi có câu hỏi không
+                if (listCauHoi.Count > 0)
+                {
+                    TimeSpan khoangThoiGian = obj.ThoiGianKetThuc - DateTime.Now;
+
+                    // check xem đề thi có đang trong thời gian làm bài không
+                    if (khoangThoiGian <= TimeSpan.Zero)
+                    {
+                        deThiBLL.DeleteByMaDeThi(lop, obj);
+                        MessageBox.Show("Đã quá hạn làm bài thi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RenderDeThi();
+                    }
+                    else
+                    {
+                        KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
+                        // Check xem người dùng đã làm bài thi này chưa (chỉ check trong trường hợp người dùng là học sinh)
+                        if (kq != null && fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+                        {
+                            MessageBox.Show("Bạn đã làm bài thi này rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            fBaiThi formBaithi = new fBaiThi(obj, lop, this);
+                            formBaithi.ShowDialog();
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể làm bài (Giáo viên chưa thêm câu hỏi vào đề)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnDong_Click(object s, EventArgs ev, DeThiDTO obj,LopDTO lop)
+        {
+            //donng
+            deThiBLL.DeleteByMaDeThi(lop, obj);
+            RenderDeThi();
+        }
+        //private void CreatePanelSV()
+        //{
+        //    Panel panelContain = new Panel
+        //    {
+        //        Location = new Point(3, 3),
+        //        Name = "panelContain",
+        //        Size = new Size(390, 350),
+        //        TabIndex = 0,
+        //        BorderStyle = BorderStyle.FixedSingle,
+        //        Margin = new Padding(10, 10, 10, 10),
+        //    };
+
+        //    Panel panelHead = new Panel
+        //    {
+        //        Location = new Point(0, 0),
+        //        Name = "panelHead",
+        //        Size = new Size(390, 290),
+        //        TabIndex = 1,
+        //        BackColor = GetRandomColor()
+        //    };
+
+        //    Label lblTenDeThi = new Label
+        //    {
+        //        AutoSize = false,
+        //        Font = new System.Drawing.Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
+        //        Location = new Point(10, 9),
+        //        Name = "lblTenDeThi",
+        //        Size = new Size(300, 200),
+        //        TabIndex = 0,
+        //        Text = "Đề thi môn ABCxzy",
+        //        AutoEllipsis = true
+        //    };
+        //    toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
+
+
+
+        //    Label lblMonHoc = new Label
+        //    {
+        //        AutoSize = true,
+        //        Location = new Point(20, 220),
+        //        Name = "lblMonHoc1",
+        //        Size = new Size(110, 13),
+        //        TabIndex = 1,
+        //        Text = "Môn học: AAA",
+        //        Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
+
+        //    };
+
+        //    Label lblThoiGianLamBai = new Label
+        //    {
+        //        AutoSize = true,
+        //        Location = new Point(20, 250),
+        //        Name = "lblThoiGianLamBai",
+        //        Size = new Size(140, 13),
+        //        TabIndex = 2,
+        //        Text = "Thời gian làm bài: 60 phút",
+        //        Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
+
+        //    };
+
+        //    System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
+        //    {
+        //        Location = new Point(10, 300),
+        //        Name = "button2",
+        //        Size = new Size(120, 41),
+        //        TabIndex = 2,
+        //        Text = "Làm bài thi",
+        //        UseVisualStyleBackColor = true,
+        //        Cursor = System.Windows.Forms.Cursors.Hand,
+        //        Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+        //        TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+        //        Enabled = true,
+        //    };
+        //    System.Windows.Forms.Button btnXemDa = new System.Windows.Forms.Button
+        //    {
+        //        Location = new Point(135, 300),
+        //        Name = "button2",
+        //        Size = new Size(120, 41),
+        //        TabIndex = 2,
+        //        Text = "Kết quả",
+        //        UseVisualStyleBackColor = true,
+        //        Cursor = System.Windows.Forms.Cursors.Hand,
+        //        Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+        //        TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+        //        Visible = true,
+        //    };
+        //    System.Windows.Forms.Button btnXemLai = new System.Windows.Forms.Button
+        //    {
+        //        Location = new Point(260, 300),
+        //        Name = "button2",
+        //        Size = new Size(120, 41),
+        //        TabIndex = 2,
+        //        Text = "Xem lại",
+        //        UseVisualStyleBackColor = true,
+        //        Cursor = System.Windows.Forms.Cursors.Hand,
+        //        Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+        //        TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
+        //        Enabled = true,
+        //        Visible = true,
+        //    };
+        //    panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
+
+        //    panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
+        //    flowLayoutPanel1.Controls.Add(panelContain);
+        //    panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemDa, btnXemLai });
+
+        //    flowLayoutPanel1.AutoScroll = true;
+        //}
         private void btnImport_Click(object sender, EventArgs e)
         {
             fThemSVvaoLop fAddSV = new fThemSVvaoLop();

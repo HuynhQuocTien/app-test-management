@@ -1,6 +1,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -61,6 +62,38 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+
+        public KetQuaDTO Get(int MaDe, long MaSV)
+        {
+            KetQuaDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM KetQua WHERE MaDe = @MaDe AND MaND = @MaSV";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", MaDe);
+                    command.Parameters.AddWithValue("@MaSV", MaSV);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = new KetQuaDTO
+                            {
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaND"]),
+                                Diem = Math.Round(Convert.ToDecimal(reader["Diem"]), 2),
+                                SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
+                                SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
         }
 
         public List<KetQuaDTO> GetAll()
