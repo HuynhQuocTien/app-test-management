@@ -80,3 +80,9 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\ob
 C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.pdb
 C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\ref\app-test-management.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.xml
+C:\Users\Administrator\Desktop\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.xml

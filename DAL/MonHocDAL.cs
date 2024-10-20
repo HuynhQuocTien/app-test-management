@@ -40,7 +40,33 @@ namespace DAL
                 return false;
             }
         }
-
+        public bool Import(MonHocDTO monHoc)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "INSERT INTO MonHoc (MaMonHoc, TenMonHoc, SoTC, SoTietLT, SoTietTH, TrangThai, is_delete)" +
+                        "VALUES (@TenMonHoc, @SoTC, @SoTietLT, @SoTietTH, @TrangThai, @is_delete);";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TenMonHoc", monHoc.TenMonHoc);
+                        command.Parameters.AddWithValue("@SoTC", monHoc.SoTC);
+                        command.Parameters.AddWithValue("@SoTietLT", monHoc.SoTietLT);
+                        command.Parameters.AddWithValue("@SoTietTH", monHoc.SoTietTH);
+                        command.Parameters.AddWithValue("@TrangThai", monHoc.TrangThai);
+                        command.Parameters.AddWithValue("@is_delete", monHoc.is_delete);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
         public bool Delete(MonHocDTO monHoc)
         {
             try
