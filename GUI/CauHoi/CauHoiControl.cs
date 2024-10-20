@@ -26,7 +26,8 @@ namespace GUI.CauHoi
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+            fThemCauHoi fThemCauHoi = new fThemCauHoi();
+            fThemCauHoi.Show();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -394,6 +394,7 @@
     <Compile Include="Users\InfoUser.Designer.cs">
       <DependentUpon>InfoUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Session.cs" />
     <Compile Include="Users\UsersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -493,6 +494,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{3224fc6b-69e8-41f3-b65d-d128d95c005d}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{a0dc0b8b-6d7e-47f6-8d48-ff38b9eb5b51}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{805df0f9-6afa-468e-a2ee-3a8ef3ee9ac8}</Project>
