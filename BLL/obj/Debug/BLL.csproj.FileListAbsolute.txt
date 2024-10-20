@@ -24,3 +24,16 @@ C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.cspr
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.dll
 C:\Users\Administrator\Desktop\GitHub\app-test-management\BLL\obj\Debug\BLL.pdb
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\BLL.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\BLL.pdb
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\DAL.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\DTO.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\DAL.pdb
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\DTO.pdb
+C:\Users\huynh\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.xml
+C:\Users\huynh\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\huynh\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\huynh\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\huynh\Source\Repos\app-test-management\BLL\obj\Debug\BLL.dll
+C:\Users\huynh\Source\Repos\app-test-management\BLL\obj\Debug\BLL.pdb
