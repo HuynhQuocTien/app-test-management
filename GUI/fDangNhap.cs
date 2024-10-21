@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,9 @@ namespace GUI
 {
     public partial class fDangNhap : Form
     {
-        private NguoiDungDTO nguoiDungDTO = new NguoiDungDTO();
-        private TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
-        private NhomQuyenDTO nhomQuyenDTO = new NhomQuyenDTO();
+        public static NguoiDungDTO nguoiDungDTO;
+        public static TaiKhoanDTO taiKhoanDTO;
+        public static NhomQuyenDTO nhomQuyenDTO;
         private NguoiDungBLL nguoiDungBLL;
         private NhomQuyenBLL nhomQuyenBLL;
 
@@ -92,12 +93,13 @@ namespace GUI
             string thongbBao = taiKhoanBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
             if (thongbBao.Equals("Đăng nhập thành công!"))
             {
+                Session.UserID = taiKhoan;
                 nguoiDungDTO = nguoiDungBLL.getUserLoginById(Convert.ToInt64(taiKhoan));
                 taiKhoanDTO = taiKhoanBLL.getTaiKhoanById(Convert.ToInt64(taiKhoan));
                 nhomQuyenDTO = nhomQuyenBLL.getNhomQuyenById(taiKhoanDTO.MaNhomQuyen);
-                fLayout formLayout = new fLayout(nguoiDungDTO, taiKhoanDTO,nhomQuyenDTO);
+                fLayout formLayout = new fLayout();
                 formLayout.Show();
-                this.Hide();
+                this.Visible = false;
             }
             else
             {

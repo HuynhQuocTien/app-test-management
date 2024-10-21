@@ -10,6 +10,7 @@ namespace DTO
     {
         public int MaCauHoi { get; set; }
         public string NoiDung { get; set; }
+        public string LoaiCauHoi { get; set; }
         public int MaMonHoc { get; set; }
         public long MaNguoiTao { get; set; }
         public string DoKho { get; set; }
@@ -18,10 +19,11 @@ namespace DTO
         public CauHoiDTO()
         {
         }
-        public CauHoiDTO(int maCauHoi, string noiDung, int maMonHoc, long maNguoiTao, string doKho, int trangThai, int is_delete)
+        public CauHoiDTO(int maCauHoi, string noiDung,string loaiCauHoi, int maMonHoc, long maNguoiTao, string doKho, int trangThai, int is_delete)
         {
             MaCauHoi = maCauHoi;
             NoiDung = noiDung;
+            LoaiCauHoi = loaiCauHoi;
             MaMonHoc = maMonHoc;
             MaNguoiTao = maNguoiTao;
             DoKho = doKho;

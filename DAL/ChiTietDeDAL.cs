@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -81,6 +82,44 @@ namespace DAL
                 }
             }
             return chiTietDeList;
+        }
+
+        public List<CauHoiDTO> GetAllCauHoiOfDeThi(DeThiDTO deThi)
+        {
+            List<CauHoiDTO> list = new List<CauHoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT cau_hoi.* FROM ChiTietDe" +
+                    " INNER JOIN CauHoi ON ChiTietDe.MaCauHoi = CauHoi.MaCauHoi" +
+                    " WHERE ChiTietDe.MaDe = " + deThi.MaDe;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var enumDoKho = (EnumDoKho)Convert.ToInt32(reader["DoKho"].ToString());
+                            CauHoiDTO item = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"].ToString()),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                DoKho = EnumHelper.GetEnumDescription(enumDoKho) ,
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+
+                            };
+                            list.Add(item);
+                        }
+                    }
+
+                }
+                connection.Close();
+            }
+            return list;
+
         }
 
         public ChiTietDeDTO GetById(ChiTietDeDTO chiTietDe)

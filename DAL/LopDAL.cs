@@ -65,7 +65,7 @@ namespace DAL
             }
         }
 
-        public List<LopDTO> GetAll(long MaSV) //Loc lop theo MaSV
+        public List<LopDTO> GetAllByMaSV(long MaSV) //Loc lop theo MaSV
         {
             List<LopDTO> lopList = new List<LopDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
@@ -96,7 +96,36 @@ namespace DAL
             }
             return lopList;
         }
+        public List<LopDTO> GetAllByMaGV(long MaGV) //Loc lop theo MaGV
+        {
+            List<LopDTO> lopList = new List<LopDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM Lop WHERE MaGV = " + MaGV + "  AND is_delete = 0";
 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LopDTO lop = new LopDTO
+                            {
+                                MaLop = Convert.ToInt32(reader["MaLop"]),
+                                MaGV = Convert.ToInt64(reader["MaGV"]),
+                                TenLop = reader["TenLop"].ToString(),
+                                MaMoi = reader["MaMoi"].ToString(),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            lopList.Add(lop);
+                        }
+                    }
+
+                }
+            }
+            return lopList;
+        }
         public LopDTO GetById(LopDTO lop)
         {
             LopDTO result = null;
@@ -209,6 +238,31 @@ namespace DAL
                 Console.WriteLine(ex);
             }
             return result + 1;
+        }
+
+        public int GetMaLopByMaMoi(string maMoi)
+        {
+            int result = -1;
+
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT MaLop FROM Lop WHERE MaMoi = @MaMoi";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaMoi", maMoi);
+
+                    // Sử dụng ExecuteScalar() để trả về giá trị đơn
+                    object objResult = command.ExecuteScalar();
+
+                    if (objResult != null)
+                    {
+                        // Nếu có kết quả, chuyển đổi sang kiểu int
+                        result = Convert.ToInt32(objResult);
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

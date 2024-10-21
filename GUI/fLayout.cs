@@ -16,10 +16,7 @@ namespace GUI
 {
     public partial class fLayout : Form
     {   
-        private NguoiDungDTO nguoiDungDTO = new NguoiDungDTO();
-        private TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
-        private NhomQuyenDTO nhomQuyenDTO = new NhomQuyenDTO();
-        public fLayout(NguoiDungDTO nguoiDungDTO, TaiKhoanDTO taiKhoanDTO, NhomQuyenDTO nhomQuyenDTO)
+        public fLayout()
         {
             InitializeComponent();
             this.containerBtnPanel.Controls.Add(this.btnLopHoc, 0, 2);
@@ -39,11 +36,8 @@ namespace GUI
             AddColorChange(btnThongKe, hoverColor, hoverColor);
             AddColorChange(btnThoat, hoverColor, hoverColor);
             AddColorChange(btnPhanCong, hoverColor, hoverColor);
-            this.nguoiDungDTO = nguoiDungDTO;            
-            this.taiKhoanDTO = taiKhoanDTO;
-            this.nhomQuyenDTO = nhomQuyenDTO;
-            lblOwnerName.Text = nguoiDungDTO.HoTen;
-            lblOwnerRule.Text = nhomQuyenDTO.TenQuyen;
+            lblOwnerName.Text = fDangNhap.nguoiDungDTO.HoTen;
+            lblOwnerRule.Text = fDangNhap.nhomQuyenDTO.TenQuyen;
             //AddColorChange(btnPhanQuyen, hoverColor, hoverColor);
 
         }

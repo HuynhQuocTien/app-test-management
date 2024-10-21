@@ -1,4 +1,6 @@
-﻿namespace GUI.PhanCong
+﻿using System;
+
+namespace GUI.PhanCong
 {
     partial class fAddPhanCong
     {
@@ -109,6 +111,7 @@
             this.cbMonHoc.Name = "cbMonHoc";
             this.cbMonHoc.Size = new System.Drawing.Size(400, 29);
             this.cbMonHoc.TabIndex = 9;
+            this.cbMonHoc.SelectedIndexChanged += new EventHandler(cbMonHoc_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -240,6 +243,7 @@
             this.btnRightToLeftAll.TabIndex = 2;
             this.btnRightToLeftAll.Text = "<<";
             this.btnRightToLeftAll.UseVisualStyleBackColor = true;
+            this.btnRightToLeftAll.Click += buttonMoveAllToLeft_Click;
             // 
             // btnLeftToRightAll
             // 
@@ -251,6 +255,7 @@
             this.btnLeftToRightAll.TabIndex = 3;
             this.btnLeftToRightAll.Text = ">>";
             this.btnLeftToRightAll.UseVisualStyleBackColor = true;
+            this.btnLeftToRightAll.Click += buttonMoveAllToRight_Click;
             // 
             // btnRightToLeft
             // 
@@ -262,6 +267,7 @@
             this.btnRightToLeft.TabIndex = 4;
             this.btnRightToLeft.Text = "<";
             this.btnRightToLeft.UseVisualStyleBackColor = true;
+            this.btnRightToLeft.Click += buttonRightToLeft_Click;
             // 
             // btnLeftToRight
             // 
@@ -273,6 +279,8 @@
             this.btnLeftToRight.TabIndex = 5;
             this.btnLeftToRight.Text = ">";
             this.btnLeftToRight.UseVisualStyleBackColor = true;
+            this.btnLeftToRight.Click += buttonLeftToRight_Click;
+
             // 
             // listBox1
             // 
@@ -315,6 +323,8 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Thêm phân công";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += buttonAdd_Click;
+
             // 
             // fAddPhanCong
             // 

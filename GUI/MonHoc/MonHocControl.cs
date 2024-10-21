@@ -74,7 +74,61 @@ namespace GUI.MonHoc
 
         private void importExcell(string path)
         {
+            using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+                DataTable dt = new DataTable();
+                MonHocBLL monHocBLL = new MonHocBLL();
+                // Thêm các cột vào DataTable từ dòng đầu tiên của Excel (tên cột)
+                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                {
+                    dt.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                }
 
+                // Duyệt qua các hàng trong Excel, bắt đầu từ hàng thứ 2
+                for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
+                {
+                    List<string> listRow = new List<string>();
+                    MonHocDTO monHoc = new MonHocDTO(); // Tạo đối tượng mới cho mỗi hàng
+
+                    // Lấy thuộc tính của MonHocDTO bằng Reflection
+                    PropertyInfo[] properties = typeof(MonHocDTO).GetProperties();
+
+                    // Duyệt qua từng cột trong một hàng
+                    for (int col = excelWorksheet.Dimension.Start.Column; col <= excelWorksheet.Dimension.End.Column; col++)
+                    {
+                        try
+                        {
+                            string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
+                            if (cellValue != null && col - 1 < properties.Length)
+                            {
+                                // Lấy thuộc tính tương ứng với cột hiện tại
+                                PropertyInfo property = properties[col - 1]; // `col - 1` để đồng bộ cột với thuộc tính
+                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                property.SetValue(monHoc, valueToSet); // Gán giá trị cho thuộc tính của MonHocDTO
+                            }
+                        }
+                        catch (InvalidCastException)
+                        {
+                            Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheet.Cells[row, col].Value}' sang kiểu '{properties[col - 1].PropertyType.Name}'.");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Lỗi khi gán giá trị cho {properties[col - 1].Name}: {ex.Message}");
+                        }
+                    }
+
+                    // Thêm đối tượng monHoc vào DataTable
+                    //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
+
+                    // Add vào database
+                    string tb = monHocBLL.Import(monHoc);
+
+                }
+
+                // Gán DataTable cho DataGridView
+                dataGridView1.DataSource = dt;
+            }
         }
         private void exportExcell(string path)
         {
@@ -126,17 +180,50 @@ namespace GUI.MonHoc
                 try
                 {
                     exportExcell(saveFileDialog.FileName);
-                    MessageBox.Show("Export Thành công");
+                    System.Windows.Forms.MessageBox.Show("Export Thành công");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Export Thất bại");
+                    System.Windows.Forms.MessageBox.Show("Export Thất bại");
                 }
             }
         }
         private void textBoxTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void importBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import Môn học";
+            // Đuôi file
+            openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    importExcell(openFileDialog.FileName);
+                    System.Windows.Forms.MessageBox.Show("import Thành công");
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("import Thất bại");
+                }
+            }
+            render();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn xóa môn học này ?", "Cảnh báo", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                MonHocBLL monHocBLL = new MonHocBLL();
+                string thongBao = monHocBLL.Delete(this.monHocDTO);
+                System.Windows.Forms.MessageBox.Show(thongBao, "Thông báo");
+                render();
+            }
         }
     }
 }

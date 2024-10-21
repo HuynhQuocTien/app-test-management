@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using GUI.LopHoc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,15 @@ namespace GUI
 {
     public partial class fBaiThi : Form
     {
-        public fBaiThi()
+        private DeThiDTO deThi;
+        private LopDTO lop;
+        private fChiTietLop fChiTietLop;
+        public fBaiThi(DeThiDTO deThi,LopDTO lop, fChiTietLop fChiTietLop)
         {
             InitializeComponent();
+            this.deThi = deThi;
+            this.lop = lop;
+            this.fChiTietLop = fChiTietLop;
         }
         private void button1_Click(object sender, EventArgs e)
         {

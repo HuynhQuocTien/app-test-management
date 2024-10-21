@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace GUI.LopHoc
     public partial class LopHocControl : UserControl
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+        private int counter = 1;
         LopBLL lopBLL;
         List<LopDTO> listlop;
 
@@ -23,13 +25,28 @@ namespace GUI.LopHoc
             InitializeComponent();
             lopBLL = new LopBLL();
             listlop = new List<LopDTO>();
-            CreatePanel();
-        }
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            fThemLop themLop = new fThemLop(this,GenerateRandomCode(10));
 
-            themLop.ShowDialog();
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            {
+                btnThem.Text = "Tham gia lớp";
+                renderLopDTO(lopBLL.getListLopByMaSV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+
+            }
+            else
+            {
+                btnThem.Text = "Tạo lớp";
+                renderLopDTO(lopBLL.getListLopByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+            }
+        }
+        public void renderLopDTO(List<LopDTO> list)
+        {
+            listlop = list;
+            // Xóa tất cả các panel được tạo trước đó
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var l in listlop)
+            {
+                CreatePanel(l);
+            }
         }
         private Color GetRandomColor()
         {
@@ -54,12 +71,12 @@ namespace GUI.LopHoc
             }
             return Color.FromArgb(r, g, b);
         }
-        private void CreatePanel()
+        private void CreatePanel(LopDTO lop)
         {
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
-                Name = "panelContain",
+                Name = "panelContain" + counter.ToString(),
                 Size = new Size(360, 350),
                 TabIndex = 0,
                 BorderStyle = BorderStyle.FixedSingle,
@@ -80,19 +97,22 @@ namespace GUI.LopHoc
                 AutoSize = false,
                 Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
                 Location = new Point(10, 9),
-                Name = "labelMonhoc",
+                Name = "labelMonhoc" + counter.ToString(),
                 Size = new Size(300, 200),
                 TabIndex = 0,
-                Text = "Lop ABC",
+                Text = lop.TenLop,
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(labelMonhoc, labelMonhoc.Text);
-
+            if(!fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            {
+                labelMonhoc.Click += (s,ev) => { labelMonhoc_Click(s, ev, lop); };
+            }
 
             System.Windows.Forms.Button buttonThamGia = new System.Windows.Forms.Button
             {
                 Location = new Point(60, 300),
-                Name = "button2",
+                Name = "button2" + counter,
                 Size = new Size(100, 40),
                 TabIndex = 2,
                 Text = "Vào lớp",
@@ -103,17 +123,21 @@ namespace GUI.LopHoc
             System.Windows.Forms.Button buttonXoa = new System.Windows.Forms.Button
             {
                 Location = new Point(200, 300),
-                Name = "button3",
+                Name = "button3" + counter,
                 Size = new Size(100, 40),
                 TabIndex = 3,
                 Text = "Xóa",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Visible = true
+                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên") ? false : true
+            };
+            buttonXoa.Click += (s, ev) =>
+            {
+                buttonXoa_Click(s, ev, lop);
             };
             buttonThamGia.Click += (s, ev) =>
             {
-                buttonThamGia_Click(s, ev);
+                buttonThamGia_Click(s, ev,lop);
             };
             panelHead.Controls.AddRange(new Control[] { labelMonhoc });
             panelContain.Controls.AddRange(new Control[] { buttonThamGia, buttonXoa, panelHead });
@@ -122,12 +146,49 @@ namespace GUI.LopHoc
             flowLayoutPanel1.Controls.Add(panelContain);
 
             flowLayoutPanel1.AutoScroll = true;
+            counter++;
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            {
+                buttonThamGia.Location = new Point(125, 300);
+            }
 
         }
-        private void buttonThamGia_Click(object sender, EventArgs e)
+        private void labelMonhoc_Click(object sender, EventArgs e, LopDTO obj)
         {
-            fChiTietLop fct = new fChiTietLop();
+            fThemLop themLop = new fThemLop(this, "edit", obj.MaMoi, obj);
+            themLop.ShowDialog();
+        }
+        private void buttonXoa_Click(object sender, EventArgs e, LopDTO obj)
+        {
+            lopBLL.Delete(obj);
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            Panel panelContain = (Panel)clickedButton.Parent;
+
+            DialogResult result = MessageBox.Show("Xác nhận xóa lớp học?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                flowLayoutPanel1.Controls.Remove(panelContain);
+            }
+        }
+        private void buttonThamGia_Click(object sender, EventArgs e,LopDTO lop)
+        {
+            fChiTietLop fct = new fChiTietLop(this, lop);
             fct.ShowDialog();
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giảng viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            {
+                fThemLop themLop = new fThemLop(this, "add", GenerateRandomCode(10));
+
+                themLop.ShowDialog();
+            }
+            else if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên"))
+            {
+                fThemLop fJoinLop = new fThemLop(this, "join");
+                fJoinLop.ShowDialog();
+            }
         }
         private string GenerateRandomCode(int length)//randomMaMoi Còn lỗi
         {
@@ -141,7 +202,19 @@ namespace GUI.LopHoc
                 int index = random.Next(chars.Length);
                 code.Append(chars[index]);
             }
+            List<string> lMaMoi = new List<string>();
+            foreach (LopDTO item in listlop)
+            {
+                lMaMoi.Add(item.MaMoi.ToString());
+            }
 
+            foreach (string item in lMaMoi)
+            {
+                if (code.ToString().Equals(item))
+                {
+                    return GenerateRandomCode(10);
+                }
+            }
             return code.ToString();
         }
 
@@ -149,7 +222,21 @@ namespace GUI.LopHoc
         {
             listlop.Add(obj);
             lopBLL.Add(obj);
-            CreatePanel();
+            CreatePanel(obj);
+        }
+        public void UpdateLop(LopDTO obj)
+        {
+            lopBLL.Update(obj);
+            LopBLL lopBLLnew = new LopBLL();
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            {
+                renderLopDTO(lopBLL.getListLopByMaSV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+
+            }
+            else
+            {
+                renderLopDTO(lopBLL.getListLopByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+            }
         }
     }
 }

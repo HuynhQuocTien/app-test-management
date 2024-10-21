@@ -44,12 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDeBLL.cs" />
     <Compile Include="ChiTietLopBLL.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DeThiBLL.cs" />
+    <Compile Include="GiaoDeThiBLL.cs" />
+    <Compile Include="KetQuaBLL.cs" />
     <Compile Include="LopBLL.cs" />
     <Compile Include="MonHocBLL.cs" />
     <Compile Include="NguoiDungBLL.cs" />
     <Compile Include="NhomQuyenBLL.cs" />
+    <Compile Include="PhanCongBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBLL.cs" />
   </ItemGroup>
