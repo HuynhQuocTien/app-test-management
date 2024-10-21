@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,20 @@ namespace GUI.CauHoi
         public CauHoiControl()
         {
             InitializeComponent();
+            render();
+        }
+
+        private void render()
+        {
+            loadDataComboBoxMHView();
+        }
+
+        private void loadDataComboBoxMHView()
+        {
+            MonHocBLL monHocBLL = new MonHocBLL();
+            comboBox1.DataSource = monHocBLL.GetAll();
+            comboBox1.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
+            comboBox1.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
         }
 
         private void btnXuatFile_Click(object sender, EventArgs e)
@@ -75,6 +90,11 @@ namespace GUI.CauHoi
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
