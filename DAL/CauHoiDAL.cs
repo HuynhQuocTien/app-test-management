@@ -5,38 +5,40 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class CauHoiDAL : IUnitDAL<CauHoiDTO>
+    public class CauHoiDAL : IUnitCTL<CauHoiDTO>
     {
         public static CauHoiDAL getInstance()
         {
             return new CauHoiDAL();
         }
 
-        public bool Add(CauHoiDTO cauHoi)
+        public int Add(CauHoiDTO cauHoi)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO CauHoi (NoiDung, MaMonHoc, MaNguoiTao, DoKho, TrangThai, is_delete)" +
-                        "VALUES (@NoiDung, @MaMonHoc, @MaNguoiTao, @DoKho, @TrangThai, @is_delete);";
+                    string query = "INSERT INTO CauHoi (NoiDung, NguoiTao, MaMonHoc, DoKho, TrangThai, is_delete, LoaiCauHoi)" +
+                        "VALUES (@NoiDung, @NguoiTao, @MaMonHoc, @DoKho, @TrangThai, @is_delete, @LoaiCauHoi); " +
+                        "SELECT SCOPE_IDENTITY();";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@NoiDung", cauHoi.NoiDung);
+                        command.Parameters.AddWithValue("@NguoiTao", cauHoi.MaNguoiTao);
                         command.Parameters.AddWithValue("@MaMonHoc", cauHoi.MaMonHoc);
-                        command.Parameters.AddWithValue("@MaNguoiTao", cauHoi.MaNguoiTao);
                         command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
-                        command.Parameters.AddWithValue("@TrangThai", 1);
+                        command.Parameters.AddWithValue("@TrangThai", cauHoi.TrangThai);
                         command.Parameters.AddWithValue("@is_delete", 0);
-                        int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
+                        command.Parameters.AddWithValue("@LoaiCauHoi", cauHoi.LoaiCauHoi);
+                        int maCauHoi = Convert.ToInt32(command.ExecuteScalar());
+                        return maCauHoi;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return 0;
             }
         }
 
@@ -79,8 +81,9 @@ namespace DAL
                             {
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                MaNguoiTao = Convert.ToInt64(reader["MaNguoiTao"]),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 DoKho = reader["DoKho"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
@@ -137,6 +140,35 @@ namespace DAL
                         command.Parameters.AddWithValue("@MaMonHoc", cauHoi.MaMonHoc);
                         command.Parameters.AddWithValue("@MaNguoiTao", cauHoi.MaNguoiTao);
                         command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool Import(CauHoiDTO cauHoi)
+        {
+           try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "INSERT INTO CauHoi (NoiDung, NguoiTao, MaMonHoc, DoKho, TrangThai, is_delete, LoaiCauHoi)" +
+                        "VALUES (@NoiDung, @NguoiTao, @MaMonHoc, @DoKho, @TrangThai, @is_delete, @LoaiCauHoi);";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@NoiDung", cauHoi.NoiDung);
+                        command.Parameters.AddWithValue("@NguoiTao", cauHoi.MaNguoiTao);
+                        command.Parameters.AddWithValue("@MaMonHoc", cauHoi.MaMonHoc);
+                        command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
+                        command.Parameters.AddWithValue("@TrangThai", cauHoi.TrangThai);
+                        command.Parameters.AddWithValue("@is_delete", 0);
+                        command.Parameters.AddWithValue("@LoaiCauHoi", cauHoi.LoaiCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }

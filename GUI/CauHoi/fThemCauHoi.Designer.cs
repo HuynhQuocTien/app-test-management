@@ -31,7 +31,6 @@ namespace GUI.CauHoi
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemCauHoi));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -317,19 +316,17 @@ namespace GUI.CauHoi
             this.comboBoxDoKho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxDoKho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxDoKho.DisplayMember = "Value";
             this.comboBoxDoKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDoKho.FormattingEnabled = true;
             this.comboBoxDoKho.Items.AddRange(new object[] {
-            ((object)(resources.GetObject("comboBoxDoKho.Items"))),
-            ((object)(resources.GetObject("comboBoxDoKho.Items1"))),
-            ((object)(resources.GetObject("comboBoxDoKho.Items2")))});
+            "Dễ",
+            "Trung Bình",
+            "Khó"});
             this.comboBoxDoKho.Location = new System.Drawing.Point(508, 39);
             this.comboBoxDoKho.Margin = new System.Windows.Forms.Padding(2, 4, 2, 2);
             this.comboBoxDoKho.Name = "comboBoxDoKho";
             this.comboBoxDoKho.Size = new System.Drawing.Size(121, 29);
             this.comboBoxDoKho.TabIndex = 3;
-            this.comboBoxDoKho.ValueMember = "Key";
             // 
             // lblMonHoc
             // 
@@ -643,7 +640,7 @@ namespace GUI.CauHoi
             2,
             3,
             4});
-            this.cbSoDapAn.Location = new System.Drawing.Point(167, 5);
+            this.cbSoDapAn.Location = new System.Drawing.Point(167, 9);
             this.cbSoDapAn.Margin = new System.Windows.Forms.Padding(2);
             this.cbSoDapAn.Name = "cbSoDapAn";
             this.cbSoDapAn.Size = new System.Drawing.Size(100, 29);
@@ -732,19 +729,17 @@ namespace GUI.CauHoi
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DisplayMember = "Value";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            ((object)(resources.GetObject("comboBox1.Items"))),
-            ((object)(resources.GetObject("comboBox1.Items1"))),
-            ((object)(resources.GetObject("comboBox1.Items2")))});
+            "Dễ",
+            "Trung Bình",
+            "Khó"});
             this.comboBox1.Location = new System.Drawing.Point(508, 39);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 29);
             this.comboBox1.TabIndex = 3;
-            this.comboBox1.ValueMember = "Key";
             // 
             // label4
             // 
@@ -1080,7 +1075,7 @@ namespace GUI.CauHoi
             "3",
             "4",
             "5"});
-            this.comboBox3.Location = new System.Drawing.Point(167, 5);
+            this.comboBox3.Location = new System.Drawing.Point(167, 9);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(100, 29);
@@ -1168,19 +1163,17 @@ namespace GUI.CauHoi
             this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox4.DisplayMember = "Value";
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            ((object)(resources.GetObject("comboBox4.Items"))),
-            ((object)(resources.GetObject("comboBox4.Items1"))),
-            ((object)(resources.GetObject("comboBox4.Items2")))});
+            "Dễ",
+            "Trung Bình",
+            "Khó"});
             this.comboBox4.Location = new System.Drawing.Point(508, 54);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 4, 2, 2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 29);
             this.comboBox4.TabIndex = 3;
-            this.comboBox4.ValueMember = "Key";
             // 
             // label9
             // 
@@ -1693,7 +1686,7 @@ namespace GUI.CauHoi
             "6",
             "7",
             "8"});
-            this.comboBox6.Location = new System.Drawing.Point(207, 5);
+            this.comboBox6.Location = new System.Drawing.Point(207, 9);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(100, 29);

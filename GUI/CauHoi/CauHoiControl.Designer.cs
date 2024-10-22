@@ -196,7 +196,7 @@ namespace GUI.CauHoi
             this.comboBox1.Items.AddRange(new object[] {
             "Chọn môn học"});
             this.comboBox1.Location = new System.Drawing.Point(2, 2);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(366, 29);
             this.comboBox1.TabIndex = 0;
@@ -204,22 +204,21 @@ namespace GUI.CauHoi
             // comboBox2
             // 
             this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox2.DisplayMember = "Value";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Chọn độ khó"});
+            "Chọn độ khó",
+            ((object)(resources.GetObject("comboBox2.Items"))),
+            ((object)(resources.GetObject("comboBox2.Items1"))),
+            ((object)(resources.GetObject("comboBox2.Items2")))});
             this.comboBox2.Location = new System.Drawing.Point(2, 36);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(111, 29);
             this.comboBox2.TabIndex = 1;
-            comboBox2.Items.Add(new KeyValuePair<string, string>("1", "Dễ"));
-            comboBox2.Items.Add(new KeyValuePair<string, string>("2", "Trung bình"));
-            comboBox2.Items.Add(new KeyValuePair<string, string>("3", "Khó"));
-            // Đặt thuộc tính hiển thị (DisplayMember) và giá trị (ValueMember)
-            comboBox2.DisplayMember = "Value";  // Hiển thị tên (DisplayName)
-            comboBox2.ValueMember = "Key";      // Giá trị (Value)
+            this.comboBox2.ValueMember = "Key";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // containerBtnPanel
@@ -288,6 +287,7 @@ namespace GUI.CauHoi
             this.btnImport.Text = "   IMPORT";
             this.btnImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnNhapFile_Click);
             // 
             // btnChiTiet
             // 
@@ -440,6 +440,7 @@ namespace GUI.CauHoi
             this.dataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -476,6 +477,7 @@ namespace GUI.CauHoi
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1164, 405);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -485,7 +487,7 @@ namespace GUI.CauHoi
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CauHoiControl";
             this.Size = new System.Drawing.Size(1180, 768);
             this.mainPanel.ResumeLayout(false);

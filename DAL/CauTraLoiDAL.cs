@@ -18,7 +18,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO CauTraLoi (MaCauHoi, NoiDung, IsDapAn)" +
+                    string query = "INSERT INTO CauTraLoi (MaCauHoi, NoiDung, is_DapAn)" +
                         "VALUES (@MaCauHoi, @NoiDung, @IsDapAn);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

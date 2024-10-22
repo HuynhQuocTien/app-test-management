@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHoiBLL.cs" />
+    <Compile Include="CauTraLoiBLL.cs" />
+    <Compile Include="CauTraLoiDienChoTrongBLL.cs" />
     <Compile Include="ChiTietDeBLL.cs" />
     <Compile Include="ChiTietLopBLL.cs" />
     <Compile Include="Class1.cs" />
