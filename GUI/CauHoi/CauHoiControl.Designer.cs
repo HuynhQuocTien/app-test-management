@@ -504,7 +504,6 @@ namespace GUI.CauHoi
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private TableLayoutPanel mainPanel;

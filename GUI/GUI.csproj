@@ -208,6 +208,24 @@
     <Compile Include="CauHoi\CauHoiControl.Designer.cs">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CauHoi\fCauHoiDCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiDCT.Designer.cs">
+      <DependentUpon>fCauHoiDCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiNoiCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiNoiCau.Designer.cs">
+      <DependentUpon>fCauHoiNoiCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiTN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiTN.Designer.cs">
+      <DependentUpon>fCauHoiTN.cs</DependentUpon>
+    </Compile>
     <Compile Include="CauHoi\fThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +423,12 @@
   <ItemGroup>
     <EmbeddedResource Include="CauHoi\CauHoiControl.resx">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiDCT.resx">
+      <DependentUpon>fCauHoiDCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiTN.resx">
+      <DependentUpon>fCauHoiTN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CauHoi\fThemCauHoi.resx">
       <DependentUpon>fThemCauHoi.cs</DependentUpon>

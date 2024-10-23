@@ -197,7 +197,27 @@ namespace GUI.CauHoi
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-           
+            string LoaiCauHoi = this.cauHoiDTO.LoaiCauHoi;
+
+            switch (LoaiCauHoi)
+            {
+                case "Trắc nghiệm":
+                    fCauHoiTN fCauHoiTN = new fCauHoiTN();
+                    fCauHoiTN.Show();
+                    break;
+
+                case "Điền từ":
+                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT();
+                    fCauHoiDCT.Show();
+                    break;
+                case "Nối câu":
+                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau();
+                    fCauHoiNoiCau.Show();
+                    break;
+                default:
+                    MessageBox.Show("Loại câu hỏi không hợp lệ!");
+                    break;
+            }
         }
 
         private void btnChiTiet_Click(object sender, EventArgs e)
