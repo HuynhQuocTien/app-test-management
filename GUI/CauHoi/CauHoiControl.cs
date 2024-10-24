@@ -202,12 +202,12 @@ namespace GUI.CauHoi
             switch (LoaiCauHoi)
             {
                 case "Trắc nghiệm":
-                    fCauHoiTN fCauHoiTN = new fCauHoiTN();
+                    fCauHoiTN fCauHoiTN = new fCauHoiTN(this.cauHoiDTO);
                     fCauHoiTN.Show();
                     break;
 
                 case "Điền từ":
-                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT();
+                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT(this.cauHoiDTO);
                     fCauHoiDCT.Show();
                     break;
                 case "Nối câu":
@@ -255,7 +255,6 @@ namespace GUI.CauHoi
                 string DoKho = selectedRow.Cells["DoKho"].Value.ToString();
                 int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
                 int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
-                MessageBox.Show(MaCauHoi.ToString(), "Thông báo");
                 this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
             }
         }

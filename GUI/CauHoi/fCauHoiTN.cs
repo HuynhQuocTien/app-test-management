@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace GUI.CauHoi
 {
     public partial class fCauHoiTN : Form
     {
-        public fCauHoiTN()
+        private CauHoiDTO cauHoiDTO;
+        public fCauHoiTN(CauHoiDTO cauHoiDTO)
         {
+            this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
         }
 

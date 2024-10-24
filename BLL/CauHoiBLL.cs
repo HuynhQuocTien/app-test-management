@@ -45,6 +45,15 @@ namespace BLL
             return "Xóa thất bại";
         }
 
+        public bool Update(CauHoiDTO cauhoi)
+        {
+            if (cauHoiDAL.Update(cauhoi))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public string Import(CauHoiDTO cauhoi)
         {
             if (cauHoiDAL.Import(cauhoi))

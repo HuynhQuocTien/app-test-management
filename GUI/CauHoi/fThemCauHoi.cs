@@ -44,10 +44,6 @@ namespace GUI.CauHoi
             comboBox2.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox2.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
 
-            comboBox2.DataSource = monHocBLL.GetAll();
-            comboBox2.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
-            comboBox2.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
-
             comboBox5.DataSource = monHocBLL.GetAll();
             comboBox5.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox5.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
@@ -70,6 +66,7 @@ namespace GUI.CauHoi
             int MaMonHoc = 0;
             long MaNguoiTao = Convert.ToInt64(Session.UserID);
             string DoKho="";
+            int trangThai = 0;
             if (tabControl2_SelectedName().Equals("Trắc nghiệm"))
             {
                 string selectedValue = comboBoxDoKho.SelectedItem.ToString();
@@ -88,6 +85,7 @@ namespace GUI.CauHoi
                 }
                 NoiDung= txtNoiDung.Text;
                 MaMonHoc = Convert.ToInt32(comboBoxMonHoc.SelectedValue);
+                trangThai = checkBox1.Checked ? 1 : 0;
 
             } else if (tabControl2_SelectedName().Equals("Điền từ"))
             {
@@ -107,6 +105,8 @@ namespace GUI.CauHoi
                 }
                 NoiDung = textBox1.Text;
                 MaMonHoc = Convert.ToInt32(comboBox2.SelectedValue);
+                trangThai = checkBox2.Checked ? 1 : 0;
+
             }
             else if (tabControl2_SelectedName().Equals("Nối câu"))
             {
@@ -126,8 +126,10 @@ namespace GUI.CauHoi
                 }
                 NoiDung = "Hãy nối hai cột lại với nhau:";
                 MaMonHoc = Convert.ToInt32(comboBox5.SelectedValue);
+                trangThai = checkBox4.Checked ? 1 : 0;
+
             }
-            int trangThai = checkBox1.Checked ? 1 : 0;
+
             int trangThaiXoa = 0;
 
             return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);

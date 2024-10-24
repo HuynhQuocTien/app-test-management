@@ -132,7 +132,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "UPDATE CauHoi SET NoiDung = @NoiDung, MaMonHoc = @MaMonHoc, MaNguoiTao = @MaNguoiTao, DoKho = @DoKho WHERE MaCauHoi = @MaCauHoi";
+                    string query = "UPDATE CauHoi SET NoiDung = @NoiDung, MaMonHoc = @MaMonHoc, NguoiTao = @MaNguoiTao, DoKho = @DoKho WHERE MaCauHoi = @MaCauHoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaCauHoi", cauHoi.MaCauHoi);
@@ -141,7 +141,20 @@ namespace DAL
                         command.Parameters.AddWithValue("@MaNguoiTao", cauHoi.MaNguoiTao);
                         command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
                         int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
+                        if (rowsChanged > 0)
+                        {
+                            string query1 = "DELETE FROM CauTraLoiDienChoTrong WHERE MaCauHoi = @MaCauHoi";
+
+                            using (SqlCommand command1 = new SqlCommand(query1, connection))
+                            {
+                                command1.Parameters.AddWithValue("@MaCauHoi", cauHoi.MaCauHoi);
+                                int rowsChanged1 = command1.ExecuteNonQuery();
+                            }
+                            return true;
+                        } else
+                        {
+                            return false;
+                        }
                     }
                 }
             }
