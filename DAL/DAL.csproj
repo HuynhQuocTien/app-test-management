@@ -57,6 +57,7 @@
     <Compile Include="GetConnectionDb.cs" />
     <Compile Include="GiaoDeThiDAL.cs" />
     <Compile Include="IUnitCTL.cs" />
+    <Compile Include="IUnitCTLCT.cs" />
     <Compile Include="IUnitDAL.cs" />
     <Compile Include="KetQuaDAL.cs" />
     <Compile Include="LopDAL.cs" />

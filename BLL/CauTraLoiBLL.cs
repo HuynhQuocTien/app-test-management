@@ -15,9 +15,9 @@ namespace BLL
         {
             CauTraLoiDAL = new CauTraLoiDAL();
         }
-        public List<CauTraLoiDTO> GetAll()
+        public List<CauTraLoiDTO> GetAll(int MaCauHoi)
         {
-            return CauTraLoiDAL.GetAll();
+            return CauTraLoiDAL.GetAll(MaCauHoi);
         }
         public int Add(CauTraLoiDTO cautraloi)
         {

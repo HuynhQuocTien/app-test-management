@@ -15,9 +15,9 @@ namespace BLL
         {
             cauTraLoiDienChoTrongDAL = new CauTraLoiDienChoTrongDAL();
         }
-        public List<CauTraLoiDienChoTrongDTO> GetAll()
+        public List<CauTraLoiDienChoTrongDTO> GetAll(int MaCauHoi)
         {
-            return cauTraLoiDienChoTrongDAL.GetAll();
+            return cauTraLoiDienChoTrongDAL.GetAll(MaCauHoi);
         }
         public int Add(CauTraLoiDienChoTrongDTO cauTraLoiDienChoTrong)
         {

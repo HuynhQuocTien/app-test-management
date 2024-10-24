@@ -1,10 +1,12 @@
 ﻿using BLL;
+using DAL;
 using DTO;
 using GUI.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,7 @@ namespace GUI.CauHoi
         {
             loadDataComboBoxMHView();
             loadDataCauhoi();
+            loadDataCauTraLoi();
         }
 
         private void loadDataComboBoxMHView()
@@ -59,10 +62,46 @@ namespace GUI.CauHoi
             checkBox2.Checked = this.cauHoiDTO.TrangThai == 1;
         }
 
+
         private void loadDataCauTraLoi()
         {
+            List<CauTraLoiDienChoTrongDTO> cauTraLoiList = new List<CauTraLoiDienChoTrongDTO>();
+            CauTraLoiDienChoTrongBLL cauTraLoiDienChoTrongBLL = new CauTraLoiDienChoTrongBLL();
+            cauTraLoiList=cauTraLoiDienChoTrongBLL.GetAll(this.cauHoiDTO.MaCauHoi);
+            comboBox3.SelectedItem = cauTraLoiList.Count.ToString();
+            // Kiểm tra theo số đáp án được chọn trong ComboBox
+            if (comboBox3.SelectedIndex == 4)  // 5 đáp án
+            {
+                textBox2.Text=cauTraLoiList[0].DapAnText.ToString();
+                textBox3.Text = cauTraLoiList[1].DapAnText.ToString();
+                textBox4.Text = cauTraLoiList[2].DapAnText.ToString();
+                textBox5.Text = cauTraLoiList[3].DapAnText.ToString();
+                textBox11.Text = cauTraLoiList[4].DapAnText.ToString();
 
-        }
+            }
+            else if (comboBox3.SelectedIndex == 3)  // 4 đáp án
+            {
+                textBox2.Text = cauTraLoiList[0].DapAnText.ToString();
+                textBox3.Text = cauTraLoiList[1].DapAnText.ToString();
+                textBox4.Text = cauTraLoiList[2].DapAnText.ToString();
+                textBox5.Text = cauTraLoiList[3].DapAnText.ToString();
+            }
+            else if (comboBox3.SelectedIndex == 2)  // 3 đáp án
+            {
+                textBox2.Text = cauTraLoiList[0].DapAnText.ToString();
+                textBox3.Text = cauTraLoiList[1].DapAnText.ToString();
+                textBox4.Text = cauTraLoiList[2].DapAnText.ToString();
+            }
+            else if (comboBox3.SelectedIndex == 1)  // 2 đáp án
+            {
+                textBox2.Text = cauTraLoiList[0].DapAnText.ToString();
+                textBox3.Text = cauTraLoiList[1].DapAnText.ToString();
+            }
+            else if (comboBox3.SelectedIndex == 0)  // 1 đáp án
+            {
+                textBox2.Text = cauTraLoiList[0].DapAnText.ToString();
+            }
+        } 
 
         private CauHoiDTO getInfo()
         {
@@ -161,6 +200,7 @@ namespace GUI.CauHoi
             if (Check) // Nếu thêm câu hỏi thành công
             {
                 suaCauTraLoiDienChoTrong(); // Sử dụng MaCauHoi để thêm câu trả lời
+                render();
             }
             else
             {

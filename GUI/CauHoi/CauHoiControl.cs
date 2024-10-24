@@ -280,7 +280,7 @@ namespace GUI.CauHoi
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-
+            render();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

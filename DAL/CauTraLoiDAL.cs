@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class CauTraLoiDAL : IUnitDAL<CauTraLoiDTO>
+    public class CauTraLoiDAL : IUnitCTLCT<CauTraLoiDTO>
     {
         public static CauTraLoiDAL getInstance()
         {
@@ -59,14 +59,15 @@ namespace DAL
             }
         }
 
-        public List<CauTraLoiDTO> GetAll()
+        public List<CauTraLoiDTO> GetAll(int MaCauHoi)
         {
             List<CauTraLoiDTO> cauTraLoiList = new List<CauTraLoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauTraLoi";
+                string query = "SELECT * FROM CauTraLoi where MaCauHoi=@MaCauHoi";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaCauHoi", MaCauHoi);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -76,7 +77,7 @@ namespace DAL
                                 MaCauTL = Convert.ToInt32(reader["MaCauTL"]),
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
-                                IsDapAn = Convert.ToInt32(reader["IsDapAn"])
+                                IsDapAn = Convert.ToInt32(reader["is_DapAn"])
                             };
                             cauTraLoiList.Add(cauTraLoi);
                         }

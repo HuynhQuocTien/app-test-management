@@ -143,12 +143,26 @@ namespace DAL
                         int rowsChanged = command.ExecuteNonQuery();
                         if (rowsChanged > 0)
                         {
-                            string query1 = "DELETE FROM CauTraLoiDienChoTrong WHERE MaCauHoi = @MaCauHoi";
-
-                            using (SqlCommand command1 = new SqlCommand(query1, connection))
+                            if(cauHoi.LoaiCauHoi=="Trắc nghiệm")
                             {
-                                command1.Parameters.AddWithValue("@MaCauHoi", cauHoi.MaCauHoi);
-                                int rowsChanged1 = command1.ExecuteNonQuery();
+                                string query1 = "DELETE FROM CauTraLoi WHERE MaCauHoi = @MaCauHoi";
+
+                                using (SqlCommand command1 = new SqlCommand(query1, connection))
+                                {
+                                    command1.Parameters.AddWithValue("@MaCauHoi", cauHoi.MaCauHoi);
+                                    int rowsChanged1 = command1.ExecuteNonQuery();
+                                }
+                            }
+                            else if(cauHoi.LoaiCauHoi == "Điền từ")
+                            {
+
+                                string query1 = "DELETE FROM CauTraLoiDienChoTrong WHERE MaCauHoi = @MaCauHoi";
+
+                                using (SqlCommand command1 = new SqlCommand(query1, connection))
+                                {
+                                    command1.Parameters.AddWithValue("@MaCauHoi", cauHoi.MaCauHoi);
+                                    int rowsChanged1 = command1.ExecuteNonQuery();
+                                }
                             }
                             return true;
                         } else
