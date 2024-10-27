@@ -1,38 +1,39 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class NoiCauDAL : IUnitDAL<NoiCauDTO>
+    public class NoiCauDAL : IUnitNoiCau<NoiCauDTO>
     {
         public static NoiCauDAL getInstance()
         {
             return new NoiCauDAL();
         }
 
-        public bool Add(NoiCauDTO noiCau)
+        public KeyValuePair<int, string> Add(NoiCauDTO noiCau)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO NoiCau (MaCauHoi, NoiDung, Diem) VALUES (@MaCauHoi, @NoiDung, @Diem);";
+                    string query = "INSERT INTO NoiCau (MaCauHoi, NoiDung, Diem) VALUES (@MaCauHoi, @NoiDung, @Diem); " +
+                        "SELECT SCOPE_IDENTITY();";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaCauHoi", noiCau.MaCauHoi);
                         command.Parameters.AddWithValue("@NoiDung", noiCau.NoiDung);
                         command.Parameters.AddWithValue("@Diem", noiCau.Diem);
-                        int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
+                        int maCauNoi = Convert.ToInt32(command.ExecuteScalar());
+                        return new KeyValuePair<int, string>(maCauNoi, noiCau.NoiDung);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return default; // Hoặc xử lý lỗi khác
             }
         }
 

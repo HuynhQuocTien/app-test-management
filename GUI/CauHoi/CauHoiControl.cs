@@ -211,7 +211,7 @@ namespace GUI.CauHoi
                     fCauHoiDCT.Show();
                     break;
                 case "Nối câu":
-                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau();
+                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau(this.cauHoiDTO);
                     fCauHoiNoiCau.Show();
                     break;
                 default:

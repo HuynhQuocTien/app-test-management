@@ -401,3 +401,4 @@ C:\Users\huynh\Source\Repos\app-test-management\GUI\obj\Debug\GUI.dll
 C:\Users\huynh\Source\Repos\app-test-management\GUI\obj\Debug\GUI.pdb
 C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.CauHoi.fCauHoiTN.resources
 C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.CauHoi.fCauHoiDCT.resources
+C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.CauHoi.fCauHoiNoiCau.resources

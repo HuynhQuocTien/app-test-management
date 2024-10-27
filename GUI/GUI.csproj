@@ -427,6 +427,9 @@
     <EmbeddedResource Include="CauHoi\fCauHoiDCT.resx">
       <DependentUpon>fCauHoiDCT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiNoiCau.resx">
+      <DependentUpon>fCauHoiNoiCau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CauHoi\fCauHoiTN.resx">
       <DependentUpon>fCauHoiTN.cs</DependentUpon>
     </EmbeddedResource>

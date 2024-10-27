@@ -3,7 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\cauhoi\\fcauhoinoicau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\cauhoi\\fthemcauhoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\bll\\noicautraloibll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\dal\\noicautraloidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\dal\\cautraloidienchotrongdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\bll\\cautraloidienchotrongbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,15 +84,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InfoUser.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\InfoUser.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
-              "RelativeToolTip": "..\\GUI\\Users\\InfoUser.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAAAIwMkAAAAVAAAA",
+              "DocumentIndex": 3,
+              "Title": "NoiCauTraLoiDAL.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\NoiCauTraLoiDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\NoiCauTraLoiDAL.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\NoiCauTraLoiDAL.cs",
+              "RelativeToolTip": "..\\DAL\\NoiCauTraLoiDAL.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowEcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T08:38:51.43Z",
+              "WhenOpened": "2024-10-27T17:39:51.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NoiCauTraLoiBLL.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\NoiCauTraLoiBLL.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\NoiCauTraLoiBLL.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\NoiCauTraLoiBLL.cs",
+              "RelativeToolTip": "..\\BLL\\NoiCauTraLoiBLL.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T17:38:33.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CauTraLoiDienChoTrongDAL.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\CauTraLoiDienChoTrongDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\CauTraLoiDienChoTrongDAL.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\CauTraLoiDienChoTrongDAL.cs",
+              "RelativeToolTip": "..\\DAL\\CauTraLoiDienChoTrongDAL.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwEUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T17:34:19.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CauTraLoiDienChoTrongBLL.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\CauTraLoiDienChoTrongBLL.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\CauTraLoiDienChoTrongBLL.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\CauTraLoiDienChoTrongBLL.cs",
+              "RelativeToolTip": "..\\BLL\\CauTraLoiDienChoTrongBLL.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T17:31:50.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fThemCauHoi.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
+              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
+              "ViewState": "AQIAAIQFAAAAAAAAAAAswKIFAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T16:52:28.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fCauHoiNoiCau.cs",
+              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fCauHoiNoiCau.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fCauHoiNoiCau.cs",
+              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fCauHoiNoiCau.cs",
+              "RelativeToolTip": "..\\GUI\\CauHoi\\fCauHoiNoiCau.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAUwIsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T16:38:42.099Z",
               "EditorCaption": ""
             }
           ]

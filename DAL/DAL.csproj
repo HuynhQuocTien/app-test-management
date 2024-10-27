@@ -59,6 +59,8 @@
     <Compile Include="IUnitCTL.cs" />
     <Compile Include="IUnitCTLCT.cs" />
     <Compile Include="IUnitDAL.cs" />
+    <Compile Include="IUnitNoiCau.cs" />
+    <Compile Include="IUnitNoiCauTL.cs" />
     <Compile Include="KetQuaDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="MonHocDAL.cs" />
