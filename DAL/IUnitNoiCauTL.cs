@@ -13,6 +13,6 @@ namespace DAL
         List<T> GetAll(int maCauHoi);
         bool Add(T t);
         bool Update(T t);
-        bool Delete(T t);
+        bool Delete(int maCauNoi);
     }
 }

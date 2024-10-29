@@ -37,16 +37,16 @@ namespace DAL
             }
         }
 
-        public bool Delete(NoiCauDTO noiCau)
+        public bool Delete(int maCauHoi)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM NoiCau WHERE MaNoiCau = @MaNoiCau";
+                    string query = "DELETE FROM NoiCau WHERE MaCauHoi = @MaCauHoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaNoiCau", noiCau.MaNoiCau);
+                        command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -79,6 +79,29 @@ namespace DAL
                                 Diem = Convert.ToDecimal(reader["Diem"])
                             };
                             noiCauList.Add(noiCau);
+                        }
+                    }
+                }
+            }
+            return noiCauList;
+        }
+
+        public List<int> GetAllMaNoiCau(int maCauHoi)
+        {
+            List<int> noiCauList = new List<int>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT MaNoiCau FROM NoiCau WHERE MaCauHoi = @MaCauHoi";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int MaNoiCau = Convert.ToInt32(reader["MaNoiCau"]);
+                            noiCauList.Add(MaNoiCau);
                         }
                     }
                 }

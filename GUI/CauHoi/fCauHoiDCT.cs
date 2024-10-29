@@ -195,75 +195,151 @@ namespace GUI.CauHoi
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
-
-            if (Check) // Nếu thêm câu hỏi thành công
-            {
-                suaCauTraLoiDienChoTrong(); // Sử dụng MaCauHoi để thêm câu trả lời
-                render();
-            }
-            else
-            {
-                MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
-            }
-        }
-
-        private void suaCauTraLoiDienChoTrong()
-        {
-            CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
             int i = 0;
-
             // Kiểm tra theo số đáp án được chọn trong ComboBox
             if (comboBox3.SelectedIndex == 4)  // 5 đáp án
             {
-                int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
-                int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
-                int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
-                int DA4 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 4, textBox5.Text, 0));
-                int DA5 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 5, textBox11.Text, 0));
-                if (DA1 == 1 && DA2 == 1 && DA3 == 1 && DA4 == 1 && DA5 == 1)
+                if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox11.Text == "")
                 {
-                    i = 1;
+                    MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
+                    return;
                 }
+                else
+                {
+                    bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
+
+                    if (Check) // Nếu thêm câu hỏi thành công
+                    {
+                        CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
+                        int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
+                        int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
+                        int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
+                        int DA4 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 4, textBox5.Text, 0));
+                        int DA5 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 5, textBox11.Text, 0));
+                        if (DA1 == 1 && DA2 == 1 && DA3 == 1 && DA4 == 1 && DA5 == 1)
+                        {
+                            i = 1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
+                    }
+                }
+
+
             }
             else if (comboBox3.SelectedIndex == 3)  // 4 đáp án
             {
-                int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
-                int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
-                int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
-                int DA4 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 4, textBox5.Text, 0));
-                if (DA1 == 1 && DA2 == 1 && DA3 == 1 && DA4 == 1)
+                if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
                 {
-                    i = 1;
+                    MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
+
+                    if (Check) // Nếu thêm câu hỏi thành công
+                    {
+                        CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
+                        int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
+                        int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
+                        int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
+                        int DA4 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 4, textBox5.Text, 0));
+                        if (DA1 == 1 && DA2 == 1 && DA3 == 1 && DA4 == 1)
+                        {
+                            i = 1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
+                    }
                 }
             }
             else if (comboBox3.SelectedIndex == 2)  // 3 đáp án
             {
-                int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
-                int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
-                int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
-                if (DA1 == 1 && DA2 == 1 && DA3 == 1)
+                if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
                 {
-                    i = 1;
+                    MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
+
+                    if (Check) // Nếu thêm câu hỏi thành công
+                    {
+                        CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
+                        int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
+                        int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
+                        int DA3 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 3, textBox4.Text, 0));
+                        if (DA1 == 1 && DA2 == 1 && DA3 == 1)
+                        {
+                            i = 1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
+                    }
                 }
             }
             else if (comboBox3.SelectedIndex == 1)  // 2 đáp án
             {
-                int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
-                int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
-                if (DA1 == 1 && DA2 == 1)
+                if (textBox2.Text == "" || textBox3.Text == "")
                 {
-                    i = 1;
+                    MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
+
+                    if (Check) // Nếu thêm câu hỏi thành công
+                    {
+                        CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
+                        int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
+                        int DA2 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 2, textBox3.Text, 0));
+                        if (DA1 == 1 && DA2 == 1)
+                        {
+                            i = 1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
+                    }
                 }
             }
             else if (comboBox3.SelectedIndex == 0)  // 1 đáp án
             {
-                int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
-                if (DA1 == 1)
+                if (textBox2.Text == "")
                 {
-                    i = 1;
+                    MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
+
+                    if (Check) // Nếu thêm câu hỏi thành công
+                    {
+                        CauTraLoiDienChoTrongBLL cautraloiDCT = new CauTraLoiDienChoTrongBLL();
+                        int DA1 = cautraloiDCT.Add(this.getInfoCTLDCT(this.cauHoiDTO.MaCauHoi, 1, textBox2.Text, 0));
+                        if (DA1 == 1)
+                        {
+                            i = 1;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
+                    }
                 }
             }
+
 
             // Thông báo nếu việc thêm câu trả lời thành công
             if (i == 1)
@@ -275,6 +351,7 @@ namespace GUI.CauHoi
                 MessageBox.Show("Có lỗi xảy ra", "Thông báo sửa", MessageBoxButtons.OK);
             }
         }
+
 
     }
 }

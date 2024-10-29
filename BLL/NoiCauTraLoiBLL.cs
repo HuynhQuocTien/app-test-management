@@ -35,13 +35,13 @@ namespace BLL
             return NoiCauTraLoiDAL.GetById(noiCau);
         }
 
-        public string Delete(NoiCauTraLoiDTO noicautraloi)
+        public bool Delete(int MaCauNoi)
         {
-            if (NoiCauTraLoiDAL.Delete(noicautraloi))
+            if (NoiCauTraLoiDAL.Delete(MaCauNoi))
             {
-                return "Xoá thành công";
+                return true;
             }
-            return "Xóa thất bại";
+            return false;
         }
 
         public bool Update(NoiCauTraLoiDTO noicautraloi)

@@ -13,6 +13,6 @@ namespace DAL
         List<T> GetAll();
         KeyValuePair<int, string> Add(T t);
         bool Update(T t);
-        bool Delete(T t);
+        bool Delete(int maCauHoi);
     }
 }

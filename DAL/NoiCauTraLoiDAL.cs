@@ -36,16 +36,16 @@ namespace DAL
             }
         }
 
-        public bool Delete(NoiCauTraLoiDTO noiCauTraLoi)
+        public bool Delete(int maCauNoi)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM NoiCauTraLoi WHERE MaCauTraLoi = @MaCauTraLoi";
+                    string query = "DELETE FROM NoiCauTraLoi WHERE MaCauNoi = @MaCauNoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaCauTraLoi", noiCauTraLoi.MaCauTraLoi);
+                        command.Parameters.AddWithValue("@MaCauNoi", maCauNoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }

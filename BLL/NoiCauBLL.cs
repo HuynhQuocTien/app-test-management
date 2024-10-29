@@ -19,6 +19,11 @@ namespace BLL
         {
             return NoiCauDAL.GetAll();
         }
+
+        public List<int> GetAllMaNoiCau(int maCauHoi)
+        {
+            return NoiCauDAL.GetAllMaNoiCau(maCauHoi);
+        }
         public KeyValuePair<int,string> Add(NoiCauDTO noicau)
         {
             var result = NoiCauDAL.Add(noicau); // Gọi hàm Add một lần và lưu kết quả
@@ -38,13 +43,13 @@ namespace BLL
             return NoiCauDAL.GetById(noiCau);
         }
 
-        public string Delete(NoiCauDTO noicau)
+        public bool Delete(int MaCauHoi)
         {
-            if (NoiCauDAL.Delete(noicau))
+            if (NoiCauDAL.Delete(MaCauHoi))
             {
-                return "Xoá thành công";
+                return true;
             }
-            return "Xóa thất bại";
+            return false;
         }
 
         public bool Update(NoiCauDTO noicau)
