@@ -1570,32 +1570,44 @@ namespace GUI.CauHoi
         }
 
 
-
-
-        private void importExcell(string path)
+        private void importExcel(string path)
         {
-            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Thiết lập context phi thương mại
+            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
             {
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
-                DataTable dt = new DataTable();
                 CauHoiBLL cauhoiBLL = new CauHoiBLL();
-                // Thêm các cột vào DataTable từ dòng đầu tiên của Excel (tên cột)
-                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
-                {
-                    dt.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
-                }
 
-                // Duyệt qua các hàng trong Excel, bắt đầu từ hàng thứ 2
+                // Lưu loại câu hỏi từ cột đầu tiên
+                HashSet<string> questionTypes = new HashSet<string>();
+
+                // Duyệt qua các hàng trong Excel để thu thập các loại câu hỏi
                 for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
                 {
-                    List<string> listRow = new List<string>();
-                    CauHoiDTO cauhoi = new CauHoiDTO(); // Tạo đối tượng mới cho mỗi hàng
+                    string questionType = excelWorksheet.Cells[row, 3].Value?.ToString();
+                    if (questionType != null)
+                    {
+                        questionTypes.Add(questionType);
+                    }
+                }
 
-                    // Lấy thuộc tính của MonHocDTO bằng Reflection
+                // Kiểm tra nếu có nhiều hơn một loại câu hỏi
+                if (questionTypes.Count > 1)
+                {
+                    MessageBox.Show("File không hợp lệ: Loại câu hỏi không đồng nhất trên tất cả các dòng.", "Lỗi Import");
+                    return; // Dừng import
+                }
+
+                // Lấy giá trị đầu tiên từ questionTypes để sử dụng trong switch-case
+                string questionTypeToProcess = questionTypes.FirstOrDefault();
+
+                // Tiến hành import nếu tất cả các dòng có cùng loại câu hỏi
+                for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
+                {
+                    CauHoiDTO cauhoi = new CauHoiDTO();
+
                     PropertyInfo[] properties = typeof(CauHoiDTO).GetProperties();
-
-                    // Duyệt qua từng cột trong một hàng
+                    string maCauHoi= excelWorksheet.Cells[row, excelWorksheet.Dimension.Start.Column].Value?.ToString();
                     for (int col = excelWorksheet.Dimension.Start.Column; col <= excelWorksheet.Dimension.End.Column; col++)
                     {
                         try
@@ -1603,10 +1615,9 @@ namespace GUI.CauHoi
                             string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
                             if (cellValue != null && col - 1 < properties.Length)
                             {
-                                // Lấy thuộc tính tương ứng với cột hiện tại
-                                PropertyInfo property = properties[col - 1]; // `col - 1` để đồng bộ cột với thuộc tính
+                                PropertyInfo property = properties[col - 1];
                                 object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
-                                property.SetValue(cauhoi, valueToSet); // Gán giá trị cho thuộc tính của MonHocDTO
+                                property.SetValue(cauhoi, valueToSet);
                             }
                         }
                         catch (InvalidCastException)
@@ -1619,18 +1630,197 @@ namespace GUI.CauHoi
                         }
                     }
 
-                    // Thêm đối tượng monHoc vào DataTable
-                    //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
+                    // Thêm vào database
+                    int maCauHoiDT = cauhoiBLL.ImportDT(cauhoi);
 
-                    // Add vào database
-                    string tb = cauhoiBLL.Import(cauhoi);
+                    // Xử lý tùy vào loại câu hỏi
+                    switch (questionTypeToProcess)
+                    {
+                        case "Trắc nghiệm":
+                            ExcelWorksheet excelWorksheetTracNghiem = excelPackage.Workbook.Worksheets[1];
+                            CauTraLoiBLL cautraloiTN = new CauTraLoiBLL();
+                            for (int rowTN = excelWorksheetTracNghiem.Dimension.Start.Row + 1; rowTN <= excelWorksheetTracNghiem.Dimension.End.Row; rowTN++)
+                            {
+                                CauTraLoiDTO cautraloi = new CauTraLoiDTO();
+                                if(maCauHoi== excelWorksheetTracNghiem.Cells[rowTN, 2].Value?.ToString())
+                                {
 
+                                    PropertyInfo[] propertiesTN = typeof(CauTraLoiDTO).GetProperties();
+                                    for (int col = excelWorksheetTracNghiem.Dimension.Start.Column; col <= excelWorksheetTracNghiem.Dimension.End.Column; col++)
+                                    {
+                                        try
+                                        {
+                                            string cellValue = excelWorksheetTracNghiem.Cells[rowTN, col].Value?.ToString();
+                                            if (cellValue != null && col - 1 < propertiesTN.Length)
+                                            {
+                                                PropertyInfo property = propertiesTN[col - 1];
+                                                if (col == 2)
+                                                {
+                                                    property.SetValue(cautraloi, maCauHoiDT);
+                                                }
+                                                else
+                                                {
+                                                    object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                                    property.SetValue(cautraloi, valueToSet);
+                                                }
+                                            }
+                                        }
+                                        catch (InvalidCastException)
+                                        {
+                                            Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheetTracNghiem.Cells[rowTN, col].Value}' sang kiểu '{propertiesTN[col - 1].PropertyType.Name}'.");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Console.WriteLine($"Lỗi khi gán giá trị cho {propertiesTN[col - 1].Name}: {ex.Message}");
+                                        }
+                                    }
+                                    cautraloiTN.Add(cautraloi);
+                                }
+                            }
+                            System.Windows.Forms.MessageBox.Show("import Thành công");
+                            break;
+
+                        case "Điền từ":
+                            ExcelWorksheet excelWorksheetDienTu = excelPackage.Workbook.Worksheets[1];
+                            CauTraLoiDienChoTrongBLL cautraloiDCTBLL = new CauTraLoiDienChoTrongBLL();
+                            for (int rowDCT = excelWorksheetDienTu.Dimension.Start.Row + 1; rowDCT <= excelWorksheetDienTu.Dimension.End.Row; rowDCT++)
+                            {
+                                CauTraLoiDienChoTrongDTO cautraloiDCT = new CauTraLoiDienChoTrongDTO();
+                                if (maCauHoi == excelWorksheetDienTu.Cells[rowDCT, 2].Value?.ToString())
+                                {
+
+                                    PropertyInfo[] propertiesDCT = typeof(CauTraLoiDienChoTrongDTO).GetProperties();
+                                    for (int col = excelWorksheetDienTu.Dimension.Start.Column; col <= excelWorksheetDienTu.Dimension.End.Column; col++)
+                                    {
+                                        try
+                                        {
+                                            string cellValue = excelWorksheetDienTu.Cells[rowDCT, col].Value?.ToString();
+                                            if (cellValue != null && col - 1 < propertiesDCT.Length)
+                                            {
+                                                PropertyInfo property = propertiesDCT[col - 1];
+                                                if (col == 2)
+                                                {
+                                                    property.SetValue(cautraloiDCT, maCauHoiDT);
+                                                }
+                                                else
+                                                {
+                                                    object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                                    property.SetValue(cautraloiDCT, valueToSet);
+                                                }
+                                            }
+                                        }
+                                        catch (InvalidCastException)
+                                        {
+                                            Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheetDienTu.Cells[rowDCT, col].Value}' sang kiểu '{propertiesDCT[col - 1].PropertyType.Name}'.");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Console.WriteLine($"Lỗi khi gán giá trị cho {propertiesDCT[col - 1].Name}: {ex.Message}");
+                                        }
+                                    }
+                                    cautraloiDCTBLL.Add(cautraloiDCT);
+                                }
+                            }
+                            System.Windows.Forms.MessageBox.Show("import Thành công");
+                            break;
+
+                        case "Nối câu":
+                            ExcelWorksheet excelWorksheetNoiCau = excelPackage.Workbook.Worksheets[1];
+                            NoiCauBLL noiCauBLL = new NoiCauBLL();
+                            for (int rowNC = excelWorksheetNoiCau.Dimension.Start.Row + 1; rowNC <= excelWorksheetNoiCau.Dimension.End.Row; rowNC++)
+                            {
+                                NoiCauDTO noiCauDTO = new NoiCauDTO();
+                                if (maCauHoi == excelWorksheetNoiCau.Cells[rowNC, 2].Value?.ToString())
+                                {
+
+                                    PropertyInfo[] propertiesNC = typeof(NoiCauDTO).GetProperties();
+                                    string maNoiCau = excelWorksheetNoiCau.Cells[rowNC, excelWorksheetNoiCau.Dimension.Start.Column].Value?.ToString();
+                                    for (int col = excelWorksheetNoiCau.Dimension.Start.Column; col <= excelWorksheetNoiCau.Dimension.End.Column; col++)
+                                    {
+                                        try
+                                        {
+                                            string cellValue = excelWorksheetNoiCau.Cells[rowNC, col].Value?.ToString();
+                                            if (cellValue != null && col - 1 < propertiesNC.Length)
+                                            {
+                                                PropertyInfo property = propertiesNC[col - 1];
+                                                if (col == 2)
+                                                {
+                                                    property.SetValue(noiCauDTO, maCauHoiDT);
+                                                }
+                                                else
+                                                {
+                                                    object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                                    property.SetValue(noiCauDTO, valueToSet);
+                                                }
+                                            }
+                                        }
+                                        catch (InvalidCastException)
+                                        {
+                                            Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheetNoiCau.Cells[rowNC, col].Value}' sang kiểu '{propertiesNC[col - 1].PropertyType.Name}'.");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Console.WriteLine($"Lỗi khi gán giá trị cho {propertiesNC[col - 1].Name}: {ex.Message}");
+                                        }
+                                    }
+                                    //NCTL
+                                    KeyValuePair<int, string> maNoiCauTraLoiDT = noiCauBLL.Add(noiCauDTO);
+                                    ExcelWorksheet excelWorksheetNoiCauTraLoi = excelPackage.Workbook.Worksheets[2];
+                                    NoiCauTraLoiBLL noiCauTraLoiBLL = new NoiCauTraLoiBLL();
+                                    for (int rowNCTL = excelWorksheetNoiCauTraLoi.Dimension.Start.Row + 1; rowNCTL <= excelWorksheetNoiCauTraLoi.Dimension.End.Row; rowNCTL++)
+                                    {
+                                        NoiCauTraLoiDTO noiCauTraLoiDTO = new NoiCauTraLoiDTO();                                      
+
+                                        if (maNoiCau == excelWorksheetNoiCauTraLoi.Cells[rowNCTL, 2].Value?.ToString())
+                                        {
+
+                                            PropertyInfo[] propertiesNCTL = typeof(NoiCauTraLoiDTO).GetProperties();
+                                            for (int col = excelWorksheetNoiCauTraLoi.Dimension.Start.Column; col <= excelWorksheetNoiCauTraLoi.Dimension.End.Column; col++)
+                                            {
+                                                try
+                                                {
+                                                    string cellValue = excelWorksheetNoiCauTraLoi.Cells[rowNCTL, col].Value?.ToString();
+                                                    if (cellValue != null && col - 1 < propertiesNCTL.Length)
+                                                    {
+                                                        PropertyInfo property = propertiesNCTL[col - 1];
+                                                        if (col == 2)
+                                                        {
+                                                            property.SetValue(noiCauTraLoiDTO, maNoiCauTraLoiDT.Key);
+                                                        }
+                                                        else
+                                                        {
+                                                            object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                                            property.SetValue(noiCauTraLoiDTO, valueToSet);
+                                                        }
+                                                    }
+                                                }
+                                                catch (InvalidCastException)
+                                                {
+                                                    Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheetNoiCauTraLoi.Cells[rowNCTL, col].Value}' sang kiểu '{propertiesNCTL[col - 1].PropertyType.Name}'.");
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    Console.WriteLine($"Lỗi khi gán giá trị cho {propertiesNCTL[col - 1].Name}: {ex.Message}");
+                                                }
+                                            }
+                                            noiCauTraLoiBLL.Add(noiCauTraLoiDTO);
+
+                                        }
+                                    }
+                                }
+                            }
+                            System.Windows.Forms.MessageBox.Show("import Thành công");
+                            break;
+
+                        default:
+                            Console.WriteLine("Oops! Đã có lỗi xảy ra." + cauhoi.MaCauHoi);
+                            // Xử lý trường hợp loại câu hỏi không hợp lệ
+                            break;
+                    }
                 }
-
-                // Gán DataTable cho DataGridView
-                //dataGridView1.DataSource = dt;
             }
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -1641,8 +1831,8 @@ namespace GUI.CauHoi
             {
                 try
                 {
-                    importExcell(openFileDialog.FileName);
-                    System.Windows.Forms.MessageBox.Show("import Thành công");
+                    importExcel(openFileDialog.FileName);
+                    
                 }
                 catch (Exception ex)
                 {

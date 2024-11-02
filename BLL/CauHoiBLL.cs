@@ -62,5 +62,15 @@ namespace BLL
             }
             return "Thêm thất bại";
         }
+
+        public int ImportDT(CauHoiDTO cauhoi)
+        {
+            int MaCauHoi = cauHoiDAL.Add(cauhoi);
+            if (MaCauHoi>0)
+            {
+                return MaCauHoi;
+            }
+            return 0;
+        }
     }
 }
