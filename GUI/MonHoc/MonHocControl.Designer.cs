@@ -412,6 +412,11 @@ namespace GUI.MonHoc
 
         }
 
+
+        private void InitializeComponentTracNghiem()
+        {
+
+        }
         #endregion
 
         private TableLayoutPanel mainPanel;
@@ -433,5 +438,8 @@ namespace GUI.MonHoc
         private DataGridView dataGridView1;
         private Button importBtn;
         private Button deleteBtn;
+
+
+
     }
 }
