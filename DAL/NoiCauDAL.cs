@@ -1,51 +1,52 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class NoiCauDAL : IUnitDAL<NoiCauDTO>
+    public class NoiCauDAL : IUnitNoiCau<NoiCauDTO>
     {
         public static NoiCauDAL getInstance()
         {
             return new NoiCauDAL();
         }
 
-        public bool Add(NoiCauDTO noiCau)
+        public KeyValuePair<int, string> Add(NoiCauDTO noiCau)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO NoiCau (MaCauHoi, NoiDung, Diem) VALUES (@MaCauHoi, @NoiDung, @Diem);";
+                    string query = "INSERT INTO NoiCau (MaCauHoi, NoiDung, Diem) VALUES (@MaCauHoi, @NoiDung, @Diem); " +
+                        "SELECT SCOPE_IDENTITY();";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaCauHoi", noiCau.MaCauHoi);
                         command.Parameters.AddWithValue("@NoiDung", noiCau.NoiDung);
                         command.Parameters.AddWithValue("@Diem", noiCau.Diem);
-                        int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
+                        int maCauNoi = Convert.ToInt32(command.ExecuteScalar());
+                        return new KeyValuePair<int, string>(maCauNoi, noiCau.NoiDung);
                     }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return default; // Hoặc xử lý lỗi khác
             }
         }
 
-        public bool Delete(NoiCauDTO noiCau)
+        public bool Delete(int maCauHoi)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM NoiCau WHERE MaNoiCau = @MaNoiCau";
+                    string query = "DELETE FROM NoiCau WHERE MaCauHoi = @MaCauHoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaNoiCau", noiCau.MaNoiCau);
+                        command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -78,6 +79,29 @@ namespace DAL
                                 Diem = Convert.ToDecimal(reader["Diem"])
                             };
                             noiCauList.Add(noiCau);
+                        }
+                    }
+                }
+            }
+            return noiCauList;
+        }
+
+        public List<int> GetAllMaNoiCau(int maCauHoi)
+        {
+            List<int> noiCauList = new List<int>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT MaNoiCau FROM NoiCau WHERE MaCauHoi = @MaCauHoi";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int MaNoiCau = Convert.ToInt32(reader["MaNoiCau"]);
+                            noiCauList.Add(MaNoiCau);
                         }
                     }
                 }

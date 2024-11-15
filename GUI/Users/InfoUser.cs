@@ -59,7 +59,6 @@ namespace GUI.Users
             {
                 Directory.CreateDirectory(avatarFolderPath);
             }
-            MessageBox.Show("Image Path: " + avatarFolderPath);
             reader.Close();
             LoadUserInfo();
         }
@@ -174,10 +173,34 @@ namespace GUI.Users
 
                     string newFileName = $"Avatar_{userID}{Path.GetExtension(currentImagePath)}";
                     string newAvatarPath = Path.Combine(avatarFolderPath, newFileName);
-                    MessageBox.Show("Image Path: " + newAvatarPath);
+                    MessageBox.Show("Image Path: " + newAvatarPath + "Current: " + currentImagePath);
 
                     string fileName = Path.GetFileName(currentImagePath);
-                    File.Copy(currentImagePath, newAvatarPath, true);
+                    if (File.Exists(newAvatarPath))
+                    {
+
+                        try
+                        {
+                            // Giải phóng tài nguyên trước khi xóa
+                            GC.Collect();   // Thu gom rác
+                            GC.WaitForPendingFinalizers(); // Đảm bảo thu gom hoàn tất
+
+                            // Mở file stream để chắc chắn tệp không bị khóa
+                            using (FileStream fs = new FileStream(newAvatarPath, FileMode.Open, FileAccess.Read, FileShare.None))
+                            {
+                                fs.Close();
+                            }
+
+                            // Xóa file cũ
+                            File.Delete(newAvatarPath);
+                        }
+                        catch (IOException ioEx)
+                        {
+                            MessageBox.Show($"Tệp đang được sử dụng bởi một tiến trình khác: {ioEx.Message}");
+                            return;  // Kết thúc việc sao chép nếu không xóa được file
+                        }
+                    }
+                        File.Copy(currentImagePath, newAvatarPath, true);
 
                     // Update Ten and SDT in NguoiDung table
                     string queryUser = "UPDATE NguoiDung SET Ten=@Ten, SDT=@SDT, Avatar=@Avatar WHERE MaNguoiDung=@UserID;";
