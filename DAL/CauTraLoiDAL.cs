@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -35,6 +36,33 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        public List<CauTraLoiDTO> getByMaCauHoi(int mch)
+        {
+            List<CauTraLoiDTO> cauTraLoiList = new List<CauTraLoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * from CauTraLoi where MaCauHoi = " + mch;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauTraLoiDTO cauTraLoi = new CauTraLoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                MaCauTL = Convert.ToInt32(reader["MaCauTL"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                IsDapAn = Convert.ToInt32(reader["is_DapAn"]),
+                            };
+                            cauTraLoiList.Add(cauTraLoi);
+                        }
+                    }
+
+                }
+            }
+            return cauTraLoiList;
         }
 
         public bool Delete(CauTraLoiDTO cauTraLoi)
