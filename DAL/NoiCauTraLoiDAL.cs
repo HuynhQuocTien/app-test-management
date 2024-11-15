@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class NoiCauTraLoiDAL : IUnitDAL<NoiCauTraLoiDTO>
+    public class NoiCauTraLoiDAL : IUnitNoiCauTL<NoiCauTraLoiDTO>
     {
         public static NoiCauTraLoiDAL getInstance()
         {
@@ -36,16 +36,16 @@ namespace DAL
             }
         }
 
-        public bool Delete(NoiCauTraLoiDTO noiCauTraLoi)
+        public bool Delete(int maCauNoi)
         {
             try
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM NoiCauTraLoi WHERE MaCauTraLoi = @MaCauTraLoi";
+                    string query = "DELETE FROM NoiCauTraLoi WHERE MaCauNoi = @MaCauNoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaCauTraLoi", noiCauTraLoi.MaCauTraLoi);
+                        command.Parameters.AddWithValue("@MaCauNoi", maCauNoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -58,21 +58,22 @@ namespace DAL
             }
         }
 
-        public List<NoiCauTraLoiDTO> GetAll()
+        public List<NoiCauTraLoiDTO> GetAll(int maCauHoi)
         {
             List<NoiCauTraLoiDTO> noiCauTraLoiList = new List<NoiCauTraLoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM NoiCauTraLoi";
+                string query = "SELECT NCTL.* FROM NoiCauTraLoi NCTL  INNER JOIN NoiCau NC ON NC.MaNoiCau=NCTL.MaCauNoi WHERE NC.MaCauHoi=@MaCauHoi";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             NoiCauTraLoiDTO noiCauTraLoi = new NoiCauTraLoiDTO
                             {
-                                MaCauTraLoi = Convert.ToInt32(reader["MaCauTraLoi"]),
+                                MaCauTraLoi = Convert.ToInt32(reader["MaCauTL"]),
                                 MaCauNoi = Convert.ToInt32(reader["MaCauNoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
                                 DapAnNoi = reader["DapAnNoi"].ToString()
