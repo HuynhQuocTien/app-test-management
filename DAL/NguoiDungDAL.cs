@@ -83,7 +83,7 @@ namespace DAL
                             {
                                 MaNguoiDung = Convert.ToInt32(reader["MaNguoiDung"]),
                                 HoTen = reader["HoTen"].ToString(),
-                                GioiTinh = reader["GioiTinh"].ToString(),
+                                GioiTinh = Convert.ToInt32( reader["GioiTinh"].ToString()),
                                 NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
                                 Avatar = reader["Avatar"].ToString(),
                                 SDT = reader["SDT"].ToString(),
@@ -116,7 +116,7 @@ namespace DAL
                             {
                                 MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
                                 HoTen = reader["Ten"].ToString(),
-                                GioiTinh = reader["GioiTinh"].ToString(),
+                                GioiTinh = Convert.ToInt32(reader["GioiTinh"].ToString()),
                                 NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
                                 Avatar = reader["Avatar"].ToString(),
                                 SDT = reader["SDT"].ToString(),

@@ -150,6 +150,102 @@ namespace DAL
                 return false;
             }
         }
+        public List<NguoiDungDTO> GetSV(int maLop)
+        {
+            List<NguoiDungDTO> ctlList = new List<NguoiDungDTO>();
+            try
+            {
+                using (SqlConnection conn = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT ND.MaNguoiDung, ND.Ten, ND.NgaySinh, ND.GioiTinh, ND.SDT " +
+                                   "FROM ChiTietLop CTL " +
+                                    "JOIN NguoiDung ND ON CTL.MaSV = ND.MaNguoiDung " +
+                                    "WHERE CTL.MaLop = @MaLop AND CTL.is_delete = 0;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaLop", maLop);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                NguoiDungDTO ctl = new NguoiDungDTO
+                                {
+                                    MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                    HoTen = reader["Ten"].ToString(),
+                                    NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
+                                    SDT = reader["SDT"].ToString(),
+                                    GioiTinh = Convert.ToInt32(reader["GioiTinh"])
+                                };
+                                ctlList.Add(ctl);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return ctlList;
+        }
+
+        public int XemSLDeThi(int maLop)
+        {
+            int slDeThi = 0;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(*) AS MaDe FROM GiaoDeThi WHERE MaLop = @MaLop AND is_delete = 0";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaLop", maLop);
+
+                        int rowsChanged = command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return slDeThi;
+        }
+
+        public int XemSLDeThiHoatDong(int maLop)
+        {
+            DateTime currentDate = DateTime.Now;
+            string Date1 = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
+            int slDeThi = 0;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(DISTINCT gd.MaDe) AS SoLuongDeThi" +
+                                    "FROM GiaoDeThi gd" +
+                                    "INNER JOIN DeThi dt ON gd.MaDe = dt.MaDe" +
+                                    "WHERE gd.MaLop = @MaLop" +
+                                    "AND gd.is_delete = 0  AND dt.is_delete = 0" +
+                                    "AND dt.ThoiGianBatDau <= @EndDate AND dt.ThoiGianKetThuc >= @StartDate;";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaLop", maLop);
+                        command.Parameters.AddWithValue("@Enđate", Date1);
+                        command.Parameters.AddWithValue("@StartDate", Date1);
+
+                        int rowsChanged = command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return slDeThi;
+        }
     }
 
 }

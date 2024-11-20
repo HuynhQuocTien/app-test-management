@@ -44,13 +44,13 @@ namespace GUI.CauHoi
         {
             switch (this.cauHoiDTO.DoKho)
             {
-                case "1":
+                case 1:
                     comboBox1.SelectedIndex = 0;
                     break;
-                case "2":
+                case 2:
                     comboBox1.SelectedIndex = 1;
                     break;
-                case "3":
+                case 3:
                     comboBox1.SelectedIndex = 2;
                     break;
                 default:
@@ -133,7 +133,7 @@ namespace GUI.CauHoi
             int trangThai = checkBox2.Checked ? 1 : 0;
             int trangThaiXoa = 0;
 
-            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
+            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,Convert.ToInt32(DoKho), trangThai, trangThaiXoa);
         }
 
         private CauTraLoiDienChoTrongDTO getInfoCTLDCT(int MaCauHoi, int viTri, string dapAnText, int isDelete)

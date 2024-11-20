@@ -116,13 +116,13 @@ namespace GUI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.64343F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label3, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.button1, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.checkBox1, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.lblQuenMatKhau, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(225, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -155,6 +155,7 @@ namespace GUI
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(144, 26);
             this.textBox2.TabIndex = 11;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress_1);
             // 
             // textBox1
@@ -164,6 +165,7 @@ namespace GUI
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(144, 26);
             this.textBox1.TabIndex = 10;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress_1);
             // 
             // label2
@@ -247,6 +249,7 @@ namespace GUI
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fDangNhap_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

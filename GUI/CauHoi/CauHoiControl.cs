@@ -255,7 +255,7 @@ namespace GUI.CauHoi
                 string DoKho = selectedRow.Cells["DoKho"].Value.ToString();
                 int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
                 int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
-                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
+                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,Convert.ToInt32(DoKho), trangThai, trangThaiXoa);
             }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

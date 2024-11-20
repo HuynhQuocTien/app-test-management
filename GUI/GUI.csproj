@@ -328,6 +328,12 @@
     <Compile Include="LopHoc\fDanhSachSV.Designer.cs">
       <DependentUpon>fDanhSachSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc\fSetThoiGianDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fSetThoiGianDeThi.Designer.cs">
+      <DependentUpon>fSetThoiGianDeThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="LopHoc\fThemDeThiCuaLop.cs">
       <SubType>Form</SubType>
     </Compile>

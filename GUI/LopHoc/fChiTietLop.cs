@@ -290,7 +290,7 @@ namespace GUI.LopHoc
             // thực hiện chức năng mở đề thi khi de thi dang dong
             if (obj.TrangThai == 0)
             {
-                fThemDeThiCuaLop f = new fThemDeThiCuaLop(obj, lop, this, "edit");
+                fSetThoiGianDeThi f = new fSetThoiGianDeThi(obj, lop, this, "edit");
                 f.ShowDialog();
             }
             else // thực hiện chức năng làm bài
