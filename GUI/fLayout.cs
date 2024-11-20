@@ -71,14 +71,40 @@ namespace GUI
         }
         public void LoadInfoOwner()
         {
-
             NguoiDungDTO u = fDangNhap.nguoiDungDTO;
+
+            // Lấy đường dẫn của thư mục chứa file thực thi của ứng dụng
+            string exePath = Application.StartupPath;
+            for (int i = 0; i < 5; i++)
+            {
+                DirectoryInfo parent = Directory.GetParent(exePath);
+                if (parent == null)
+                {
+                    throw new DirectoryNotFoundException($"Không thể đi ngược 5 cấp thư mục từ {Application.StartupPath}");
+                }
+                exePath = parent.FullName;
+            }
+
+            // Tạo đường dẫn đến thư mục Avatar
+            String avatarFolderPath = Path.Combine(exePath, "GUI", "Users", "Avatar");
+
+            // Tạo đường dẫn đầy đủ tới file ảnh
+            string imagePath = Path.Combine(avatarFolderPath, u.Avatar);
+
+            string defaultImagePath = Path.Combine(avatarFolderPath, "images.png");
+            // Kiểm tra xem file ảnh có tồn tại hay không
+            if (File.Exists(imagePath))
+            {
+                // Gán ảnh vào PictureBox nếu file tồn tại
+                pictureOwner.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                // Nếu không tìm thấy ảnh, bạn có thể hiển thị ảnh mặc định
+                pictureOwner.Image = Image.FromFile(defaultImagePath); ; // Hoặc gán ảnh mặc định
+            }
             lblOwnerName.Text = u.HoTen;
             lblOwnerRule.Text = fDangNhap.nhomQuyenDTO.TenQuyen;
-            if (!string.IsNullOrWhiteSpace(u.Avatar) && System.IO.File.Exists(u.Avatar))
-            {
-                pictureOwner.ImageLocation = u.Avatar;
-            }
         }
         private void HideAllUserControls()
         {
@@ -182,8 +208,13 @@ namespace GUI
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            InfoUser info = new InfoUser();
+            InfoUser info = new InfoUser(this);
             info.Visible = true;
+
+        }
+        public void updateAvatar(string ava)
+        {
+            pictureOwner.Image = Image.FromFile(ava); ;
 
         }
         private void btnPhanCong_Click(object sender, EventArgs e)

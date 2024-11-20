@@ -46,11 +46,13 @@ namespace GUI.MonHoc
                 themMonHoc();
                 clearForm();
                 monHocControl.render();
+                this.Close();
             }else if(this.chucNang == "Update")
             {
                 suaMonHoc();
                 clearForm();
                 monHocControl.render();
+                this.Close();
             }
         }
 

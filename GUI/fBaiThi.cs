@@ -298,7 +298,7 @@ namespace GUI
             }
             return isAnswer;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             flag = 1;
             int d = 0;
@@ -343,11 +343,11 @@ namespace GUI
             }
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             next_slide(so_cau_hoi);
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btnPrev_Click(object sender, EventArgs e)
         {
            
         }

@@ -20,6 +20,50 @@ namespace GUI.Users
         private string userID;
         private string currentImagePath;
         private string avatarFolderPath;
+        private fLayout layoutF;
+        public InfoUser(fLayout f)
+        {
+            InitializeComponent();
+            this.userID = Session.UserID;
+            layoutF = f;
+            SqlConnection conn = GetConnectionDb.GetConnection();
+            string query = "SELECT * FROM NhomQuyen";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            // Xóa các mục hiện có trong ComboBox (nếu cần)
+            comboBox1.Items.Clear();
+
+            // Thêm các mục mới từ SQL Server
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader["TenQuyen"].ToString());
+            }
+
+
+            // Lấy đường dẫn của thư mục chứa file thực thi của ứng dụng
+            string exePath = Application.StartupPath;
+
+            for (int i = 0; i < 5; i++)
+            {
+                DirectoryInfo parent = Directory.GetParent(exePath);
+                if (parent == null)
+                {
+                    throw new DirectoryNotFoundException($"Không thể đi ngược 5 cấp thư mục từ {Application.StartupPath}");
+                }
+                exePath = parent.FullName;
+            }
+            // Tạo đường dẫn đến thư mục Avatar
+            avatarFolderPath = Path.Combine(exePath, "GUI", "Users", "Avatar");
+
+            // Kiểm tra xem thư mục có tồn tại không, nếu không thì tạo mới
+            if (!Directory.Exists(avatarFolderPath))
+            {
+                Directory.CreateDirectory(avatarFolderPath);
+            }
+            reader.Close();
+            LoadUserInfo();
+        }
         public InfoUser()
         {
             InitializeComponent();
@@ -62,7 +106,6 @@ namespace GUI.Users
             reader.Close();
             LoadUserInfo();
         }
-
         private void LoadUserInfo()
         {
             // Sử dụng lớp từ DAL để lấy thông tin người dùng từ database
@@ -92,6 +135,7 @@ namespace GUI.Users
                         {
                             // Gán ảnh vào PictureBox nếu file tồn tại
                             pictureBox1.Image = Image.FromFile(imagePath);
+
                         }
                         else
                         {
@@ -173,7 +217,7 @@ namespace GUI.Users
 
                     string newFileName = $"Avatar_{userID}{Path.GetExtension(currentImagePath)}";
                     string newAvatarPath = Path.Combine(avatarFolderPath, newFileName);
-                    MessageBox.Show("Image Path: " + newAvatarPath + "Current: " + currentImagePath);
+                    //MessageBox.Show("Image Path: " + newAvatarPath + "Current: " + currentImagePath);
 
                     string fileName = Path.GetFileName(currentImagePath);
                     if (File.Exists(newAvatarPath))
@@ -213,7 +257,7 @@ namespace GUI.Users
                         cmdUser.Parameters.AddWithValue("@UserID", userID);
                         cmdUser.ExecuteNonQuery();
                     }
-
+                    layoutF.updateAvatar(newAvatarPath);
                     MessageBox.Show("Cập nhật thông tin thành công!");
 
 

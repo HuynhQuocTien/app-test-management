@@ -73,7 +73,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+                    string query = "UPDATE MonHoc SET is_delete = 1 WHERE MaMonHoc = @MaMonHoc";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaMonHoc", monHoc.MaMonHoc);
@@ -94,7 +94,7 @@ namespace DAL
             List<MonHocDTO> monHocList = new List<MonHocDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM MonHoc";
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
