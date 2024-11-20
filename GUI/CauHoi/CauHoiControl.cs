@@ -20,11 +20,41 @@ namespace GUI.CauHoi
     public partial class CauHoiControl : UserControl
     {
         private CauHoiDTO cauHoiDTO;
-
+        private int Allrecord;
         public CauHoiControl()
         {
             InitializeComponent();
             render();
+            phanTrang();
+        }
+        public void phanTrang()
+        {
+            int totalRecords = Allrecord;  // Tổng số bản ghi
+
+            int recordsPerPage = 10; // Số bản ghi trên mỗi trang
+            int totalPages = (int)Math.Ceiling((double)totalRecords / recordsPerPage);
+            this.numericUpDown1.Enabled = true;
+            this.numericUpDown1.Minimum = 1;
+            this.numericUpDown1.Maximum = totalPages;
+            this.label2.Text = "Trên tổng " + totalPages + " trang";
+            // Sự kiện khi thay đổi trang
+            this.numericUpDown1.ValueChanged += (sender, e) =>
+            {
+                int selectedPage = (int)numericUpDown1.Value;
+                LoadPage(selectedPage, recordsPerPage);
+            };
+        }
+
+        private void LoadPage(int pageNumber, int recordsPerPage)
+        {
+            int startRecord = (pageNumber - 1) * recordsPerPage;
+
+            // Tải dữ liệu từ cơ sở dữ liệu hoặc danh sách, lấy các bản ghi từ startRecord đến startRecord + recordsPerPage
+            // Ví dụ:
+            CauHoiBLL cauhoiBLL = new CauHoiBLL();
+            DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage);
+
+            dataGridView1.DataSource = pageData;
         }
 
         private void render()
@@ -49,6 +79,8 @@ namespace GUI.CauHoi
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
             dataGridView1.DataSource = cauhoiBLL.GetAll();
+            Allrecord = cauhoiBLL.GetAll().Count;
+            LoadPage(1, 10);
         }
 
         private void loadDataComboBoxMHView()
@@ -240,7 +272,10 @@ namespace GUI.CauHoi
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            
+            CauHoiBLL cauhoiBLL = new CauHoiBLL();
+            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text);
+            this.numericUpDown1.Enabled = false;
+            this.label2.Text = "Trên tổng ... trang";
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -252,10 +287,10 @@ namespace GUI.CauHoi
                 string LoaiCauHoi = selectedRow.Cells["LoaiCauHoi"].Value.ToString();
                 int MaMonHoc = int.Parse(selectedRow.Cells["MaMonHoc"].Value.ToString());
                 long MaNguoiTao = long.Parse(selectedRow.Cells["MaNguoiTao"].Value.ToString());
-                string DoKho = selectedRow.Cells["DoKho"].Value.ToString();
+                int DoKho = int.Parse(selectedRow.Cells["DoKho"].Value.ToString());
                 int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
                 int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
-                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,Convert.ToInt32(DoKho), trangThai, trangThaiXoa);
+                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,DoKho, trangThai, trangThaiXoa);
             }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -280,7 +315,8 @@ namespace GUI.CauHoi
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            render();
+            render(); 
+            phanTrang();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

@@ -151,25 +151,25 @@ namespace GUI.CauHoi
             string LoaiCauHoi = "Nối câu";
             int MaMonHoc = 0;
             long MaNguoiTao = Convert.ToInt64(Session.UserID);
-            string DoKho = "";
+            int DoKho = 0;
             int trangThai = 0;
             string selectedValue = comboBox4.SelectedItem.ToString();
             switch (selectedValue)
             {
                 case "Dễ":
-                    DoKho = "1";
+                    DoKho = 1;
                     break;
                 case "Trung Bình":
-                    DoKho = "2";
+                    DoKho = 2;
                     break;
                 case "Khó":
-                    DoKho = "3";
+                    DoKho = 3;
                     break;
             }
             MaMonHoc = Convert.ToInt32(comboBox5.SelectedValue);
             trangThai = checkBox4.Checked ? 1 : 0;
             int trangThaiXoa = 0;
-            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, Convert.ToInt32(DoKho), trangThai, trangThaiXoa);
+            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
         }
 
         private NoiCauTraLoiDTO getInfoNCTL(int MaCauNoi, string NoiDung, string DapAnNoi)
