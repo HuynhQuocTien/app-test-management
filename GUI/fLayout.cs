@@ -216,19 +216,19 @@ namespace GUI
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giảng viên") || tenquyen.Contains("Sinh viên") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("Học sinh") || tenquyen.Contains("GV Phân công"))
             {
                 containerBtnPanel.Controls.Add(btnLopHoc, 0, 2);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giảng viên") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("GV Phân công"))
             {
                 containerBtnPanel.Controls.Add(btnCauHoi, 0, 4);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giảng viên") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("GV Phân công"))
             {
                 containerBtnPanel.Controls.Add(btnDeThi, 0, 5);
                 containerBtnPanel.RowStyles.Add(new RowStyle());

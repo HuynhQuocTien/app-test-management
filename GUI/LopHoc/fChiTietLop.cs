@@ -219,7 +219,7 @@ namespace GUI.LopHoc
                 Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
-                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên") ? "Làm bài thi" : "Mở đáp án",
+                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Làm bài thi" : "Mở đáp án",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -234,12 +234,12 @@ namespace GUI.LopHoc
                 Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
-                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên") ? "Kết quả" : "Mở để thi",
+                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Kết quả" : "Mở để thi",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên") ? false : true,
+                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? false : true,
             };
 
             System.Windows.Forms.Button btnDong = new System.Windows.Forms.Button
@@ -319,7 +319,7 @@ namespace GUI.LopHoc
                     {
                         KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
                         // Check xem người dùng đã làm bài thi này chưa (chỉ check trong trường hợp người dùng là học sinh)
-                        if (kq != null && fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+                        if (kq != null && fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
                         {
                             MessageBox.Show("Bạn đã làm bài thi này rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
