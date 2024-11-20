@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj": {}
+    "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj": {
+    "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "projectUniqueName": "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
         "projectName": "app-test-management",
-        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
-        "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\obj\\",
+        "projectPath": "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
+        "packagesPath": "C:\\Users\\HuynhQuocTien\\.nuget\\packages\\",
+        "outputPath": "E:\\GitHub\\app-test-management\\app-test-management\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\huynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HuynhQuocTien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj"
+              "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj"
               }
             }
           }
@@ -47,8 +46,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -78,23 +78,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj": {
+    "E:\\GitHub\\app-test-management\\BLL\\BLL.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj",
+        "projectUniqueName": "E:\\GitHub\\app-test-management\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj",
+        "projectPath": "E:\\GitHub\\app-test-management\\BLL\\BLL.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj"
+              "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
+              "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -104,16 +105,17 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
+    "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj",
+        "projectPath": "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
+              "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }
@@ -123,11 +125,12 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
+    "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj",
+        "projectUniqueName": "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj",
+        "projectPath": "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -138,22 +141,23 @@
         "net472": {}
       }
     },
-    "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
+    "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj",
+        "projectUniqueName": "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj",
+        "projectPath": "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\BLL.csproj"
+              "E:\\GitHub\\app-test-management\\BLL\\BLL.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\DAL.csproj"
+              "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DTO\\DTO.csproj"
+              "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj": {
+                "projectPath": "E:\\GitHub\\app-test-management\\DTO\\DTO.csproj"
               }
             }
           }

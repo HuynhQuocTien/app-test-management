@@ -10,16 +10,20 @@ namespace DTO
     {
         public long MaNguoiDung {  get; set; }
         public string HoTen {  get; set; } //Database: Ten
-        public string GioiTinh { get; set; }
+        public int GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
         public string Avatar { get; set; }
         public string SDT { get; set; }
         public DateTime NgayTao { get; set; }
         public int TrangThai { get; set; }
         public int is_delete { get; set; }
+        public string IdLogin { get; set; }
+        public DateTime TimeIn { get; set; }
+
+        public DateTime TimeOut { get; set; }
         public NguoiDungDTO() { }
 
-        public NguoiDungDTO(int maNguoiDung, string hoTen, string gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)
+        public NguoiDungDTO(int maNguoiDung, string hoTen, int gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)
         {
             MaNguoiDung = maNguoiDung;
             HoTen = hoTen;

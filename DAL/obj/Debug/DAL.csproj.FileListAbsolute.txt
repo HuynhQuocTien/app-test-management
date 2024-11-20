@@ -31,3 +31,14 @@ C:\Users\huynh\source\repos\app-test-management\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\huynh\source\repos\app-test-management\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\huynh\source\repos\app-test-management\DAL\obj\Debug\DAL.dll
 C:\Users\huynh\source\repos\app-test-management\DAL\obj\Debug\DAL.pdb
+E:\GitHub\app-test-management\DAL\bin\Debug\DAL.dll
+E:\GitHub\app-test-management\DAL\bin\Debug\DAL.pdb
+E:\GitHub\app-test-management\DAL\bin\Debug\DTO.dll
+E:\GitHub\app-test-management\DAL\bin\Debug\System.Data.SqlClient.dll
+E:\GitHub\app-test-management\DAL\bin\Debug\DTO.pdb
+E:\GitHub\app-test-management\DAL\bin\Debug\System.Data.SqlClient.xml
+E:\GitHub\app-test-management\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\GitHub\app-test-management\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\GitHub\app-test-management\DAL\obj\Debug\DAL.csproj.Up2Date
+E:\GitHub\app-test-management\DAL\obj\Debug\DAL.dll
+E:\GitHub\app-test-management\DAL\obj\Debug\DAL.pdb

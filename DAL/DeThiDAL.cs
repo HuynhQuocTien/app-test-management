@@ -285,5 +285,31 @@ namespace DAL
                 return false;
             }
         }
+        public List<MonHocDTO> LayTenMonHoc()
+        {
+            List<MonHocDTO> dtList = new List<MonHocDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("sai");
+                            MonHocDTO mh = new MonHocDTO
+                            {
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
+                            };
+                            dtList.Add(mh);
+                        }
+                    }
+
+                }
+            }
+            return dtList;
+        }
     }
 }

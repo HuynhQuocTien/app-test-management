@@ -138,7 +138,7 @@ namespace GUI.CauHoi
 
             int trangThaiXoa = 0;
 
-            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
+            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,Convert.ToInt32( DoKho), trangThai, trangThaiXoa);
         }
 
 

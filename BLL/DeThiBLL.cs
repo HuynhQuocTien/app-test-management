@@ -29,5 +29,15 @@ namespace BLL
         {
             return deThiDAL.GetById(deThi);
         }
+        public List<MonHocDTO> TenMonHoc()
+        {
+            List<MonHocDTO> dsMonHoc = deThiDAL.LayTenMonHoc();
+            return dsMonHoc;
+        }
+
+        public bool Add(DeThiDTO dethidto)
+        {
+            return deThiDAL.Add(dethidto);
+        }
     }
 }
