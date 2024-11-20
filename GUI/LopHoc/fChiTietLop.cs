@@ -45,11 +45,13 @@ namespace GUI.LopHoc
             nguoiDungBLL = new NguoiDungBLL();
             chiTietDeBLL = new ChiTietDeBLL();
             RenderInfoLop();
+            //Tạo Đề thi giả để xem
             DeThiDTO temp = new DeThiDTO();
             temp.MaDe = 1;
             DeThiDTO dt =deThiBLL.GetById(temp);
             CreatePanel(dt);
             CreatePanelSV();
+            //End
         }
         public void RenderDeThi()
         {
