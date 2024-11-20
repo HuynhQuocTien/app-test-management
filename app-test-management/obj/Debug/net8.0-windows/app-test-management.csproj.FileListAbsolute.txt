@@ -148,6 +148,7 @@ E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\BLL.d
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\DAL.dll
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\DTO.dll
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\GUI.dll
+E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.dll
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.dll
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
@@ -160,6 +161,7 @@ E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\GUI.d
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\BLL.pdb
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\DAL.pdb
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\DTO.pdb
+E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Newtonsoft.Json.xml
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.pdb
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.xml
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.xml

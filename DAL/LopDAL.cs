@@ -182,11 +182,12 @@ namespace DAL
             List<LopDTO> lopList = new List<LopDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FORM Lop Where is_delete = 0";
+                string query = "SELECT * FROM Lop Where is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        
                         while (reader.Read())
                         {
                             LopDTO lop = new LopDTO

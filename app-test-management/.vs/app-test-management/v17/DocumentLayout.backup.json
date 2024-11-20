@@ -3,13 +3,22 @@
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|e:\\github\\app-test-management\\dto\\nguoidungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,15 +92,66 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NguoiDungDTO.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DTO\\NguoiDungDTO.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\NguoiDungDTO.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\DTO\\NguoiDungDTO.cs",
+              "RelativeToolTip": "..\\DTO\\NguoiDungDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T10:09:18.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fDangNhap.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T10:05:20.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fDangNhap.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T10:05:19.157Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "fLayout.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeToolTip": "..\\GUI\\fLayout.cs",
+              "ViewState": "AgIAAOsAAAAAAAAAAAApwBABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T10:04:03.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "fLayout.Designer.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.Designer.cs",
               "RelativeDocumentMoniker": "..\\GUI\\fLayout.Designer.cs",
               "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.Designer.cs",
               "RelativeToolTip": "..\\GUI\\fLayout.Designer.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAmwF8AAACDAAAAAAAAAA==",
+              "ViewState": "AgIAAAcCAAAAAAAAAAAmwB4CAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:59:12.56Z",
+              "WhenOpened": "2024-11-20T10:03:27.08Z",
               "EditorCaption": ""
             },
             {
@@ -103,21 +163,8 @@
               "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs [Design]",
               "RelativeToolTip": "..\\GUI\\fLayout.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:58:13.061Z",
+              "WhenOpened": "2024-11-20T10:03:26.523Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fLayout.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeToolTip": "..\\GUI\\fLayout.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAcwN0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:36:16.774Z",
-              "EditorCaption": ""
             }
           ]
         }

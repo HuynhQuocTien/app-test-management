@@ -429,6 +429,7 @@ E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.dl
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+E:\GitHub\app-test-management\GUI\bin\Debug\Newtonsoft.Json.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\System.Buffers.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\System.ClientModel.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\System.ComponentModel.Annotations.dll
@@ -475,6 +476,7 @@ E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.xm
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+E:\GitHub\app-test-management\GUI\bin\Debug\Newtonsoft.Json.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\System.Buffers.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\System.ClientModel.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
