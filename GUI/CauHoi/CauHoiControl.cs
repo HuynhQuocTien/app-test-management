@@ -86,6 +86,7 @@ namespace GUI.CauHoi
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
             dataGridView1.DataSource = cauhoiBLL.GetAll();
             Allrecord = cauhoiBLL.GetAll().Count;
+            LoadPage(1, 10);
         }
 
         private void loadDataComboBoxMHView()

@@ -140,8 +140,9 @@ namespace DAL
             {
                 // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
                 string query = @"
-                SELECT * 
-                FROM CauHoi  
+                SELECT MaCauHoi, NoiDung, NguoiTao AS MaNguoiTao,MaMonHoc,DoKho,TrangThai,is_delete, LoaiCauHoi 
+                FROM CauHoi
+                where is_delete=0
                 ORDER BY MaCauHoi 
                 OFFSET @StartRecord ROWS 
                 FETCH NEXT @RecordsPerPage ROWS ONLY";
