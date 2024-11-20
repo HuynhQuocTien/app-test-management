@@ -35,6 +35,7 @@ namespace GUI.CauHoi
 
             int recordsPerPage = 10; // Số bản ghi trên mỗi trang
             int totalPages = (int)Math.Ceiling((double)totalRecords / recordsPerPage);
+            this.numericUpDown1.Enabled = true;
             this.numericUpDown1.Minimum = 1;
             this.numericUpDown1.Maximum = totalPages;
             this.label2.Text = "Trên tổng " + totalPages + " trang";
@@ -56,7 +57,6 @@ namespace GUI.CauHoi
             DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage);
 
             dataGridView1.DataSource = pageData;
-            styleDataGridView();
         }
 
         
@@ -279,6 +279,8 @@ namespace GUI.CauHoi
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
             dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text);
+            this.numericUpDown1.Enabled = false;
+            this.label2.Text = "Trên tổng ... trang";
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -319,6 +321,7 @@ namespace GUI.CauHoi
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             render();
+            phanTrang();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
