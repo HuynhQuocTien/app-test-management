@@ -89,16 +89,16 @@ namespace GUI
             this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            //this.containerBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.containerBtnPanel.Size = new System.Drawing.Size(330, 845);
             this.containerBtnPanel.TabIndex = 0;
             // 
@@ -238,7 +238,7 @@ namespace GUI
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThoat.Size = new System.Drawing.Size(310, 50);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "  Đăng xuất";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -324,7 +324,7 @@ namespace GUI
             this.btnDeThi.Name = "btnDeThi";
             this.btnDeThi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDeThi.Size = new System.Drawing.Size(310, 50);
-            this.btnDeThi.TabIndex = 6;
+            this.btnDeThi.TabIndex = 3;
             this.btnDeThi.Text = "  Đề thi";
             this.btnDeThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeThi.UseVisualStyleBackColor = false;
@@ -366,7 +366,7 @@ namespace GUI
             this.btnPhanCong.Name = "btnPhanCong";
             this.btnPhanCong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPhanCong.Size = new System.Drawing.Size(310, 50);
-            this.btnPhanCong.TabIndex = 32;
+            this.btnPhanCong.TabIndex = 8;
             this.btnPhanCong.Text = "  Phân công";
             this.btnPhanCong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhanCong.UseVisualStyleBackColor = false;
@@ -407,7 +407,7 @@ namespace GUI
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(310, 50);
-            this.btnThongKe.TabIndex = 8;
+            this.btnThongKe.TabIndex = 9;
             this.btnThongKe.Text = "  Thống kê";
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -539,8 +539,8 @@ namespace GUI
             this.Name = "fLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserForm_FormClosed);
-            this.Load += new System.EventHandler(this.UserForm_Load_1);
+            this.Load += new System.EventHandler(this.fLayout_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fLayout_FormClosed);
             this.containerBtnPanel.ResumeLayout(false);
             this.infoPanelBox.ResumeLayout(false);
             this.infoOwnerPanel.ResumeLayout(false);

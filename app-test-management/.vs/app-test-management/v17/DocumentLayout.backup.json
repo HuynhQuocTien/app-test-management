@@ -3,10 +3,13 @@
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,8 +19,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 15,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
@@ -77,27 +84,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "fDangNhap.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
-              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAuwJsAAAArAAAAAAAAAA==",
+              "Title": "fLayout.Designer.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.Designer.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fLayout.Designer.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\fLayout.Designer.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAmwF8AAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T08:41:07.676Z",
+              "WhenOpened": "2024-11-20T09:59:12.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "fDangNhap.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\fDangNhap.cs [Design]",
+              "Title": "fLayout.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fLayout.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T08:41:06.224Z",
+              "WhenOpened": "2024-11-20T09:58:13.061Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fLayout.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
+              "RelativeToolTip": "..\\GUI\\fLayout.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAcwN0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T09:36:16.774Z",
+              "EditorCaption": ""
             }
           ]
         }

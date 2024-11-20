@@ -18,6 +18,8 @@ namespace GUI
         public static NguoiDungDTO nguoiDungDTO;
         public static TaiKhoanDTO taiKhoanDTO;
         public static NhomQuyenDTO nhomQuyenDTO;
+        public static DateTime LoginTime = DateTime.Now;
+
         private NguoiDungBLL nguoiDungBLL;
         private NhomQuyenBLL nhomQuyenBLL;
 
@@ -31,6 +33,7 @@ namespace GUI
         private Rectangle recTxt1;
         private Rectangle recTxt2;
         private Rectangle recCBox1;
+
         public fDangNhap()
         {
             InitializeComponent();
