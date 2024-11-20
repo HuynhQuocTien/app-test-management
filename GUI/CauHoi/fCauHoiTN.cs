@@ -42,13 +42,13 @@ namespace GUI.CauHoi
         {
             switch (this.cauHoiDTO.DoKho)
             {
-                case "1":
+                case 1:
                     comboBoxDoKho.SelectedIndex = 0;
                     break;
-                case "2":
+                case 2:
                     comboBoxDoKho.SelectedIndex = 1;
                     break;
-                case "3":
+                case 3:
                     comboBoxDoKho.SelectedIndex = 2;
                     break;
                 default:
@@ -104,20 +104,20 @@ namespace GUI.CauHoi
             string LoaiCauHoi = "Trắc nghiệm";
             int MaMonHoc = 0;
             long MaNguoiTao = Convert.ToInt64(Session.UserID);
-            string DoKho = "";
+            int DoKho = 0;
 
             string selectedValue = comboBoxDoKho.SelectedItem.ToString();
 
             switch (selectedValue)
             {
                 case "Dễ":
-                    DoKho = "1";
+                    DoKho = 1;
                     break;
                 case "Trung Bình":
-                    DoKho = "2";
+                    DoKho = 2;
                     break;
                 case "Khó":
-                    DoKho = "3";
+                    DoKho = 3;
                     break;
             }
             NoiDung = txtNoiDung.Text;

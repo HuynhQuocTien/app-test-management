@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,16 @@ namespace BLL
         public List<CauHoiDTO> GetAll()
         {
             return cauHoiDAL.GetAll();
+        }
+
+        public List<CauHoiDTO> GetTimKiem(string timkiem)
+        {
+            return cauHoiDAL.GetTimKiem(timkiem);
+        }
+
+        public DataTable GetDataForPage(int startRecord, int recordsPerPage)
+        {
+            return cauHoiDAL.GetDataForPage(startRecord,recordsPerPage);
         }
         public int Add(CauHoiDTO cauhoi)
         {

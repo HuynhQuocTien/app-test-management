@@ -106,7 +106,7 @@ namespace DAL
                                 LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"].ToString()),
                                 MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
-                                DoKho = EnumHelper.GetEnumDescription(enumDoKho) ,
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
 

@@ -21,6 +21,12 @@ namespace GUI.PhanCong
         public PhanCongControl()
         {
             InitializeComponent();
+            phanTrang();
+            LoadDataToGridView();
+        }
+
+        public void phanTrang()
+        {
             // Đặt giới hạn số trang cho NumericUpDown
             int totalRecords = countPC();  // Tổng số bản ghi
 
@@ -35,7 +41,6 @@ namespace GUI.PhanCong
                 int selectedPage = (int)numericUpDown1.Value;
                 LoadPage(selectedPage, recordsPerPage);
             };
-            LoadDataToGridView();
         }
 
         private void LoadPage(int pageNumber, int recordsPerPage)

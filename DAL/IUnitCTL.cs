@@ -11,6 +11,9 @@ namespace DAL
     {
         T GetById(T t);
         List<T> GetAll();
+
+        List<T> GetTimKiem(string timkiem);
+
         int Add(T t);
         bool Update(T t);
         bool Delete(T t);
