@@ -22,17 +22,18 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO NguoiDung (HoTen, GioiTinh, NgaySinh, Avatar, SDT, NgayTao, TrangThai, is_delete) VALUES (@HoTen, @GioiTinh, @NgaySinh, @Avatar, @SDT, @NgayTao, @TrangThai, @is_delete);";
+                    string query = "INSERT INTO NguoiDung (MaNguoiDung, Ten, GioiTinh, NgaySinh, Avatar, SDT, NgayTao, TrangThai, is_delete) VALUES (@MaNguoiDung, @Ten, @GioiTinh, @NgaySinh, @Avatar, @SDT, @NgayTao, @TrangThai, @is_delete);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@HoTen", nguoiDung.HoTen);
+                        command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
+                        command.Parameters.AddWithValue("@Ten", nguoiDung.HoTen);
                         command.Parameters.AddWithValue("@GioiTinh", nguoiDung.GioiTinh);
                         command.Parameters.AddWithValue("@NgaySinh", nguoiDung.NgaySinh);
                         command.Parameters.AddWithValue("@Avatar", nguoiDung.Avatar);
                         command.Parameters.AddWithValue("@SDT", nguoiDung.SDT);
                         command.Parameters.AddWithValue("@NgayTao", nguoiDung.NgayTao);
-                        command.Parameters.AddWithValue("@TrangThai", nguoiDung.TrangThai);
-                        command.Parameters.AddWithValue("@is_delete", nguoiDung.is_delete);
+                        command.Parameters.AddWithValue("@TrangThai", 1);
+                        command.Parameters.AddWithValue("@is_delete", 0);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -41,6 +42,7 @@ namespace DAL
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+          
                 return false;
             }
         }
@@ -153,6 +155,43 @@ namespace DAL
             }
             return result;
         }
+
+
+
+        //public bool Import(NguoiDungDTO nguoiDung)
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection connection = GetConnectionDb.GetConnection())
+        //        {
+        //            string query = "INSERT INTO NguoiDung (MaNguoiDung, Ten, GioiTinh, NgaySinh, Avatar, SDT, NgayTao, TrangThai, " +
+        //            "is_delete) VALUES (@MaNguoiDung, @Ten, @GioiTinh, @NgaySinh, @Avatar, @SDT, @NgayTao, @TrangThai, @is_delete);";
+        //            using (SqlCommand command = new SqlCommand(query, connection))
+        //            {
+        //                command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
+        //                command.Parameters.AddWithValue("@Ten", nguoiDung.HoTen);
+        //                command.Parameters.AddWithValue("@GioiTinh", nguoiDung.GioiTinh);
+        //                command.Parameters.AddWithValue("@NgaySinh", nguoiDung.NgaySinh);
+        //                command.Parameters.AddWithValue("@Avatar", nguoiDung.Avatar);
+        //                command.Parameters.AddWithValue("@SDT", nguoiDung.SDT);
+        //                command.Parameters.AddWithValue("@NgayTao", nguoiDung.NgayTao);
+        //                command.Parameters.AddWithValue("@TrangThai", 1);
+        //                command.Parameters.AddWithValue("@is_delete", 0);
+        //                int rowsChanged = command.ExecuteNonQuery();
+        //                return rowsChanged > 0;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.ToString());
+        //        return false;
+        //    }
+        //}
+
+
+
+
 
         public bool Update(NguoiDungDTO nguoiDung)
         {

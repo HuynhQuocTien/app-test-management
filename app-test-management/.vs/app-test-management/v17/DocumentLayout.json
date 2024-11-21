@@ -31,6 +31,19 @@
           "SelectedChildIndex": 15,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "fThemDeThi.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T06:24:24.12Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
             },
