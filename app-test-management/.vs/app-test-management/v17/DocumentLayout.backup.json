@@ -6,22 +6,7 @@
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\userscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\dethi\\dethicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dal\\dethidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dal\\nguoidungdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\userscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\bll\\nguoidungbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -33,34 +18,31 @@
       "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dto\\nguoidungdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dal\\nguoidungdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dal\\dethidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\adduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\userscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\monhoc\\monhoccontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\monhoc\\fthemmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\dethi\\dethicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\monhoc\\monhoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\gui\\users\\infouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\tnt96\\source\\repos\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -88,8 +70,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 23,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "fThemDeThi.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T06:24:24.12Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -148,45 +143,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fThemDeThi.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCUAAAACAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "AddUser.cs",
+              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\Users\\AddUser.cs",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
+              "RelativeToolTip": "..\\GUI\\Users\\AddUser.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAmwHoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:16:38.878Z",
+              "WhenOpened": "2024-11-21T08:50:52.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "fThemDeThi.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "AddUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\Users\\AddUser.cs",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\Users\\AddUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:24:24.12Z",
+              "WhenOpened": "2024-11-21T08:50:50.265Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AddUser.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.Designer.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\AddUser.Designer.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.Designer.cs",
-              "RelativeToolTip": "..\\GUI\\Users\\AddUser.Designer.cs",
-              "ViewState": "AgIAANUBAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:17:53.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 18,
               "Title": "PhanCongControl.Designer.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.Designer.cs",
@@ -197,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 19,
               "Title": "PhanCongControl.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\PhanCongControl.cs",
@@ -209,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 16,
               "Title": "fDangNhap.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\fDangNhap.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\huynh\\source\\repos\\app-test-management\\GUI\\fDangNhap.cs",
@@ -220,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 15,
               "Title": "fAddPhanCong.Designer.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\huynh\\source\\repos\\app-test-management\\GUI\\PhanCong\\fAddPhanCong.Designer.cs",
@@ -231,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 17,
               "Title": "InfoUser.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\huynh\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
@@ -242,38 +224,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddUser.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\AddUser.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
-              "RelativeToolTip": "..\\GUI\\Users\\AddUser.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAmwCgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T17:40:04.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "fLayout.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeToolTip": "..\\GUI\\fLayout.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAArwKAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T15:03:05.848Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "InfoUser.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
               "RelativeDocumentMoniker": "..\\GUI\\Users\\InfoUser.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
               "RelativeToolTip": "..\\GUI\\Users\\InfoUser.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAswGwAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAswFUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T11:02:17.844Z",
               "EditorCaption": ""
@@ -284,40 +241,28 @@
               "Title": "UsersControl.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\Users\\UsersControl.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs*",
-              "RelativeToolTip": "..\\GUI\\Users\\UsersControl.cs*",
-              "ViewState": "AgIAAFYAAAAAAAAAAIA4wGUAAAA6AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs",
+              "RelativeToolTip": "..\\GUI\\Users\\UsersControl.cs",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAjwBMBAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:56:34.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "UsersControl.cs [Design]",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\Users\\UsersControl.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\Users\\UsersControl.cs [Design]*",
+              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\UsersControl.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\Users\\UsersControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:56:33.15Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MonHocControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\MonHocControl.Designer.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.Designer.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\MonHocControl.Designer.cs",
-              "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.Designer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAkwKsBAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T10:55:56.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DeThiDAL.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\DAL\\DeThiDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\DeThiDAL.cs",
@@ -330,71 +275,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "DeThiBLL.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\BLL\\DeThiBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\DeThiBLL.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\BLL\\DeThiBLL.cs",
               "RelativeToolTip": "..\\BLL\\DeThiBLL.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAIwC8AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAmwDgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:09:53.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "NguoiDungBLL.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\BLL\\NguoiDungBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\NguoiDungBLL.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\BLL\\NguoiDungBLL.cs",
               "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:07:02.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeThiControl.cs",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAmwLAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T10:04:26.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DeThiControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\DeThiControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T10:04:25.283Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "NguoiDungDAL.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\DAL\\NguoiDungDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\NguoiDungDAL.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\DAL\\NguoiDungDAL.cs",
               "RelativeToolTip": "..\\DAL\\NguoiDungDAL.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAcwMQAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T09:58:57.494Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "NguoiDungDTO.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\DTO\\NguoiDungDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\NguoiDungDTO.cs",
@@ -407,30 +327,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 9,
               "Title": "MonHocControl.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\MonHocControl.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\MonHocControl.cs",
               "RelativeToolTip": "..\\GUI\\MonHoc\\MonHocControl.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAgwCoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwIEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:52:12.972Z"
+              "WhenOpened": "2024-11-20T09:52:12.972Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 10,
               "Title": "fThemMonHoc.cs [Design]",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs",
               "RelativeDocumentMoniker": "..\\GUI\\MonHoc\\fThemMonHoc.cs",
               "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\MonHoc\\fThemMonHoc.cs [Design]",
               "RelativeToolTip": "..\\GUI\\MonHoc\\fThemMonHoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:52:01.413Z"
+              "WhenOpened": "2024-11-20T09:52:01.413Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "InfoUser.cs [Design]",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\InfoUser.cs",
               "RelativeDocumentMoniker": "..\\GUI\\Users\\InfoUser.cs",
@@ -442,19 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\Users\\AddUser.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\Users\\AddUser.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\Users\\AddUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T09:50:11.324Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 14,
               "Title": "GetConnectionDb.cs",
               "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\DAL\\GetConnectionDb.cs",
               "RelativeDocumentMoniker": "..\\DAL\\GetConnectionDb.cs",

@@ -138,17 +138,10 @@ namespace GUI.Users
                 MessageBox.Show("Chọn vai trò.");
                 return;
             }
-            string selectedStatus = radioButtonStatus.Text;
-
-
-
-
+            //string selectedStatus = radioButtonStatus.Text;
 
             NguoiDungDTO nguoiDungAdd = new NguoiDungDTO(maNguoiDung, txtNameValue, gioiTinh, selectedNgaySinh, "avatar", txtSdtValue, DateTime.Now, 1, 0);
             TaiKhoanDTO taikhoanAdd = new TaiKhoanDTO(Convert.ToInt64(txtIDValue), txtPassValue, txtEmailValue, cbNhomQuyenValue.MaNhomQuyen, 1);
-
-
-
 
             usersControl.AddNguoiDung(nguoiDungAdd, taikhoanAdd);
 

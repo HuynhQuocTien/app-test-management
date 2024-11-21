@@ -34,6 +34,15 @@ namespace BLL
         }
 
 
+        //public string Import(NguoiDungDTO nguoiDung)
+        //{
+        //    if (NguoiDungDAL.Import(nguoiDung))
+        //    {
+        //        return "Thêm thành công";
+        //    }
+        //    return "Thêm thất bại";
+        //}
+
         public NguoiDungDTO getUserLoginById(long id)
         {
             NguoiDungDTO nd = new NguoiDungDTO();
