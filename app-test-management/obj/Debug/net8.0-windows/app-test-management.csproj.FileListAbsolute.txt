@@ -182,3 +182,5 @@ E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\refin
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.pdb
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.genruntimeconfig.cache
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\ref\app-test-management.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\huynh\Source\Repos\app-test-management\app-test-management\bin\Debug\net8.0-windows\Newtonsoft.Json.xml

@@ -234,6 +234,54 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool UpdateEmail(string email, long maNguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE TaiKhoan SET Email = @Email WHERE Username = @Username";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", maNguoiDung);
+                        command.Parameters.AddWithValue("@Email", email);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+
+        public bool checkEmail(string email, long maNguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(*) FROM TaiKhoan WHERE Email = @Email and Username!=@MaNguoiDung";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+                        // Dùng ExecuteScalar để trả về kết quả COUNT(*)
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        return count > 0; // Email tồn tại nếu COUNT > 0
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi kiểm tra email: {ex.Message}");
+                return false; // Trả về false nếu gặp lỗi
+            }
+        }
     }
 }
 

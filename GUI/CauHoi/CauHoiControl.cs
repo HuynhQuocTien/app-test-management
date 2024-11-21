@@ -86,7 +86,7 @@ namespace GUI.CauHoi
         private void loadDataComboBoxMHView()
         {
             MonHocBLL monHocBLL = new MonHocBLL();
-            comboBox1.DataSource = monHocBLL.GetAll();
+            comboBox1.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
             comboBox1.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox1.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
         }
