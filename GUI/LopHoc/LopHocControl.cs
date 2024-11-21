@@ -178,7 +178,7 @@ namespace GUI.LopHoc
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("GV Phân công"))
             {
                 fThemLop themLop = new fThemLop(this, "add", GenerateRandomCode(10));
 
