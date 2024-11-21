@@ -29,7 +29,7 @@ namespace DAL
                         " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc, @NguoiTao, @TrangThai, @is_delete)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaMon", dethi.MaMonHoc);
+                        command.Parameters.AddWithValue("@MaMonHoc", dethi.MaMonHoc);
                         command.Parameters.AddWithValue("@TenDe", dethi.TenDe);
                         command.Parameters.AddWithValue("@ThoiGianTao", dethi.ThoiGianTao);
                         command.Parameters.AddWithValue("@ThoiGianBatDau", dethi.ThoiGianBatDau);

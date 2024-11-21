@@ -24,12 +24,13 @@ namespace GUI.DeThi
         public fThemDeThi(DeThiControl fdethi, string hanhDong, DeThiDTO dethi = null)
         {
             InitializeComponent();
-            LoadMonHoc();
             monHocBLL = new MonHocBLL();
+            deThiBLL = new DeThiBLL();
+
+            LoadMonHoc();
             deThiControl = fdethi;
             this.hanhDong = hanhDong;
             this.deThiUpdate = dethi;
-            deThiBLL = new DeThiBLL();
             if (hanhDong.Equals("edit"))
             {
                 deThiUpdate = dethi;
@@ -88,6 +89,7 @@ namespace GUI.DeThi
                         fDangNhap.nguoiDungDTO.MaNguoiDung, 1, 0, cbMonHocValue.TenMonHoc);
                     deThiControl.AddDeThi(deThiAdd);
                     this.Close();
+                    MessageBox.Show("Thêm đề thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Dispose();
                 }
                 catch (Exception ex)

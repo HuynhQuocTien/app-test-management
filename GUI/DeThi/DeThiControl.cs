@@ -173,7 +173,7 @@ namespace GUI.DeThi
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giảng viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
             {
                 fThemDeThi themDeThi = new fThemDeThi(this, "add");
                 themDeThi.ShowDialog();
