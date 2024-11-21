@@ -53,6 +53,10 @@ namespace GUI.CauHoi
             comboBox5.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
             comboBox5.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox5.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
+
+            cbMonhoc.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
+            cbMonhoc.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
+            cbMonhoc.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
         }
 
         private string tabControl2_SelectedName()
