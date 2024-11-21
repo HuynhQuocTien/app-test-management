@@ -42,17 +42,21 @@ namespace GUI.CauHoi
         private void loadDataComboBoxMHView()
         {
             MonHocBLL monHocBLL = new MonHocBLL();
-            comboBoxMonHoc.DataSource= monHocBLL.GetAll();
+            comboBoxMonHoc.DataSource= monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
             comboBoxMonHoc.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBoxMonHoc.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
 
-            comboBox2.DataSource = monHocBLL.GetAll();
+            comboBox2.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
             comboBox2.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox2.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
 
-            comboBox5.DataSource = monHocBLL.GetAll();
+            comboBox5.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
             comboBox5.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox5.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
+
+            cbMonhoc.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
+            cbMonhoc.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
+            cbMonhoc.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
         }
 
         private string tabControl2_SelectedName()

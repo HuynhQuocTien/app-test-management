@@ -13,6 +13,8 @@ using DocumentFormat.OpenXml.Office.Word;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using System.Windows.Controls;
+using BLL;
+using DTO;
 
 namespace GUI.PhanCong
 {
@@ -28,6 +30,13 @@ namespace GUI.PhanCong
             //Data LB
         }
 
+        private PhanCongDTO getInfo(int maMonHoc, long maGV)
+        {
+            int MaPhanCong = 0;
+            int MaMonHoc = maMonHoc;
+            long MaGiaoVien = maGV;
+            return new PhanCongDTO(MaPhanCong,MaMonHoc,MaGiaoVien);
+        }
         private void loadComboBox()
         {
             using (SqlConnection conn = GetConnectionDb.GetConnection())
@@ -35,15 +44,10 @@ namespace GUI.PhanCong
                 try
                 {
                     isDataBinding = true;  // Bắt đầu quá trình gán dữ liệu
-                    string query = "SELECT ND.Ten as 'TenNguoiDung', ND.MaNguoiDung as 'MaNguoiDung' FROM NguoiDung ND INNER JOIN TaiKhoan TK ON ND.MaNguoiDung = TK.Username INNER JOIN NhomQuyen NQ ON NQ.MaNhomQuyen = TK.MaNhomQuyen WHERE NQ.MaNhomQuyen = 2;";
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-
-                    // Đổ dữ liệu vào DataTable
-                    da.Fill(dt);
 
                     // Gán dữ liệu vào DataGridView
-                    cbMonHoc.DataSource = dt;
+                    PhanCongBLL phanCongBLL = new PhanCongBLL();
+                    cbMonHoc.DataSource = phanCongBLL.loadComboBox();
                     cbMonHoc.DisplayMember = "TenNguoiDung";  // Tên cột hiển thị
                     cbMonHoc.ValueMember = "MaNguoiDung";     // Giá trị ẩn (ID)
 
@@ -62,28 +66,20 @@ namespace GUI.PhanCong
 
         private void loadListboxPC(string id)
         {
-            using (SqlConnection conn = GetConnectionDb.GetConnection())
-            {
                 try
                 {
-
-                    string query = "SELECT MH.TenMonHoc, MH.MaMonHoc FROM PhanCong PC INNER JOIN MonHoc MH ON MH.MaMonHoc = PC.MaMonHoc WHERE PC.MaGV = @MaGV;";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaGV", id);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);  // Sử dụng SqlCommand ở đây
-                    DataTable dt = new DataTable();
-
-                    // Đổ dữ liệu vào DataTable
-                    da.Fill(dt);
+                    PhanCongBLL phanCongBLL = new PhanCongBLL();
 
                     // Xóa các mục hiện có (nếu cần)
                     listBox1.Items.Clear();
 
                     // Thêm từng mục vào ListBox
-                    foreach (DataRow row in dt.Rows)
+                    foreach (DataRow row in phanCongBLL.loadListboxPC(id).Rows)
                     {
-                        listBox1.Items.Add(new KeyValuePair<string, string>(row["TenMonHoc"].ToString(), row["MaMonHoc"].ToString()));  // Thêm tên môn học vào ListBox
+                        listBox1.Items.Add(new KeyValuePair<string, int>(
+                            row["TenMonHoc"].ToString(),
+                            Convert.ToInt32(row["MaMonHoc"])
+                        ));
                     }
 
                     // Đặt DisplayMember và ValueMember cho ListBox
@@ -93,34 +89,26 @@ namespace GUI.PhanCong
                 catch (Exception ex)
                 {
                     MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
-                }
-            }
+                } 
         }
 
         private void loadListboxCPC(string id)
         {
-            using (SqlConnection conn = GetConnectionDb.GetConnection())
-            {
                 try
                 {
-
-                    string query = "SELECT MH.TenMonHoc, MH.MaMonHoc FROM MonHoc MH WHERE NOT EXISTS (SELECT 1 FROM PhanCong PC WHERE PC.MaMonHoc = MH.MaMonHoc AND PC.MaGV = @MaGV);";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaGV", id);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);  // Sử dụng SqlCommand ở đây
-                    DataTable dt = new DataTable();
-
-                    // Đổ dữ liệu vào DataTable
-                    da.Fill(dt);
 
                     // Xóa các mục hiện có (nếu cần)
                     lbCauHoi.Items.Clear();
 
                     // Thêm từng mục vào ListBox
-                    foreach (DataRow row in dt.Rows)
+                    PhanCongBLL phanCongBLL = new PhanCongBLL();
+
+                    foreach (DataRow row in phanCongBLL.loadListboxCPC(id).Rows)
                     {
-                        lbCauHoi.Items.Add(new KeyValuePair<string, string>(row["TenMonHoc"].ToString(), row["MaMonHoc"].ToString()));  // Thêm tên môn học vào ListBox
+                            listBox1.Items.Add(new KeyValuePair<string, int>(
+                            row["TenMonHoc"].ToString(),
+                            Convert.ToInt32(row["MaMonHoc"])
+                        ));
                     }
 
                     // Đặt DisplayMember và ValueMember cho ListBox
@@ -131,7 +119,7 @@ namespace GUI.PhanCong
                 {
                     MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
                 }
-            }
+            
         }
 
         private void cbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,31 +198,13 @@ namespace GUI.PhanCong
             }
         }
 
-        private bool CheckPCExists(string id)
-        {
-            using (SqlConnection conn = GetConnectionDb.GetConnection())
-            {
-                try
-                {
-                    string query = "SELECT COUNT(1) FROM PhanCong WHERE MaGV = @MaGV";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaGV", id);
-
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0; // Trả về true nếu có bản ghi tồn tại
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
-                    return false;
-                }
-            }
-        }
+        
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             string selectedValue = cbMonHoc.SelectedValue.ToString();
             // Kiểm tra nếu đã có phân công
-            if (CheckPCExists(selectedValue))
+            PhanCongBLL phanCongBLL = new PhanCongBLL();    
+            if (phanCongBLL.CheckPCExists(selectedValue))
             {
                 DeletePC(selectedValue);  // Xóa phân công cũ và thêm mới
             }
@@ -251,11 +221,8 @@ namespace GUI.PhanCong
                 try
                 {
 
-                    string query = "Delete FROM PhanCong Where MaGV=@MaGV;";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaGV", id);
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    PhanCongBLL phanCongBLL=new PhanCongBLL();                 
+                    if (phanCongBLL.DeleteMAGV(id))
                     {
                         AddPC(id);
                     }
@@ -273,8 +240,6 @@ namespace GUI.PhanCong
 
         private void AddPC(string id)
         {
-            using (SqlConnection conn = GetConnectionDb.GetConnection())
-            {
                 try
                 {
                     if (listBox1.Items.Count > 0)
@@ -283,25 +248,23 @@ namespace GUI.PhanCong
                         foreach (var item in listBox1.Items)
                         {
                             // Ép kiểu item về KeyValuePair<string, string>
-                            var selectedItem = (KeyValuePair<string, string>)item;
+                            var selectedItem = (KeyValuePair<string, int>)item;
 
                             // Lấy giá trị key và value
                             string tenMonHoc = selectedItem.Key;  // Đây là tên môn học
-                            string maMonHoc = selectedItem.Value;  // Đây là mã môn học (dùng để lưu vào SQL)
+                            int maMonHoc = selectedItem.Value;  // Đây là mã môn học (dùng để lưu vào SQL)
 
                             // Tạo câu lệnh SQL Insert
-                            string query = "INSERT INTO PhanCong (MaMonHoc, MaGV) VALUES (@MaMonHoc, @MaGV);";
-                            SqlCommand cmd = new SqlCommand(query, conn);
-
-                            // Thêm tham số cho câu lệnh SQL
-                            cmd.Parameters.AddWithValue("@MaMonHoc", maMonHoc);  // Giá trị mã môn học
-                            cmd.Parameters.AddWithValue("@MaGV", id);  // Giá trị mã giáo viên (được truyền vào)
-
-                            // Thực thi câu lệnh SQL
-                            cmd.ExecuteNonQuery();
+                            PhanCongBLL phanCongBLL = new PhanCongBLL();
+                        if (!phanCongBLL.Add(getInfo(maMonHoc, Convert.ToInt64(id))))
+                        {
+                            MessageBox.Show("Lỗi thêm dữ liệu!");
+                            return; // Nếu muốn thoát khỏi phương thức
                         }
 
-                        MessageBox.Show("Thêm dữ liệu thành công!");
+                    }
+
+                    MessageBox.Show("Thêm dữ liệu thành công!");
                     }
                     else
                     {
@@ -313,7 +276,7 @@ namespace GUI.PhanCong
                 {
                     MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
                 }
-            }
+            
         }
     }
 }

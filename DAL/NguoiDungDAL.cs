@@ -160,5 +160,30 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool UpdateInfo(string Ten, string SDT, string Avatar, string MaNguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE NguoiDung SET Ten = @HoTen, Avatar = @Avatar, SDT = @SDT WHERE MaNguoiDung = @MaNguoiDung";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNguoiDung", MaNguoiDung);
+                        command.Parameters.AddWithValue("@HoTen", Ten);
+                        command.Parameters.AddWithValue("@Avatar", Avatar);
+                        command.Parameters.AddWithValue("@SDT", SDT);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
 }
