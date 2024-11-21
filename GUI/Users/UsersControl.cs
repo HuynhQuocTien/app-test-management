@@ -31,13 +31,6 @@ namespace GUI.Users
         private TextBox[] textBoxName;
         NguoiDungBLL nguoiDungBLL;
         TaiKhoanDAL taiKhoanDAL;
-        private List<NguoiDungDTO> getListNguoiDung()
-        {
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            return nguoiDungBLL.GetAllNguoiDung(); 
-        }
-
-
         private List<TaiKhoanDTO> getListTaiKhoan()
         {
             TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
@@ -82,17 +75,6 @@ namespace GUI.Users
         {
             AddUser addUser = new AddUser(this);
             addUser.ShowDialog();
-        }
-        public void AddNguoiDung(NguoiDungDTO objND, TaiKhoanDTO objTK)
-        {
-            //MessageBox.Show("Meo");
-            MessageBox.Show(objND.ToString());
-            MessageBox.Show(objTK.ToString());
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
-            nguoiDungBLL.Add(objND);
-            taiKhoanDAL.Add(objTK);
-            renderUsers();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

@@ -3,22 +3,10 @@
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\dethidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\users\\userscontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\dethicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|e:\\github\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\dethicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|e:\\github\\app-test-management\\bll\\nguoidungbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,19 +18,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 15,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "fThemDeThi.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "C:\\Users\\tnt96\\source\\repos\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:24:24.12Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
@@ -106,78 +81,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeThiDAL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\DeThiDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\DeThiDAL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\DeThiDAL.cs*",
-              "RelativeToolTip": "..\\DAL\\DeThiDAL.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowB8AAABCAAAAAAAAAA==",
+              "Title": "UsersControl.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\Users\\UsersControl.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\Users\\UsersControl.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\Users\\UsersControl.cs",
+              "RelativeToolTip": "..\\GUI\\Users\\UsersControl.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAADgv00AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:58:25.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fThemDeThi.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:53:11.69Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fThemDeThi.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAhwFkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:51:05.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MonHocBLL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\MonHocBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\MonHocBLL.cs",
-              "RelativeToolTip": "..\\BLL\\MonHocBLL.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:49:47.426Z",
+              "WhenOpened": "2024-11-21T10:20:16.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DeThiControl.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ViewState": "AgIAAKAAAAAAAAAAAAArwLgAAAAMAAAAAAAAAA==",
+              "Title": "NguoiDungBLL.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\NguoiDungBLL.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
+              "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:47:39.105Z",
+              "WhenOpened": "2024-11-21T10:19:23.64Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeThiControl.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:47:37.81Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

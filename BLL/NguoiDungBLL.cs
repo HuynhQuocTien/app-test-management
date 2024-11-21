@@ -60,20 +60,6 @@ namespace BLL
                 return "2";
             }    
         }
-        public string Add(NguoiDungDTO n)
-        {
-            if (nguoiDungDAL.Add(n))
-                return "Thêm người dùng thành công!";
-            return "Thêm người dùng thất bại!";
-        }
-        public List<NguoiDungDTO> GetAllNguoiDung()
-        {
-            return nguoiDungDAL.GetAll();
-        }
-        public bool Delete(NguoiDungDTO nguoiDung)
-        {
-            return nguoiDungDAL.DeleteByMaNguoiDung(nguoiDung);
-        }
 
     }
 }
