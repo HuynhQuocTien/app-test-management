@@ -402,6 +402,8 @@ C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.csproj.CoreCom
 C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.dll
 C:\Users\huynh\source\repos\app-test-management\GUI\obj\Debug\GUI.pdb
+C:\Users\huynh\Source\Repos\app-test-management\GUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\huynh\Source\Repos\app-test-management\GUI\bin\Debug\Newtonsoft.Json.xml
 E:\GitHub\app-test-management\GUI\bin\Debug\GUI.dll.config
 E:\GitHub\app-test-management\GUI\bin\Debug\GUI.dll
 E:\GitHub\app-test-management\GUI\bin\Debug\GUI.pdb
@@ -544,5 +546,3 @@ E:\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.dll
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.pdb
-C:\Users\huynh\Source\Repos\app-test-management\GUI\bin\Debug\Newtonsoft.Json.dll
-C:\Users\huynh\Source\Repos\app-test-management\GUI\bin\Debug\Newtonsoft.Json.xml

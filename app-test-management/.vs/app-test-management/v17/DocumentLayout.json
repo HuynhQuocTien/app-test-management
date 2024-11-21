@@ -1,46 +1,9 @@
 {
   "Version": 1,
-<<<<<<< Updated upstream
-  "WorkspaceRootPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\cauhoi\\cauhoicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\cauhoi\\fthemcauhoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\dal\\monhocdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\bll\\cauhoibll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\dal\\cauhoidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\lophoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\lophoccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\flayout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
->>>>>>> Stashed changes
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,35 +13,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
-          "SelectedChildIndex": 18,
-=======
           "SelectedChildIndex": 15,
->>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
             },
             {
               "$type": "Bookmark",
@@ -113,160 +56,35 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MonHocDAL.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\MonHocDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\MonHocDAL.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\MonHocDAL.cs",
-              "RelativeToolTip": "..\\DAL\\MonHocDAL.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAAwIEAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:11:35.17Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MonHocBLL.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\MonHocBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\MonHocBLL.cs",
-              "RelativeToolTip": "..\\BLL\\MonHocBLL.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:10:10.194Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "fThemCauHoi.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAD4vywAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T05:20:45.797Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CauHoiDAL.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\CauHoiDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\CauHoiDAL.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\DAL\\CauHoiDAL.cs",
-              "RelativeToolTip": "..\\DAL\\CauHoiDAL.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowDAAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T04:26:27.5Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             },
             {
-<<<<<<< Updated upstream
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CauHoiControl.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAADgv1sAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T04:16:23.509Z",
-=======
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LopHocControl.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\LopHocControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAmwLoAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:12:25.748Z",
->>>>>>> Stashed changes
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAJITAAAAAAAAAIAwwKoTAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-11-21T07:52:23.58Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 4,
-              "Title": "CauHoiBLL.cs",
-              "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\CauHoiBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\CauHoiBLL.cs",
-              "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\BLL\\CauHoiBLL.cs",
-              "RelativeToolTip": "..\\BLL\\CauHoiBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T04:11:01.568Z",
-              "EditorCaption": ""
-=======
-              "DocumentIndex": 1,
-              "Title": "LopHocControl.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\LopHocControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\LopHocControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\LopHocControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:12:21.661Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fChiTietLop.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:12:16.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fChiTietLop.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:12:15.285Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "fLayout.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeToolTip": "..\\GUI\\fLayout.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAqwPkAAAB0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:11:21.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "fLayout.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fLayout.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fLayout.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\fLayout.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:11:19.103Z",
-              "EditorCaption": " [Design]"
->>>>>>> Stashed changes
             }
           ]
         }
