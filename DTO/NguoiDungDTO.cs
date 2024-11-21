@@ -23,7 +23,7 @@ namespace DTO
         public DateTime TimeOut { get; set; }
         public NguoiDungDTO() { }
 
-        public NguoiDungDTO(int maNguoiDung, string hoTen, int gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)
+        public NguoiDungDTO(long maNguoiDung, string hoTen, int gioiTinh, DateTime ngaySinh, string avatar, string sDT, DateTime ngayTao, int trangThai, int is_delete)
         {
             MaNguoiDung = maNguoiDung;
             HoTen = hoTen;

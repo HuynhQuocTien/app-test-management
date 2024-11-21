@@ -23,8 +23,10 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
-                        "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
+                    //string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
+                    //    "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
+                    string query = "INSERT INTO DeThi (MaMonHoc, TenDe, ThoiGianTao, ThoiGianBatDau, ThoiGianKetThuc, NguoiTao, TrangThai, is_delete)" +
+                        " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc, @NguoiTao, @TrangThai, @is_delete)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaMon", dethi.MaMonHoc);
@@ -108,7 +110,8 @@ namespace DAL
             List<DeThiDTO> dtList = new List<DeThiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM DeThi WHERE is_delete = 0 AND NguoiTao = " + maNguoiTao;
+                //string query = "SELECT * FROM DeThi WHERE is_delete = 0 AND NguoiTao = " + maNguoiTao;
+                string query = "SELECT DeThi.*, MonHoc.TenMonHoc FROM DeThi JOIN MonHoc ON DeThi.MaMonHoc = MonHoc.MaMonHoc WHERE DeThi.is_delete = 0 AND DeThi.NguoiTao = " + maNguoiTao;
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -125,7 +128,8 @@ namespace DAL
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
-                                is_delete = Convert.ToInt32(reader["is_delete"])
+                                is_delete = Convert.ToInt32(reader["is_delete"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
                             };
                             dtList.Add(dt);
                         }

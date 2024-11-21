@@ -51,7 +51,8 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM NguoiDung WHERE MaNguoiDung = @MaNguoiDung";
+                    //string query = "DELETE FROM NguoiDung WHERE MaNguoiDung = @MaNguoiDung";
+                    string query = "SELECT * FROM NguoiDung WHERE is_delete = 0";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
@@ -66,7 +67,29 @@ namespace DAL
                 return false;
             }
         }
-
+        public bool DeleteByMaNguoiDung(NguoiDungDTO nguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE NguoiDung SET TrangThai = @TrangThai, is_delete = @is_delete WHERE MaNguoiDung = @MaNguoiDung";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
+                        command.Parameters.AddWithValue("@is_delete", 1);
+                        command.Parameters.AddWithValue("@TrangThai", 0);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
         public List<NguoiDungDTO> GetAll()
         {
             List<NguoiDungDTO> nguoiDungList = new List<NguoiDungDTO>();
@@ -81,9 +104,9 @@ namespace DAL
                         {
                             NguoiDungDTO nguoiDung = new NguoiDungDTO
                             {
-                                MaNguoiDung = Convert.ToInt32(reader["MaNguoiDung"]),
-                                HoTen = reader["HoTen"].ToString(),
-                                GioiTinh = Convert.ToInt32( reader["GioiTinh"].ToString()),
+                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                HoTen = reader["Ten"].ToString(),
+                                GioiTinh = Convert.ToInt32(reader["GioiTinh"]),
                                 NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
                                 Avatar = reader["Avatar"].ToString(),
                                 SDT = reader["SDT"].ToString(),
@@ -116,7 +139,7 @@ namespace DAL
                             {
                                 MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
                                 HoTen = reader["Ten"].ToString(),
-                                GioiTinh = Convert.ToInt32(reader["GioiTinh"].ToString()),
+                                GioiTinh = Convert.ToInt32(reader["GioiTinh"]),
                                 NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
                                 Avatar = reader["Avatar"].ToString(),
                                 SDT = reader["SDT"].ToString(),

@@ -77,6 +77,53 @@ namespace GUI.Users
             }
             LoadUserInfo();
         }
+        public void getNguoiDungId(NguoiDungDTO nguoiDung)
+        {
+            this.userID = nguoiDung.MaNguoiDung;
+            LoadUserFolder();
+            LoadUserInfo();
+        }
+        private void LoadUserFolder()
+        {
+
+            SqlConnection conn = GetConnectionDb.GetConnection();
+            string query = "SELECT * FROM NhomQuyen";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            // Xóa các mục hiện có trong ComboBox (nếu cần)
+            comboBox1.Items.Clear();
+
+            // Thêm các mục mới từ SQL Server
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader["TenQuyen"].ToString());
+            }
+
+
+            // Lấy đường dẫn của thư mục chứa file thực thi của ứng dụng
+            string exePath = Application.StartupPath;
+
+            for (int i = 0; i < 5; i++)
+            {
+                DirectoryInfo parent = Directory.GetParent(exePath);
+                if (parent == null)
+                {
+                    throw new DirectoryNotFoundException($"Không thể đi ngược 5 cấp thư mục từ {Application.StartupPath}");
+                }
+                exePath = parent.FullName;
+            }
+            // Tạo đường dẫn đến thư mục Avatar
+            avatarFolderPath = Path.Combine(exePath, "GUI", "Users", "Avatar");
+
+            // Kiểm tra xem thư mục có tồn tại không, nếu không thì tạo mới
+            if (!Directory.Exists(avatarFolderPath))
+            {
+                Directory.CreateDirectory(avatarFolderPath);
+            }
+            //MessageBox.Show("Image Path: " + avatarFolderPath);
+            reader.Close();
+        }       
         private void LoadUserInfo()
         {
             try

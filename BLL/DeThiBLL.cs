@@ -39,5 +39,22 @@ namespace BLL
         {
             return deThiDAL.Add(dethidto);
         }
+        public bool Update(DeThiDTO d)
+        {
+            return deThiDAL.Update(d);
+        }
+        public List<DeThiDTO> getDeThiByMaGV(long maGV)
+        {
+            return deThiDAL.GetAll(maGV);
+        }
+        public bool Delete(DeThiDTO deThi)
+        {
+            return deThiDAL.Delete(deThi);
+        }
+        public int GetAutoIncrement()
+        {
+            return deThiDAL.GetAutoIncrement();
+        }
+
     }
 }

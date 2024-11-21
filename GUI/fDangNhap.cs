@@ -52,6 +52,7 @@ namespace GUI
             nguoiDungBLL = new NguoiDungBLL();
             nhomQuyenBLL = new NhomQuyenBLL();
         }
+
         private void Form1_Resiz(object sender, EventArgs e)
         {
             resize_Control(button1, recBut1);
@@ -63,7 +64,6 @@ namespace GUI
             resize_Control(label4, recLab4);
             resize_Control(checkBox1, recCBox1);
         }
-
         private void resize_Control(Control c, Rectangle r)
         {
             float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
