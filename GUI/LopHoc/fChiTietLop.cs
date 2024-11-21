@@ -75,9 +75,10 @@ namespace GUI.LopHoc
             fDanhSachDeThi f = new fDanhSachDeThi(this, lopDTO);
             f.ShowDialog();
         }
-        private void lblTenLop_Click_1(object sender, EventArgs e)
+        private void lblTenLop_Click(object sender, EventArgs e)
         {
-
+            fThemLop f = new fThemLop(lopHocControl, "edit", lopDTO.MaMoi, lopDTO);
+            f.ShowDialog();
         }
         private void btnXemDSSV_Click(object sender, EventArgs e)
         {
@@ -116,7 +117,6 @@ namespace GUI.LopHoc
             }
             return System.Drawing.Color.FromArgb(r, g, b);
         }
-
         private void CreatePanel(DeThiDTO deThi)
         {
             Panel panelContain = new Panel
@@ -272,8 +272,7 @@ namespace GUI.LopHoc
             flowLayoutPanel1.Controls.Add(panelContain);
             panelContain.Controls.AddRange(new Control[] { btnDong, panelHead, btnLamBai, btnXemKq });
             flowLayoutPanel1.AutoScroll = true;
-            btnLamBai.Enabled = true;
-            btnDong.Enabled = false;            
+            btnLamBai.Enabled = true;        
             panelHead.BackColor = GetRandomColor();
             panelHead.Enabled = true;
         }

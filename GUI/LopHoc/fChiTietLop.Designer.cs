@@ -249,7 +249,7 @@
             this.lblTenLop.TabIndex = 5;
             this.lblTenLop.Text = "Kỹ thuật lập trình   ";
             this.lblTenLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTenLop.Click += new System.EventHandler(this.lblTenLop_Click_1);
+            this.lblTenLop.Click += new System.EventHandler(this.lblTenLop_Click);
             // 
             // chuThichPanel
             // 

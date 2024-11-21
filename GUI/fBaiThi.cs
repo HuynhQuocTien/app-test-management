@@ -111,7 +111,6 @@ namespace GUI
             int seconds = remainingTimeInSeconds % 60;
             lblThoiGianLamBai.Text = $"{minutes:00}:{seconds:00}";
         }
-
         private void NopBai()
         {
             flag = 1;

@@ -1,7 +1,14 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fbaithi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fbaithi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +16,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,6 +77,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fBaiThi.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fBaiThi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fBaiThi.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fBaiThi.cs",
+              "RelativeToolTip": "..\\GUI\\fBaiThi.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAQwHAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T01:43:01.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fBaiThi.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fBaiThi.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fBaiThi.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fBaiThi.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fBaiThi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T01:43:00.181Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

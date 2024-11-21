@@ -26,7 +26,7 @@ namespace GUI.LopHoc
             lopBLL = new LopBLL();
             listlop = new List<LopDTO>();
 
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 btnThem.Text = "Tham gia lớp";
                 renderLopDTO(lopBLL.getListLopByMaSV(fDangNhap.nguoiDungDTO.MaNguoiDung));
@@ -104,7 +104,7 @@ namespace GUI.LopHoc
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(labelMonhoc, labelMonhoc.Text);
-            if(!fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            if(!fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 labelMonhoc.Click += (s,ev) => { labelMonhoc_Click(s, ev, lop); };
             }
@@ -129,7 +129,7 @@ namespace GUI.LopHoc
                 Text = "Xóa",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên") ? false : true
+                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh") ? false : true
             };
             buttonXoa.Click += (s, ev) =>
             {
@@ -147,7 +147,7 @@ namespace GUI.LopHoc
 
             flowLayoutPanel1.AutoScroll = true;
             counter++;
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 buttonThamGia.Location = new Point(125, 300);
             }
@@ -178,13 +178,13 @@ namespace GUI.LopHoc
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giảng viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
             {
                 fThemLop themLop = new fThemLop(this, "add", GenerateRandomCode(10));
 
                 themLop.ShowDialog();
             }
-            else if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Sinh viên"))
+            else if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
             {
                 fThemLop fJoinLop = new fThemLop(this, "join");
                 fJoinLop.ShowDialog();
@@ -228,7 +228,7 @@ namespace GUI.LopHoc
         {
             lopBLL.Update(obj);
             LopBLL lopBLLnew = new LopBLL();
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Sinh viên"))
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 renderLopDTO(lopBLL.getListLopByMaSV(fDangNhap.nguoiDungDTO.MaNguoiDung));
 
