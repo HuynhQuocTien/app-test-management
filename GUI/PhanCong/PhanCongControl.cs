@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using BLL;
 using DocumentFormat.OpenXml.Office.Word;
+using GUI.CauHoi;
 
 
 namespace GUI.PhanCong
@@ -69,12 +70,19 @@ namespace GUI.PhanCong
         {
             fAddPhanCong fthemPhanCong = new fAddPhanCong();
             fthemPhanCong.Show();
+            fthemPhanCong.FormClosed += (s, args) => {
+                LoadDataToGridView();
+                phanTrang();
+                this.numericUpDown1.Value = 1;
+            };
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
                PhanCongBLL phanCongBLL = new PhanCongBLL();
                dataGridView1.DataSource = phanCongBLL.GetTimKiem(textBoxTimKiem.Text);
+                this.numericUpDown1.Enabled = false;
+                this.label2.Text = "Trên tổng ... trang";
         }
     }
 }

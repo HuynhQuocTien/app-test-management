@@ -10,10 +10,10 @@ namespace DAL
     public interface IUnitCTL<T> where T : class
     {
         T GetById(T t);
-        List<T> GetAll();
+        List<T> GetAll(long MaNguoiTao);
         int Add(T t);
         bool Update(T t);
         bool Delete(T t);
-        List<T> GetTimKiem(string timkiem);
+        List<T> GetTimKiem(string timkiem, long MaNguoiTao);
     }
 }

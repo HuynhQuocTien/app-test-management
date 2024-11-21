@@ -16,18 +16,23 @@ namespace BLL
         {
             cauHoiDAL = new CauHoiDAL();
         }
-        public List<CauHoiDTO> GetAll()
+        public List<CauHoiDTO> GetAll(long MaNguoiTao)
         {
-            return cauHoiDAL.GetAll();
+            return cauHoiDAL.GetAll(MaNguoiTao);
         }
-        public List<CauHoiDTO> GetTimKiem(string timkiem)
+        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
         {
-            return cauHoiDAL.GetTimKiem(timkiem);
+            return cauHoiDAL.GetTimKiem(timkiem, MaNguoiTao);
         }
 
-        public DataTable GetDataForPage(int startRecord, int recordsPerPage)
+        public List<CauHoiDTO> GetTimKiemSelect(int dokho, string MaMonHoc, long MaNguoiTao)
         {
-            return cauHoiDAL.GetDataForPage(startRecord, recordsPerPage);
+            return cauHoiDAL.GetTimKiemSelect(dokho, MaMonHoc, MaNguoiTao);
+        }
+
+        public DataTable GetDataForPage(int startRecord, int recordsPerPage, long MaNguoiTao)
+        {
+            return cauHoiDAL.GetDataForPage(startRecord, recordsPerPage, MaNguoiTao);
         }
         public int Add(CauHoiDTO cauhoi)
         {
@@ -82,5 +87,7 @@ namespace BLL
             }
             return 0;
         }
+
+         
     }
 }

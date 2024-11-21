@@ -24,6 +24,17 @@ namespace GUI.CauHoi
         public CauHoiControl()
         {
             InitializeComponent();
+            List<KeyValuePair<string, int>> items = new List<KeyValuePair<string, int>>()
+            {
+                new KeyValuePair<string, int>("Chọn độ khó", 0),
+                new KeyValuePair<string, int>("Dễ", 1),
+                new KeyValuePair<string, int>("Trung bình", 2),
+                new KeyValuePair<string, int>("Khó", 3)
+            };
+            this.comboBox2.DataSource = items;        // Gán dữ liệu vào ComboBox
+            this.comboBox2.DisplayMember = "Key";    // Thuộc tính hiển thị
+            this.comboBox2.ValueMember = "Value";    // Thuộc tính giá trị
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             render();
             phanTrang();
         }
@@ -52,7 +63,7 @@ namespace GUI.CauHoi
             // Tải dữ liệu từ cơ sở dữ liệu hoặc danh sách, lấy các bản ghi từ startRecord đến startRecord + recordsPerPage
             // Ví dụ:
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage);
+            DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage, fDangNhap.taiKhoanDTO.Username);
 
             dataGridView1.DataSource = pageData;
         }
@@ -78,8 +89,8 @@ namespace GUI.CauHoi
         private void loadDataGridView()
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            dataGridView1.DataSource = cauhoiBLL.GetAll();
-            Allrecord = cauhoiBLL.GetAll().Count;
+            dataGridView1.DataSource = cauhoiBLL.GetAll(fDangNhap.taiKhoanDTO.Username);
+            Allrecord = dataGridView1.RowCount;
             LoadPage(1, 10);
         }
 
@@ -225,6 +236,11 @@ namespace GUI.CauHoi
         {
             fThemCauHoi fThemCauHoi = new fThemCauHoi();
             fThemCauHoi.Show();
+            fThemCauHoi.FormClosed += (s, args) => {
+                render();
+                phanTrang();
+                this.numericUpDown1.Value = 1;
+            };
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -236,15 +252,30 @@ namespace GUI.CauHoi
                 case "Trắc nghiệm":
                     fCauHoiTN fCauHoiTN = new fCauHoiTN(this.cauHoiDTO);
                     fCauHoiTN.Show();
+                    fCauHoiTN.FormClosed += (s, args) => {
+                        render();
+                        phanTrang();
+                        this.numericUpDown1.Value = 1;
+                    };
                     break;
 
                 case "Điền từ":
                     fCauHoiDCT fCauHoiDCT = new fCauHoiDCT(this.cauHoiDTO);
                     fCauHoiDCT.Show();
+                    fCauHoiDCT.FormClosed += (s, args) => {
+                        render();
+                        phanTrang();
+                        this.numericUpDown1.Value = 1;
+                    };
                     break;
                 case "Nối câu":
                      fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau(this.cauHoiDTO);
                     fCauHoiNoiCau.Show();
+                    fCauHoiNoiCau.FormClosed += (s, args) => {
+                        render();
+                        phanTrang();
+                        this.numericUpDown1.Value = 1;
+                    };
                     break;
                 default:
                     MessageBox.Show("Loại câu hỏi không hợp lệ!");
@@ -273,7 +304,7 @@ namespace GUI.CauHoi
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text);
+            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text,fDangNhap.taiKhoanDTO.Username);
             this.numericUpDown1.Enabled = false;
             this.label2.Text = "Trên tổng ... trang";
         }
@@ -298,16 +329,6 @@ namespace GUI.CauHoi
             
         }
 
-        private void comboBoxMonHoc_SelectedValueChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void comboBoxDoKho_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void textBoxTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             
@@ -317,10 +338,27 @@ namespace GUI.CauHoi
         {
             render(); 
             phanTrang();
+            this.numericUpDown1.Value = 1;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedIndex == -1 || comboBox2.SelectedValue == null)
+                return; // Bỏ qua khi chưa chọn giá trị nào
+
+            if (comboBox2.SelectedItem is KeyValuePair<string, int> selectedItem)
+            {
+                if (selectedItem.Value == 0)
+                {
+                    return;
+                }
+
+                int DoKho = selectedItem.Value;  // Lấy giá trị Value
+                CauHoiBLL cauhoiBLL = new CauHoiBLL();
+                dataGridView1.DataSource = cauhoiBLL.GetTimKiemSelect(DoKho, comboBox1.SelectedValue.ToString(), fDangNhap.taiKhoanDTO.Username);
+                this.numericUpDown1.Enabled = false;
+                this.label2.Text = "Trên tổng ... trang";
+            }
 
         }
     }

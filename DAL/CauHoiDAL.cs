@@ -12,17 +12,19 @@ namespace DAL
         {
             return new CauHoiDAL();
         }
-        public List<CauHoiDTO> GetTimKiem(string timkiem)
+        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauHoi WHERE (NoiDung LIKE @NoiDung OR NguoiTao LIKE @NguoiTao OR LoaiCauHoi LIKE @LoaiCauHoi) AND is_delete = 0";
+                string query = "SELECT * FROM CauHoi WHERE (NoiDung LIKE @NoiDung OR LoaiCauHoi LIKE @LoaiCauHoi) AND NguoiTao=@MaNguoiTao AND is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NoiDung", "%" + timkiem + "%");
                     command.Parameters.AddWithValue("@NguoiTao", "%" + timkiem + "%");
                     command.Parameters.AddWithValue("@LoaiCauHoi", "%" + timkiem + "%");
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -46,7 +48,42 @@ namespace DAL
             return cauHoiList;
         }
 
-        public DataTable GetDataForPage(int startRecord, int recordsPerPage)
+        public List<CauHoiDTO> GetTimKiemSelect(int dokho, string MaMonHoc, long MaNguoiTao)
+        {
+            List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauHoi WHERE DoKho = @DoKho AND MaMonHoc = @MaMonHoc AND NguoiTao=@MaNguoiTao AND is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@DoKho", dokho);
+                    command.Parameters.AddWithValue("@MaMonHoc", MaMonHoc);
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauHoiDTO cauHoi = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            cauHoiList.Add(cauHoi);
+                        }
+                    }
+                }
+            }
+            return cauHoiList;
+        }
+
+        public DataTable GetDataForPage(int startRecord, int recordsPerPage, long MaNguoiTao)
         {
             DataTable dt = new DataTable();
 
@@ -57,7 +94,7 @@ namespace DAL
                 string query = @"
                 SELECT MaCauHoi, NoiDung, NguoiTao AS MaNguoiTao,MaMonHoc,DoKho,TrangThai,is_delete, LoaiCauHoi 
                 FROM CauHoi
-                where is_delete=0
+                where is_delete=0 AND NguoiTao=@MaNguoiTao
                 ORDER BY MaCauHoi 
                 OFFSET @StartRecord ROWS 
                 FETCH NEXT @RecordsPerPage ROWS ONLY";
@@ -67,6 +104,8 @@ namespace DAL
                     // Thêm các tham số cho OFFSET và FETCH NEXT
                     cmd.Parameters.AddWithValue("@StartRecord", startRecord);
                     cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
+                    cmd.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
 
                     // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -130,20 +169,21 @@ namespace DAL
             }
         }
 
-        public List<CauHoiDTO> GetAll()
+        public List<CauHoiDTO> GetAll(long MaNguoiTao)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauHoi WHERE is_delete = 0";
+                string query = "SELECT * FROM CauHoi WHERE is_delete = 0 AND NguoiTao=@MaNguoiTao";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             CauHoiDTO cauHoi = new CauHoiDTO
-                            {
+                            {                            
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
                                 LoaiCauHoi = reader["LoaiCauHoi"].ToString(),

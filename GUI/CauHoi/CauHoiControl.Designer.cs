@@ -204,22 +204,17 @@ namespace GUI.CauHoi
             // comboBox2
             // 
             this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox2.DisplayMember = "Value";
+            this.comboBox2.DataSource = ((object)(resources.GetObject("comboBox2.DataSource")));
+            this.comboBox2.DisplayMember = "Key";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Chọn độ khó",
-            ((object)(resources.GetObject("comboBox2.Items"))),
-            ((object)(resources.GetObject("comboBox2.Items1"))),
-            ((object)(resources.GetObject("comboBox2.Items2")))});
             this.comboBox2.Location = new System.Drawing.Point(2, 36);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(111, 29);
             this.comboBox2.TabIndex = 1;
             this.comboBox2.ValueMember = "Key";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // containerBtnPanel
             // 
