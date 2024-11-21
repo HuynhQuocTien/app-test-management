@@ -125,6 +125,10 @@ namespace GUI.DeThi
             {
                 buttonXoa_Click(s, ev, deThi);
             };
+            btnThemCauHoiVaoDe.Click += (s, ev) =>
+            {
+                btnThemCauHoiVaoDe_Click(s, ev, deThi);
+            };
             panelHead.Controls.AddRange(new Control[] { lblMonHoc, lblThoiGianLamBai, lblTenDeThi });
             panelContain.Controls.AddRange(new Control[] { btnThemCauHoiVaoDe, buttonXoa, panelHead });
 
@@ -170,7 +174,11 @@ namespace GUI.DeThi
                 flowLayoutPanel1.Controls.Remove(panelContain);
             }
         }
-
+        private void btnThemCauHoiVaoDe_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            fThemChiTietDeThi f = new fThemChiTietDeThi(obj);
+            f.ShowDialog();
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))

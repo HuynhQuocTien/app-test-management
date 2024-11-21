@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,23 +19,28 @@ namespace GUI.DeThi
     public partial class fThemChiTietDeThi : Form
     {
         //private int maMonHoc = 1, maLop = 1;
-        int maDeThi = 1;
-        private long maNguoiDung = 3121410497;
+        private int maDeThi = 1;
+        private long maNguoiDung;
         GiaoDeThiBLL giaoDeThiBLL = new GiaoDeThiBLL();
 
         ChiTietDeBLL chiTietDeThiBLL = new ChiTietDeBLL();
         List<int> maMonHocList = new List<int>();
+        DeThiDTO deThi;
         public fThemChiTietDeThi(int maDe)
         {
             maDeThi = maDe;
         }
-        public fThemChiTietDeThi()
+        public fThemChiTietDeThi(DeThiDTO deThi)
         {
             InitializeComponent();
+            this.deThi = deThi;
+            maDeThi = deThi.MaDe;
+            maNguoiDung = fDangNhap.nguoiDungDTO.MaNguoiDung;
             xemCbMonHoc();
             xemCbDoKho();
             xemlbCauHoi();
             lbCauHoi.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;  // Hoặc MultiSimple
+            lbDeThi.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;  // Hoặc MultiSimple
             xemldDeThi();
         }
 
@@ -90,9 +96,6 @@ namespace GUI.DeThi
             xemlbCauHoi();
             xemldDeThi();
         }
-
-
-
         public void xemCbMonHoc()
         {
             cbMonHoc.Items.Clear();

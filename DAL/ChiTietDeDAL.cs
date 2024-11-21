@@ -89,7 +89,7 @@ namespace DAL
             List<CauHoiDTO> list = new List<CauHoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT cau_hoi.* FROM ChiTietDe" +
+                string query = "SELECT CauHoi.* FROM ChiTietDe" +
                     " INNER JOIN CauHoi ON ChiTietDe.MaCauHoi = CauHoi.MaCauHoi" +
                     " WHERE ChiTietDe.MaDe = " + deThi.MaDe;
                 using (SqlCommand command = new SqlCommand(query, connection))

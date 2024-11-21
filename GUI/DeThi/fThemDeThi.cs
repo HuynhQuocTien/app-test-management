@@ -64,7 +64,7 @@ namespace GUI.DeThi
                     MonHocDTO cbMonHocValue = (MonHocDTO)cbMonHoc.SelectedItem;
                     DeThiDTO objUpdate = new DeThiDTO(deThiUpdate.MaDe, cbMonHocValue.MaMonHoc, txtTenDeThi.Text, deThiUpdate.ThoiGianTao,
                         deThiUpdate.ThoiGianBatDau, deThiUpdate.ThoiGianBatDau.AddMinutes(Convert.ToInt32(nud.Text)),
-                        fDangNhap.nguoiDungDTO.MaNguoiDung, 1, 0, cbMonHocValue.TenMonHoc);
+                        fDangNhap.nguoiDungDTO.MaNguoiDung, 0, 0, cbMonHocValue.TenMonHoc);
 
 
                     deThiControl.UpdateDeThi(objUpdate);
@@ -86,7 +86,7 @@ namespace GUI.DeThi
                     MonHocDTO cbMonHocValue = (MonHocDTO)cbMonHoc.SelectedItem;
                     DeThiDTO deThiAdd = new DeThiDTO(deThiBLL.GetAutoIncrement(), cbMonHocValue.MaMonHoc,
                         txtTendeValue, DateTime.Now, DateTime.Now, DateTime.Now.AddMinutes(Convert.ToInt32(nud.Text)),
-                        fDangNhap.nguoiDungDTO.MaNguoiDung, 1, 0, cbMonHocValue.TenMonHoc);
+                        fDangNhap.nguoiDungDTO.MaNguoiDung, 0, 0, cbMonHocValue.TenMonHoc);
                     deThiControl.AddDeThi(deThiAdd);
                     this.Close();
                     MessageBox.Show("Thêm đề thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

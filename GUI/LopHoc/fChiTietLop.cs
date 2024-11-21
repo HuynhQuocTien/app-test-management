@@ -46,12 +46,13 @@ namespace GUI.LopHoc
             chiTietDeBLL = new ChiTietDeBLL();
             RenderInfoLop();
             //Tạo Đề thi giả để xem
-            DeThiDTO temp = new DeThiDTO();
-            temp.MaDe = 1;
-            DeThiDTO dt =deThiBLL.GetById(temp);
-            CreatePanel(dt);
-            CreatePanelSV();
+            //DeThiDTO temp = new DeThiDTO();
+            //temp.MaDe = 1;
+            //DeThiDTO dt =deThiBLL.GetById(temp);
+            //CreatePanel(dt);
+            //CreatePanelSV();
             //End
+            RenderDeThi();
         }
         public void RenderDeThi()
         {
@@ -294,7 +295,7 @@ namespace GUI.LopHoc
         private void btnLamBai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
         {
             // thực hiện chức năng mở đề thi khi de thi dang dong
-            if (obj.TrangThai == 0)
+            if (obj.TrangThai == 0 && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 fSetThoiGianDeThi f = new fSetThoiGianDeThi(obj, lop, this, "edit");
                 f.ShowDialog();
