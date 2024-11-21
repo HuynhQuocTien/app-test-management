@@ -20,10 +20,22 @@ namespace GUI.Users
         private string userID;
         private string currentImagePath;
         private string avatarFolderPath;
+
+        public void getNguoiDungId(NguoiDungDTO nguoiDung)
+        {
+            this.userID = nguoiDung.MaNguoiDung.ToString();
+            LoadUserFolder();
+            LoadUserInfo();
+        }
+
         public InfoUser()
         {
             InitializeComponent();
-            this.userID = Session.UserID;
+        }
+
+        private void LoadUserFolder()
+        {
+ 
             SqlConnection conn = GetConnectionDb.GetConnection();
             string query = "SELECT * FROM NhomQuyen";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -59,9 +71,8 @@ namespace GUI.Users
             {
                 Directory.CreateDirectory(avatarFolderPath);
             }
-            MessageBox.Show("Image Path: " + avatarFolderPath);
+            //MessageBox.Show("Image Path: " + avatarFolderPath);
             reader.Close();
-            LoadUserInfo();
         }
 
         private void LoadUserInfo()
@@ -71,6 +82,8 @@ namespace GUI.Users
             {
                 try
                 {
+
+                
                     string query = "SELECT * FROM TaiKhoan INNER JOIN NguoiDung ON TaiKhoan.Username = NguoiDung.MaNguoiDung INNER JOIN NhomQuyen ON NhomQuyen.MaNhomQuyen = TaiKhoan.MaNhomQuyen  WHERE TaiKhoan.Username=@UserID;";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@UserID", userID);
@@ -163,6 +176,8 @@ namespace GUI.Users
             {
                 try
                 {
+
+                    //MessageBox.Show(userID);
                     // Update Email in TaiKhoan table
                     string queryEmail = "UPDATE TaiKhoan SET Email=@Email WHERE Username=@UserID;";
                     using (SqlCommand cmdEmail = new SqlCommand(queryEmail, conn))
@@ -174,13 +189,13 @@ namespace GUI.Users
 
                     string newFileName = $"Avatar_{userID}{Path.GetExtension(currentImagePath)}";
                     string newAvatarPath = Path.Combine(avatarFolderPath, newFileName);
-                    MessageBox.Show("Image Path: " + newAvatarPath);
+                    //MessageBox.Show("Image Path: " + newAvatarPath);
 
                     string fileName = Path.GetFileName(currentImagePath);
                     File.Copy(currentImagePath, newAvatarPath, true);
 
                     // Update Ten and SDT in NguoiDung table
-                    string queryUser = "UPDATE NguoiDung SET Ten=@Ten, SDT=@SDT, Avatar=@Avatar WHERE MaNguoiDung=@UserID;";
+                    string queryUser = "UPDATE NguoiDung SET Ten=@Ten, SDT=@SDT, Avatar = @Avatar WHERE MaNguoiDung=@UserID;";
                     using (SqlCommand cmdUser = new SqlCommand(queryUser, conn))
                     {
                         cmdUser.Parameters.AddWithValue("@Ten", textBoxName.Text);

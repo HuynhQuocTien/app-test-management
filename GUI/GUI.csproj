@@ -409,6 +409,9 @@
     <EmbeddedResource Include="CauHoi\fThemCauHoi.resx">
       <DependentUpon>fThemCauHoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeThi\DeThiControl.resx">
+      <DependentUpon>DeThiControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeThi\fThemChiTietDeThi.resx">
       <DependentUpon>fThemChiTietDeThi.cs</DependentUpon>
     </EmbeddedResource>

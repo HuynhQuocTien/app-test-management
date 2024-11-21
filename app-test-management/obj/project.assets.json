@@ -539,24 +539,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huynh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tnt96\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "projectUniqueName": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
       "projectName": "app-test-management",
-      "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
-      "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\obj\\",
+      "projectPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "packagesPath": "C:\\Users\\tnt96\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\huynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\tnt96\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -571,8 +566,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj": {
-              "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\GUI.csproj"
+            "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj": {
+              "projectPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj"
             }
           }
         }
@@ -616,7 +611,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,8 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using BLL;
+using DAL;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using DTO;
+using GUI.LopHoc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,19 +19,31 @@ namespace GUI.DeThi
     public partial class DeThiControl : UserControl
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+       
+        
+        DeThiBLL deThiBLL;
+        List<DeThiDTO> listDeThi;
 
         public DeThiControl()
         {
             InitializeComponent();
-            CreatePanel();
+            deThiBLL = new DeThiBLL();
+            listDeThi = new List<DeThiDTO>();
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
         }
-        private void btnThem_Click(object sender, EventArgs e)
+        public void renderDeThiDTO(List<DeThiDTO> list)
         {
-            fThemDeThi themLop = new fThemDeThi();
-            themLop.ShowDialog();
+            listDeThi = list;
+            // Xóa tất cả các panel được tạo trước đó
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var l in listDeThi)
+            {
+                CreatePanel(l);
+            }
         }
-        private void CreatePanel()
+        private void CreatePanel(DeThiDTO deThi)
         {
+            // Subscribe to the Click event of the panel
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
@@ -56,7 +71,7 @@ namespace GUI.DeThi
                 Name = "lblTenDeThi",
                 Size = new Size(300, 200),
                 TabIndex = 0,
-                Text = "Đề thi 1",
+                Text = deThi.TenDe,
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
@@ -68,7 +83,7 @@ namespace GUI.DeThi
                 Name = "lblMonHoc1",
                 Size = new Size(110, 13),
                 TabIndex = 2,
-                Text = "Môn học: ABCxyz",
+                Text = $"Môn học: {deThi.TenMonHoc}",
 
             };
 
@@ -79,7 +94,7 @@ namespace GUI.DeThi
                 Name = "lblThoiGianLamBai",
                 Size = new Size(140, 13),
                 TabIndex = 1,
-                Text = "Thời gian làm bài: 120 phút"
+                Text = $"Thời gian làm bài: {(int)(deThi.ThoiGianKetThuc - deThi.ThoiGianBatDau).TotalMinutes} phút"
             };
 
             System.Windows.Forms.Button btnThemCauHoiVaoDe = new System.Windows.Forms.Button
@@ -102,7 +117,22 @@ namespace GUI.DeThi
                 Text = "Xóa",
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
-            };            
+            };
+
+
+
+            lblTenDeThi.Click += (s, ev) =>
+            {
+                labelDeThi_Click(s, ev, deThi);
+            };
+
+
+
+            buttonXoa.Click += (s, ev) =>
+            {
+                buttonXoa_Click(s, ev, deThi);
+            };
+
             panelHead.Controls.AddRange(new Control[] { lblMonHoc, lblThoiGianLamBai, lblTenDeThi });
             panelContain.Controls.AddRange(new Control[] { btnThemCauHoiVaoDe, buttonXoa, panelHead });
 
@@ -111,7 +141,53 @@ namespace GUI.DeThi
             flowLayoutPanel1.AutoScroll = true;
 
         }
+        private void labelDeThi_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            fThemDeThi suaDeThi = new fThemDeThi(this, "edit", obj);
+            suaDeThi.ShowDialog();
+        }
 
+
+        private void buttonXoa_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            deThiBLL.Delete(obj);
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            Panel panelContain = (Panel)clickedButton.Parent;
+
+            DialogResult result = MessageBox.Show("Xác nhận xóa đề thi?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                flowLayoutPanel1.Controls.Remove(panelContain);
+            }
+        }
+      
+
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giảng viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            {
+                fThemDeThi themDeThi = new fThemDeThi(this, "add");
+                themDeThi.ShowDialog();
+            }
+        }
+
+        public void AddDeThi(DeThiDTO obj)
+        {         
+            listDeThi.Add(obj);
+            deThiBLL.Add(obj);
+            CreatePanel(obj);
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+        }
+
+        public void UpdateDeThi(DeThiDTO obj)
+        {
+            deThiBLL.Update(obj);
+            DeThiBLL deThiBLLnew = new DeThiBLL();
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+            
+        }
         // Ramdom mau nhat
         private Color GetRandomColor()
         {

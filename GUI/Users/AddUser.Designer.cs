@@ -445,7 +445,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 327);
+            this.comboBox1.Location = new System.Drawing.Point(16, 323);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 29);
             this.comboBox1.TabIndex = 10;
@@ -477,7 +477,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Tạo";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -490,6 +490,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Huỷ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 

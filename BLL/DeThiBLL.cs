@@ -25,6 +25,33 @@ namespace BLL
            return deThiDAL.GetAllDeThiCuaLop(lop);
         }
 
+        public bool Update(DeThiDTO d)
+        {
+            return deThiDAL.Update(d);
+        }
+
+        public List<DeThiDTO> getDeThiByMaGV(long maGV)
+        {
+            return deThiDAL.GetAll(maGV);
+        }
+
+        public bool Delete(DeThiDTO deThi)
+        {
+            return deThiDAL.Delete(deThi);
+        }
+
+        public int GetAutoIncrement()
+        {
+            return deThiDAL.GetAutoIncrement();
+        }
+
+        public string Add(DeThiDTO d)
+        {
+            if (deThiDAL.Add(d))
+                return "Thêm đề thi thành công!";
+            return "Thêm đề thi thất bại!";
+        }
+
         public DeThiDTO GetById(DeThiDTO deThi)
         {
             return deThiDAL.GetById(deThi);

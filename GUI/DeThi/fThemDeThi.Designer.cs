@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTenlop = new System.Windows.Forms.TextBox();
+            this.txtTenDeThi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.nud = new System.Windows.Forms.NumericUpDown();
@@ -70,13 +70,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "phút";
             // 
-            // txtTenlop
+            // txtTenDeThi
             // 
-            this.txtTenlop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenlop.Location = new System.Drawing.Point(223, 86);
-            this.txtTenlop.Name = "txtTenlop";
-            this.txtTenlop.Size = new System.Drawing.Size(234, 29);
-            this.txtTenlop.TabIndex = 1;
+            this.txtTenDeThi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDeThi.Location = new System.Drawing.Point(223, 86);
+            this.txtTenDeThi.Name = "txtTenDeThi";
+            this.txtTenDeThi.Size = new System.Drawing.Size(234, 29);
+            this.txtTenDeThi.TabIndex = 1;
             // 
             // label2
             // 
@@ -147,7 +147,7 @@
             this.Controls.Add(this.nud);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTenlop);
+            this.Controls.Add(this.txtTenDeThi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTenlop;
+        private System.Windows.Forms.TextBox txtTenDeThi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.NumericUpDown nud;

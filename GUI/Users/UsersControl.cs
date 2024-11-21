@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using BLL;
+using DAL;
+using DocumentFormat.OpenXml.Spreadsheet;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -24,22 +26,49 @@ namespace GUI.Users
         private TextBox[] textBoxRole;
         private TextBox[] textBoxName;
 
+        NguoiDungBLL nguoiDungBLL;
+        TaiKhoanDAL taiKhoanDAL;
+        private List<NguoiDungDTO> getListNguoiDung()
+        {
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            return nguoiDungBLL.GetAllNguoiDung(); 
+        }
+
         public UsersControl()
         {
             InitializeComponent();
             renderUsers();
         }
-        private void Delete_MouseClick(object sender, MouseEventArgs e)
+
+        private void Delete_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
-            
+            if (MessageBox.Show("Bạn có muốn xóa người dùng không?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+
+                if (nguoiDungBLL.Delete(nguoiDung))
+                {
+                    MessageBox.Show("Xóa người dùng thành công.");
+                    renderUsers();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa người dùng thất bại.");
+                }
+            }
         }
-        private void Detail_MouseClick(object sender, MouseEventArgs e)
+        private void Detail_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
-            
+
+            //InfoUser infoNguoiDung = new InfoUser(nguoiDung);
+            //InfoUser infoNguoiDung = new InfoUser(nguoiDung);
+            InfoUser infoNguoiDung = new InfoUser();
+            infoNguoiDung.getNguoiDungId(nguoiDung);
+            infoNguoiDung.ShowDialog();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser();
+            AddUser addUser = new AddUser(this);
             addUser.ShowDialog();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,17 +88,46 @@ namespace GUI.Users
         {
 
         }
+
+
+        public void AddNguoiDung(NguoiDungDTO objND, TaiKhoanDTO objTK)
+        {
+
+            //MessageBox.Show("Meo");
+            MessageBox.Show(objND.ToString());
+
+            MessageBox.Show(objTK.ToString());
+
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
+            nguoiDungBLL.Add(objND);
+            taiKhoanDAL.Add(objTK);
+            renderUsers();
+        }
+
+
+
+
         private void renderUsers()
         {
-            panelUser = new Panel[5];
-            buttonCT = new Button[5];
-            buttonDELETE = new Button[5];
-            textBoxDate = new TextBox[5];
-            textBoxRole = new TextBox[5];
-            textBoxName = new TextBox[5];
-            avatarImg = new PictureBox[5];
-            for (int i = 0; i < 5; i++)
+            flowLayoutContainer.Controls.Clear();
+
+            var nguoiDungs = getListNguoiDung();
+            int nguoiDungCount = nguoiDungs.Count;
+
+
+            panelUser = new Panel[nguoiDungCount];
+            buttonCT = new Button[nguoiDungCount];
+            buttonDELETE = new Button[nguoiDungCount];
+            textBoxDate = new TextBox[nguoiDungCount];
+            textBoxRole = new TextBox[nguoiDungCount];
+            textBoxName = new TextBox[nguoiDungCount];
+            avatarImg = new PictureBox[nguoiDungCount];
+
+            for (int i = 0; i < nguoiDungCount; i++)
             {
+                var nguoiDung = nguoiDungs[i];
+
                 panelUser[i] = new Panel();
                 panelUser[i].Name = "panelUser" + i;
                 panelUser[i].Size = new Size(385, 150);
@@ -84,7 +142,9 @@ namespace GUI.Users
                 buttonCT[i].Tag = "id1";
                 buttonCT[i].Text = "Chi tiết";
                 buttonCT[i].UseVisualStyleBackColor = true;
-                buttonCT[i].MouseClick += Detail_MouseClick;
+                //buttonCT[i].MouseClick += Detail_MouseClick;
+                buttonCT[i].MouseClick += (sender, e) => Detail_MouseClick(sender, e, nguoiDung);
+
                 buttonCT[i].Cursor = Cursors.Hand;
                 // 
                 // buttonDELETE
@@ -97,8 +157,12 @@ namespace GUI.Users
                 buttonDELETE[i].Tag = "id1";
                 buttonDELETE[i].TextImageRelation = TextImageRelation.ImageBeforeText;
                 buttonDELETE[i].UseVisualStyleBackColor = true;
-                buttonDELETE[i].MouseClick += Delete_MouseClick;
+                //buttonDELETE[i].MouseClick += Delete_MouseClick;
+                buttonDELETE[i].MouseClick += (sender, e) => Delete_MouseClick(sender, e, nguoiDung);
                 buttonDELETE[i].Cursor = Cursors.Hand;
+
+
+             
                 // 
                 // textBoxDate
                 // 
@@ -107,7 +171,7 @@ namespace GUI.Users
                 textBoxDate[i].Location = new Point(149, 76);
                 textBoxDate[i].Name = "textBoxDate" + i;
                 textBoxDate[i].Size = new Size(209, 23);
-                textBoxDate[i].Text = "12/9/2024";
+                textBoxDate[i].Text = nguoiDung.NgaySinh.ToString("dd/MM/yyyy");
                 textBoxDate[i].Enabled = false;
                 // 
                 // textBoxRole
@@ -118,8 +182,7 @@ namespace GUI.Users
                 textBoxRole[i].Name = "textBoxRole" + i;
                 textBoxRole[i].Size = new Size(209, 23);
                 textBoxRole[i].Enabled = false;
-
-                        textBoxRole[i].Text += "Admin";
+                textBoxRole[i].Text += "Admin";
 
 
                 // 
@@ -130,7 +193,7 @@ namespace GUI.Users
                 textBoxName[i].Location = new Point(149, 18);
                 textBoxName[i].Name = "textBoxName" + i;
                 textBoxName[i].Size = new Size(209, 23);
-                textBoxName[i].Text = "Huỳnh Quốc Tiến";
+                textBoxName[i].Text = nguoiDung.HoTen;
                 textBoxName[i].Enabled = false;
                 // 
                 // avatarImg
@@ -142,7 +205,7 @@ namespace GUI.Users
                 avatarImg[i].Size = new Size(100, 113);
                 avatarImg[i].TabStop = false;
                 avatarImg[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
+                avatarImg[i].ImageLocation = nguoiDung.Avatar;
 
 
                 panelUser[i].Controls.Add(buttonCT[i]);

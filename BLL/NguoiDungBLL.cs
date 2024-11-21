@@ -15,6 +15,25 @@ namespace BLL
         {
             nguoiDungDAL = NguoiDungDAL.getInstance();
         }
+        public string Add(NguoiDungDTO n)
+        {
+            if (nguoiDungDAL.Add(n))
+                return "Thêm người dùng thành công!";
+            return "Thêm người dùng thất bại!";
+        }
+
+
+        public List<NguoiDungDTO> GetAllNguoiDung()
+        {
+            return nguoiDungDAL.GetAll();
+        }
+
+        public bool Delete(NguoiDungDTO nguoiDung)
+        {
+            return nguoiDungDAL.DeleteByMaNguoiDung(nguoiDung);
+        }
+
+
         public NguoiDungDTO getUserLoginById(long id)
         {
             NguoiDungDTO nd = new NguoiDungDTO();
