@@ -25,6 +25,14 @@ namespace GUI.CauHoi
         public fThemCauHoi()
         {
             InitializeComponent();
+            textBox15.MaxLength = 1;
+            textBox16.MaxLength = 1;
+            textBox14.MaxLength = 1;
+            textBox9.MaxLength = 1;
+            textBox6.MaxLength = 1;
+            textBox7.MaxLength = 1;
+            textBox8.MaxLength = 1;
+            textBox10.MaxLength = 1;
             this.btnLuu.Click += btnLuu_Click;
             this.button1.Click += button1_Click;
             this.button2.Click += button2_Click;
@@ -168,15 +176,64 @@ namespace GUI.CauHoi
             int MaNoiCau = 0;
             return new NoiCauDTO(MaNoiCau, MaCauHoi, NoiDung, Diem);
         }
-
-        private int CountLines(TextBox textBox)
+        private int CountQuestions(TextBox textBox)
         {
             if (string.IsNullOrEmpty(textBox.Text))
                 return 0;
 
-            // Đếm số dòng bằng cách đếm ký tự xuống dòng + 1
-            return textBox.Text.Split('\n').Length;
+            // Lấy tất cả các dòng trong TextBox
+            string[] lines = textBox.Text.Replace("\r", "").Split('\n');
+
+            // Đếm số dòng bắt đầu bằng A., B., C., D.
+            int questionCount = 0;
+            foreach (string line in lines)
+            {
+                if (line.Trim().StartsWith("1.") ||
+                    line.Trim().StartsWith("2.") ||
+                    line.Trim().StartsWith("3.") ||
+                    line.Trim().StartsWith("4.") ||
+                    line.Trim().StartsWith("5.") ||
+                    line.Trim().StartsWith("6.") ||
+                    line.Trim().StartsWith("7.") ||
+                    line.Trim().StartsWith("8.")
+                 )
+                {
+                    questionCount++;
+                }
+            }
+
+            return questionCount;
         }
+
+        private int CountAnswer(TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+                return 0;
+
+            // Lấy tất cả các dòng trong TextBox
+            string[] lines = textBox.Text.Replace("\r", "").Split('\n');
+
+            // Đếm số dòng bắt đầu bằng A., B., C., D.
+            int questionCount = 0;
+            foreach (string line in lines)
+            {
+                if (line.Trim().StartsWith("A.") ||
+                    line.Trim().StartsWith("B.") ||
+                    line.Trim().StartsWith("C.") ||
+                    line.Trim().StartsWith("D.") ||
+                    line.Trim().StartsWith("E.") ||
+                    line.Trim().StartsWith("F.") ||
+                    line.Trim().StartsWith("G.") ||
+                    line.Trim().StartsWith("H.")
+                 )
+                {
+                    questionCount++;
+                }
+            }
+
+            return questionCount;
+        }
+
         private int themCauHoi()
         {
             CauHoiBLL cauHoiBLL = new CauHoiBLL();
@@ -187,6 +244,16 @@ namespace GUI.CauHoi
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int i = 0;
+            if (comboBoxDoKho.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (comboBoxMonHoc.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (cbSoDapAn.SelectedIndex == 2)  // 4 đáp án
             {
                 if (txtInputDA1.Text == "" || txtInputDA2.Text == "" || txtInputDA3.Text == "" || txtInputDA4.Text == "")
@@ -277,6 +344,22 @@ namespace GUI.CauHoi
             {
                 MessageBox.Show("Nhập thành công", "Thông báo thêm", MessageBoxButtons.OK);
                 clearFormTracNghiem();
+                DialogResult result = MessageBox.Show(
+                "Bạn có muốn thoát không ?",
+                "Thông bao xác nhận",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+
             }
             else if (i == 0)
             {
@@ -289,7 +372,18 @@ namespace GUI.CauHoi
         private void button1_Click(object sender, EventArgs e)
         {
             int i = 0;
+            int count = Regex.Matches(textBox1.Text, @"\(\d+\)").Count;
             // Kiểm tra theo số đáp án được chọn trong ComboBox
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (comboBox3.SelectedIndex == 4)  // 5 đáp án
             {
                 if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox11.Text == "")
@@ -297,8 +391,19 @@ namespace GUI.CauHoi
                     MessageBox.Show("Ô được chọn không được để trống.", "Thông báo thêm", MessageBoxButtons.OK);
                     return;
                 }
+
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
@@ -329,6 +434,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
@@ -358,6 +473,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
@@ -387,6 +512,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
@@ -415,6 +550,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
@@ -438,6 +583,21 @@ namespace GUI.CauHoi
             {
                 MessageBox.Show("Nhập thành công", "Thông báo thêm", MessageBoxButtons.OK);
                 clearFormDienChoTrong();
+                DialogResult result = MessageBox.Show(
+               "Bạn có muốn thoát không ?",
+               "Thông bao xác nhận",
+               MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Question
+               );
+
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
             }
             else if (i == 0)
             {
@@ -453,14 +613,19 @@ namespace GUI.CauHoi
                 MessageBox.Show("Chưa chọn số đáp án", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            if (CountLines(textBox12)>8 || CountLines(textBox13)>8)
+            if (comboBox4.SelectedIndex == -1)
             {
-                MessageBox.Show("Một trong hai cột đã vượt quá 8 dòng", "Báo Lỗi");
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            if (CountLines(textBox12) != CountLines(textBox13))
+            if (CountQuestions(textBox12)>8 || CountAnswer(textBox13)>8)
             {
-                MessageBox.Show("Số dòng ở 2 cột phải ngang nhau", "Báo Lỗi");
+                MessageBox.Show("Một trong hai cột đã vượt quá 8 câu", "Báo Lỗi");
+                return;
+            }
+            if (CountQuestions(textBox12) != CountAnswer(textBox13))
+            {
+                MessageBox.Show("Số câu ở 2 cột phải ngang nhau", "Báo Lỗi");
                 return;
             }
             // Thêm các validation khác nếu cần
@@ -483,27 +648,108 @@ namespace GUI.CauHoi
                 return;
             }
 
-            if(CountLines(textBox12) != int.Parse(comboBox6.SelectedItem.ToString()) || CountLines(textBox13) != int.Parse(comboBox6.SelectedItem.ToString()))
+            if(CountQuestions(textBox12) != int.Parse(comboBox6.SelectedItem.ToString()) || CountAnswer(textBox13) != int.Parse(comboBox6.SelectedItem.ToString()))
             {
-                MessageBox.Show("Số dòng của 2 cột không được khác số đáp án", "Lỗi định dạng");
+                MessageBox.Show("Số câu của 2 cột không được khác số đáp án", "Lỗi định dạng");
+                return;
+            }
+
+            if(kiemTraTrung(int.Parse(comboBox6.SelectedItem.ToString())))
+            {
+                MessageBox.Show("Số đáp án không được trùng lặp", "Lỗi định dạng");
                 return;
             }
             Dictionary<char, string> CauNoi = ProcessTextBoxContent(textBox12);
             Dictionary<char, string> DapAn = ProcessTextBoxContent(textBox13);
             Dictionary<string,string> CauNoi_DapAn=NoiCau_CauTraLoi(CauNoi, DapAn);
 
-
             int MaCauHoi = themCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
             if (MaCauHoi > 0) // Nếu thêm câu hỏi thành công
             {
                 themNoiCau(MaCauHoi,CauNoi, CauNoi_DapAn); // Sử dụng MaCauHoi để thêm câu trả lời
-                //clearFormDienChoTrong();
+                                                           //clearFormDienChoTrong();
+                DialogResult result = MessageBox.Show(
+               "Bạn có muốn thoát không ?",
+               "Thông bao xác nhận",
+               MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Question
+               );
+
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
             }
             else
             {
                 MessageBox.Show("Thêm câu hỏi thất bại.", "Thông báo lỗi", MessageBoxButtons.OK);
             }
+        }
+        bool kiemTraTrung(int sodapan)
+        {
+            string[] values = null;
+            // Tạo mảng để lưu các giá trị từ textbox
+            if (sodapan == 8)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text, textBox8.Text, textBox10.Text
+                };
+            }
+            else if (sodapan == 7)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text, textBox8.Text
+                };
+            }
+            else if (sodapan == 6)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text
+                };
+            }
+            else if (sodapan == 5)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text
+                };
+            }
+            else if (sodapan == 4)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text
+                };
+            }
+            else if (sodapan == 3)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text
+                };
+            }
+            else if (sodapan == 2)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text
+                };
+            }
+
+            // Kiểm tra trùng lặp bằng LINQ
+            return values.Distinct().Count() < values.Length;
         }
 
         private bool ValidateTextFormatABC(TextBox textBox)

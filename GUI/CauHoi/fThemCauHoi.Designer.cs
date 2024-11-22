@@ -640,7 +640,7 @@ namespace GUI.CauHoi
             2,
             3,
             4});
-            this.cbSoDapAn.Location = new System.Drawing.Point(167, 5);
+            this.cbSoDapAn.Location = new System.Drawing.Point(167, 9);
             this.cbSoDapAn.Margin = new System.Windows.Forms.Padding(2);
             this.cbSoDapAn.Name = "cbSoDapAn";
             this.cbSoDapAn.Size = new System.Drawing.Size(100, 29);
@@ -1075,7 +1075,7 @@ namespace GUI.CauHoi
             "3",
             "4",
             "5"});
-            this.comboBox3.Location = new System.Drawing.Point(167, 5);
+            this.comboBox3.Location = new System.Drawing.Point(167, 9);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(100, 29);
@@ -1686,7 +1686,7 @@ namespace GUI.CauHoi
             "6",
             "7",
             "8"});
-            this.comboBox6.Location = new System.Drawing.Point(207, 5);
+            this.comboBox6.Location = new System.Drawing.Point(207, 9);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(100, 29);
