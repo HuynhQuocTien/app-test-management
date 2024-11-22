@@ -20,14 +20,38 @@ namespace GUI.CauHoi
     public partial class fCauHoiDCT : Form
     {
         private CauHoiDTO cauHoiDTO;
-
-        public fCauHoiDCT(CauHoiDTO cauHoiDTO)
+        private int flag = 0;
+        public fCauHoiDCT(CauHoiDTO cauHoiDTO, int Detail)
         {
-            this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
+            flag=Detail;
+            if (Detail == 1)
+            {
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                textBox1.Enabled = false;
+                comboBox3.Enabled = false;
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                textBox4.Enabled = false;
+                textBox5.Enabled = false;
+                textBox11.Enabled = false;
+                checkBox2.Enabled = false;
+                this.button1.Text = "Đóng";
+                this.button1.Click += new System.EventHandler(this.btnThoat);
+            } else if(Detail==0)
+            {
+                this.button1.Click += new System.EventHandler(this.btnLuu_Click);
+            }    
+            this.cauHoiDTO = cauHoiDTO;         
             render();
         }
-        private void render()
+
+        private void btnThoat(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+            private void render()
         {
             loadDataComboBoxMHView();
             loadDataCauhoi();
@@ -153,46 +177,49 @@ namespace GUI.CauHoi
 
         private void cbSoDapAn_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex == 4)
+            if(flag==0)
             {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = true;
-                textBox11.Enabled = true;
-            }
-            else if (comboBox3.SelectedIndex == 3)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = true;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 2)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 1)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = false;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 0)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = false;
-                textBox4.Enabled = false;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
+                if (comboBox3.SelectedIndex == 4)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = true;
+                    textBox11.Enabled = true;
+                }
+                else if (comboBox3.SelectedIndex == 3)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = true;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 2)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 1)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = false;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 0)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = false;
+                    textBox4.Enabled = false;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+            }    
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

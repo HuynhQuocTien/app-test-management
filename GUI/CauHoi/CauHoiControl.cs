@@ -473,7 +473,7 @@ namespace GUI.CauHoi
             switch (LoaiCauHoi)
             {
                 case "Trắc nghiệm":
-                    fCauHoiTN fCauHoiTN = new fCauHoiTN(this.cauHoiDTO);
+                    fCauHoiTN fCauHoiTN = new fCauHoiTN(this.cauHoiDTO, 0);
                     fCauHoiTN.Show();
                     fCauHoiTN.FormClosed += (s, args) => {
                         render();
@@ -483,7 +483,7 @@ namespace GUI.CauHoi
                     break;
 
                 case "Điền từ":
-                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT(this.cauHoiDTO);
+                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT(this.cauHoiDTO, 0);
                     fCauHoiDCT.Show();
                     fCauHoiDCT.FormClosed += (s, args) => {
                         render();
@@ -492,7 +492,7 @@ namespace GUI.CauHoi
                     };
                     break;
                 case "Nối câu":
-                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau(this.cauHoiDTO);
+                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau(this.cauHoiDTO, 0);
                     fCauHoiNoiCau.Show();
                     fCauHoiNoiCau.FormClosed += (s, args) => {
                         render();
@@ -508,7 +508,27 @@ namespace GUI.CauHoi
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            
+            string LoaiCauHoi = this.cauHoiDTO.LoaiCauHoi;
+
+            switch (LoaiCauHoi)
+            {
+                case "Trắc nghiệm":
+                    fCauHoiTN fCauHoiTN = new fCauHoiTN(this.cauHoiDTO, 1);
+                    fCauHoiTN.Show();
+                    break;
+
+                case "Điền từ":
+                    fCauHoiDCT fCauHoiDCT = new fCauHoiDCT(this.cauHoiDTO, 1);
+                    fCauHoiDCT.Show();
+                    break;
+                case "Nối câu":
+                    fCauHoiNoiCau fCauHoiNoiCau = new fCauHoiNoiCau(this.cauHoiDTO, 1);
+                    fCauHoiNoiCau.Show();
+                    break;
+                default:
+                    MessageBox.Show("Loại câu hỏi không hợp lệ!");
+                    break;
+            }
 
         }
 
