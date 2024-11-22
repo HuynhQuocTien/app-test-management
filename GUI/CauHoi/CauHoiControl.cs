@@ -235,10 +235,11 @@ namespace GUI.CauHoi
             // Định nghĩa ánh xạ cột - tên thuộc tính
             Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
         {
-            { 1, "NoiDung" },
-            { 2, "MaMonHoc" },
-            { 3, "DoKho" },
-            { 4, "LoaiCauHoi" }
+            {1, "MaCauHoi"},
+            { 2, "NoiDung" },
+            { 3, "MaMonHoc" },
+            { 4, "DoKho" },
+            { 5, "LoaiCauHoi" }
         };
             OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Thiết lập context phi thương mại
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
@@ -300,7 +301,7 @@ namespace GUI.CauHoi
                             importTracNghiem(cauhoi, tracNghiemSheet);
                             break;
                         case "điền từ":
-                            //importDienTu(cauhoi, dienTuSheet, row);
+                            importDienTu(cauhoi, dienTuSheet);
                             break;
                         case "nối từ":
                             //importNoiTu(cauhoi, noiTuSheet, row);
@@ -356,7 +357,7 @@ namespace GUI.CauHoi
                         if (property != null)
                         {
                             string cellValue = sheet.Cells[row, col].Value?.ToString();
-                            if (cellValue != null)
+                            if (cellValue != null && cellValue.Equals(cauhoi.MaCauHoi))
                             {
                                 object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
                                 property.SetValue(cauTraLoiDTO, valueToSet);
@@ -374,26 +375,44 @@ namespace GUI.CauHoi
             
 
         }
+        private void importDienTu(CauHoiDTO cauhoi, ExcelWorksheet sheet)
+        {
+            Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
+            {
+                { 1, "MaCauHoi" },
+                { 2, "ViTri" },
+                { 3, "DapAnText" }
+            };
+            CauTraLoiDienChoTrongDTO cauTraLoiDTO = new CauTraLoiDienChoTrongDTO(); // Tạo đối tượng mới cho mỗi hàng
+            CauTraLoiDienChoTrongBLL cauTraLoiDienChoTrongBLL = new CauTraLoiDienChoTrongBLL();
 
-        //private void importDienTu(CauHoiDTO cauhoi, ExcelWorksheet sheet, int row)
-        //{
-        //    string cauTraLoi = sheet.Cells[row, 1].Value?.ToString();
-        //    for (int col = sheet.Dimension.Start.Column + 1; col < sheet.Dimension.End.Column; col++)
-        //    {
-        //        if (!string.IsNullOrEmpty(cauTraLoi))
-        //        {
-        //            CauTraLoiBLL cauTraLoiBLL = new CauTraLoiBLL();
-        //            CauTraLoiDienChoTrongDTO cauTraLoiDienChoTrongDTO = new CauTraLoiDienChoTrongDTO
-        //            {
-        //                MaCauHoi = cauhoi.MaCauHoi,
-        //                ViTri = 1,
-        //                DapAnText = cauTraLoi,
-        //                IsDelete = 0
-        //            };
-        //            cauTraLoiBLL.Import(cauTraLoiDTO);
-        //        }
-        //    }
-        //}
+            for (int row = sheet.Dimension.Start.Row + 1; row <= sheet.Dimension.End.Row; row++)
+            {
+                string cauTraLoi = sheet.Cells[row, 1].Value?.ToString();
+                for (int col = sheet.Dimension.Start.Column + 1; col < sheet.Dimension.End.Column; col++)
+                {
+                    if (columnPropertyMapping.ContainsKey(col))
+                    {
+                        string propertyName = columnPropertyMapping[col];
+                        PropertyInfo property = typeof(CauTraLoiDienChoTrongDTO).GetProperty(propertyName);
+                        if (property != null)
+                        {
+                            string cellValue = sheet.Cells[row, col].Value?.ToString();
+                            if (cellValue != null)
+                            {
+                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                property.SetValue(cauTraLoiDTO, valueToSet);
+                            }
+                        }
+                    }
+                }
+                if (cauTraLoiDTO != null)
+                {
+                    cauTraLoiDTO.MaCauHoi = cauhoi.MaCauHoi;
+                    cauTraLoiDienChoTrongBLL.Add(cauTraLoiDTO);
+                }
+            }
+        }
 
         //private void importNoiTu(CauHoiDTO cauhoi, ExcelWorksheet sheet, int row)
         //{
