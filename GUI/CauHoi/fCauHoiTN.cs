@@ -10,17 +10,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.CauHoi
 {
     public partial class fCauHoiTN : Form
     {
         private CauHoiDTO cauHoiDTO;
-        public fCauHoiTN(CauHoiDTO cauHoiDTO)
+        private int flag = 0; //mặc định chế độ sửa
+
+        public fCauHoiTN(CauHoiDTO cauHoiDTO, int detail)
         {
             this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
+            flag = detail;
+
+            if (detail == 1)
+            {
+                comboBoxDoKho.Enabled = false;
+                comboBoxMonHoc.Enabled = false;
+                txtNoiDung.Enabled = false;
+                cbSoDapAn.Enabled = false;
+                txtInputDA1.Enabled = false;
+                rb1.Enabled = false;
+                txtInputDA2.Enabled = false;
+                rb2.Enabled = false;
+                txtInputDA3.Enabled = false;
+                rb3.Enabled = false;
+                txtInputDA4.Enabled = false;
+                rb4.Enabled = false;
+                cbSoDapAn.Enabled = false;
+                checkBox1.Enabled = false;
+                this.btnLuu.Text = "Đóng";
+                this.btnLuu.Click += new System.EventHandler(this.btnThoat);
+            }
+            else if (detail == 0)
+            {
+                this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            }
             render();
+        }
+
+        private void btnThoat(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void render()
@@ -138,40 +171,43 @@ namespace GUI.CauHoi
 
         public void cbSoDapAn_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cbSoDapAn.SelectedIndex == 2)
-            {
-                txtInputDA1.Enabled = true;
-                rb1.Enabled = true;
-                txtInputDA2.Enabled = true;
-                rb2.Enabled = true;
-                txtInputDA3.Enabled = true;
-                rb3.Enabled = true;
-                txtInputDA4.Enabled = true;
-                rb4.Enabled = true;
+            if(flag==0)
+            { 
+                if (cbSoDapAn.SelectedIndex == 2)
+                {
+                    txtInputDA1.Enabled = true;
+                    rb1.Enabled = true;
+                    txtInputDA2.Enabled = true;
+                    rb2.Enabled = true;
+                    txtInputDA3.Enabled = true;
+                    rb3.Enabled = true;
+                    txtInputDA4.Enabled = true;
+                    rb4.Enabled = true;
 
-            }
-            else if (cbSoDapAn.SelectedIndex == 1)
-            {
-                txtInputDA1.Enabled = true;
-                rb1.Enabled = true;
-                txtInputDA2.Enabled = true;
-                rb2.Enabled = true;
-                txtInputDA3.Enabled = true;
-                rb3.Enabled = true;
-                txtInputDA4.Enabled = false;
-                rb4.Enabled = false;
-            }
-            else if (cbSoDapAn.SelectedIndex == 0)
-            {
-                txtInputDA1.Enabled = true;
-                rb1.Enabled = true;
-                txtInputDA2.Enabled = true;
-                rb2.Enabled = true;
-                txtInputDA3.Enabled = false;
-                rb3.Enabled = false;
-                txtInputDA4.Enabled = false;
-                rb4.Enabled = false;
-            }
+                }
+                else if (cbSoDapAn.SelectedIndex == 1)
+                {
+                    txtInputDA1.Enabled = true;
+                    rb1.Enabled = true;
+                    txtInputDA2.Enabled = true;
+                    rb2.Enabled = true;
+                    txtInputDA3.Enabled = true;
+                    rb3.Enabled = true;
+                    txtInputDA4.Enabled = false;
+                    rb4.Enabled = false;
+                }
+                else if (cbSoDapAn.SelectedIndex == 0)
+                {
+                    txtInputDA1.Enabled = true;
+                    rb1.Enabled = true;
+                    txtInputDA2.Enabled = true;
+                    rb2.Enabled = true;
+                    txtInputDA3.Enabled = false;
+                    rb3.Enabled = false;
+                    txtInputDA4.Enabled = false;
+                    rb4.Enabled = false;
+                }
+            }    
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

@@ -387,7 +387,6 @@
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "LƯU";
             this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // panel1
             // 

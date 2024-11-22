@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,11 +18,37 @@ namespace GUI.CauHoi
     public partial class fCauHoiNoiCau : Form
     {
         private CauHoiDTO cauHoiDTO;
-        public fCauHoiNoiCau(CauHoiDTO cauHoiDTO)
+        int flag = 0;
+        public fCauHoiNoiCau(CauHoiDTO cauHoiDTO, int detail)
         {
             this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
+            flag = detail;
 
+            if (detail == 1)
+            {
+                comboBox5.Enabled = false;
+                comboBox4.Enabled = false;
+                textBox12.Enabled = false;
+                textBox13.Enabled = false;
+                comboBox6.Enabled = false;
+                textBox15.Enabled = false;
+                textBox16.Enabled = false;
+                textBox14.Enabled = false;
+                textBox9.Enabled = false;
+                textBox6.Enabled = false;
+                textBox7.Enabled = false;
+                textBox8.Enabled = false;
+                textBox10.Enabled = false;
+                checkBox4.Enabled = false;
+
+                this.button2.Text = "Đóng";
+                this.button2.Click += new System.EventHandler(this.btnThoat);
+            }
+            else if (detail == 0)
+            {
+                this.button2.Click += new System.EventHandler(this.button2_Click);
+            }
             textBox15.MaxLength = 1;
             textBox16.MaxLength = 1;
             textBox14.MaxLength = 1;
@@ -32,7 +59,10 @@ namespace GUI.CauHoi
             textBox10.MaxLength = 1;
             render();
         }
-
+        private void btnThoat(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void render()
         {
             loadDataComboBoxMHView();
@@ -1327,83 +1357,86 @@ namespace GUI.CauHoi
         private void cbSoDapAn_SelectedValueChanged(object sender, EventArgs e)
         {
             //combobox6
-            if (comboBox6.SelectedIndex == 7)
+            if(flag==0)
             {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = true;
-                textBox10.Enabled = true;
-            }
-            else if (comboBox6.SelectedIndex == 6)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = true;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 5)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 4)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 3)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 2)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = false;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 1)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = false;
-                textBox9.Enabled = false;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
+                if (comboBox6.SelectedIndex == 7)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = true;
+                    textBox10.Enabled = true;
+                }
+                else if (comboBox6.SelectedIndex == 6)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = true;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 5)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 4)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 3)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 2)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = false;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 1)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = false;
+                    textBox9.Enabled = false;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+            }    
         }
     }
 }

@@ -82,7 +82,7 @@ namespace GUI.PhanCong
                PhanCongBLL phanCongBLL = new PhanCongBLL();
                dataGridView1.DataSource = phanCongBLL.GetTimKiem(textBoxTimKiem.Text);
                 this.numericUpDown1.Enabled = false;
-                this.label2.Text = "Trên tổng ... trang";
+                this.numericUpDown1.Value = 1;
         }
     }
 }
