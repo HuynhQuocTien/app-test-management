@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\getconnectiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -37,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -101,7 +104,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "GetConnectionDb.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\GetConnectionDb.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\GetConnectionDb.cs",
+              "RelativeToolTip": "..\\DAL\\GetConnectionDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T18:23:12.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DeThiControl.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
@@ -113,32 +129,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "fChiTietLop.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs*",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs*",
-              "ViewState": "AgIAAL4BAAAAAAAAAIAwwPIAAAA1AAAAAAAAAA==",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAhwLAAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T15:59:26.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "fChiTietLop.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]*",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T15:59:25.478Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DeThiControl.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
@@ -151,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "fSetThoiGianDeThi.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fSetThoiGianDeThi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fSetThoiGianDeThi.cs",
@@ -164,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "fThemDeThiCuaLop.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemDeThiCuaLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fThemDeThiCuaLop.cs",
@@ -176,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "fSetThoiGianDeThi.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fSetThoiGianDeThi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fSetThoiGianDeThi.cs",
@@ -188,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "fThemChiTietDeThi.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs",
@@ -200,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "fThemDeThi.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",

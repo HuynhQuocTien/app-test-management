@@ -48,6 +48,7 @@
     <Compile Include="CauTraLoiBLL.cs" />
     <Compile Include="CauTraLoiDienChoTrongBLL.cs" />
     <Compile Include="ChiTietDeBLL.cs" />
+    <Compile Include="ChiTietDeDaLamBLL.cs" />
     <Compile Include="ChiTietLopBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DeThiBLL.cs" />
