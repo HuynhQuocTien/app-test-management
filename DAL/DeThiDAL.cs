@@ -315,5 +315,25 @@ namespace DAL
             }
             return dtList;
         }
+        public int CheckDeThiCoTrongLop(int MaDe, int MaLop)
+        {
+            int count = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(MaDe) FROM GiaoDeThi WHERE MaDe = " + MaDe + " and MaLop = " + MaLop;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        count = (int)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return count;
+        }
     }
 }

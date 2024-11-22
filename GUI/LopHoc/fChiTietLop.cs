@@ -168,6 +168,7 @@ namespace GUI.LopHoc
 
             };
             TimeSpan thoiGiamLamBai = deThi.ThoiGianKetThuc.Subtract(deThi.ThoiGianBatDau);
+            int soPhutLamBai = (int)Math.Floor(thoiGiamLamBai.TotalMinutes); // Làm tròn xuống
             Label lblThoiGianLamBai = new Label
             {
                 AutoSize = true,
@@ -175,7 +176,7 @@ namespace GUI.LopHoc
                 Name = "lblThoiGianLamBai" + counter,
                 Size = new System.Drawing.Size(140, 13),
                 TabIndex = 2,
-                Text = "Thời gian làm bài: " + thoiGiamLamBai.TotalMinutes + " phút",
+                Text = "Thời gian làm bài: " + soPhutLamBai + " phút",
                 Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
 
             };
@@ -209,9 +210,24 @@ namespace GUI.LopHoc
 			{
 				thoiGianText = "Hết hạn";
 				//dtclBus.DeleteByMaLopAndMaDeThi(lop.MaLop, baiThi.MaDeThi);
-				deThi.TrangThai = 0;
+				deThi.TrangThai = -1;
 			}
-			lblTrangThai.Text = deThi.TrangThai == 1 ? $"Trạng thái: Đang mở ({thoiGianText})" : "Trạng thái: Đã đóng";
+            if (deThi.TrangThai == 0)
+            {
+                lblTrangThai.Text = $"Trạng thái: Đang mở ({thoiGianText})";
+            }
+            else if(deThi.TrangThai == 1)
+            {
+                lblTrangThai.Text = "Trạng thái: Đã đóng - Xem đáp án: Đóng";
+            } else if (deThi.TrangThai == 2)
+            {
+                lblTrangThai.Text = "Trạng thái: Đã đóng - Xem đáp án: Mở";
+            }
+            else if (deThi.TrangThai == -1)
+            {
+                lblTrangThai.Text = "Trạng thái: Đã đóng - Hết hạn";
+            }
+                //lblTrangThai.Text = deThi.TrangThai == 1 ? $"Trạng thái: Đang mở ({thoiGianText})" : "Trạng thái: Đã đóng";
 			KetQuaDTO ketQua = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
 
             System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
@@ -225,7 +241,7 @@ namespace GUI.LopHoc
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = deThi.TrangThai == 0 ? false : true,
+                Enabled = deThi.TrangThai == 0 ? true : false, //Trang thai = 0 là được làm bài
             };
 
             
@@ -295,7 +311,7 @@ namespace GUI.LopHoc
         private void btnLamBai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
         {
             // thực hiện chức năng mở đề thi khi de thi dang dong
-            if (obj.TrangThai == 0 && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
+            if (obj.TrangThai != 0 && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
                 fSetThoiGianDeThi f = new fSetThoiGianDeThi(obj, lop, this, "edit");
                 f.ShowDialog();

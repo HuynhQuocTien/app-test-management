@@ -60,6 +60,9 @@ namespace BLL
                 return "2";
             }    
         }
-
+        public string getTenQuyenByIDNguoiDung(long id)
+        {
+            return nguoiDungDAL.getTenQuyenByID(id);
+        }
     }
 }

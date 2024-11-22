@@ -55,6 +55,14 @@ namespace BLL
         {
             return deThiDAL.GetAutoIncrement();
         }
+        public bool checkDeThiCoTrongLop(int MaDe, int MaLop)
+        {
+            if (deThiDAL.CheckDeThiCoTrongLop(MaDe, MaLop) >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }

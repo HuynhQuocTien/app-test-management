@@ -428,6 +428,12 @@
     <Compile Include="Users\UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\UsersDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\UsersDetail.Designer.cs">
+      <DependentUpon>UsersDetail.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CauHoi\CauHoiControl.resx">
@@ -520,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\UsersControl.resx">
       <DependentUpon>UsersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UsersDetail.resx">
+      <DependentUpon>UsersDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

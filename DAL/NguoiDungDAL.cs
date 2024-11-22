@@ -247,5 +247,26 @@ namespace DAL
                 return false;
             }
         }
+        public string getTenQuyenByID(long id)
+        {
+            string tenQuyen = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT NhomQuyen.TenQuyen FROM NguoiDung INNER JOIN TaiKhoan ON NguoiDung.MaNguoiDung = TaiKhoan.Username INNER JOIN NhomQuyen ON TaiKhoan.MaNhomQuyen = NhomQuyen.MaNhomQuyen WHERE NguoiDung.MaNguoiDung = @MaNguoiDung";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaNguoiDung", id);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tenQuyen = reader["TenQuyen"].ToString();
+                        }
+                    }
+                }
+            }
+            return tenQuyen;
+        }
     }
 }

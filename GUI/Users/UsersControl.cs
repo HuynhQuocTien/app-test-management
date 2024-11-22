@@ -65,10 +65,7 @@ namespace GUI.Users
         }
         private void Detail_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
-            // InfoUser infoNguoiDung = new InfoUser(nguoiDung);
-            //InfoUser infoNguoiDung = new InfoUser(nguoiDung);
-            InfoUser infoNguoiDung = new InfoUser();
-            infoNguoiDung.getNguoiDungId(nguoiDung);
+            UsersDetail infoNguoiDung = new UsersDetail(nguoiDung, this);
             infoNguoiDung.ShowDialog();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -110,15 +107,25 @@ namespace GUI.Users
             renderUsers();
         }
 
-
-
-
+        public void renderAfterEdit()
+        {
+            renderUsers();
+        }
         private void renderUsers()
         {
             flowLayoutContainer.Controls.Clear();
 
             var nguoiDungs = getListNguoiDung();
             int nguoiDungCount = nguoiDungs.Count;
+
+
+            NhomQuyenDAL nhomQuyenDAL = new NhomQuyenDAL();
+
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+
+
+
+
 
 
             panelUser = new Panel[nguoiDungCount];
@@ -132,6 +139,9 @@ namespace GUI.Users
             for (int i = 0; i < nguoiDungCount; i++)
             {
                 var nguoiDung = nguoiDungs[i];
+
+                string tenQuyen = nguoiDungBLL.getTenQuyenByIDNguoiDung(nguoiDung.MaNguoiDung);
+
 
                 panelUser[i] = new Panel();
                 panelUser[i].Name = "panelUser" + i;
@@ -165,9 +175,6 @@ namespace GUI.Users
                 //buttonDELETE[i].MouseClick += Delete_MouseClick;
                 buttonDELETE[i].MouseClick += (sender, e) => Delete_MouseClick(sender, e, nguoiDung);
                 buttonDELETE[i].Cursor = Cursors.Hand;
-
-
-
                 // 
                 // textBoxDate
                 // 
@@ -187,9 +194,7 @@ namespace GUI.Users
                 textBoxRole[i].Name = "textBoxRole" + i;
                 textBoxRole[i].Size = new Size(209, 23);
                 textBoxRole[i].Enabled = false;
-                textBoxRole[i].Text += "Admin";
-
-
+                textBoxRole[i].Text += tenQuyen;
                 // 
                 // textBoxName
                 // 
@@ -210,7 +215,25 @@ namespace GUI.Users
                 avatarImg[i].Size = new Size(100, 113);
                 avatarImg[i].TabStop = false;
                 avatarImg[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                avatarImg[i].ImageLocation = nguoiDung.Avatar;
+
+
+
+
+                if (!string.IsNullOrEmpty(nguoiDung.Avatar) && File.Exists(nguoiDung.Avatar))
+                {
+                    //avatarImg[i].Image = Image.FromFile(nguoiDung.Avatar);
+
+                    avatarImg[i].Image = Image.FromFile(Path.Combine(Path.Combine(Directory.GetParent(Application.StartupPath).FullName, "GUI", "Users", "Avatar"), nguoiDung.Avatar));
+
+
+
+                }
+                else
+                {
+                    avatarImg[i].Image = null; // or set a default image
+                }
+
+
 
 
                 panelUser[i].Controls.Add(buttonCT[i]);
