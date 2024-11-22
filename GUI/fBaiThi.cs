@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,7 @@ namespace GUI
             
             InitializeComponent();
 
+            
             TaoCauHoi(dsCauHoi);
             tao_slide(dsCauHoi);
             loadData();
@@ -78,7 +80,7 @@ namespace GUI
             lblLop.Text = lop.TenLop.ToString();
             lblNgayThi.Text = DateTime.Now.ToString();
             lblSoCauHoi.Text = so_cau_hoi.ToString();
-            pictureBox1.ImageLocation = fDangNhap.nguoiDungDTO.Avatar;
+            Load_pictureBox1();
 
             // Khởi tạo đối tượng Timer và cấu hình nó
             countdownTimer = new System.Windows.Forms.Timer();
@@ -102,6 +104,43 @@ namespace GUI
                 // Thời gian đã hết, bạn có thể thực hiện các hành động tương ứng ở đây.
                 countdownTimer.Stop();
                 NopBai();
+            }
+        }
+        private void Load_pictureBox1()
+        {
+            // Lấy đường dẫn của thư mục chứa file thực thi của ứng dụng
+            string exePath = Application.StartupPath;
+
+            for (int i = 0; i < 5; i++)
+            {
+                DirectoryInfo parent = Directory.GetParent(exePath);
+                if (parent == null)
+                {
+                    throw new DirectoryNotFoundException($"Không thể đi ngược 5 cấp thư mục từ {Application.StartupPath}");
+                }
+                exePath = parent.FullName;
+            }
+            // Tạo đường dẫn đến thư mục Avatar
+            string avatarFolderPath = Path.Combine(exePath, "GUI", "Users", "Avatar");
+            MessageBox.Show(avatarFolderPath);
+            // Lấy tên file ảnh từ cơ sở dữ liệu
+            string tenAnh = fDangNhap.nguoiDungDTO.Avatar;
+
+            string defaultImagePath = Path.Combine(avatarFolderPath, "images.png");
+            // Tạo đường dẫn đầy đủ tới file ảnh
+            string imagePath = Path.Combine(avatarFolderPath, tenAnh);
+
+            // Kiểm tra xem file ảnh có tồn tại hay không
+            if (File.Exists(imagePath))
+            {
+                // Gán ảnh vào PictureBox nếu file tồn tại
+                pictureBox1.Image = Image.FromFile(imagePath);
+
+            }
+            else
+            {
+                // Nếu không tìm thấy ảnh, bạn có thể hiển thị ảnh mặc định
+                pictureBox1.Image = Image.FromFile(defaultImagePath); ; // Hoặc gán ảnh mặc định
             }
         }
 

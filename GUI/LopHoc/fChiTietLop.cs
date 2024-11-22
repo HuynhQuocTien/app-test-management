@@ -175,7 +175,7 @@ namespace GUI.LopHoc
                 Name = "lblThoiGianLamBai" + counter,
                 Size = new System.Drawing.Size(140, 13),
                 TabIndex = 2,
-                Text = "Thời gian làm bài: " + thoiGiamLamBai + " phút",
+                Text = "Thời gian làm bài: " + thoiGiamLamBai.TotalMinutes + " phút",
                 Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
 
             };

@@ -136,6 +136,7 @@ namespace GUI.Users
                     // Tạo đường dẫn đầy đủ tới file ảnh
                     string imagePath = Path.Combine(avatarFolderPath, tenAnh);
 
+                    string defaultImagePath = Path.Combine(avatarFolderPath, "images.png");
                     // Kiểm tra xem file ảnh có tồn tại hay không
                     if (File.Exists(imagePath))
                     {
@@ -146,7 +147,7 @@ namespace GUI.Users
                     else
                     {
                         // Nếu không tìm thấy ảnh, bạn có thể hiển thị ảnh mặc định
-                        pictureBox1.Image = null; // Hoặc gán ảnh mặc định
+                        pictureBox1.Image = Image.FromFile(defaultImagePath); ; // Hoặc gán ảnh mặc định
                     }
                     textBoxID.Text = fDangNhap.nguoiDungDTO.MaNguoiDung.ToString();
                     textBoxEmail.Text = fDangNhap.taiKhoanDTO.Email.ToString();
