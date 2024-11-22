@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,9 +21,10 @@ namespace DAL
         {
             try
             {
-
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
+                    //string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
+                    //    "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
                     string query = "INSERT INTO DeThi (MaMonHoc, TenDe, ThoiGianTao, ThoiGianBatDau, ThoiGianKetThuc, NguoiTao, TrangThai, is_delete)" +
                         " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc, @NguoiTao, @TrangThai, @is_delete)";
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -110,6 +110,7 @@ namespace DAL
             List<DeThiDTO> dtList = new List<DeThiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
+                //string query = "SELECT * FROM DeThi WHERE is_delete = 0 AND NguoiTao = " + maNguoiTao;
                 string query = "SELECT DeThi.*, MonHoc.TenMonHoc FROM DeThi JOIN MonHoc ON DeThi.MaMonHoc = MonHoc.MaMonHoc WHERE DeThi.is_delete = 0 AND DeThi.NguoiTao = " + maNguoiTao;
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -287,6 +288,32 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        public List<MonHocDTO> LayTenMonHoc()
+        {
+            List<MonHocDTO> dtList = new List<MonHocDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("sai");
+                            MonHocDTO mh = new MonHocDTO
+                            {
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
+                            };
+                            dtList.Add(mh);
+                        }
+                    }
+
+                }
+            }
+            return dtList;
         }
     }
 }

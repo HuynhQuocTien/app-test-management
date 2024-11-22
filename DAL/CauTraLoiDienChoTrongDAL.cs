@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class CauTraLoiDienChoTrongDAL : IUnitDAL<CauTraLoiDienChoTrongDTO>
+    public class CauTraLoiDienChoTrongDAL : IUnitCTLCT<CauTraLoiDienChoTrongDTO>
     {
         public static CauTraLoiDienChoTrongDAL getInstance()
         {
@@ -59,14 +59,15 @@ namespace DAL
             }
         }
 
-        public List<CauTraLoiDienChoTrongDTO> GetAll()
+        public List<CauTraLoiDienChoTrongDTO> GetAll(int MaCauHoi)
         {
             List<CauTraLoiDienChoTrongDTO> cauTraLoiList = new List<CauTraLoiDienChoTrongDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauTraLoiDienChoTrong";
+                string query = "SELECT * FROM CauTraLoiDienChoTrong where MaCauHoi=@MaCauHoi";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaCauHoi", MaCauHoi);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

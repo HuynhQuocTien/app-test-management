@@ -500,6 +500,11 @@ namespace GUI.Users
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 29);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.Items.Add("Admin");
+            this.comboBox1.Items.Add("Giáo viên");
+            this.comboBox1.Items.Add("Học Sinh");
+            this.comboBox1.Items.Add("GV Phân Công");
+
             // 
             // InfoUser
             // 

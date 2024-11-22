@@ -21,6 +21,10 @@ namespace BLL
         {
             return monHocDAL.GetAll();
         }
+        public List<MonHocDTO> GetFromPhanCong(long maGV)
+        {
+            return monHocDAL.GetFromPhanCong(maGV);
+        }
         public string Add(MonHocDTO monHoc)
         {
             if (monHocDAL.Add(monHoc))

@@ -73,7 +73,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+                    string query = "UPDATE MonHoc SET is_delete = 1 WHERE MaMonHoc = @MaMonHoc";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaMonHoc", monHoc.MaMonHoc);
@@ -94,9 +94,41 @@ namespace DAL
             List<MonHocDTO> monHocList = new List<MonHocDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM MonHoc";
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MonHocDTO monHoc = new MonHocDTO
+                            {
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString(),
+                                SoTC = Convert.ToInt32(reader["SoTC"]),
+                                SoTietLT = Convert.ToInt32(reader["SoTietLT"]),
+                                SoTietTH = Convert.ToInt32(reader["SoTietTH"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            monHocList.Add(monHoc);
+                        }
+                    }
+                }
+            }
+            return monHocList;
+        }
+
+        public List<MonHocDTO> GetFromPhanCong(long MaGV)
+        {
+            List<MonHocDTO> monHocList = new List<MonHocDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT MH.* FROM MonHoc MH INNER JOIN PhanCong PC ON MH.MaMonHoc=PC.MaMonHoc WHERE MH.is_delete = 0 and PC.MaGV=@MaGV;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaGV", MaGV);
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

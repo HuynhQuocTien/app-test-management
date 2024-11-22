@@ -49,5 +49,17 @@ namespace BLL
             nd.MaNguoiDung = id;
             return nguoiDungDAL.GetById(nd);
         }
+        public string updateInfo(string Ten, string SDT, string Avatar, string MaNguoiDung)
+        {
+            if(nguoiDungDAL.UpdateInfo(Ten, SDT, Avatar, MaNguoiDung))
+            {
+                return "1";
+            }
+            else
+            {
+                return "2";
+            }    
+        }
+
     }
 }

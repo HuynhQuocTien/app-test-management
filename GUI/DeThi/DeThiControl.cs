@@ -1,8 +1,6 @@
 ﻿using BLL;
-using DAL;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DTO;
-using GUI.LopHoc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,11 +17,8 @@ namespace GUI.DeThi
     public partial class DeThiControl : UserControl
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
-       
-        
         DeThiBLL deThiBLL;
         List<DeThiDTO> listDeThi;
-
         public DeThiControl()
         {
             InitializeComponent();
@@ -41,9 +36,13 @@ namespace GUI.DeThi
                 CreatePanel(l);
             }
         }
+        //private void btnThem_Click(object sender, EventArgs e)
+        //{
+        //    fThemDeThi themLop = new fThemDeThi();
+        //    themLop.ShowDialog();
+        //}
         private void CreatePanel(DeThiDTO deThi)
         {
-            // Subscribe to the Click event of the panel
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
@@ -71,7 +70,7 @@ namespace GUI.DeThi
                 Name = "lblTenDeThi",
                 Size = new Size(300, 200),
                 TabIndex = 0,
-                Text = deThi.TenDe,
+                Text = Text = deThi.TenDe,
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
@@ -118,21 +117,18 @@ namespace GUI.DeThi
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
             };
-
-
-
             lblTenDeThi.Click += (s, ev) =>
             {
                 labelDeThi_Click(s, ev, deThi);
             };
-
-
-
             buttonXoa.Click += (s, ev) =>
             {
                 buttonXoa_Click(s, ev, deThi);
             };
-
+            btnThemCauHoiVaoDe.Click += (s, ev) =>
+            {
+                btnThemCauHoiVaoDe_Click(s, ev, deThi);
+            };
             panelHead.Controls.AddRange(new Control[] { lblMonHoc, lblThoiGianLamBai, lblTenDeThi });
             panelContain.Controls.AddRange(new Control[] { btnThemCauHoiVaoDe, buttonXoa, panelHead });
 
@@ -141,53 +137,7 @@ namespace GUI.DeThi
             flowLayoutPanel1.AutoScroll = true;
 
         }
-        private void labelDeThi_Click(object sender, EventArgs e, DeThiDTO obj)
-        {
-            fThemDeThi suaDeThi = new fThemDeThi(this, "edit", obj);
-            suaDeThi.ShowDialog();
-        }
 
-
-        private void buttonXoa_Click(object sender, EventArgs e, DeThiDTO obj)
-        {
-            deThiBLL.Delete(obj);
-            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
-            Panel panelContain = (Panel)clickedButton.Parent;
-
-            DialogResult result = MessageBox.Show("Xác nhận xóa đề thi?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                flowLayoutPanel1.Controls.Remove(panelContain);
-            }
-        }
-      
-
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giảng viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
-            {
-                fThemDeThi themDeThi = new fThemDeThi(this, "add");
-                themDeThi.ShowDialog();
-            }
-        }
-
-        public void AddDeThi(DeThiDTO obj)
-        {         
-            listDeThi.Add(obj);
-            deThiBLL.Add(obj);
-            CreatePanel(obj);
-            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
-        }
-
-        public void UpdateDeThi(DeThiDTO obj)
-        {
-            deThiBLL.Update(obj);
-            DeThiBLL deThiBLLnew = new DeThiBLL();
-            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
-            
-        }
         // Ramdom mau nhat
         private Color GetRandomColor()
         {
@@ -207,6 +157,49 @@ namespace GUI.DeThi
             b = b > 255 ? 255 : b;
 
             return Color.FromArgb(r, g, b);
+        }
+        private void labelDeThi_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            fThemDeThi suaDeThi = new fThemDeThi(this, "edit", obj);
+            suaDeThi.ShowDialog();
+        }
+        private void buttonXoa_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            deThiBLL.Delete(obj);
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            Panel panelContain = (Panel)clickedButton.Parent;
+            DialogResult result = MessageBox.Show("Xác nhận xóa đề thi?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                flowLayoutPanel1.Controls.Remove(panelContain);
+            }
+        }
+        private void btnThemCauHoiVaoDe_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            fThemChiTietDeThi f = new fThemChiTietDeThi(obj);
+            f.ShowDialog();
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
+            {
+                fThemDeThi themDeThi = new fThemDeThi(this, "add");
+                themDeThi.ShowDialog();
+            }
+        }
+        public void AddDeThi(DeThiDTO obj)
+        {
+            listDeThi.Add(obj);
+            deThiBLL.Add(obj);
+            CreatePanel(obj);
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+        }
+        public void UpdateDeThi(DeThiDTO obj)
+        {
+            deThiBLL.Update(obj);
+            DeThiBLL deThiBLLnew = new DeThiBLL();
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+
         }
     }
 }

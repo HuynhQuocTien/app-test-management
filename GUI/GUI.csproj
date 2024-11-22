@@ -100,6 +100,9 @@
       <HintPath>..\app-test-management\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\app-test-management\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -208,6 +211,24 @@
     <Compile Include="CauHoi\CauHoiControl.Designer.cs">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CauHoi\fCauHoiDCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiDCT.Designer.cs">
+      <DependentUpon>fCauHoiDCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiNoiCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiNoiCau.Designer.cs">
+      <DependentUpon>fCauHoiNoiCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiTN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CauHoi\fCauHoiTN.Designer.cs">
+      <DependentUpon>fCauHoiTN.cs</DependentUpon>
+    </Compile>
     <Compile Include="CauHoi\fThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +331,12 @@
     <Compile Include="LopHoc\fDanhSachSV.Designer.cs">
       <DependentUpon>fDanhSachSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc\fSetThoiGianDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LopHoc\fSetThoiGianDeThi.Designer.cs">
+      <DependentUpon>fSetThoiGianDeThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="LopHoc\fThemDeThiCuaLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,11 +433,17 @@
     <EmbeddedResource Include="CauHoi\CauHoiControl.resx">
       <DependentUpon>CauHoiControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiDCT.resx">
+      <DependentUpon>fCauHoiDCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiNoiCau.resx">
+      <DependentUpon>fCauHoiNoiCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CauHoi\fCauHoiTN.resx">
+      <DependentUpon>fCauHoiTN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CauHoi\fThemCauHoi.resx">
       <DependentUpon>fThemCauHoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeThi\DeThiControl.resx">
-      <DependentUpon>DeThiControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeThi\fThemChiTietDeThi.resx">
       <DependentUpon>fThemChiTietDeThi.cs</DependentUpon>
@@ -563,6 +596,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\setting-syncing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Users\Avatar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\app-test-management\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\app-test-management\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

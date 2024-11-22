@@ -29,16 +29,8 @@ namespace GUI.Users
         private TextBox[] textBoxDate;
         private TextBox[] textBoxRole;
         private TextBox[] textBoxName;
-
         NguoiDungBLL nguoiDungBLL;
         TaiKhoanDAL taiKhoanDAL;
-        private List<NguoiDungDTO> getListNguoiDung()
-        {
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            return nguoiDungBLL.GetAllNguoiDung(); 
-        }
-
-
         private List<TaiKhoanDTO> getListTaiKhoan()
         {
             TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
@@ -50,13 +42,16 @@ namespace GUI.Users
             InitializeComponent();
             renderUsers();
         }
-
+        private List<NguoiDungDTO> getListNguoiDung()
+        {
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            return nguoiDungBLL.GetAllNguoiDung();
+        }
         private void Delete_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
             if (MessageBox.Show("Bạn có muốn xóa người dùng không?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-
                 if (nguoiDungBLL.Delete(nguoiDung))
                 {
                     MessageBox.Show("Xóa người dùng thành công.");
@@ -70,8 +65,7 @@ namespace GUI.Users
         }
         private void Detail_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
-
-            //InfoUser infoNguoiDung = new InfoUser(nguoiDung);
+            // InfoUser infoNguoiDung = new InfoUser(nguoiDung);
             //InfoUser infoNguoiDung = new InfoUser(nguoiDung);
             InfoUser infoNguoiDung = new InfoUser();
             infoNguoiDung.getNguoiDungId(nguoiDung);
@@ -173,7 +167,7 @@ namespace GUI.Users
                 buttonDELETE[i].Cursor = Cursors.Hand;
 
 
-             
+
                 // 
                 // textBoxDate
                 // 
@@ -228,6 +222,7 @@ namespace GUI.Users
                 flowLayoutContainer.Controls.Add(panelUser[i]);
 
             }
+
 
 
         }

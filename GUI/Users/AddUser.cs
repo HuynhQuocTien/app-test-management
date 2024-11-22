@@ -1,27 +1,22 @@
-﻿using BLL;
-using DAL;
-using DTO;
-using GUI.DeThi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BLL;
+using DAL;
+using DTO;
 
 namespace GUI.Users
 {
     public partial class AddUser : Form
     {
-
-
         private UsersControl usersControl;
-  
+
         MonHocBLL monHocBLL;
         DeThiBLL deThiBLL;
         DeThiBLL NguoiDungBLL;
@@ -29,8 +24,6 @@ namespace GUI.Users
         private string hanhDong;
         private DeThiDTO deThiUpdate;
         NhomQuyenBLL nhomQuyenBLL;
-
-
         public AddUser(UsersControl usersControl)
         {
             InitializeComponent();
@@ -48,22 +41,16 @@ namespace GUI.Users
             //this.hanhDong = hanhDong;
             //this.deThiUpdate = dethi;
             //deThiBLL = new DeThiBLL();
-
         }
 
         private void btnThemSl_Click(object sender, EventArgs e)
         {
-
             MessageBox.Show("Meo1");
 
             //THem tu flie
 
 
-
-
         }
-
-
         private void LoadQuyen()
         {
             try
@@ -79,24 +66,13 @@ namespace GUI.Users
                 MessageBox.Show("Error loading subjects: " + ex.Message);
             }
         }
-
-
-
         private void clear()
         {
             this.Dispose();
         }
         private void ButtonSubmit_Click(object sender, EventArgs e)
-        {
-
-         
-
-
-
-
-
+        { 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Meo");
@@ -176,7 +152,6 @@ namespace GUI.Users
 
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             clear();

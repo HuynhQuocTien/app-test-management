@@ -18,6 +18,8 @@ namespace GUI
         public static NguoiDungDTO nguoiDungDTO;
         public static TaiKhoanDTO taiKhoanDTO;
         public static NhomQuyenDTO nhomQuyenDTO;
+        public static DateTime LoginTime = DateTime.Now;
+
         private NguoiDungBLL nguoiDungBLL;
         private NhomQuyenBLL nhomQuyenBLL;
 
@@ -31,6 +33,7 @@ namespace GUI
         private Rectangle recTxt1;
         private Rectangle recTxt2;
         private Rectangle recCBox1;
+
         public fDangNhap()
         {
             InitializeComponent();
@@ -49,6 +52,7 @@ namespace GUI
             nguoiDungBLL = new NguoiDungBLL();
             nhomQuyenBLL = new NhomQuyenBLL();
         }
+
         private void Form1_Resiz(object sender, EventArgs e)
         {
             resize_Control(button1, recBut1);
@@ -60,7 +64,6 @@ namespace GUI
             resize_Control(label4, recLab4);
             resize_Control(checkBox1, recCBox1);
         }
-
         private void resize_Control(Control c, Rectangle r)
         {
             float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
@@ -138,6 +141,28 @@ namespace GUI
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click_1(sender, e);
+            }
+
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click_1(sender, e);
+            }
+        }
+
+        private void fDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -13,13 +13,13 @@ namespace DTO
         public string LoaiCauHoi { get; set; }
         public int MaMonHoc { get; set; }
         public long MaNguoiTao { get; set; }
-        public string DoKho { get; set; }
+        public int DoKho { get; set; }
         public int TrangThai { get; set; }
         public int is_delete { get; set; }
         public CauHoiDTO()
         {
         }
-        public CauHoiDTO(int maCauHoi, string noiDung,string loaiCauHoi, int maMonHoc, long maNguoiTao, string doKho, int trangThai, int is_delete)
+        public CauHoiDTO(int maCauHoi, string noiDung,string loaiCauHoi, int maMonHoc, long maNguoiTao, int doKho, int trangThai, int is_delete)
         {
             MaCauHoi = maCauHoi;
             NoiDung = noiDung;
@@ -29,6 +29,12 @@ namespace DTO
             DoKho = doKho;
             TrangThai = trangThai;
             this.is_delete = is_delete;
+        }
+        public override string ToString()
+        {
+
+            return $"Độ khó: " + DoKho + " | Tên: " + NoiDung; // Hiển thị thuộc tính Name trong ListBox
+            //return $"mã: " + MaCauHoi;
         }
     }
 }

@@ -32,7 +32,6 @@ namespace DTO
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
-
         public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, long nguoiTao, int trangThai, int is_delete, string tenMonHoc)
         {
             MaDe = maDe;

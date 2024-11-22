@@ -13,15 +13,18 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 using Excell = Microsoft.Office.Interop.Excel;
+using DAL;
 
 namespace GUI.MonHoc
 {
     public partial class MonHocControl : UserControl
     {
         private MonHocDTO monHocDTO;
+        MonHocBLL monHocBLL;
         public MonHocControl()
         {
             InitializeComponent();
+            monHocBLL = new MonHocBLL();
             render();
         }
         public void render()
@@ -38,23 +41,45 @@ namespace GUI.MonHoc
             dataGridView1.Columns["SoTietTH"].HeaderText = "Số tiết thực hành";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
             dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
+            dataGridView1.Columns["is_delete"].Visible = false;
+            // Gắn sự kiện để tùy chỉnh hiển thị cột "Trạng thái"
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
         }
         private void loadDataGridView()
         {
-            MonHocBLL monHocBLL = new MonHocBLL();
             dataGridView1.DataSource = monHocBLL.GetAll();
+        }
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Kiểm tra nếu cột là "TrangThai"
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "TrangThai" && e.Value != null)
+            {
+                try
+                {
+                    int value = Convert.ToInt32(e.Value); // Chuyển giá trị về kiểu int
+                    e.Value = value == 1 ? "Đang hoạt động" : "Ngừng hoạt động"; // Gán giá trị hiển thị
+                    e.FormattingApplied = true; // Đánh dấu đã xử lý định dạng
+                }
+                catch
+                {
+
+                }
+               
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             string chucNang = "Add";
             fThemMonHoc themMonHoc = new fThemMonHoc(this, chucNang);
             themMonHoc.Show();
+            render();
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
             string chungNang = "Update";
             fThemMonHoc suaMonHoc = new fThemMonHoc(this, monHocDTO, chungNang);
             suaMonHoc.Show();
+            render();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,11 +92,10 @@ namespace GUI.MonHoc
                 int soTietLT = int.Parse(selectedRow.Cells["SoTietLT"].Value.ToString());
                 int soTietTH = int.Parse(selectedRow.Cells["SoTietTH"].Value.ToString());
                 int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
-                int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
-                this.monHocDTO = new MonHocDTO(maMonHoc, tenMonHoc, soTC, soTietLT, soTietTH, trangThai, trangThaiXoa);
+                //int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
+                this.monHocDTO = new MonHocDTO(maMonHoc, tenMonHoc, soTC, soTietLT, soTietTH, trangThai, 0);
             }
         }
-
         private void importExcell(string path)
         {
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))

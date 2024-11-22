@@ -1,8 +1,6 @@
 ﻿using DTO;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -49,6 +47,28 @@ namespace DAL
             }
         }
 
+        public bool Delete(NguoiDungDTO nguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    //string query = "DELETE FROM NguoiDung WHERE MaNguoiDung = @MaNguoiDung";
+                    string query = "SELECT * FROM NguoiDung WHERE is_delete = 0";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
         public bool DeleteByMaNguoiDung(NguoiDungDTO nguoiDung)
         {
             try
@@ -72,33 +92,6 @@ namespace DAL
                 return false;
             }
         }
-
-
-        public bool Delete(NguoiDungDTO nguoiDung)
-        {
-            try
-            {
-                using (SqlConnection connection = GetConnectionDb.GetConnection())
-                {
-                    string query = "DELETE FROM NguoiDung WHERE MaNguoiDung = @MaNguoiDung";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@MaNguoiDung", nguoiDung.MaNguoiDung);
-                        int rowsChanged = command.ExecuteNonQuery();
-                        return rowsChanged > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return false;
-            }
-        }
-
-
-
-
         public List<NguoiDungDTO> GetAll()
         {
             List<NguoiDungDTO> nguoiDungList = new List<NguoiDungDTO>();
@@ -218,6 +211,31 @@ namespace DAL
                         command.Parameters.AddWithValue("@NgayTao", nguoiDung.NgayTao);
                         command.Parameters.AddWithValue("@TrangThai", nguoiDung.TrangThai);
                         command.Parameters.AddWithValue("@is_delete", nguoiDung.is_delete);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool UpdateInfo(string Ten, string SDT, string Avatar, string MaNguoiDung)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE NguoiDung SET Ten = @HoTen, Avatar = @Avatar, SDT = @SDT WHERE MaNguoiDung = @MaNguoiDung";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNguoiDung", MaNguoiDung);
+                        command.Parameters.AddWithValue("@HoTen", Ten);
+                        command.Parameters.AddWithValue("@Avatar", Avatar);
+                        command.Parameters.AddWithValue("@SDT", SDT);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
