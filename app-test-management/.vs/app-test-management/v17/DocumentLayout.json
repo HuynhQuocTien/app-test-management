@@ -6,7 +6,7 @@
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\cauhoicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\fthemcauhoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\cauhoicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,22 +86,22 @@
               "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.cs",
               "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
               "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ViewState": "AgIAAAIBAAAAAAAAAAAqwCABAABDAAAAAAAAAA==",
+              "ViewState": "AgIAADwBAAAAAAAAAAAYwEkBAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T02:55:51.704Z",
+              "WhenOpened": "2024-11-22T09:28:00.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "fThemCauHoi.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ViewState": "AgIAADYHAAAAAAAAAADgvx4HAAAbAAAAAAAAAA==",
+              "Title": "CauHoiControl.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T02:52:49.282Z"
+              "WhenOpened": "2024-11-22T09:27:58.118Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

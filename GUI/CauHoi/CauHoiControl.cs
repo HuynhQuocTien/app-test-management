@@ -287,6 +287,9 @@ namespace GUI.CauHoi
                         }
                     }
                     cauhoi.MaCauHoi = cauhoiBLL.GetAutoIncrement();
+                    cauhoi.MaNguoiTao = fDangNhap.nguoiDungDTO.MaNguoiDung;
+                    cauhoi.TrangThai = 1;
+                    cauhoi.is_delete = 0;
                     string a = cauhoiBLL.Import(cauhoi);
 
                     // Xử lý thêm câu trả lời tùy theo loại câu hỏi
@@ -320,7 +323,7 @@ namespace GUI.CauHoi
             {
                 { 1, "MaCauHoi" },
                 { 2, "NoiDung" },
-                { 3, "is_DapAn" }
+                { 3, "IsDapAn" }
             };
             CauTraLoiBLL cauTraLoiBLL = new CauTraLoiBLL();
             CauHoiBLL cauHoiBLL = new CauHoiBLL();
