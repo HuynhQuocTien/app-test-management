@@ -36,7 +36,7 @@ namespace GUI.CauHoi
             this.btnLuu.Click += btnLuu_Click;
             this.button1.Click += button1_Click;
             this.button2.Click += button2_Click;
-
+            cbbLoaiCH.SelectedIndex =1;
             render();
         }
 

@@ -24,6 +24,12 @@ namespace DTO
             NoiDung = noiDung;
             this.IsDapAn = is_DapAn;
         }
+        public CauTraLoiDTO(int maCauHoi, string noiDung, int is_DapAn)
+        {
+            MaCauHoi = maCauHoi;
+            NoiDung = noiDung;
+            this.IsDapAn = is_DapAn;
+        }
 
     }
 }

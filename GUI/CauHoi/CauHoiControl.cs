@@ -150,66 +150,267 @@ namespace GUI.CauHoi
             }
         }
 
+        //private void importExcell(string path)
+        //{
+        //    // Định nghĩa ánh xạ cột - tên thuộc tính
+        //    Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
+        //    {
+        //        { 1, "NoiDung" },
+        //        { 2, "MaMonHoc" },
+        //        { 3, "DoKho" },
+        //        {4, "LoaiCauHoi" }
+        //    };
+        //    OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Thiết lập context phi thương mại
+        //    using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
+        //    {
+        //        ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
+        //        DataTable dt = new DataTable();
+        //        CauHoiBLL cauhoiBLL = new CauHoiBLL();
+        //        // Thêm các cột vào DataTable từ dòng đầu tiên của Excel (tên cột)
+        //        for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+        //        {
+        //            dt.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+        //        }
+
+        //        // Duyệt qua các hàng trong Excel, bắt đầu từ hàng thứ 2
+        //        for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
+        //        {
+        //            List<string> listRow = new List<string>();
+        //            CauHoiDTO cauhoi = new CauHoiDTO(); // Tạo đối tượng mới cho mỗi hàng
+
+        //            // Lấy thuộc tính của MonHocDTO bằng Reflection
+        //            PropertyInfo[] properties = typeof(CauHoiDTO).GetProperties();
+
+        //            // Duyệt qua từng cột trong một hàng
+        //            for (int col = excelWorksheet.Dimension.Start.Column; col <= excelWorksheet.Dimension.End.Column; col++)
+        //            {
+        //                try
+        //                {
+        //                    if (columnPropertyMapping.ContainsKey(col))
+        //                    {
+        //                        string propertyName = columnPropertyMapping[col];
+        //                        PropertyInfo property = typeof(CauHoiDTO).GetProperty(propertyName);
+        //                        //string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
+        //                        if (property != null)
+        //                        {
+        //                            string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
+        //                            if (cellValue != null)
+        //                            {
+        //                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+        //                                property.SetValue(cauhoi, valueToSet);
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //                catch (InvalidCastException)
+        //                {
+        //                    Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheet.Cells[row, col].Value}' sang kiểu '{properties[col - 1].PropertyType.Name}'.");
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    Console.WriteLine($"Lỗi khi gán giá trị cho {properties[col - 1].Name}: {ex.Message}");
+        //                }
+        //            }
+
+        //            // Thêm đối tượng monHoc vào DataTable
+        //            //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
+        //            // Thiết lập các giá trị mặc định
+        //            cauhoi.TrangThai = 1; // Mặc định trạng thái là 1
+        //            cauhoi.is_delete = 0; // Mặc định is_delete là 0
+        //            cauhoi.MaNguoiTao = fDangNhap.nguoiDungDTO.MaNguoiDung; // Mặc định người tạo là người đang đăng nhập
+        //            // Add vào database
+        //            if (String.IsNullOrEmpty(cauhoi.NoiDung))
+        //            {
+        //                importTracNghiem(cauhoi, excelPackage.Workbook.Worksheets[1]);
+        //            }
+        //        }
+
+        //        render();
+        //        phanTrang();
+        //        this.numericUpDown1.Value = 1;
+        //    }
+        //}
         private void importExcell(string path)
         {
+            // Định nghĩa ánh xạ cột - tên thuộc tính
+            Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
+        {
+            { 1, "NoiDung" },
+            { 2, "MaMonHoc" },
+            { 3, "DoKho" },
+            { 4, "LoaiCauHoi" }
+        };
             OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Thiết lập context phi thương mại
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
             {
-                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
-                DataTable dt = new DataTable();
-                CauHoiBLL cauhoiBLL = new CauHoiBLL();
-                // Thêm các cột vào DataTable từ dòng đầu tiên của Excel (tên cột)
-                for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
+                ExcelWorksheet mainSheet = excelPackage.Workbook.Worksheets[0];
+                ExcelWorksheet tracNghiemSheet = excelPackage.Workbook.Worksheets[1];
+                ExcelWorksheet dienTuSheet = excelPackage.Workbook.Worksheets[2];
+                ExcelWorksheet noiTuSheet = excelPackage.Workbook.Worksheets[3];
+
+                // Kiểm tra tiêu đề cột trong Excel
+                for (int col = mainSheet.Dimension.Start.Column; col <= mainSheet.Dimension.End.Column; col++)
                 {
-                    dt.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
+                    string expectedColumn = columnPropertyMapping[col];
+                    string actualColumn = mainSheet.Cells[1, col].Value?.ToString()?.Trim();
+
+                    if (actualColumn == null || !actualColumn.Equals(expectedColumn, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show($"File Excel không hợp lệ. Cột '{expectedColumn}' tại vị trí {col} không khớp với dữ liệu trong Excel.", "Lỗi Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Dừng quá trình import
+                    }
                 }
 
-                // Duyệt qua các hàng trong Excel, bắt đầu từ hàng thứ 2
-                for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
+                CauHoiBLL cauhoiBLL = new CauHoiBLL();
+
+                // Duyệt qua các hàng trong sheet chính
+                for (int row = mainSheet.Dimension.Start.Row + 1; row <= mainSheet.Dimension.End.Row; row++)
                 {
-                    List<string> listRow = new List<string>();
                     CauHoiDTO cauhoi = new CauHoiDTO(); // Tạo đối tượng mới cho mỗi hàng
 
-                    // Lấy thuộc tính của MonHocDTO bằng Reflection
-                    PropertyInfo[] properties = typeof(CauHoiDTO).GetProperties();
-
                     // Duyệt qua từng cột trong một hàng
-                    for (int col = excelWorksheet.Dimension.Start.Column; col <= excelWorksheet.Dimension.End.Column; col++)
+                    for (int col = mainSheet.Dimension.Start.Column; col <= mainSheet.Dimension.End.Column; col++)
                     {
-                        try
+                        if (columnPropertyMapping.ContainsKey(col))
                         {
-                            string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
-                            if (cellValue != null && col - 1 < properties.Length)
+                            string propertyName = columnPropertyMapping[col];
+                            PropertyInfo property = typeof(CauHoiDTO).GetProperty(propertyName);
+                            if (property != null)
                             {
-                                // Lấy thuộc tính tương ứng với cột hiện tại
-                                PropertyInfo property = properties[col - 1]; // `col - 1` để đồng bộ cột với thuộc tính
-                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
-                                property.SetValue(cauhoi, valueToSet); // Gán giá trị cho thuộc tính của MonHocDTO
+                                string cellValue = mainSheet.Cells[row, col].Value?.ToString();
+                                if (cellValue != null)
+                                {
+                                    object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                    property.SetValue(cauhoi, valueToSet);
+                                }
                             }
                         }
-                        catch (InvalidCastException)
-                        {
-                            Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheet.Cells[row, col].Value}' sang kiểu '{properties[col - 1].PropertyType.Name}'.");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Lỗi khi gán giá trị cho {properties[col - 1].Name}: {ex.Message}");
-                        }
                     }
+                    cauhoi.MaCauHoi = cauhoiBLL.GetAutoIncrement();
+                    string a = cauhoiBLL.Import(cauhoi);
 
-                    // Thêm đối tượng monHoc vào DataTable
-                    //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
-
-                    // Add vào database
-                    string tb = cauhoiBLL.Import(cauhoi);
-
+                    // Xử lý thêm câu trả lời tùy theo loại câu hỏi
+                    string loaiCauHoi = cauhoi.LoaiCauHoi?.ToLower();
+                    switch (loaiCauHoi)
+                    {
+                        case "trắc nghiệm":
+                            importTracNghiem(cauhoi, tracNghiemSheet);
+                            break;
+                        case "điền từ":
+                            //importDienTu(cauhoi, dienTuSheet, row);
+                            break;
+                        case "nối từ":
+                            //importNoiTu(cauhoi, noiTuSheet, row);
+                            break;
+                        default:
+                            Console.WriteLine($"Loại câu hỏi không hợp lệ: {cauhoi.LoaiCauHoi}");
+                            break;
+                    }
                 }
 
-                // Gán DataTable cho DataGridView
-                dataGridView1.DataSource = dt;
+                render();
+                phanTrang();
+                this.numericUpDown1.Value = 1;
             }
         }
 
+        private void importTracNghiem(CauHoiDTO cauhoi, ExcelWorksheet sheet)
+        {
+            Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
+            {
+                { 1, "MaCauHoi" },
+                { 2, "NoiDung" },
+                { 3, "is_DapAn" }
+            };
+            CauTraLoiBLL cauTraLoiBLL = new CauTraLoiBLL();
+            CauHoiBLL cauHoiBLL = new CauHoiBLL();
+            //for (int col = sheet.Dimension.Start.Column + 1; col < sheet.Dimension.End.Column; col++)
+            //{
+            //    string cauTraLoi = sheet.Cells[row, col].Value?.ToString();
+            //    if (!string.IsNullOrEmpty(cauTraLoi))
+            //    {
+            //        string DapAn = sheet.Cells[row, col + 1].Value?.ToString();
+            //        CauTraLoiDTO cauTraLoiDTO = new CauTraLoiDTO
+            //        {
+            //            MaCauHoi = cauhoi.MaCauHoi,
+            //            NoiDung = cauTraLoi,
+            //            IsDapAn = Convert.ToInt32(DapAn)
+            //        };
+            //        cauTraLoiBLL.Add(cauTraLoiDTO);
+            //    }
+            //}
+            CauTraLoiDTO cauTraLoiDTO = new CauTraLoiDTO(); // Tạo đối tượng mới cho mỗi hàng
+            for (int row = sheet.Dimension.Start.Row + 1; row <= sheet.Dimension.End.Row; row++)
+            {
+
+                // Duyệt qua từng cột trong một hàng
+                for (int col = sheet.Dimension.Start.Column; col <= sheet.Dimension.End.Column; col++)
+                {
+                    if (columnPropertyMapping.ContainsKey(col))
+                    {
+                        string propertyName = columnPropertyMapping[col];
+                        PropertyInfo property = typeof(CauTraLoiDTO).GetProperty(propertyName);
+                        if (property != null)
+                        {
+                            string cellValue = sheet.Cells[row, col].Value?.ToString();
+                            if (cellValue != null)
+                            {
+                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
+                                property.SetValue(cauTraLoiDTO, valueToSet);
+                            }
+                        }
+                    }
+                }
+                if (cauTraLoiDTO != null)
+                {
+                    cauTraLoiDTO.MaCauHoi = cauhoi.MaCauHoi;
+                    cauTraLoiBLL.Add(cauTraLoiDTO);
+
+                }
+            }
+            
+
+        }
+
+        //private void importDienTu(CauHoiDTO cauhoi, ExcelWorksheet sheet, int row)
+        //{
+        //    string cauTraLoi = sheet.Cells[row, 1].Value?.ToString();
+        //    for (int col = sheet.Dimension.Start.Column + 1; col < sheet.Dimension.End.Column; col++)
+        //    {
+        //        if (!string.IsNullOrEmpty(cauTraLoi))
+        //        {
+        //            CauTraLoiBLL cauTraLoiBLL = new CauTraLoiBLL();
+        //            CauTraLoiDienChoTrongDTO cauTraLoiDienChoTrongDTO = new CauTraLoiDienChoTrongDTO
+        //            {
+        //                MaCauHoi = cauhoi.MaCauHoi,
+        //                ViTri = 1,
+        //                DapAnText = cauTraLoi,
+        //                IsDelete = 0
+        //            };
+        //            cauTraLoiBLL.Import(cauTraLoiDTO);
+        //        }
+        //    }
+        //}
+
+        //private void importNoiTu(CauHoiDTO cauhoi, ExcelWorksheet sheet, int row)
+        //{
+        //    NoiTuBLL noiTuBLL = new NoiTuBLL();
+        //    for (int col = sheet.Dimension.Start.Column; col < sheet.Dimension.End.Column; col += 2)
+        //    {
+        //        string noiDungA = sheet.Cells[row, col].Value?.ToString();
+        //        string noiDungB = sheet.Cells[row, col + 1].Value?.ToString();
+        //        if (!string.IsNullOrEmpty(noiDungA) && !string.IsNullOrEmpty(noiDungB))
+        //        {
+        //            NoiTuDTO noiTuDTO = new NoiTuDTO
+        //            {
+        //                MaCauHoi = cauhoi.MaCauHoi,
+        //                NoiDungA = noiDungA,
+        //                NoiDungB = noiDungB
+        //            };
+        //            noiTuBLL.Import(noiTuDTO);
+        //        }
+        //    }
+        //}
         private void btnNhapFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

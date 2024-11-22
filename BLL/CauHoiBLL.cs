@@ -87,7 +87,11 @@ namespace BLL
             }
             return 0;
         }
+        public int GetAutoIncrement()
+        {
+            return cauHoiDAL.GetAutoIncrement();
+        }
 
-         
+
     }
 }
