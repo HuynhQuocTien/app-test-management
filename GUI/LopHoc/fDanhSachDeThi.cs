@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using BLL;
+using DAL;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -18,13 +20,53 @@ namespace GUI.LopHoc
         private System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
         fChiTietLop fctl;
         LopDTO lop;
+
+
+        DeThiBLL deThiBLL;
+        List<DeThiDTO> listDeThi;
+        GiaoDeThiBLL giaoDeThiBLL;
+
+
         public fDanhSachDeThi(fChiTietLop fctl,LopDTO lop)
         {
             InitializeComponent();
-            CreatePanel();
+
+
+
+            deThiBLL = new DeThiBLL();
+            listDeThi = new List<DeThiDTO>();
+
+
+            //CreatePanel();
             this.fctl = fctl;
             this.lop = lop;
+
+
+
+            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+
+
+      
         }
+
+
+        public void renderDeThiDTO(List<DeThiDTO> list)
+        {
+
+
+            listDeThi = list;
+            // Xóa tất cả các panel được tạo trước đó
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var l in listDeThi)
+            {
+                if (!deThiBLL.checkDeThiCoTrongLop(l.MaDe, lop.MaLop)) {
+                    CreatePanel(l);
+
+                }
+
+            }
+        }
+
         private Color GetRandomColor()
         {
             Random random = new Random();
@@ -45,7 +87,28 @@ namespace GUI.LopHoc
             return Color.FromArgb(r, g, b);
         }
 
-        private void CreatePanel()
+
+        private void buttonThem_Click(object sender, EventArgs e, DeThiDTO obj)
+        {
+            int maDe = Convert.ToInt32(obj.MaDe);
+            int maLop = Convert.ToInt32(lop.MaLop);
+            long maNguoiDung = Convert.ToInt64(fDangNhap.nguoiDungDTO.MaNguoiDung);
+            GiaoDeThiDTO giaoDeThiAdd = new GiaoDeThiDTO(maDe, maLop, maNguoiDung, 0);
+            GiaoDeThiBLL giaoDeThiBLL = new GiaoDeThiBLL();
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            Panel panelContain = (Panel)clickedButton.Parent;
+            DialogResult result = MessageBox.Show("Xác nhận thêm đề thi vào lớp?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                giaoDeThiBLL.Add(giaoDeThiAdd);
+                renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
+                fctl.RenderDeThi();
+                this.Close();
+                this.Dispose();
+            }
+        }
+
+        private void CreatePanel(DeThiDTO deThi)
         {
             Panel panelContain = new Panel
             {
@@ -74,7 +137,7 @@ namespace GUI.LopHoc
                 Name = "lblTenDeThi",
                 Size = new Size(300, 200),
                 TabIndex = 0,
-                Text = "Đề thi môn ABCxzy",
+                Text = deThi.TenDe,
                 AutoEllipsis = true
             };
             toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
@@ -88,7 +151,7 @@ namespace GUI.LopHoc
                 Name = "lblMonHoc1",
                 Size = new Size(110, 13),
                 TabIndex = 1,
-                Text = "Môn học: AAA",
+                Text = $"Môn học: {deThi.TenMonHoc}",
                 Font = new Font("Segoe UI", 10, FontStyle.Regular)
 
             };
@@ -100,7 +163,7 @@ namespace GUI.LopHoc
                 Name = "lblThoiGianLamBai",
                 Size = new Size(140, 13),
                 TabIndex = 2,
-                Text = "Thời gian làm bài: 60 phút",
+                Text = $"Thời gian làm bài: {(int)(deThi.ThoiGianKetThuc - deThi.ThoiGianBatDau).TotalMinutes} phút",
                 Font = new Font("Segoe UI", 10, FontStyle.Regular)
 
             };
@@ -117,6 +180,14 @@ namespace GUI.LopHoc
                 Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
+
+
+
+            btnThem.Click += (s, ev) =>
+            {
+                buttonThem_Click(s, ev, deThi);
+            };
+
 
             System.Windows.Forms.Button btnXem = new System.Windows.Forms.Button
             {

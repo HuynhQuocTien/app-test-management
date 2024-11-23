@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace DAL
 {
@@ -112,7 +113,7 @@ namespace DAL
                             {
                                 MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
-                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaND"]),
                                 Diem = Convert.ToInt32(reader["Diem"]),
                                 SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
                                 SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
@@ -186,6 +187,92 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool UpdateTrangThaiMoDapAn(int maLop, int maDe, int TrangThai)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE KetQua SET TrangThai = @TrangThai " +
+                                   "WHERE MaDe = @MaDe AND MaND IN (SELECT MaSV FROM ChiTietLop WHERE MaLop = @MaLop)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TrangThai", TrangThai);
+                        command.Parameters.AddWithValue("@MaDe", maDe);
+                        command.Parameters.AddWithValue("@MaLop", maLop);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool UpdateByMaDe(KetQuaDTO ketQua)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE KetQua SET TrangThai = @TrangThai WHERE MaDe = @MaDe";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaDe", ketQua.MaDe);
+                        command.Parameters.AddWithValue("@TrangThai", ketQua.TrangThai);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+
+
+
+        public int? GetTrangThaiByMaLopAndMaDe(int maLop, int maDe)
+        {
+            int? trangThai = null; // Use nullable int to handle cases where no record is found
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = @"SELECT kq.TrangThai 
+                             FROM KetQua kq 
+                             JOIN ChiTietLop ctl ON kq.MaND = ctl.MaSV 
+                             WHERE ctl.MaLop = @MaLop AND kq.MaDe = @MaDe";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaLop", maLop);
+                        command.Parameters.AddWithValue("@MaDe", maDe);
+
+                        // Execute the command and retrieve the result
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            trangThai = Convert.ToInt32(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return trangThai;
+        }
+
+
     }
 }
 

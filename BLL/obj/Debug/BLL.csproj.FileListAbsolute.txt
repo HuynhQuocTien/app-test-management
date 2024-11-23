@@ -50,3 +50,16 @@ E:\GitHub\app-test-management\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 E:\GitHub\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
 E:\GitHub\app-test-management\BLL\obj\Debug\BLL.dll
 E:\GitHub\app-test-management\BLL\obj\Debug\BLL.pdb
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\BLL.dll
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\BLL.pdb
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\DAL.dll
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\DTO.dll
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.dll
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\DAL.pdb
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\DTO.pdb
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\bin\Debug\System.Data.SqlClient.xml
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\obj\Debug\BLL.dll
+C:\Users\tnt96\Source\Repos\app-test-management\BLL\obj\Debug\BLL.pdb

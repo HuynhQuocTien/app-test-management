@@ -539,24 +539,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HuynhQuocTien\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tnt96\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "projectUniqueName": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
       "projectName": "app-test-management",
-      "projectPath": "E:\\GitHub\\app-test-management\\app-test-management\\app-test-management.csproj",
-      "packagesPath": "C:\\Users\\HuynhQuocTien\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\app-test-management\\app-test-management\\obj\\",
+      "projectPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\app-test-management.csproj",
+      "packagesPath": "C:\\Users\\tnt96\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\app-test-management\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\HuynhQuocTien\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\tnt96\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -564,14 +559,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj": {
-              "projectPath": "E:\\GitHub\\app-test-management\\GUI\\GUI.csproj"
+            "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj": {
+              "projectPath": "C:\\Users\\tnt96\\Source\\Repos\\app-test-management\\GUI\\GUI.csproj"
             }
           }
         }
@@ -584,9 +580,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -616,7 +611,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
