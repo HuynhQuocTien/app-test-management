@@ -1,4 +1,4 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -139,6 +139,35 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+
+
+        public NoiCauTraLoiDaLamDTO GetByMaNoiCau(int MaNoiCau)
+        {
+            NoiCauTraLoiDaLamDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM NoiCauTraLoiDaLam WHERE MaCauNoi = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", MaNoiCau);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = new NoiCauTraLoiDaLamDTO
+                            {
+                                MaCauTLDaLam = Convert.ToInt32(reader["MaCauTLDaLam"]),
+                                MaCauNoi = Convert.ToInt32(reader["MaCauNoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                DapAnNoi = reader["DapAnNoi"].ToString(),
+                                DapAnChon = reader["DapAnChon"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

@@ -271,18 +271,42 @@ namespace GUI.LopHoc
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
+               
             btnXemKq.Click += (s, ev) =>
             {
                 btnXemKq_Click(s, ev,  deThi);
             };
-            btnDong.Click += (s, ev) =>
-            {
-                btnDong_Click(s, ev, deThi, lopDTO);
-            };
+
+            
             btnLamBai.Click += (s, ev) =>
             {
                 btnLamBai_Click(s, ev, deThi, lopDTO);
             };
+
+            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
+            {
+                btnDong.Click += (s, ev) =>
+                {
+                    btnXemlai_Click(s, ev, deThi, lopDTO);
+                };
+
+                btnXemKq.Click += (s, ev) =>
+                {
+                    btnXemKq_Click(s, ev, deThi);
+                };
+            }
+            else
+            {
+                btnDong.Click += (s, ev) =>
+                {
+                    btnMoDapAn_Click(s, ev, deThi, lopDTO);
+                };
+
+                btnDong.Click += (s, ev) =>
+                {
+                    btnDong_Click(s, ev, deThi, lopDTO);
+                };
+            }
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, lblTrangThai });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
@@ -360,7 +384,35 @@ namespace GUI.LopHoc
             deThiBLL.DeleteByMaDeThi(lop, obj);
             RenderDeThi();
         }
-        
+
+        private void btnMoDapAn_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
+        {
+            //donng
+            //deThiBLL.DeleteByMaDeThi(lop, obj);
+            //RenderDeThi();
+        }
+
+
+        private void btnXemlai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
+        {
+            //xemkq
+            KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
+            //if(obj.TrangThai!=2)
+            //{
+            //    MessageBox.Show(obj.TrangThai.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            if (kq != null)
+            {
+                fXemdapan f = new fXemdapan(kq);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void CreatePanelSV()
         {
             Panel panelContain = new Panel

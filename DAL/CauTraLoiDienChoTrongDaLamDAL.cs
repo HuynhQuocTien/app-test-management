@@ -1,4 +1,4 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -144,6 +144,39 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<CauTraLoiDienChoTrongDaLamDTO> GetAllByMaCauHoi(int MaCauHoi)
+        {
+            List<CauTraLoiDienChoTrongDaLamDTO> results = new List<CauTraLoiDienChoTrongDaLamDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauTraLoiDienChoTrongDaLam WHERE MaCauHoi = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", MaCauHoi);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauTraLoiDienChoTrongDaLamDTO cautraloidalam = new CauTraLoiDienChoTrongDaLamDTO
+                            {
+                                MaCauTLDienChoTrongDaLam = Convert.ToInt32(reader["MaCauTLDienChoTrongDaLam"]),
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                ViTri = Convert.ToInt32(reader["ViTri"]),
+                                CauTraLoiText = reader["CauTraLoiText"].ToString(),
+                                DapAnText = reader["DapAnText"].ToString(),
+                                IsDelete = Convert.ToInt32(reader["IsDelete"])
+                            };
+
+                            results.Add(cautraloidalam); // Thêm đối tượng vào danh sách
+                        }
+                    }
+                }
+            }
+            return results;
+        }
+
+
     }
 }
 
