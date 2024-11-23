@@ -120,6 +120,7 @@ namespace GUI.LopHoc
         }
         private void CreatePanel(DeThiDTO deThi)
         {
+            int trangthaiData=deThi.TrangThai;
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
@@ -287,7 +288,7 @@ namespace GUI.LopHoc
             {
                 btnDong.Click += (s, ev) =>
                 {
-                    btnXemlai_Click(s, ev, deThi, lopDTO);
+                    btnXemlai_Click(s, ev, deThi, lopDTO, trangthaiData);
                 };
 
                 btnXemKq.Click += (s, ev) =>
@@ -393,11 +394,11 @@ namespace GUI.LopHoc
         }
 
 
-        private void btnXemlai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
+        private void btnXemlai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop, int trangthaiData)
         {
             //xemkq
             KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-            if (obj.TrangThai != 2)
+            if (trangthaiData != 2)
             {
                 MessageBox.Show(obj.TrangThai.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
