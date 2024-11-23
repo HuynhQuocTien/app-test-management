@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\fxemdapan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\fxemdapan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\huynh\\source\\repos\\app-test-management\\gui\\fxemdapan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -85,33 +85,33 @@
               "RelativeDocumentMoniker": "..\\GUI\\fXemdapan.Designer.cs",
               "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\fXemdapan.Designer.cs",
               "RelativeToolTip": "..\\GUI\\fXemdapan.Designer.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwDYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T08:06:51.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "fXemdapan.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\fXemdapan.cs",
               "RelativeDocumentMoniker": "..\\GUI\\fXemdapan.cs",
               "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\fXemdapan.cs",
               "RelativeToolTip": "..\\GUI\\fXemdapan.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwMwAAAAnAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowMwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T07:31:22.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "fChiTietLop.cs",
               "DocumentMoniker": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
               "ToolTip": "C:\\Users\\huynh\\source\\repos\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ViewState": "AQIAAIIBAAAAAAAAAADwv44BAABXAAAA",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAYwNcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T07:04:42.939Z",
               "EditorCaption": ""

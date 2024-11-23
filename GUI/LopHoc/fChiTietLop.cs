@@ -397,11 +397,11 @@ namespace GUI.LopHoc
         {
             //xemkq
             KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-            //if(obj.TrangThai!=2)
-            //{
-            //    MessageBox.Show(obj.TrangThai.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (obj.TrangThai != 2)
+            {
+                MessageBox.Show(obj.TrangThai.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (kq != null)
             {
                 fXemdapan f = new fXemdapan(kq);
