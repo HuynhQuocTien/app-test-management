@@ -35,7 +35,7 @@ namespace GUI.DeThi
             {
                 deThiUpdate = dethi;
                 txtTenDeThi.Text = deThiUpdate.TenDe;
-                //nud.Text = (deThiUpdate.ThoiGianKetThuc - deThiUpdate.ThoiGianBatDau).TotalMinutes.ToString();
+                numThoiGianLam.Text = (deThiUpdate.ThoiGianKetThuc - deThiUpdate.ThoiGianBatDau).TotalMinutes.ToString();
                 cbMonHoc.SelectedValue = deThiUpdate.MaMonHoc;
                 this.Text = "Cập nhật đề thi";
                 label2.Text = "Cập nhật đề thi";
@@ -62,9 +62,10 @@ namespace GUI.DeThi
                 try
                 {
                     MonHocDTO cbMonHocValue = (MonHocDTO)cbMonHoc.SelectedItem;
+                    int thoiGianLamBai = (int)numThoiGianLam.Value;
                     DeThiDTO objUpdate = new DeThiDTO(deThiUpdate.MaDe, cbMonHocValue.MaMonHoc, txtTenDeThi.Text, deThiUpdate.ThoiGianTao,
-                        deThiUpdate.ThoiGianBatDau, deThiUpdate.ThoiGianBatDau,
-                        fDangNhap.nguoiDungDTO.MaNguoiDung, -1, 0, cbMonHocValue.TenMonHoc);
+                        deThiUpdate.ThoiGianBatDau, deThiUpdate.ThoiGianBatDau, thoiGianLamBai,
+                        fDangNhap.nguoiDungDTO.MaNguoiDung, deThiUpdate.TrangThai, deThiUpdate.is_delete, cbMonHocValue.TenMonHoc);
 
 
                     deThiControl.UpdateDeThi(objUpdate);
@@ -84,8 +85,9 @@ namespace GUI.DeThi
                     string txtTendeValue = txtTenDeThi.Text;
                     //string nudValue = nud.Text;
                     MonHocDTO cbMonHocValue = (MonHocDTO)cbMonHoc.SelectedItem;
+                    int thoiGianLamBai = (int)numThoiGianLam.Value;
                     DeThiDTO deThiAdd = new DeThiDTO(deThiBLL.GetAutoIncrement(), cbMonHocValue.MaMonHoc,
-                        txtTendeValue, DateTime.Now, DateTime.Now, DateTime.Now,
+                        txtTendeValue, DateTime.Now, DateTime.Now, DateTime.Now, thoiGianLamBai,
                         fDangNhap.nguoiDungDTO.MaNguoiDung, -1, 0, cbMonHocValue.TenMonHoc);
                     deThiControl.AddDeThi(deThiAdd);
                     this.Close();

@@ -60,7 +60,6 @@ namespace GUI
             this.btnPrev = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.panelNoi = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -105,6 +104,7 @@ namespace GUI
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDownSearch = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -129,6 +129,7 @@ namespace GUI
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -464,16 +465,6 @@ namespace GUI
             this.label2.Text = "Nhập câu hỏi cần đến";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.txtSearch.Location = new System.Drawing.Point(211, 3);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(64, 26);
-            this.txtSearch.TabIndex = 10;
-            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnGo
             // 
             this.btnGo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -484,6 +475,8 @@ namespace GUI
             this.btnGo.TabIndex = 11;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Visible = false;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // panelNoi
             // 
@@ -719,7 +712,7 @@ namespace GUI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.37751F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnGo, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtSearch, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.numericUpDownSearch, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -981,6 +974,15 @@ namespace GUI
             this.tableLayoutPanel6.Size = new System.Drawing.Size(975, 264);
             this.tableLayoutPanel6.TabIndex = 15;
             // 
+            // numericUpDownSearch
+            // 
+            this.numericUpDownSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.numericUpDownSearch.Location = new System.Drawing.Point(211, 3);
+            this.numericUpDownSearch.Name = "numericUpDownSearch";
+            this.numericUpDownSearch.Size = new System.Drawing.Size(64, 26);
+            this.numericUpDownSearch.TabIndex = 12;
+            this.numericUpDownSearch.ValueChanged += new System.EventHandler(this.numericUpDownSearch_ValueChanged);
+            // 
             // fBaiThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -992,7 +994,6 @@ namespace GUI
             this.Name = "fBaiThi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Làm bài thi";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Baithi_FormClosing);
             this.Load += new System.EventHandler(this.Baithi_Load);
@@ -1036,6 +1037,7 @@ namespace GUI
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1072,7 +1074,6 @@ namespace GUI
         private Label lblMonThi;
         private Label label1;
         private Label label2;
-        private TextBox txtSearch;
         private Button btnGo;
         private TableLayoutPanel panelNoi;
         private Panel panel8;
@@ -1117,5 +1118,6 @@ namespace GUI
         private TextBox textBox10;
         private Label label15;
         private Label label16;
+        private NumericUpDown numericUpDownSearch;
     }
 }

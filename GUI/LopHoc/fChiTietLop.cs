@@ -44,6 +44,7 @@ namespace GUI.LopHoc
             ketQuaBLL = new KetQuaBLL();
             nguoiDungBLL = new NguoiDungBLL();
             chiTietDeBLL = new ChiTietDeBLL();
+            
             RenderInfoLop();
             //Tạo Đề thi giả để xem
             //DeThiDTO temp = new DeThiDTO();
@@ -67,6 +68,16 @@ namespace GUI.LopHoc
         }
         public void RenderInfoLop()
         {
+            if(fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
+            {
+                btnThem.Visible = false;
+                btnImport.Visible = false;
+            }
+            else
+            {
+                btnThem.Visible = true;
+                btnImport.Visible = true;
+            }
             lblMaMoi.Text = lopDTO.MaMoi;
             lblTenLop.Text = lopDTO.TenLop + "   ";
             lblTenGV.Text = nguoiDungBLL.getUserLoginById(lopDTO.MaGV).HoTen;

@@ -65,8 +65,8 @@ namespace GUI
             dsCauHoi.Sort((x, y) => random.Next(-1, 2));
             
             InitializeComponent();
+            label1.Text = "1/" + so_cau_hoi.ToString();
 
-            
             TaoCauHoi(dsCauHoi);
             tao_slide(dsCauHoi);
             loadData();
@@ -122,7 +122,6 @@ namespace GUI
             }
             // Tạo đường dẫn đến thư mục Avatar
             string avatarFolderPath = Path.Combine(exePath, "GUI", "Users", "Avatar");
-            MessageBox.Show(avatarFolderPath);
             // Lấy tên file ảnh từ cơ sở dữ liệu
             string tenAnh = fDangNhap.nguoiDungDTO.Avatar;
 
@@ -143,7 +142,6 @@ namespace GUI
                 pictureBox1.Image = Image.FromFile(defaultImagePath); ; // Hoặc gán ảnh mặc định
             }
         }
-
         private void UpdateTimerLabel()
         {
             int minutes = remainingTimeInSeconds / 60;
@@ -172,23 +170,35 @@ namespace GUI
             KetQuaDTO kq = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
             if (kq == null)
             {
-                KetQuaDTO kqInsert = new KetQuaDTO(-1,deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon,1,0);
-                ketQuaBLL.Add(kqInsert);
-                fKetQua f = new fKetQua(deThi, lop, kqInsert);
-                f.ShowDialog();
+                KetQuaDTO kqInsert = new KetQuaDTO(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
+                if (ketQuaBLL.Add(kqInsert))
+                {
+                    MessageBox.Show("Nộp bài thành công");
+                    fKetQua f = new fKetQua(deThi, lop, kqInsert);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Nộp bài thất bại");
+
+                }
             }
             else
             {
+                
                 KetQuaDTO kqUpdate = new KetQuaDTO(kq.MaKetQua, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
-                ketQuaBLL.Update(kqUpdate);
-                fKetQua f = new fKetQua(deThi, lop, kqUpdate);
-                f.ShowDialog();
+                if (ketQuaBLL.Update(kqUpdate))
+                {             
+                    fKetQua f = new fKetQua(deThi, lop, kqUpdate);
+                    f.ShowDialog();
+                }
             }
             this.Dispose();
             fChiTietLop.Dispose();
         }
         private void TaoDapAn(GroupBox g, int ma_cau_hoi)
         {
+            CauHoiDTO cauHoi = cauHoiBLL.GetCauHoiById(ma_cau_hoi);
             List<CauTraLoiDTO> cauTraLoiList = cauTraLoiBLL.getByMaCauHoi(ma_cau_hoi);
             int so_dap_an = cauTraLoiList.Count;
             RadioButton[] rd = new RadioButton[so_dap_an];
@@ -237,7 +247,6 @@ namespace GUI
                 flowLayoutPanel1.Controls.Add(groupBox[i - 1]);
             }
         }
-
         private void GroupBox_MouseUp(object sender, MouseEventArgs e)
         {
             GroupBox groupBox = sender as GroupBox;
@@ -248,6 +257,11 @@ namespace GUI
             panel1.Controls.Clear();
             panel1.Controls.Add(slide[currentIndex]);
         }
+        public void UpdateLabelSilde(int current)
+        {
+            label1.Text = current.ToString() + "/" + so_cau_hoi.ToString();
+            
+        }
         private void next_slide(int n)
         {
             panel1.Controls.Clear();
@@ -256,6 +270,7 @@ namespace GUI
             {
                 currentIndex = 0;
             }
+            UpdateLabelSilde(currentIndex);
             panel1.Controls.Add(slide[currentIndex]);
         }
         private void tao_slide(List<CauHoiDTO> list)
@@ -387,7 +402,18 @@ namespace GUI
         }
         private void btnPrev_Click(object sender, EventArgs e)
         {
-           
+            prev_slide(so_cau_hoi);
+        }
+        private void prev_slide(int n)
+        {
+            panel1.Controls.Clear();
+            currentIndex--;
+            if (currentIndex < 0)
+            {
+                currentIndex = n - 1;
+            }
+            UpdateLabelSilde(currentIndex);
+            panel1.Controls.Add(slide[currentIndex]);
         }
         private void Baithi_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -410,5 +436,25 @@ namespace GUI
 
         }
 
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void numericUpDownSearch_ValueChanged(object sender, EventArgs e)
+        {
+            int selectedSilde = (int)numericUpDownSearch.Value;
+            if(selectedSilde > 0 && selectedSilde <= so_cau_hoi)
+            {
+                panel1.Controls.Clear();
+                currentIndex = selectedSilde - 1;
+                UpdateLabelSilde(currentIndex);
+                panel1.Controls.Add(slide[currentIndex]);
+            } else
+            {
+                MessageBox.Show("Không tìm thấy câu hỏi");
+                return;
+            }
+        }
     }
 }

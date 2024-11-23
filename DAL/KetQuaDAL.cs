@@ -19,7 +19,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO KetQua (MaDe, MaNguoiDung, Diem, SoCauDung, SoCauSai, TrangThai, is_delete)" +
+                    string query = "INSERT INTO KetQua (MaDe, MaND, Diem, SoCauDung, SoCauSai, TrangThai, is_delete)" +
                         "VALUES (@MaDe, @MaNguoiDung, @Diem, @SoCauDung, @SoCauSai, @TrangThai, @is_delete);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -112,7 +112,7 @@ namespace DAL
                             {
                                 MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
-                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaND"]),
                                 Diem = Convert.ToInt32(reader["Diem"]),
                                 SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
                                 SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
@@ -144,7 +144,7 @@ namespace DAL
                             {
                                 MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
-                                MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaND"]),
                                 Diem = Convert.ToInt32(reader["Diem"]),
                                 SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
                                 SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
@@ -164,7 +164,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "UPDATE KetQua SET MaDe = @MaDe, MaNguoiDung = @MaNguoiDung, Diem = @Diem, SoCauDung = @SoCauDung, SoCauSai = @SoCauSai, TrangThai = @TrangThai, is_delete = @is_delete WHERE MaKetQua = @MaKetQua";
+                    string query = "UPDATE KetQua SET MaDe = @MaDe, MaND = @MaNguoiDung, Diem = @Diem, SoCauDung = @SoCauDung, SoCauSai = @SoCauSai, TrangThai = @TrangThai, is_delete = @is_delete WHERE MaKetQua = @MaKetQua";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaKetQua", ketQua.MaKetQua);

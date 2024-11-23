@@ -44,7 +44,7 @@ namespace BLL
             return 0;
         }
 
-        public CauHoiDTO GetMonHocById(int maCauHoi)
+        public CauHoiDTO GetCauHoiById(int maCauHoi)
         {
             CauHoiDTO cauHoi = new CauHoiDTO();
             cauHoi.MaCauHoi = maCauHoi;

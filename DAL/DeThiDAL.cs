@@ -25,8 +25,8 @@ namespace DAL
                 {
                     //string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
                     //    "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
-                    string query = "INSERT INTO DeThi (MaMonHoc, TenDe, ThoiGianTao, ThoiGianBatDau, ThoiGianKetThuc, NguoiTao, TrangThai, is_delete)" +
-                        " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc, @NguoiTao, @TrangThai, @is_delete)";
+                    string query = "INSERT INTO DeThi (MaMonHoc, TenDe, ThoiGianTao, ThoiGianBatDau, ThoiGianKetThuc,ThoiGianLamBai, NguoiTao, TrangThai, is_delete)" +
+                        " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@ThoiGianLamBai, @NguoiTao, @TrangThai, @is_delete)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaMonHoc", dethi.MaMonHoc);
@@ -34,6 +34,7 @@ namespace DAL
                         command.Parameters.AddWithValue("@ThoiGianTao", dethi.ThoiGianTao);
                         command.Parameters.AddWithValue("@ThoiGianBatDau", dethi.ThoiGianBatDau);
                         command.Parameters.AddWithValue("@ThoiGianKetThuc", dethi.ThoiGianKetThuc);
+                        command.Parameters.AddWithValue("@ThoiGianLamBai", dethi.ThoiGianLamBai);
                         command.Parameters.AddWithValue("@NguoiTao", dethi.NguoiTao);
                         command.Parameters.AddWithValue("@TrangThai", 1);
                         command.Parameters.AddWithValue("@is_delete", 0);
@@ -92,6 +93,7 @@ namespace DAL
                                 ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
                                 ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
@@ -126,6 +128,7 @@ namespace DAL
                                 ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
                                 ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"]),
@@ -161,6 +164,7 @@ namespace DAL
                                 ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
                                 ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
@@ -187,7 +191,8 @@ namespace DAL
                         command.Parameters.AddWithValue("@TenDe", dethi.TenDe);
                         command.Parameters.AddWithValue("@ThoiGianTao", dethi.ThoiGianTao);
                         command.Parameters.AddWithValue("@ThoiGianBatDau", dethi.ThoiGianBatDau);
-                        command.Parameters.AddWithValue("@ThoiGianKetThuc", dethi.ThoiGianKetThuc);
+                        command.Parameters.AddWithValue("@ThoiGianKetThuc", dethi.ThoiGianKetThuc); 
+                        command.Parameters.AddWithValue("@ThoiGianLamBai", dethi.ThoiGianLamBai);
                         command.Parameters.AddWithValue("@NguoiTao", dethi.NguoiTao);
                         command.Parameters.AddWithValue("@MaDe", dethi.MaDe);
                         int rowsChanged = command.ExecuteNonQuery();
@@ -255,6 +260,7 @@ namespace DAL
                                 ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
                                 ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])

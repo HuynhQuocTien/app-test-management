@@ -36,6 +36,7 @@ namespace GUI.LopHoc
                 txtTenlop.Text = lopUpdate.TenLop;
                 this.Text = "Cập nhật lớp học";
                 label2.Text = "Cập nhật lớp học";
+                btnThem.Text = "Lưu";
             }
             if (hanhDong.Equals("join"))
             {
@@ -43,6 +44,7 @@ namespace GUI.LopHoc
                 label2.Text = "Nhập mã mời để vào lớp";
                 label2.Location = new Point(50, 15);
                 label1.Text = "Nhập mã mời";
+                btnThem.Text = "Tham gia";
             }
         }
         private void button1_Click(object sender, EventArgs e)
