@@ -19,7 +19,10 @@ namespace BLL
         {
             return NoiCauDAL.GetAll();
         }
-
+        public List<NoiCauDTO> GetAllByMaCauHoi(int maCauHoi)
+        {
+            return NoiCauDAL.GetAllByMaCauHoi(maCauHoi);
+        }
         public List<int> GetAllMaNoiCau(int maCauHoi)
         {
             return NoiCauDAL.GetAllMaNoiCau(maCauHoi);

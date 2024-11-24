@@ -221,6 +221,7 @@ namespace DAL
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
                                 MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 DoKho = Convert.ToInt32(reader["DoKho"]),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])
                             };

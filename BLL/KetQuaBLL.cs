@@ -40,5 +40,9 @@ namespace BLL
             }
             return false;
         }
+        public KetQuaDTO GetByMaDeAndMaND(int MaDe,long MaND)
+        {
+            return ketQuaDAL.GetByMaDeAndMaND(MaDe, MaND);
+        }
     }
 }

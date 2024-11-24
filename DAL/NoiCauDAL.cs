@@ -85,7 +85,33 @@ namespace DAL
             }
             return noiCauList;
         }
-
+        public List<NoiCauDTO> GetAllByMaCauHoi(int MaCauHoi)
+        {
+            List<NoiCauDTO> noiCauList = new List<NoiCauDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM NoiCau Where MaCauHoi = @MaCauHoi";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaCauHoi", MaCauHoi);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            NoiCauDTO noiCau = new NoiCauDTO
+                            {
+                                MaNoiCau = Convert.ToInt32(reader["MaNoiCau"]),
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                Diem = Convert.ToDecimal(reader["Diem"])
+                            };
+                            noiCauList.Add(noiCau);
+                        }
+                    }
+                }
+            }
+            return noiCauList;
+        }
         public List<int> GetAllMaNoiCau(int maCauHoi)
         {
             List<int> noiCauList = new List<int>();

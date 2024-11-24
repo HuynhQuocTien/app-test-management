@@ -158,6 +158,38 @@ namespace DAL
             return result;
         }
 
+        public KetQuaDTO GetByMaDeAndMaND(int maDe, long maND)
+        {
+            KetQuaDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM KetQua WHERE MaDe = @MaDe AND MaND = @maND";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", maDe);
+                    command.Parameters.AddWithValue("@MaND", maND);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = new KetQuaDTO
+                            {
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaNguoiDung = Convert.ToInt64(reader["MaND"]),
+                                Diem = Convert.ToInt32(reader["Diem"]),
+                                SoCauDung = Convert.ToInt32(reader["SoCauDung"]),
+                                SoCauSai = Convert.ToInt32(reader["SoCauSai"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
         public bool Update(KetQuaDTO ketQua)
         {
             try
