@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DTO;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Control = System.Windows.Forms.Control;
 using Size = System.Drawing.Size;
 
@@ -32,11 +34,15 @@ namespace GUI.LopHoc
         NguoiDungBLL nguoiDungBLL;
         ChiTietDeBLL chiTietDeBLL;
 
+        List<KetQuaDTO> listKetQua;
+
+
         public fChiTietLop(LopHocControl lopHocControl, LopDTO lopDTO)
         {
             InitializeComponent();            
             this.lopHocControl = lopHocControl;
             this.lopDTO = lopDTO;
+
             deThiBLL = new DeThiBLL();
             monHocBLL = new MonHocBLL();
             giaoDeThiBLL = new GiaoDeThiBLL();
@@ -84,6 +90,10 @@ namespace GUI.LopHoc
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+
+            
+         
+
             fDanhSachDeThi f = new fDanhSachDeThi(this, lopDTO);
             f.ShowDialog();
         }
@@ -255,14 +265,16 @@ namespace GUI.LopHoc
                 Enabled = deThi.TrangThai == 0 ? true : false, //Trang thai = 0 là được làm bài
             };
 
-            
+
+
+
             System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
             {
                 Location = new Point(145, 300),
                 Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
-                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Kết quả" : "Mở đáp án",
+                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Kết quả" : (ketQuaBLL.GetTrangThai(lopDTO.MaLop, deThi.MaDe) == 2? "Đóng đáp án" : "Mở đáp án") ,
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -284,6 +296,10 @@ namespace GUI.LopHoc
             };
             btnXemKq.Click += (s, ev) =>
             {
+
+
+
+
                 btnXemKq_Click(s, ev,  deThi);
             };
             btnDong.Click += (s, ev) =>
@@ -305,19 +321,36 @@ namespace GUI.LopHoc
             panelHead.Enabled = true;
             counter++;
         }
+
+
+      
+
+
         private void btnXemKq_Click(object s, EventArgs ev, DeThiDTO obj)
         {
-            //xemkq
-            KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe,fDangNhap.nguoiDungDTO.MaNguoiDung);
-            if (kq != null)
+
+            int? trangThai = ketQuaBLL.GetTrangThai(lopDTO.MaLop, obj.MaDe);
+
+
+            bool isUpdated;
+            if (trangThai == 1)
             {
-                fKetQua f = new fKetQua(obj, lopDTO, kq);
-                f.ShowDialog();
+                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 2);
             }
             else
             {
-                MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 1);
             }
+
+            if (isUpdated)
+            {
+                MessageBox.Show("Trạng thái đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật trạng thái không thành công. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            RenderDeThi();
         }
 
         private void btnLamBai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)

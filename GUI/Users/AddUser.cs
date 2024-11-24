@@ -77,7 +77,7 @@ namespace GUI.Users
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Meo");
+            //MessageBox.Show("Meo");
 
             string selectedRBGender = string.Empty;
             string txtIDValue = textBoxID.Text;
@@ -124,7 +124,8 @@ namespace GUI.Users
             usersControl.AddNguoiDung(nguoiDungAdd, taikhoanAdd);
 
 
-
+            this.Close();
+                    this.Dispose();
 
 
 

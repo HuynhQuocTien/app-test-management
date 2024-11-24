@@ -165,12 +165,13 @@ namespace GUI.DeThi
         }
         private void buttonXoa_Click(object sender, EventArgs e, DeThiDTO obj)
         {
-            deThiBLL.Delete(obj);
+        
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             Panel panelContain = (Panel)clickedButton.Parent;
             DialogResult result = MessageBox.Show("Xác nhận xóa đề thi?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                deThiBLL.Delete(obj);
                 flowLayoutPanel1.Controls.Remove(panelContain);
             }
         }

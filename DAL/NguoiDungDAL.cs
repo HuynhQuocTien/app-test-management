@@ -97,7 +97,7 @@ namespace DAL
             List<NguoiDungDTO> nguoiDungList = new List<NguoiDungDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM NguoiDung";
+                string query = "SELECT * FROM NguoiDung WHERE is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

@@ -18,14 +18,14 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO GiaoDeThi (MaDe, MaLop, NguoiGiao, IsDelete)" +
-                        "VALUES (@MaDe, @MaLop, @NguoiGiao, @IsDelete);";
+                    string query = "INSERT INTO GiaoDeThi (MaDe, MaLop, NguoiGiao, is_delete)" +
+                        "VALUES (@MaDe, @MaLop, @NguoiGiao, @is_delete);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaDe", giaoDeThi.MaDe);
                         command.Parameters.AddWithValue("@MaLop", giaoDeThi.MaLop);
                         command.Parameters.AddWithValue("@NguoiGiao", giaoDeThi.NguoiGiao);
-                        command.Parameters.AddWithValue("@IsDelete", giaoDeThi.IsDelete);
+                        command.Parameters.AddWithValue("@is_delete", giaoDeThi.IsDelete);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }

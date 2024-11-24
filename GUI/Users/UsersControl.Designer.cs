@@ -43,11 +43,11 @@ namespace GUI.Users
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -79,8 +79,9 @@ namespace GUI.Users
             this.flowLayoutContainer.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutContainer.Location = new System.Drawing.Point(3, 91);
+            this.flowLayoutContainer.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.flowLayoutContainer.Name = "flowLayoutContainer";
-            this.flowLayoutContainer.Size = new System.Drawing.Size(1277, 769);
+            this.flowLayoutContainer.Size = new System.Drawing.Size(1277, 672);
             this.flowLayoutContainer.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -116,7 +117,7 @@ namespace GUI.Users
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.40298F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.59702F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel3.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 2, 0);
@@ -144,6 +145,7 @@ namespace GUI.Users
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 27);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tableLayoutPanel4
@@ -151,7 +153,7 @@ namespace GUI.Users
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.07825F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.92175F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel4.Controls.Add(this.dateTimePicker1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.dateTimePicker2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.button2, 2, 0);
@@ -160,7 +162,7 @@ namespace GUI.Users
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(557, 47);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(556, 47);
             this.tableLayoutPanel4.TabIndex = 3;
             this.tableLayoutPanel4.Visible = false;
             // 
@@ -171,30 +173,33 @@ namespace GUI.Users
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(3, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(229, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(228, 29);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.Visible = false;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(238, 9);
+            this.dateTimePicker2.Location = new System.Drawing.Point(237, 9);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(229, 29);
+            this.dateTimePicker2.Size = new System.Drawing.Size(228, 29);
             this.dateTimePicker2.TabIndex = 1;
+            this.dateTimePicker2.Visible = false;
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(473, 8);
+            this.button2.Location = new System.Drawing.Point(471, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 31);
             this.button2.TabIndex = 2;
             this.button2.Text = "Tìm kiếm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
@@ -202,10 +207,11 @@ namespace GUI.Users
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(701, 12);
+            this.textBox1.Location = new System.Drawing.Point(700, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 29);
             this.textBox1.TabIndex = 0;
+            this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -237,6 +243,26 @@ namespace GUI.Users
             this.panel1.Size = new System.Drawing.Size(636, 44);
             this.panel1.TabIndex = 1;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(389, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 41);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Export File";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(287, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 41);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Import File";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -246,6 +272,7 @@ namespace GUI.Users
             this.label2.Size = new System.Drawing.Size(128, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "trên tổng ... trang";
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -256,6 +283,7 @@ namespace GUI.Users
             this.label1.Size = new System.Drawing.Size(49, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trang";
+            this.label1.Visible = false;
             // 
             // numericUpDown1
             // 
@@ -264,27 +292,8 @@ namespace GUI.Users
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(70, 29);
             this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.Visible = false;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(319, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 41);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Import File";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(442, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 41);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Export File";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // UsersControl
             // 
