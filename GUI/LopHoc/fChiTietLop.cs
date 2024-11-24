@@ -50,6 +50,7 @@ namespace GUI.LopHoc
             ketQuaBLL = new KetQuaBLL();
             nguoiDungBLL = new NguoiDungBLL();
             chiTietDeBLL = new ChiTietDeBLL();
+            
             RenderInfoLop();
             //Tạo Đề thi giả để xem
             //DeThiDTO temp = new DeThiDTO();
@@ -73,6 +74,16 @@ namespace GUI.LopHoc
         }
         public void RenderInfoLop()
         {
+            if(fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
+            {
+                btnThem.Visible = false;
+                btnImport.Visible = false;
+            }
+            else
+            {
+                btnThem.Visible = true;
+                btnImport.Visible = true;
+            }
             lblMaMoi.Text = lopDTO.MaMoi;
             lblTenLop.Text = lopDTO.TenLop + "   ";
             lblTenGV.Text = nguoiDungBLL.getUserLoginById(lopDTO.MaGV).HoTen;
@@ -178,7 +189,7 @@ namespace GUI.LopHoc
 
             };
             TimeSpan thoiGiamLamBai = deThi.ThoiGianKetThuc.Subtract(deThi.ThoiGianBatDau);
-            int soPhutLamBai = (int)Math.Floor(thoiGiamLamBai.TotalMinutes); // Làm tròn xuống
+            int soPhutLamBai = deThi.ThoiGianLamBai;
             Label lblThoiGianLamBai = new Label
             {
                 AutoSize = true,
@@ -308,6 +319,7 @@ namespace GUI.LopHoc
             btnLamBai.Enabled = true;        
             panelHead.BackColor = GetRandomColor();
             panelHead.Enabled = true;
+            counter++;
         }
 
 
@@ -351,6 +363,7 @@ namespace GUI.LopHoc
             }
             else // thực hiện chức năng làm bài
             {
+                KetQuaDTO ketQuaDTO = ketQuaBLL.GetByMaDeAndMaND(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
                 List<CauHoiDTO> listCauHoi = chiTietDeBLL.GetAllCauHoiOfDeThi(obj);
                 // check xem trong đề thi có câu hỏi không
                 if (listCauHoi.Count > 0)
@@ -370,7 +383,22 @@ namespace GUI.LopHoc
                         // Check xem người dùng đã làm bài thi này chưa (chỉ check trong trường hợp người dùng là học sinh)
                         if (kq != null && fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
                         {
-                            MessageBox.Show("Bạn đã làm bài thi này rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (kq.TrangThai > 0)
+                            {
+                                MessageBox.Show("Bạn đã làm bài thi này rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else if (kq.TrangThai < 0)
+                            {
+                                deThiBLL.DeleteByMaDeThi(lop, obj);
+                                MessageBox.Show("Đã quá hạn làm bài thi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                RenderDeThi();
+                            }
+                            else if (kq.TrangThai == 0)
+                            {
+                                fBaiThi formBaithi = new fBaiThi(obj, lop, this);
+                                formBaithi.ShowDialog();
+                            }
+                            
                         }
                         else
                         {

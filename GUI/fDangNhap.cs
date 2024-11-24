@@ -22,7 +22,7 @@ namespace GUI
 
         private NguoiDungBLL nguoiDungBLL;
         private NhomQuyenBLL nhomQuyenBLL;
-
+        private DeThiBLL deThiBLL;
 
         private Size formOriginalSize;
         private Rectangle recLab1;

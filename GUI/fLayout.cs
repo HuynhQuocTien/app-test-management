@@ -158,7 +158,6 @@ namespace GUI
             ShowUserControl(fLandingPanel);
             this.Text = "Trang chủ";
         }
-
         private void btnLopHoc_Click(object sender, EventArgs e)
         {
             ShowUserControl(lopHocPanel);

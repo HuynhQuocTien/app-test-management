@@ -541,6 +541,7 @@ E:\GitHub\app-test-management\GUI\obj\Debug\GUI.Properties.Resources.resources
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.AddUser.resources
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.InfoUser.resources
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.UsersControl.resources
+E:\GitHub\app-test-management\GUI\obj\Debug\GUI.Users.UsersDetail.resources
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 E:\GitHub\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date

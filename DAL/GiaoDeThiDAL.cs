@@ -171,6 +171,7 @@ namespace DAL
                                 ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
                                 ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
                                 is_delete = Convert.ToInt32(reader["is_delete"])

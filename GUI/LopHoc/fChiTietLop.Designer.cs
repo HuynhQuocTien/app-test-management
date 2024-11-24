@@ -37,6 +37,7 @@
             this.lblTenGV = new System.Windows.Forms.Label();
             this.lblMaMoi = new System.Windows.Forms.Label();
             this.containerBtn = new System.Windows.Forms.TableLayoutPanel();
+            this.btnImport = new System.Windows.Forms.Button();
             this.btnXemDSSV = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.TitlePanel = new System.Windows.Forms.TableLayoutPanel();
@@ -46,7 +47,6 @@
             this.lblChuThichMo = new System.Windows.Forms.Label();
             this.lblChuThichDong = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnImport = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.headingPanel.SuspendLayout();
             this.containerlbl.SuspendLayout();
@@ -178,6 +178,20 @@
             this.containerBtn.Size = new System.Drawing.Size(419, 54);
             this.containerBtn.TabIndex = 2;
             // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Location = new System.Drawing.Point(150, 9);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(139, 36);
+            this.btnImport.TabIndex = 2;
+            this.btnImport.Text = "Thêm SV vào lớp";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // btnXemDSSV
             // 
             this.btnXemDSSV.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -302,20 +316,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(946, 428);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // btnImport
-            // 
-            this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(150, 9);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(139, 36);
-            this.btnImport.TabIndex = 2;
-            this.btnImport.Text = "Thêm SV vào lớp";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // fChiTietLop
             // 

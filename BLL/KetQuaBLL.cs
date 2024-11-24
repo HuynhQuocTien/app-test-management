@@ -50,6 +50,10 @@ namespace BLL
             }
             return false;
         }
+        public KetQuaDTO GetByMaDeAndMaND(int MaDe,long MaND)
+        {
+            return ketQuaDAL.GetByMaDeAndMaND(MaDe, MaND);
+        }
 
         public bool UpdateTrangThai(int maLop, int maDe, int trangThai)
         {

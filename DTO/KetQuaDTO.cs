@@ -29,5 +29,15 @@ namespace DTO
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
+        public KetQuaDTO(int maDe, long maNguoiDung, decimal diem, int soCauDung, int soCauSai, int trangThai, int is_delete)
+        {
+            MaDe = maDe;
+            MaNguoiDung = maNguoiDung;
+            Diem = diem;
+            SoCauDung = soCauDung;
+            SoCauSai = soCauSai;
+            TrangThai = trangThai;
+            this.is_delete = is_delete;
+        }
     }
 }

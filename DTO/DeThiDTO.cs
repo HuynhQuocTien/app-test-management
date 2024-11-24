@@ -18,6 +18,7 @@ namespace DTO
         public int TrangThai {  get; set; }
         public int is_delete { get; set; }
         public string TenMonHoc { get; set; }
+        public int ThoiGianLamBai { get; set; }
         public DeThiDTO() { }
 
         public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, long nguoiTao, int trangThai, int is_delete)
@@ -32,7 +33,7 @@ namespace DTO
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
-        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, long nguoiTao, int trangThai, int is_delete, string tenMonHoc)
+        public DeThiDTO(int maDe, int maMonHoc, string tenDe, DateTime thoiGianTao, DateTime thoiGianBatDau, DateTime thoiGianKetThuc,int ThoiGianLamBai, long nguoiTao, int trangThai, int is_delete, string tenMonHoc)
         {
             MaDe = maDe;
             MaMonHoc = maMonHoc;
@@ -40,10 +41,12 @@ namespace DTO
             ThoiGianTao = thoiGianTao;
             ThoiGianBatDau = thoiGianBatDau;
             ThoiGianKetThuc = thoiGianKetThuc;
+            this.ThoiGianLamBai = ThoiGianLamBai;
             NguoiTao = nguoiTao;
             TrangThai = trangThai;
             this.is_delete = is_delete;
             TenMonHoc = tenMonHoc;
         }
+
     }
 }
