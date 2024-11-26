@@ -258,6 +258,78 @@ namespace DAL
             return dethiList;
         }
 
+        public List<CauHoiDTO> layCauHoiChuaThem(CauHoiDTO cauHoiDTO, int maDeThi)
+        {
+            List<CauHoiDTO> dethiList = new List<CauHoiDTO>();
+        
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = @"
+                            SELECT * 
+                            FROM CauHoi 
+                            WHERE is_delete = 0 
+                            AND NOT EXISTS (
+                                SELECT 1 
+                                FROM ChiTietDe 
+                                WHERE ChiTietDe.MaCauHoi = CauHoi.MaCauHoi 
+                                AND ChiTietDe.MaDe = @MaDe
+                            )";
+        
+                if (cauHoiDTO.MaMonHoc != 0)
+                {
+                    query += " AND MaMonHoc = @MaMonHoc";
+                }
+        
+                if (cauHoiDTO.DoKho != 0)
+                {
+                    query += " AND DoKho = @DoKho";
+                }
+        
+                if (!string.IsNullOrEmpty(cauHoiDTO.NoiDung))
+                {
+                    query += " AND NoiDung LIKE @NoiDung";
+                }
+        
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", maDeThi);
+        
+                    if (cauHoiDTO.MaMonHoc != 0)
+                    {
+                        command.Parameters.AddWithValue("@MaMonHoc", cauHoiDTO.MaMonHoc);
+                    }
+        
+                    if (cauHoiDTO.DoKho != 0)
+                    {
+                        command.Parameters.AddWithValue("@DoKho", cauHoiDTO.DoKho);
+                    }
+        
+                    if (!string.IsNullOrEmpty(cauHoiDTO.NoiDung))
+                    {
+                        command.Parameters.AddWithValue("@NoiDung", $"%{cauHoiDTO.NoiDung}%");
+                    }
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauHoiDTO de = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
+                                MaNguoiTao = reader.IsDBNull(reader.GetOrdinal("NguoiTao")) ? 0 : reader.GetInt64(reader.GetOrdinal("NguoiTao")),
+                                TrangThai = reader.IsDBNull(reader.GetOrdinal("TrangThai")) ? 0 : reader.GetInt32(reader.GetOrdinal("TrangThai")),
+                                is_delete = reader.IsDBNull(reader.GetOrdinal("is_delete")) ? 0 : reader.GetInt32(reader.GetOrdinal("is_delete"))
+                            };
+                            dethiList.Add(de);
+                        }
+                    }
+                }
+            }
+            return dethiList;
+        }
+
         public List<CauHoiDTO> GetCauHoiListByMaDe(int maDe)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
