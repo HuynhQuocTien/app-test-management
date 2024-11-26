@@ -33,7 +33,7 @@ namespace BLL
         }
         public List<CauHoiDTO> layCauHoiChuaThem(CauHoiDTO cauhoiDTO, int maDeThi)
         {
-            return chiTietDeDal.layCauHoiChuaThem(cauhoiDTO, maDeThi);
+            return chiTietDeDAL.layCauHoiChuaThem(cauhoiDTO, maDeThi);
         }
         public List<CauHoiDTO> GetCauHoiByMaDe(int made)
         {

@@ -120,9 +120,9 @@
               "Title": "ChiTietDeBLL.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\ChiTietDeBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\ChiTietDeBLL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\ChiTietDeBLL.cs",
-              "RelativeToolTip": "..\\BLL\\ChiTietDeBLL.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAvwDAAAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\ChiTietDeBLL.cs*",
+              "RelativeToolTip": "..\\BLL\\ChiTietDeBLL.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T15:07:08.962Z",
               "EditorCaption": ""
@@ -137,8 +137,7 @@
               "RelativeToolTip": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs",
               "ViewState": "AgIAAHsAAAAAAAAAAAAiwKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:06:02.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T15:06:02.724Z"
             },
             {
               "$type": "Document",
@@ -149,8 +148,7 @@
               "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs [Design]",
               "RelativeToolTip": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:05:59.702Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-26T15:05:59.702Z"
             },
             {
               "$type": "Document",
@@ -162,8 +160,7 @@
               "RelativeToolTip": "..\\GUI\\fNhapOTP.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:47.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:53:47.291Z"
             },
             {
               "$type": "Document",
