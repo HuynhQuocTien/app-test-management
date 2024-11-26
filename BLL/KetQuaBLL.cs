@@ -71,6 +71,11 @@ namespace BLL
         {
             return ketQuaDAL.GetAutoIncrement();
         }
+
+        public bool checkDeThiInKetQua(DeThiDTO deThi)
+        {
+            return ketQuaDAL.checkDeThiInKetQua(deThi);
+        }
     }
 
 }

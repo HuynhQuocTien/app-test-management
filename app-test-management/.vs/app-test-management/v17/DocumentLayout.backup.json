@@ -3,46 +3,31 @@
   "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|e:\\github\\app-test-management\\bll\\chitietdebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fdanhsachsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemchitietdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fdanhsachsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemchitietdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fnhapotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fchitietlop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fnhapotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\giaodethidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fnhapinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fgetotp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\nguoidungdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|e:\\github\\app-test-management\\bll\\nguoidungbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fthemsvvaolop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|e:\\github\\app-test-management\\bll\\taikhoanbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\lophoc\\fthemsvvaolop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\dethi\\fthemdethi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -52,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -116,167 +101,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChiTietDeBLL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\ChiTietDeBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\ChiTietDeBLL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\ChiTietDeBLL.cs*",
-              "RelativeToolTip": "..\\BLL\\ChiTietDeBLL.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABGAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "fDanhSachSV.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fDanhSachSV.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs [Design]*",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fDanhSachSV.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:07:08.962Z",
+              "WhenOpened": "2024-11-26T19:46:03.379Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fDanhSachSV.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fDanhSachSV.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs*",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fDanhSachSV.cs*",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wCsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:43:56.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "fThemChiTietDeThi.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAiwKAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:06:02.724Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "fThemChiTietDeThi.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemChiTietDeThi.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemChiTietDeThi.cs [Design]",
+              "Title": "fChiTietLop.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAhwGcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T15:05:59.702Z"
+              "WhenOpened": "2024-11-26T19:43:38.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "fNhapOTP.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fNhapOTP.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fNhapOTP.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fNhapOTP.cs",
-              "RelativeToolTip": "..\\GUI\\fNhapOTP.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAABEAAAAAAAAAA==",
+              "Title": "fChiTietLop.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:47.291Z"
+              "WhenOpened": "2024-11-26T19:43:33.536Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "fNhapOTP.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fNhapOTP.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fNhapOTP.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fNhapOTP.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\fNhapOTP.cs [Design]",
+              "Title": "GiaoDeThiDAL.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\GiaoDeThiDAL.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\GiaoDeThiDAL.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\GiaoDeThiDAL.cs",
+              "RelativeToolTip": "..\\DAL\\GiaoDeThiDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:45.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "fNhapInfo.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fNhapInfo.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs",
-              "RelativeToolTip": "..\\GUI\\fNhapInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:32.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fNhapInfo.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fNhapInfo.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fNhapInfo.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\fNhapInfo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:31.201Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "fGetOTP.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fGetOTP.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fGetOTP.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fGetOTP.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\fGetOTP.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:53:25.118Z"
+              "WhenOpened": "2024-11-26T19:43:26.558Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "NguoiDungDAL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\NguoiDungDAL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\NguoiDungDAL.cs",
-              "RelativeToolTip": "..\\DAL\\NguoiDungDAL.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:52:17.278Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NguoiDungBLL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\NguoiDungBLL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\NguoiDungBLL.cs",
-              "RelativeToolTip": "..\\BLL\\NguoiDungBLL.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:51:28.094Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TaiKhoanBLL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\TaiKhoanBLL.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\TaiKhoanBLL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\TaiKhoanBLL.cs",
-              "RelativeToolTip": "..\\BLL\\TaiKhoanBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:51:15.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "TaiKhoanDAL.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\TaiKhoanDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\TaiKhoanDAL.cs",
               "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\TaiKhoanDAL.cs",
               "RelativeToolTip": "..\\DAL\\TaiKhoanDAL.cs",
-              "ViewState": "AgIAAPsAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAUwFAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T14:50:45.599Z"
+              "WhenOpened": "2024-11-26T19:06:40.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "fThemDeThi.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAlwGEAAABdAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "TaiKhoanBLL.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\BLL\\TaiKhoanBLL.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\TaiKhoanBLL.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\BLL\\TaiKhoanBLL.cs",
+              "RelativeToolTip": "..\\BLL\\TaiKhoanBLL.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwDYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T07:58:50.308Z"
+              "WhenOpened": "2024-11-26T19:05:26.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "fThemDeThi.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\DeThi\\fThemDeThi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\fThemDeThi.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\DeThi\\fThemDeThi.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "fThemSVvaoLop.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAADgv8MAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T07:58:49.179Z"
+              "WhenOpened": "2024-11-26T19:03:07.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "fThemSVvaoLop.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fThemSVvaoLop.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fThemSVvaoLop.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fThemSVvaoLop.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T17:09:35.02Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

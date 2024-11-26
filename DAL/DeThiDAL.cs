@@ -351,7 +351,7 @@ namespace DAL
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaDe", deThi.MaDe);
-                        command.Parameters.AddWithValue("@TrangThai", 0);
+                        command.Parameters.AddWithValue("@TrangThai", -1);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }

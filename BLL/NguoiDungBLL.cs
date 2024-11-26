@@ -27,7 +27,6 @@ namespace BLL
         {
             return nguoiDungDAL.GetAll();
         }
-
         public List<NguoiDungDTO> GetAllNguoiDungByCondition(int maNhomQuyen, long? Username = null)
         {
             return nguoiDungDAL.GetAllByCondition(maNhomQuyen, Username);

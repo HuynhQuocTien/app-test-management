@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Control = System.Windows.Forms.Control;
@@ -90,10 +91,6 @@ namespace GUI.LopHoc
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-            
-         
-
             fDanhSachDeThi f = new fDanhSachDeThi(this, lopDTO);
             f.ShowDialog();
         }
@@ -104,7 +101,7 @@ namespace GUI.LopHoc
         }
         private void btnXemDSSV_Click(object sender, EventArgs e)
         {
-            fDanhSachSV fdsv = new fDanhSachSV();
+            fDanhSachSV fdsv = new fDanhSachSV(lopDTO);
             fdsv.ShowDialog();
         }
         private void lblMaMoi_Click(object sender, EventArgs e)
@@ -288,7 +285,7 @@ namespace GUI.LopHoc
                 Name = "button2" + counter,
                 Size = new System.Drawing.Size(100, 41),
                 TabIndex = 2,
-                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Xem lại" : "Đóng",
+                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Xem lại" : (ketQuaBLL.checkDeThiInKetQua(deThi) ? "Đóng" : "Xoá"),
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -296,10 +293,6 @@ namespace GUI.LopHoc
             };
             btnXemKq.Click += (s, ev) =>
             {
-
-
-
-
                 btnXemKq_Click(s, ev,  deThi);
             };
             btnDong.Click += (s, ev) =>
@@ -417,8 +410,52 @@ namespace GUI.LopHoc
 
         private void btnDong_Click(object s, EventArgs ev, DeThiDTO obj,LopDTO lop)
         {
-            //donng
-            deThiBLL.DeleteByMaDeThi(lop, obj);
+            Button button = (Button)s;
+            if(button.Text.Contains("Đóng"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn đóng đề này không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (DialogResult.OK == dialogResult)
+                {
+                    bool isUpdated = deThiBLL.DeleteByMaDeThi(lop, obj);
+                    if (isUpdated)
+                    {
+                        MessageBox.Show("Đã đóng đề thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đóng đề thi không thành công. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                 
+            }
+            else if (button.Text.Contains("Xoá"))
+            {
+                GiaoDeThiDTO giaoDTDelete = new GiaoDeThiDTO
+                {
+                    MaDe = obj.MaDe,
+                    MaLop = lop.MaLop
+
+                };
+                DialogResult dialogResult =  MessageBox.Show("Bạn có chắc muốn xoá đề này không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(DialogResult.OK == dialogResult)
+                {
+                    bool isDeleted = giaoDeThiBLL.Delete(giaoDTDelete);
+                    if (isDeleted)
+                    {
+                        MessageBox.Show("Đã xoá đề thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xoá đề thi không thành công. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                
+            }
+            else if (button.Text.Contains("Xem lại"))
+            {
+
+            }
+                //donng
             RenderDeThi();
         }
         
@@ -532,7 +569,7 @@ namespace GUI.LopHoc
         }
         private void btnImport_Click(object sender, EventArgs e)
         {
-            fThemSVvaoLop fAddSV = new fThemSVvaoLop();
+            fThemSVvaoLop fAddSV = new fThemSVvaoLop(lopHocControl,lopDTO);
             fAddSV.ShowDialog();
         }
     }

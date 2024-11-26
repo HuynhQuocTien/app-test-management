@@ -337,6 +337,26 @@ namespace DAL
             }
             return result + 1;
         }
+
+        public bool checkDeThiInKetQua(DeThiDTO deThi)
+        {
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM KetQua WHERE MaDe = @MaDe";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", deThi.MaDe);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
 

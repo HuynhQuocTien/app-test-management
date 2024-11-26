@@ -19,6 +19,18 @@ namespace BLL
         {
             return giaoDeThiDAL.Add(giaoDeThi);
         }
+        public bool Delete(GiaoDeThiDTO giaoDeThi)
+        {
+            return giaoDeThiDAL.Delete(giaoDeThi);
+        }
+        public List<GiaoDeThiDTO> GetAll()
+        {
+            return giaoDeThiDAL.GetAll();
+        }
+        public bool Update(GiaoDeThiDTO giaoDeThi)
+        {
+            return giaoDeThiDAL.Update(giaoDeThi);
+        }
         public GiaoDeThiDTO GetByID(GiaoDeThiDTO giaoDeThi)
         {
             return giaoDeThiDAL.GetById(giaoDeThi);
