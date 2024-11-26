@@ -1,7 +1,9 @@
 ﻿using BLL;
 using DAL;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DTO;
+using GUI.DeThi;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -39,14 +41,16 @@ namespace GUI.Users
 
         public UsersControl()
         {
-            InitializeComponent();
-            renderUsers();
+            InitializeComponent(); 
+            loadNhomQuyen();
+
+            //Lay tat ca nguoi dung lam mac dinh
+            var nguoiDungs = getListNguoiDungByCondition(0);
+            idFilter.Text = "";
+            comboBox1.SelectedValue = 0;
+            renderUsers(nguoiDungs);
         }
-        private List<NguoiDungDTO> getListNguoiDung()
-        {
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-            return nguoiDungBLL.GetAllNguoiDung();
-        }
+   
         private void Delete_MouseClick(object sender, MouseEventArgs e, NguoiDungDTO nguoiDung)
         {
             if (MessageBox.Show("Bạn có muốn xóa người dùng không?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -55,7 +59,11 @@ namespace GUI.Users
                 if (nguoiDungBLL.Delete(nguoiDung))
                 {
                     MessageBox.Show("Xóa người dùng thành công.");
-                    renderUsers();
+                    //Lay tat ca nguoi dung lam mac dinh
+                    var nguoiDungs = getListNguoiDungByCondition(0);
+                    idFilter.Text = "";
+                    comboBox1.SelectedValue = 0;
+                    renderUsers(nguoiDungs);
                 }
                 else
                 {
@@ -75,59 +83,89 @@ namespace GUI.Users
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
+
+        private void loadNhomQuyen()
+        {
+            try
+            {
+                NhomQuyenDAL nhomQuyenDAL = new NhomQuyenDAL();
+                var nhomQuyens = nhomQuyenDAL.GetAll();
+                var nhomQuyenList = new List<NhomQuyenDTO>();
+                nhomQuyenList.Add(new NhomQuyenDTO { MaNhomQuyen = 0, TenQuyen = "Tất cả" });
+                nhomQuyenList.AddRange(nhomQuyens);
+                comboBox1.DataSource = nhomQuyenList;
+                comboBox1.DisplayMember = "TenQuyen";
+                comboBox1.ValueMember = "MaNhomQuyen";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading subjects: " + ex.Message);
+            }
+        }
+        private List<NguoiDungDTO> getListNguoiDung()
+        {
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            return nguoiDungBLL.GetAllNguoiDung();
+        }
+
+        private List<NguoiDungDTO> getListNguoiDungByCondition(int MaNhomQuyen, long? Username = null )
+        {
+            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            return nguoiDungBLL.GetAllNguoiDungByCondition(MaNhomQuyen, Username);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            NhomQuyenDTO selectedQuyenValue = (NhomQuyenDTO)comboBox1.SelectedItem;
+            string usernameValue = idFilter.Text;
+            long? userId = null;
+            if (!string.IsNullOrWhiteSpace(usernameValue))
+            {
+                userId = Convert.ToInt64(usernameValue);
+            }
+            var nguoiDungs = getListNguoiDungByCondition(selectedQuyenValue.MaNhomQuyen, userId);
+            renderUsers(nguoiDungs);
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
 
 
         public void AddNguoiDung(NguoiDungDTO objND, TaiKhoanDTO objTK)
         {
-
-            //MessageBox.Show("Meo");
-            //MessageBox.Show(objND.ToString());
-
-            //MessageBox.Show(objTK.Username.ToString);
-
             NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
             TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
             nguoiDungBLL.Add(objND);
             taiKhoanDAL.Add(objTK);
-            renderUsers();
+
+            //Lay tat ca nguoi dung lam mac dinh
+            var nguoiDungs = getListNguoiDungByCondition(0);
+            idFilter.Text = "";
+            comboBox1.SelectedValue = 0;
+            renderUsers(nguoiDungs);
         }
 
         public void renderAfterEdit()
         {
-            renderUsers();
+            //Lay tat ca nguoi dung lam mac dinh
+            var nguoiDungs = getListNguoiDungByCondition(0);
+            idFilter.Text = "";
+            comboBox1.SelectedValue = 0;
+            renderUsers(nguoiDungs);
         }
-        private void renderUsers()
+        private void renderUsers(List<NguoiDungDTO> listNguoiDung)
         {
             flowLayoutContainer.Controls.Clear();
 
-            var nguoiDungs = getListNguoiDung();
+            //var nguoiDungs = getListNguoiDung();
+            var nguoiDungs = listNguoiDung;
             int nguoiDungCount = nguoiDungs.Count;
-
-
             NhomQuyenDAL nhomQuyenDAL = new NhomQuyenDAL();
-
             NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
-
-
-
-
-
-
             panelUser = new Panel[nguoiDungCount];
             buttonCT = new Button[nguoiDungCount];
             buttonDELETE = new Button[nguoiDungCount];
@@ -139,10 +177,7 @@ namespace GUI.Users
             for (int i = 0; i < nguoiDungCount; i++)
             {
                 var nguoiDung = nguoiDungs[i];
-
                 string tenQuyen = nguoiDungBLL.getTenQuyenByIDNguoiDung(nguoiDung.MaNguoiDung);
-
-
                 panelUser[i] = new Panel();
                 panelUser[i].Name = "panelUser" + i;
                 panelUser[i].Size = new Size(385, 150);
@@ -216,25 +251,16 @@ namespace GUI.Users
                 avatarImg[i].TabStop = false;
                 avatarImg[i].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
-
-
-
                 if (!string.IsNullOrEmpty(nguoiDung.Avatar) && File.Exists(nguoiDung.Avatar))
                 {
                     //avatarImg[i].Image = Image.FromFile(nguoiDung.Avatar);
 
                     avatarImg[i].Image = Image.FromFile(Path.Combine(Path.Combine(Directory.GetParent(Application.StartupPath).FullName, "GUI", "Users", "Avatar"), nguoiDung.Avatar));
-
-
-
                 }
                 else
                 {
                     avatarImg[i].Image = null; // or set a default image
                 }
-
-
-
 
                 panelUser[i].Controls.Add(buttonCT[i]);
                 panelUser[i].Controls.Add(buttonDELETE[i]);
@@ -245,14 +271,10 @@ namespace GUI.Users
                 flowLayoutContainer.Controls.Add(panelUser[i]);
 
             }
-
-
-
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
         }
 
         private void exportExcell(string path)
@@ -328,15 +350,9 @@ namespace GUI.Users
 
         }
 
-
-
-
         private void importExcell(string path)
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-         
-            
-
             using (var excelPackage = new ExcelPackage(new FileInfo(path)))
             {
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
@@ -353,9 +369,6 @@ namespace GUI.Users
                     try
                     {
                         // Read NguoiDung data
-
-
-                        //MessageBox.Show(excelWorksheet.Cells[row, 1].Value?.ToString());
 
                         nguoiDung.MaNguoiDung = Convert.ToInt64(excelWorksheet.Cells[row, 1].Value?.ToString());
                         nguoiDung.HoTen = excelWorksheet.Cells[row, 2].Value?.ToString();
@@ -388,25 +401,25 @@ namespace GUI.Users
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //Import
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Import Người Dùng";
-            // Đuôi file
-            openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    importExcell(openFileDialog.FileName);
-                    System.Windows.Forms.MessageBox.Show("import Thành công");
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show("import Thất bại");
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
-            }
-            renderUsers();
+            ////Import
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Title = "Import Người Dùng";
+            //// Đuôi file
+            //openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            //if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    try
+            //    {
+            //        importExcell(openFileDialog.FileName);
+            //        System.Windows.Forms.MessageBox.Show("import Thành công");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        System.Windows.Forms.MessageBox.Show("import Thất bại");
+            //        System.Windows.Forms.MessageBox.Show(ex.Message);
+            //    }
+            //}
+            //renderUsers();
         }
 
         private void button4_Click(object sender, EventArgs e)

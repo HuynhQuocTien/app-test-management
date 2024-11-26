@@ -143,6 +143,74 @@ namespace DAL
             return dtList;
         }
 
+
+
+
+        public List<DeThiDTO> GetAllByCondition(int MaMonHoc, string txtDeThiValue)
+        {
+            List<DeThiDTO> deThiList = new List<DeThiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT DeThi.*, MonHoc.TenMonHoc FROM DeThi JOIN MonHoc ON DeThi.MaMonHoc = MonHoc.MaMonHoc WHERE DeThi.is_delete = 0";
+
+                if (MaMonHoc != 0)
+                {
+                    query += " AND DeThi.MaMonHoc = @MaMonHoc";
+                }
+
+                if (!string.IsNullOrEmpty(txtDeThiValue))
+                {
+                    query += " AND DeThi.TenDe LIKE @TenDeValue"; 
+                }
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    if (MaMonHoc != 0)
+                    {
+                        command.Parameters.AddWithValue("@MaMonHoc", MaMonHoc);
+                    }
+
+                    if (!string.IsNullOrEmpty(txtDeThiValue))
+                    {
+                        command.Parameters.AddWithValue("@TenDeValue", "%" + txtDeThiValue + "%"); 
+                    }
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DeThiDTO dt = new DeThiDTO
+                            {
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenDe = reader["TenDe"].ToString(),
+                                ThoiGianTao = Convert.ToDateTime(reader["ThoiGianTao"]),
+                                ThoiGianBatDau = Convert.ToDateTime(reader["ThoiGianBatDau"]),
+                                ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
+                                ThoiGianLamBai = Convert.ToInt32(reader["ThoiGianLamBai"]),
+                                NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
+                            };
+                            deThiList.Add(dt);
+                        }
+                    }
+                }
+            }
+            return deThiList;
+        }
+
+
+
+
+
+
+
+
         public DeThiDTO GetById(DeThiDTO dethi)
         {
             DeThiDTO result = null;
@@ -183,7 +251,7 @@ namespace DAL
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
                     string query = "UPDATE DeThi SET MaMonHoc = @MaMonHoc, TenDe = @TenDe, ThoiGianTao = @ThoiGianTao, " +
-                        " ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, NguoiTao = @NguoiTao" +
+                        " ThoiGianBatDau = @ThoiGianBatDau, ThoiGianKetThuc = @ThoiGianKetThuc, ThoiGianLamBai = @ThoiGianLamBai, NguoiTao = @NguoiTao" +
                         " WHERE MaDe = @MaDe and is_delete = 0";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

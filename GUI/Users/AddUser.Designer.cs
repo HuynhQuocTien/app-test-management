@@ -63,8 +63,6 @@
             this.RbNu = new System.Windows.Forms.RadioButton();
             this.rbNam = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonImportUsers = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
@@ -446,7 +444,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 327);
+            this.comboBox1.Location = new System.Drawing.Point(16, 323);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 29);
             this.comboBox1.TabIndex = 10;
@@ -532,8 +530,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.buttonImportUsers);
             this.tabPage2.Controls.Add(this.btnNhap);
@@ -551,35 +547,14 @@
             this.tabPage2.Text = "Thêm từ file";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(182, 208);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 17);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "label15";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(182, 128);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 17);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label14";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(182, 290);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
             // 
             // buttonImportUsers
             // 
@@ -591,6 +566,7 @@
             this.buttonImportUsers.TabIndex = 7;
             this.buttonImportUsers.Text = "Chọn file";
             this.buttonImportUsers.UseVisualStyleBackColor = true;
+            this.buttonImportUsers.Click += new System.EventHandler(this.buttonImportUsers_Click_1);
             // 
             // btnNhap
             // 
@@ -602,6 +578,7 @@
             this.btnNhap.TabIndex = 6;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Visible = false;
             this.btnNhap.Click += new System.EventHandler(this.btnThemSl_Click);
             // 
             // txtMkSl
@@ -728,7 +705,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
     }
 }
