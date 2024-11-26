@@ -47,23 +47,28 @@ namespace GUI.DeThi
         private void btnRightToLeft_Click_1(object sender, EventArgs e)
         {
             xoa1CauHoi();
+            xemlbCauHoi();
             xemldDeThi();
         }
 
         private void btnLeftToRightAll_Click_1(object sender, EventArgs e)
         {
             themNhieuCauHoiVaoDe();
+            xemlbCauHoi();
+            xemldDeThi();
         }
 
         private void btnRightToLeftAll_Click_1(object sender, EventArgs e)
         {
             xoaNhieuCauHoi();
+            xemlbCauHoi();
             xemldDeThi();
         }
 
         private void btnLeftToRight_Click_1(object sender, EventArgs e)
         {
             them1CauHoiVaoDe();
+            xemlbCauHoi();
             xemldDeThi();
         }
         private void cbDoKho_SelectedValueChanged(object sender, EventArgs e)
@@ -93,6 +98,8 @@ namespace GUI.DeThi
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            xemCbDoKho();
+            xemCbMonHoc();
             xemlbCauHoi();
             xemldDeThi();
         }
@@ -135,9 +142,10 @@ namespace GUI.DeThi
             }
             else
                 cauHoi.MaMonHoc = maMonHocList[cbMonHoc.SelectedIndex - 1];
+                
             cauHoi.NoiDung = txtNoiDung.Text;
             cauHoi.DoKho = cbDoKho.SelectedIndex;
-            List<CauHoiDTO> dsCauHoi = chiTietDeThiBLL.GetCauHoiChuaThem(cauHoi);
+            List<CauHoiDTO> dsCauHoi = chiTietDeThiBLL.layCauHoiChuaThem(cauHoi, maDeThi);
             if (dsCauHoi != null)
             {
                 foreach (CauHoiDTO cauhoi in dsCauHoi)
