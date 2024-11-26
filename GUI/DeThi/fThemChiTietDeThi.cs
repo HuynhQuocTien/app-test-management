@@ -145,18 +145,18 @@ namespace GUI.DeThi
                 
             cauHoi.NoiDung = txtNoiDung.Text;
             cauHoi.DoKho = cbDoKho.SelectedIndex;
-            List<CauHoiDTO> dsCauHoi = chiTietDeThiBLL.layCauHoiChuaThem(cauHoi, maDeThi);
-            if (dsCauHoi != null)
-            {
-                foreach (CauHoiDTO cauhoi in dsCauHoi)
-                {
-                    lbCauHoi.Items.Add(cauhoi);
-                }
-            }
-            else
-            {
-                lbCauHoi.Items.Add("khong co du lieu");
-            }
+            //List<CauHoiDTO> dsCauHoi = chiTietDeThiBLL.layCauHoiChuaThem(cauHoi, maDeThi);
+            //if (dsCauHoi != null)
+            //{
+            //    foreach (CauHoiDTO cauhoi in dsCauHoi)
+            //    {
+            //        lbCauHoi.Items.Add(cauhoi);
+            //    }
+            //}
+            //else
+            //{
+            //    lbCauHoi.Items.Add("khong co du lieu");
+            //}
         }
 
         public void xemldDeThi()
