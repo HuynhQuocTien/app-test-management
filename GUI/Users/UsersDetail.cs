@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Data.SqlClient;
 using BLL;
+using System.Text.RegularExpressions;
 
 
 namespace GUI.Users
@@ -144,10 +145,82 @@ namespace GUI.Users
 
         }
 
+
+
+        public bool checkHoTenValid()
+        {
+            if (string.IsNullOrEmpty(textBoxName.Text))
+            {
+                MessageBox.Show("Vui lòng nhập họ tên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (textBoxName.Text.Length < 2)
+            {
+                MessageBox.Show("Độ dài tối thiểu của tên là 2", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (textBoxName.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Họ tên chỉ chứa kí tự chữ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        public bool checkEmailValid()
+        {
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                MessageBox.Show("Email không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Regex.IsMatch(textBoxEmail.Text, pattern))
+            {
+                MessageBox.Show("Sai định dạng email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+ 
+        public bool checkSdtValid()
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (textBox2.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("SDT chỉ chứa kí tự số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (textBox2.Text.Length < 10 || textBox2.Text.Length > 11)
+            {
+                MessageBox.Show("Độ dài của số điện thoại là 10 hoặc 11 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+   
+
         private void button1_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = GetConnectionDb.GetConnection())
             {
+
+
+                if (checkHoTenValid() && checkSdtValid() && checkEmailValid()) { 
+                
+          
+
                 try
                 {
                     string queryEmail = "UPDATE TaiKhoan SET Email=@Email WHERE Username=@UserID;";
@@ -202,6 +275,8 @@ namespace GUI.Users
                 catch (Exception ex)
                 {
                     MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
+                }
+
                 }
             }
 

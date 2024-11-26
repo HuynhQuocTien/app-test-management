@@ -35,6 +35,18 @@ namespace BLL
             return dsMonHoc;
         }
 
+
+
+        public List<DeThiDTO> GetAllDeThiByCondition(int maMonHoc, string txtDeThiValue)
+        {
+            return deThiDAL.GetAllByCondition(maMonHoc, txtDeThiValue);
+        }
+        
+
+
+
+
+
         public bool Add(DeThiDTO dethidto)
         {
             return deThiDAL.Add(dethidto);
@@ -47,6 +59,10 @@ namespace BLL
         {
             return deThiDAL.GetAll(maGV);
         }
+
+
+
+
         public bool Delete(DeThiDTO deThi)
         {
             return deThiDAL.Delete(deThi);

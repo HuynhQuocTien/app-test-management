@@ -93,7 +93,7 @@ namespace GUI.DeThi
                 Name = "lblThoiGianLamBai",
                 Size = new Size(140, 13),
                 TabIndex = 1,
-                Text = $"Thời gian làm bài: {(int)(deThi.ThoiGianKetThuc - deThi.ThoiGianBatDau).TotalMinutes} phút"
+                Text = $"Thời gian làm bài: {(int)deThi.ThoiGianLamBai} phút"
             };
 
             System.Windows.Forms.Button btnThemCauHoiVaoDe = new System.Windows.Forms.Button

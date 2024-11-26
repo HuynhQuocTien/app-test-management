@@ -20,40 +20,45 @@ namespace GUI.LopHoc
         private System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
         fChiTietLop fctl;
         LopDTO lop;
-
-
         DeThiBLL deThiBLL;
         List<DeThiDTO> listDeThi;
         GiaoDeThiBLL giaoDeThiBLL;
-
-
+        MonHocBLL monHocBLL;
+   
         public fDanhSachDeThi(fChiTietLop fctl,LopDTO lop)
         {
             InitializeComponent();
-
-
-
             deThiBLL = new DeThiBLL();
+            monHocBLL = new MonHocBLL();
             listDeThi = new List<DeThiDTO>();
-
-
-            //CreatePanel();
             this.fctl = fctl;
             this.lop = lop;
-
-
-
-            renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
-
-
-      
+            LoadMonHoc();
+            renderDeThiDTO(deThiBLL.GetAllDeThiByCondition(0, ""));
         }
+
+        private void LoadMonHoc()
+        {
+            try
+            {
+                var monHocs = monHocBLL.GetAll();
+                var subjectsList = new List<MonHocDTO>();
+                subjectsList.Add(new MonHocDTO { MaMonHoc = 0, TenMonHoc = "Tất cả" }); 
+                subjectsList.AddRange(monHocs);
+                cbMonHoc.DataSource = subjectsList;
+                cbMonHoc.DisplayMember = "TenMonHoc";
+                cbMonHoc.ValueMember = "MaMonHoc";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading subjects: " + ex.Message);
+            }
+        }
+
 
 
         public void renderDeThiDTO(List<DeThiDTO> list)
         {
-
-
             listDeThi = list;
             // Xóa tất cả các panel được tạo trước đó
             flowLayoutPanel1.Controls.Clear();
@@ -61,7 +66,6 @@ namespace GUI.LopHoc
             {
                 if (!deThiBLL.checkDeThiCoTrongLop(l.MaDe, lop.MaLop)) {
                     CreatePanel(l);
-
                 }
 
             }
@@ -265,17 +269,30 @@ namespace GUI.LopHoc
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            
+            MonHocDTO cbMonHocValue = (MonHocDTO)cbMonHoc.SelectedItem;
+            string txtDeThiValue = txtDeThi.Text;
+            var monHocs = getListDeThiByCondition(cbMonHocValue.MaMonHoc, txtDeThiValue);
+            renderDeThiDTO(monHocs);
         }
+
+        private List<DeThiDTO> getListDeThiByCondition(int MaMonHoc, string txtDeThiValue)
+        {
+            DeThiBLL deThiBLL = new DeThiBLL();
+            return deThiBLL.GetAllDeThiByCondition(MaMonHoc, txtDeThiValue);
+        }
+       
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            txtDeThi.Text = "";
+            cbMonHoc.SelectedValue = 0;
+            renderDeThiDTO(getListDeThiByCondition(0, ""));
         }
 
         private void txtDeThi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+        
         }
     }
 }
