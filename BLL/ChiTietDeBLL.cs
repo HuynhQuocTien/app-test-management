@@ -31,6 +31,10 @@ namespace BLL
         {
             return chiTietDeDAL.GetCauHoiChuaThem(cauHoiDTO);
         }
+        public List<CauHoiDTO> layCauHoiChuaThem(CauHoiDTO cauhoiDTO, int maDeThi)
+        {
+            return chiTietDeDal.layCauHoiChuaThem(cauhoiDTO, maDeThi);
+        }
         public List<CauHoiDTO> GetCauHoiByMaDe(int made)
         {
             return chiTietDeDAL.GetCauHoiListByMaDe(made);
