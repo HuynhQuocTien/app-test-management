@@ -65,6 +65,12 @@ namespace BLL
         {
             return ketQuaDAL.GetTrangThaiByMaLopAndMaDe(maLop, maDe);
         }
+
+        //Write method GetAutoIncrement
+        public int GetAutoIncrement()
+        {
+            return ketQuaDAL.GetAutoIncrement();
+        }
     }
 
 }

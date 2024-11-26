@@ -341,5 +341,29 @@ namespace DAL
             }
             return count;
         }
+        public bool UpdateTrangThaiKQByMaDe(int MaDe)
+        {
+            string query = @"UPDATE KetQua 
+                 SET TrangThai = 0 
+                 WHERE MaDe = @MaDe";
+
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", MaDe); // 'maDe' là biến chứa MaDe bạn muốn cập nhật
+                    int rowsAffected = command.ExecuteNonQuery(); // Thực hiện lệnh và trả về số dòng bị ảnh hưởng
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+        }
     }
 }

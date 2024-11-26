@@ -39,5 +39,10 @@ namespace BLL
         {
             return chiTietDeDAL.GetAllCauHoiOfDeThi(DeThi);
         }
+        //Write count SoCauHoi to DeThiDTO
+        public int CountSoCauHoi(DeThiDTO deThi)
+        {
+            return chiTietDeDAL.CountSoCauHoi(deThi);
+        }
     }
 }

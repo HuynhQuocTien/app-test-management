@@ -27,12 +27,25 @@ namespace BLL
             }
             return 0;
         }
-
+        //Write method update
+        public int Update(CauTraLoiDienChoTrongDTO cauTraLoiDienChoTrong)
+        {
+            if (cauTraLoiDienChoTrongDAL.Update(cauTraLoiDienChoTrong))
+            {
+                return 1;
+            }
+            return 0;
+        }
         public CauTraLoiDienChoTrongDTO GetCauTraLoiById(int maCauTraLoi)
         {
             CauTraLoiDienChoTrongDTO CauTraLoiDienChoTrong = new CauTraLoiDienChoTrongDTO();
             CauTraLoiDienChoTrong.MaCauTLiDienChoTrong = maCauTraLoi;
             return cauTraLoiDienChoTrongDAL.GetById(CauTraLoiDienChoTrong);
         }
+        public CauTraLoiDienChoTrongDTO GetCauTraLoiByMaCauHoiAndViTri(int maCauHoi,int vitri)
+        {
+            return cauTraLoiDienChoTrongDAL.GetCauTraLoiByMaCauHoiAndViTri(maCauHoi,vitri);
+        }
+
     }
 }

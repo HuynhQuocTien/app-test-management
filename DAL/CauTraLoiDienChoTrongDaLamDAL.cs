@@ -60,14 +60,15 @@ namespace DAL
             }
         }
 
-        public List<CauTraLoiDienChoTrongDaLamDTO> GetAll()
+        public List<CauTraLoiDienChoTrongDaLamDTO> GetAll(int maCauHoi)
         {
             List<CauTraLoiDienChoTrongDaLamDTO> cauTraLoiList = new List<CauTraLoiDienChoTrongDaLamDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauTraLoiDienChoTrongDaLam";
+                string query = "SELECT * FROM CauTraLoiDienChoTrongDaLam WHERE MaCauHoi = @MaCauHoi";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -87,6 +88,11 @@ namespace DAL
                 }
             }
             return cauTraLoiList;
+        }
+
+        public List<CauTraLoiDienChoTrongDaLamDTO> GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public CauTraLoiDienChoTrongDaLamDTO GetById(CauTraLoiDienChoTrongDaLamDTO cauTraLoi)

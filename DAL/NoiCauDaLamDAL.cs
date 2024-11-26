@@ -1,4 +1,4 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -23,6 +23,29 @@ namespace DAL
                     {
                         command.Parameters.AddWithValue("@MaCauHoi", noiCauDaLam.MaCauHoi);
                         command.Parameters.AddWithValue("@NoiDung", noiCauDaLam.NoiDung);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public bool AddNoiCauDaLamByMaCauHoi(int maCauHoi)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "INSERT INTO NoiCauDaLam (MaCauHoi, NoiDung) " +
+                        " SELECT MaCauHoi, NoiDung FROM NoiCau WHERE MaCauHoi = @MaCauHoi;";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -62,7 +85,7 @@ namespace DAL
             List<NoiCauDaLamDTO> noiCauDaLamList = new List<NoiCauDaLamDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM NoiCauDaLam";
+                string query = "SELECT * FROM NoiCauDaLam ORDER BY MaNoiCauDaLam ASC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -81,6 +104,44 @@ namespace DAL
                 }
             }
             return noiCauDaLamList;
+        }
+
+        public int GetAutoIncrement()
+        {
+            int result = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT MaNoiCauDaLam FROM NoiCauDaLam";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No data");
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
+                                    result = reader.GetInt32(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            if (result == -1)
+            {
+                return 1;
+            }
+            return result + 1;
         }
 
         public NoiCauDaLamDTO GetById(NoiCauDaLamDTO noiCauDaLam)

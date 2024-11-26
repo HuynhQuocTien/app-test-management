@@ -78,5 +78,9 @@ namespace BLL
                 return null;
             }
         }
+        public List<CauHoiDaLamDTO> GetAllCauHoiDaLamOfDeThi(DeThiDTO DeThi)
+        {
+            return _chiTietDeDaLamDAL.GetAllCauHoiDaLamOfDeThi(DeThi);
+        }
     }
 }

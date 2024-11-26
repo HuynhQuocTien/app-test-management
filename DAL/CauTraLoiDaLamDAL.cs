@@ -141,5 +141,78 @@ namespace DAL
                 return false;
             }
         }
+        public int GetAutoIncrement()//lay MaLop
+        {
+            int result = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT MaCauTraLoiDaLam FROM CauTraLoiDaLam";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No data");
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
+                                    result = reader.GetInt32(0); // Lấy giá trị cột AUTO_INCREMENT
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result + 1;
+        }
+
+        public List<CauTraLoiDaLamDTO> GetCauTraLoiDaLamOfDeThi(int maDe)
+        {
+            List<CauTraLoiDaLamDTO> list = new List<CauTraLoiDaLamDTO>();
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = @"SELECT ctl* FROM ChiTietDeDaLam ctd
+                                    INNER JOIN CauHoiDaLam ch ON ctd.MaCauHoi = ch.MaCauHoi
+                                    INNER JOIN CauTraLoi ctl ON ch.MaCauHoi = ctl.MaCauHoi
+                                    WHERE ctd.MaDe = @MaDe ORDER BY ctl.MaCauHoi ASC ";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaDe", maDe);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CauTraLoiDaLamDTO cauTraLoi = new CauTraLoiDaLamDTO
+                                {
+                                    MaCauTraLoiDaLam = Convert.ToInt32(reader["MaCauTraLoiDaLam"]),
+                                    MaCauHoiDaLam = Convert.ToInt32(reader["MaCauHoiDaLam"]),
+                                    NoiDung = reader["NoiDung"].ToString(),
+                                    IsDapAn = Convert.ToInt32(reader["IsDapAn"]),
+                                    IsChon = Convert.ToInt32(reader["IsChon"])
+                                };
+                                list.Add(cauTraLoi);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return list;
+        }
+
     }
 }

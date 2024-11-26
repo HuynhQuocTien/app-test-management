@@ -296,7 +296,21 @@ namespace DAL
 
             return cauHoiList;
         }
-
+        //Write count SoCauHoi to DeThiDTO
+        public int CountSoCauHoi(DeThiDTO deThi)
+        {
+            int count = 0;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT COUNT(*) FROM ChiTietDe WHERE MaDe = @MaDe";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", deThi.MaDe);
+                    count = (int)command.ExecuteScalar();
+                }
+            }
+            return count;
+        }
 
     }
 }
