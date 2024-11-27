@@ -42,8 +42,8 @@ namespace DTO
         public override string ToString()
         {
 
-            return $"Độ khó: " + DoKho + " | Tên: " + NoiDung; // Hiển thị thuộc tính Name trong ListBox
-            //return $"mã: " + MaCauHoi;
+            // return $"Độ khó: " + DoKho + " | Tên: " + NoiDung; // Hiển thị thuộc tính Name trong ListBox
+            return $"" + MaCauHoi + ")Độ khó: " + DoKho + " | Tên: " + NoiDung;
         }
     }
 }
