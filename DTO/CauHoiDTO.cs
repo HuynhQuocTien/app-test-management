@@ -30,5 +30,20 @@ namespace DTO
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
+        public CauHoiDTO(string noiDung, string loaiCauHoi, int maMonHoc, int doKho)
+        {
+            NoiDung = noiDung;
+            LoaiCauHoi = loaiCauHoi;
+            MaMonHoc = maMonHoc;
+            DoKho = doKho;
+            TrangThai = 1;
+            this.is_delete = 0;
+        }
+        public override string ToString()
+        {
+
+            return $"Độ khó: " + DoKho + " | Tên: " + NoiDung; // Hiển thị thuộc tính Name trong ListBox
+            //return $"mã: " + MaCauHoi;
+        }
     }
 }

@@ -18,12 +18,13 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO ChiTietDeThiDaLam (MaDe, MaCauHoi)" +
-                        "VALUES (@MaDe, @MaCauHoi);";
+                    string query = "INSERT INTO ChiTietDeThiDaLam (MaDe, MaCauHoi,MaKetQua)" +
+                        "VALUES (@MaDe, @MaCauHoi,@MaKetQua);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaDeDaLam", chiTietDeDaLam.MaDe);
+                        command.Parameters.AddWithValue("@MaDe", chiTietDeDaLam.MaDe);
                         command.Parameters.AddWithValue("@MaCauHoi", chiTietDeDaLam.MaCauHoi);
+                        command.Parameters.AddWithValue("@MaKetQua", chiTietDeDaLam.MaKetQua);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -73,8 +74,10 @@ namespace DAL
                         {
                             ChiTietDeDaLamDTO chiTietDeDaLam = new ChiTietDeDaLamDTO
                             {
-                                MaDe = Convert.ToInt32(reader["MaDeDaLam"]),
+                                MaChiTietDeDaLam = Convert.ToInt32(reader["MaCTDTDL"]),
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                             };
                             chiTietDeDaLamList.Add(chiTietDeDaLam);
                         }
@@ -100,8 +103,10 @@ namespace DAL
                         {
                             result = new ChiTietDeDaLamDTO
                             {
-                                MaDe = Convert.ToInt32(reader["MaDeDaLam"]),
+                                MaChiTietDeDaLam = Convert.ToInt32(reader["MaCTDTDL"]),
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
                             };
                         }
                     }
@@ -116,9 +121,10 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "UPDATE ChiTietDeDaLam SET MaDe = @MaDe, MaCauHoi = @MaCauHoi WHERE MaDe = @MaDe AND MaCauHoi = @MaCauHoi";
+                    string query = "UPDATE ChiTietDeDaLam SET MaDe = @MaDe, MaCauHoi = @MaCauHoi WHERE MaCTDTDL = @MaCTDTDL";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {                       
+                        command.Parameters.AddWithValue("@MaCTDTDL", chiTietDeDaLam.MaChiTietDeDaLam);
                         command.Parameters.AddWithValue("@MaDe", chiTietDeDaLam.MaDe);
                         command.Parameters.AddWithValue("@MaCauHoi", chiTietDeDaLam.MaCauHoi);
                         
@@ -132,6 +138,36 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+
+        public List<ChiTietDeDaLamDTO> GetByMaDeANDMaKetQua(int MaDe, int MaKetQua)
+        {
+            List<ChiTietDeDaLamDTO> results = new List<ChiTietDeDaLamDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM ChiTietDeThiDaLam WHERE MaDe = @MaDe AND MaKetQua = @MaKetQua";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", MaDe);
+                    command.Parameters.AddWithValue("@MaKetQua", MaKetQua);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ChiTietDeDaLamDTO chiTiet = new ChiTietDeDaLamDTO
+                            {
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                MaChiTietDeDaLam = Convert.ToInt32(reader["MaCTDTDL"]),
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
+                            };
+
+                            results.Add(chiTiet); // Thêm đối tượng vào danh sách
+                        }
+                    }
+                }
+            }
+            return results;
         }
     }
 }

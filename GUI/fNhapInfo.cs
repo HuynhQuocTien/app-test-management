@@ -13,13 +13,15 @@ namespace GUI
 {
     public partial class fNhapInfo : Form
     {
+        TaiKhoanBLL taiKhoanBLL;
         public fNhapInfo()
         {
             InitializeComponent();
+            taiKhoanBLL = new TaiKhoanBLL();
         }
         private void btnGui_Click(object sender, EventArgs e)
         {
-            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+             
             string email = txtEmailorUsername.Text;
             string thongBao = taiKhoanBLL.kiemTraEmailNguoiDung(email);
             if (thongBao.Equals("Oke"))

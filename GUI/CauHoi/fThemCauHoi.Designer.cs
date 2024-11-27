@@ -149,6 +149,8 @@ namespace GUI.CauHoi
             this.label1 = new System.Windows.Forms.Label();
             this.cbMonhoc = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.cbbLoaiCH = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -1695,6 +1697,8 @@ namespace GUI.CauHoi
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.cbbLoaiCH);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.cbMonhoc);
             this.tabPage2.Controls.Add(this.btnThem);
@@ -1709,9 +1713,9 @@ namespace GUI.CauHoi
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(23, 59);
+            this.label1.Location = new System.Drawing.Point(213, 254);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 58);
+            this.label1.Size = new System.Drawing.Size(206, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Chọn Môn Học:";
             // 
@@ -1719,7 +1723,7 @@ namespace GUI.CauHoi
             // 
             this.cbMonhoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonhoc.FormattingEnabled = true;
-            this.cbMonhoc.Location = new System.Drawing.Point(27, 119);
+            this.cbMonhoc.Location = new System.Drawing.Point(217, 293);
             this.cbMonhoc.Margin = new System.Windows.Forms.Padding(2);
             this.cbMonhoc.Name = "cbMonhoc";
             this.cbMonhoc.Size = new System.Drawing.Size(288, 29);
@@ -1728,7 +1732,7 @@ namespace GUI.CauHoi
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(407, 98);
+            this.btnThem.Location = new System.Drawing.Point(676, 320);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(193, 68);
@@ -1736,6 +1740,28 @@ namespace GUI.CauHoi
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // label28
+            // 
+            this.label28.Location = new System.Drawing.Point(213, 351);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(206, 37);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Chọn Loại Câu Hỏi:";
+            // 
+            // cbbLoaiCH
+            // 
+            this.cbbLoaiCH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLoaiCH.FormattingEnabled = true;
+            this.cbbLoaiCH.Items.AddRange(new object[] {
+            "Trắc nghiệm",
+            "Điền từ",
+            "Nối từ"});
+            this.cbbLoaiCH.Location = new System.Drawing.Point(217, 390);
+            this.cbbLoaiCH.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbLoaiCH.Name = "cbbLoaiCH";
+            this.cbbLoaiCH.Size = new System.Drawing.Size(288, 29);
+            this.cbbLoaiCH.TabIndex = 3;
             // 
             // fThemCauHoi
             // 
@@ -1938,5 +1964,7 @@ namespace GUI.CauHoi
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cbbLoaiCH;
     }
 }

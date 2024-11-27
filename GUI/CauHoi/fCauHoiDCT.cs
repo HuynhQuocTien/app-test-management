@@ -7,9 +7,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,14 +20,38 @@ namespace GUI.CauHoi
     public partial class fCauHoiDCT : Form
     {
         private CauHoiDTO cauHoiDTO;
-
-        public fCauHoiDCT(CauHoiDTO cauHoiDTO)
+        private int flag = 0;
+        public fCauHoiDCT(CauHoiDTO cauHoiDTO, int Detail)
         {
-            this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
+            flag=Detail;
+            if (Detail == 1)
+            {
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                textBox1.Enabled = false;
+                comboBox3.Enabled = false;
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                textBox4.Enabled = false;
+                textBox5.Enabled = false;
+                textBox11.Enabled = false;
+                checkBox2.Enabled = false;
+                this.button1.Text = "Đóng";
+                this.button1.Click += new System.EventHandler(this.btnThoat);
+            } else if(Detail==0)
+            {
+                this.button1.Click += new System.EventHandler(this.btnLuu_Click);
+            }    
+            this.cauHoiDTO = cauHoiDTO;         
             render();
         }
-        private void render()
+
+        private void btnThoat(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+            private void render()
         {
             loadDataComboBoxMHView();
             loadDataCauhoi();
@@ -133,7 +159,7 @@ namespace GUI.CauHoi
             int trangThai = checkBox2.Checked ? 1 : 0;
             int trangThaiXoa = 0;
 
-            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
+            return new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,Convert.ToInt32(DoKho), trangThai, trangThaiXoa);
         }
 
         private CauTraLoiDienChoTrongDTO getInfoCTLDCT(int MaCauHoi, int viTri, string dapAnText, int isDelete)
@@ -151,52 +177,66 @@ namespace GUI.CauHoi
 
         private void cbSoDapAn_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex == 4)
+            if(flag==0)
             {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = true;
-                textBox11.Enabled = true;
-            }
-            else if (comboBox3.SelectedIndex == 3)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = true;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 2)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 1)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = false;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
-            else if (comboBox3.SelectedIndex == 0)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = false;
-                textBox4.Enabled = false;
-                textBox5.Enabled = false;
-                textBox11.Enabled = false;
-            }
+                if (comboBox3.SelectedIndex == 4)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = true;
+                    textBox11.Enabled = true;
+                }
+                else if (comboBox3.SelectedIndex == 3)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = true;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 2)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = true;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 1)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    textBox4.Enabled = false;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+                else if (comboBox3.SelectedIndex == 0)
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = false;
+                    textBox4.Enabled = false;
+                    textBox5.Enabled = false;
+                    textBox11.Enabled = false;
+                }
+            }    
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int i = 0;
             // Kiểm tra theo số đáp án được chọn trong ComboBox
+            int count = Regex.Matches(textBox1.Text, @"\(\d+\)").Count;
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (comboBox3.SelectedIndex == 4)  // 5 đáp án
             {
                 if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox11.Text == "")
@@ -206,6 +246,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (Check) // Nếu thêm câu hỏi thành công
@@ -238,6 +288,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (Check) // Nếu thêm câu hỏi thành công
@@ -267,6 +327,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (Check) // Nếu thêm câu hỏi thành công
@@ -295,6 +365,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (Check) // Nếu thêm câu hỏi thành công
@@ -322,6 +402,16 @@ namespace GUI.CauHoi
                 }
                 else
                 {
+                    if (count > int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
+                    else if (count < int.Parse(comboBox3.SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Số đáp án ít hơn số câu trả lời.", "Thông báo thêm", MessageBoxButtons.OK);
+                        return;
+                    }
                     bool Check = suaCauHoi(); // Chỉ gọi themCauHoi() một lần và lưu ID
 
                     if (Check) // Nếu thêm câu hỏi thành công
@@ -345,6 +435,21 @@ namespace GUI.CauHoi
             if (i == 1)
             {
                 MessageBox.Show("Sửa thành công", "Thông báo sửa", MessageBoxButtons.OK);
+                DialogResult result = MessageBox.Show(
+               "Bạn có muốn thoát không ?",
+               "Thông bao xác nhận",
+               MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Question
+               );
+
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
             }
             else if (i == 0)
             {

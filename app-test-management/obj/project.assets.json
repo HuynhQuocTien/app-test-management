@@ -549,7 +549,7 @@
       "projectName": "app-test-management",
       "projectPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\app-test-management.csproj",
       "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\obj\\",
+      "outputPath": "C:\\Users\\huynh\\Source\\Repos\\app-test-management\\app-test-management\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

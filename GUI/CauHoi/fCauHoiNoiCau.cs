@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,13 +18,51 @@ namespace GUI.CauHoi
     public partial class fCauHoiNoiCau : Form
     {
         private CauHoiDTO cauHoiDTO;
-        public fCauHoiNoiCau(CauHoiDTO cauHoiDTO)
+        int flag = 0;
+        public fCauHoiNoiCau(CauHoiDTO cauHoiDTO, int detail)
         {
             this.cauHoiDTO = cauHoiDTO;
             InitializeComponent();
+            flag = detail;
+
+            if (detail == 1)
+            {
+                comboBox5.Enabled = false;
+                comboBox4.Enabled = false;
+                textBox12.Enabled = false;
+                textBox13.Enabled = false;
+                comboBox6.Enabled = false;
+                textBox15.Enabled = false;
+                textBox16.Enabled = false;
+                textBox14.Enabled = false;
+                textBox9.Enabled = false;
+                textBox6.Enabled = false;
+                textBox7.Enabled = false;
+                textBox8.Enabled = false;
+                textBox10.Enabled = false;
+                checkBox4.Enabled = false;
+
+                this.button2.Text = "Đóng";
+                this.button2.Click += new System.EventHandler(this.btnThoat);
+            }
+            else if (detail == 0)
+            {
+                this.button2.Click += new System.EventHandler(this.button2_Click);
+            }
+            textBox15.MaxLength = 1;
+            textBox16.MaxLength = 1;
+            textBox14.MaxLength = 1;
+            textBox9.MaxLength = 1;
+            textBox6.MaxLength = 1;
+            textBox7.MaxLength = 1; 
+            textBox8.MaxLength = 1; 
+            textBox10.MaxLength = 1;
             render();
         }
-
+        private void btnThoat(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void render()
         {
             loadDataComboBoxMHView();
@@ -184,13 +223,62 @@ namespace GUI.CauHoi
             return new NoiCauDTO(MaNoiCau, MaCauHoi, NoiDung, Diem);
         }
 
-        private int CountLines(TextBox textBox)
+        private int CountQuestions(TextBox textBox)
         {
             if (string.IsNullOrEmpty(textBox.Text))
                 return 0;
 
-            // Đếm số dòng bằng cách đếm ký tự xuống dòng + 1
-            return textBox.Text.Split('\n').Length;
+            // Lấy tất cả các dòng trong TextBox
+            string[] lines = textBox.Text.Replace("\r", "").Split('\n');
+
+            // Đếm số dòng bắt đầu bằng A., B., C., D.
+            int questionCount = 0;
+            foreach (string line in lines)
+            {
+                if (line.Trim().StartsWith("1.") ||
+                    line.Trim().StartsWith("2.") ||
+                    line.Trim().StartsWith("3.") ||
+                    line.Trim().StartsWith("4.") ||
+                    line.Trim().StartsWith("5.") ||
+                    line.Trim().StartsWith("6.") ||
+                    line.Trim().StartsWith("7.") ||
+                    line.Trim().StartsWith("8.")
+                 )
+                {
+                    questionCount++;
+                }
+            }
+
+            return questionCount;
+        }
+
+        private int CountAnswer(TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+                return 0;
+
+            // Lấy tất cả các dòng trong TextBox
+            string[] lines = textBox.Text.Replace("\r", "").Split('\n');
+
+            // Đếm số dòng bắt đầu bằng A., B., C., D.
+            int questionCount = 0;
+            foreach (string line in lines)
+            {
+                if (line.Trim().StartsWith("A.") ||
+                    line.Trim().StartsWith("B.") ||
+                    line.Trim().StartsWith("C.") ||
+                    line.Trim().StartsWith("D.") ||
+                    line.Trim().StartsWith("E.") ||
+                    line.Trim().StartsWith("F.") ||
+                    line.Trim().StartsWith("G.") ||
+                    line.Trim().StartsWith("H.")
+                 )
+                {
+                    questionCount++;
+                }
+            }
+
+            return questionCount;
         }
 
         private bool ValidateTextFormatABC(TextBox textBox)
@@ -223,6 +311,67 @@ namespace GUI.CauHoi
                 }
             }
             return true;
+        }
+        bool kiemTraTrung(int sodapan)
+        {
+            string[] values = null;
+            // Tạo mảng để lưu các giá trị từ textbox
+            if (sodapan == 8)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text, textBox8.Text, textBox10.Text
+                };
+            }
+            else if (sodapan == 7)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text, textBox8.Text
+                };
+            }
+            else if (sodapan == 6)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text, textBox7.Text
+                };
+            }
+            else if (sodapan == 5)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text,
+                    textBox6.Text
+                };
+            }
+            else if (sodapan == 4)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text, textBox9.Text
+                };
+            }
+            else if (sodapan == 3)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text, textBox14.Text
+                };
+            }
+            else if (sodapan == 2)
+            {
+                values = new string[]
+                {
+                    textBox15.Text, textBox16.Text
+                };
+            }
+
+            // Kiểm tra trùng lặp bằng LINQ
+            return values.Distinct().Count() < values.Length;
         }
 
         private Dictionary<string, string> NoiCau_CauTraLoi(Dictionary<char, string> CauNoi, Dictionary<char, string> DapAn)
@@ -1120,14 +1269,19 @@ namespace GUI.CauHoi
                 MessageBox.Show("Chưa chọn số đáp án", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            if (CountLines(textBox12) > 8 || CountLines(textBox13) > 8)
+            if (comboBox4.SelectedIndex == -1)
             {
-                MessageBox.Show("Một trong hai cột đã vượt quá 8 dòng", "Báo Lỗi");
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            if (CountLines(textBox12) != CountLines(textBox13))
+            if (CountQuestions(textBox12) > 8 || CountAnswer(textBox13) > 8)
             {
-                MessageBox.Show("Số dòng ở 2 cột phải ngang nhau", "Báo Lỗi");
+                MessageBox.Show("Một trong hai cột đã vượt quá 8 câu", "Báo Lỗi");
+                return;
+            }
+            if (CountQuestions(textBox12) != CountAnswer(textBox13))
+            {
+                MessageBox.Show("Số câu ở 2 cột phải ngang nhau", "Báo Lỗi");
                 return;
             }
             // Thêm các validation khác nếu cần
@@ -1150,9 +1304,15 @@ namespace GUI.CauHoi
                 return;
             }
 
-            if (CountLines(textBox12) != int.Parse(comboBox6.SelectedItem.ToString()) || CountLines(textBox13) != int.Parse(comboBox6.SelectedItem.ToString()))
+            if (CountQuestions(textBox12) != int.Parse(comboBox6.SelectedItem.ToString()) || CountAnswer(textBox13) != int.Parse(comboBox6.SelectedItem.ToString()))
             {
-                MessageBox.Show("Số dòng của 2 cột không được khác số đáp án", "Lỗi định dạng");
+                MessageBox.Show("Số câu của 2 cột không được khác số đáp án", "Lỗi định dạng");
+                return;
+            }
+
+            if (kiemTraTrung(int.Parse(comboBox6.SelectedItem.ToString())))
+            {
+                MessageBox.Show("Số đáp án không được trùng lặp", "Lỗi định dạng");
                 return;
             }
             Dictionary<char, string> CauNoi = ProcessTextBoxContent(textBox12);
@@ -1170,6 +1330,22 @@ namespace GUI.CauHoi
                 if (allMaNoiCau != null)
                 {
                     suaNoiCau(allMaNoiCau, CauNoi, CauNoi_DapAn); // Sử dụng MaCauHoi để thêm câu trả lời
+
+                    DialogResult result = MessageBox.Show(
+                   "Bạn có muốn thoát không ?",
+                   "Thông bao xác nhận",
+                   MessageBoxButtons.OKCancel,
+                   MessageBoxIcon.Question
+                   );
+
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        return;
+                    }
                 }
             }
             else
@@ -1181,83 +1357,86 @@ namespace GUI.CauHoi
         private void cbSoDapAn_SelectedValueChanged(object sender, EventArgs e)
         {
             //combobox6
-            if (comboBox6.SelectedIndex == 7)
+            if(flag==0)
             {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = true;
-                textBox10.Enabled = true;
-            }
-            else if (comboBox6.SelectedIndex == 6)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = true;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 5)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = true;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 4)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = true;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 3)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = true;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 2)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = true;
-                textBox9.Enabled = false;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
-            else if (comboBox6.SelectedIndex == 1)
-            {
-                textBox15.Enabled = true;
-                textBox16.Enabled = true;
-                textBox14.Enabled = false;
-                textBox9.Enabled = false;
-                textBox6.Enabled = false;
-                textBox7.Enabled = false;
-                textBox8.Enabled = false;
-                textBox10.Enabled = false;
-            }
+                if (comboBox6.SelectedIndex == 7)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = true;
+                    textBox10.Enabled = true;
+                }
+                else if (comboBox6.SelectedIndex == 6)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = true;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 5)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = true;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 4)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = true;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 3)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = true;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 2)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = true;
+                    textBox9.Enabled = false;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+                else if (comboBox6.SelectedIndex == 1)
+                {
+                    textBox15.Enabled = true;
+                    textBox16.Enabled = true;
+                    textBox14.Enabled = false;
+                    textBox9.Enabled = false;
+                    textBox6.Enabled = false;
+                    textBox7.Enabled = false;
+                    textBox8.Enabled = false;
+                    textBox10.Enabled = false;
+                }
+            }    
         }
     }
 }

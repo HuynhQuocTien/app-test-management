@@ -59,7 +59,7 @@ namespace GUI
                 //MessageBox.Show(otp + "", "Mã OTP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var fromAddress = new MailAddress("ptest8867@gmail.com"); //Mail dùng để gửi OTP
                 var toAddress = new MailAddress(email); // Mail Nhận
-                const string frompass = "wkyt qnqf iymg dmyk";
+                const string frompass = "wkytqnqfiymgdmyk";
                 const string subject = "OTP code";
                 string body = otp.ToString();
 

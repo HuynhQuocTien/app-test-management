@@ -12,6 +12,109 @@ namespace DAL
         {
             return new CauHoiDAL();
         }
+        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
+        {
+            List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauHoi WHERE (NoiDung LIKE @NoiDung OR LoaiCauHoi LIKE @LoaiCauHoi) AND NguoiTao=@MaNguoiTao AND is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NoiDung", "%" + timkiem + "%");
+                    command.Parameters.AddWithValue("@NguoiTao", "%" + timkiem + "%");
+                    command.Parameters.AddWithValue("@LoaiCauHoi", "%" + timkiem + "%");
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauHoiDTO cauHoi = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            cauHoiList.Add(cauHoi);
+                        }
+                    }
+                }
+            }
+            return cauHoiList;
+        }
+
+        public List<CauHoiDTO> GetTimKiemSelect(int dokho, string MaMonHoc, long MaNguoiTao)
+        {
+            List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauHoi WHERE DoKho = @DoKho AND MaMonHoc = @MaMonHoc AND NguoiTao=@MaNguoiTao AND is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@DoKho", dokho);
+                    command.Parameters.AddWithValue("@MaMonHoc", MaMonHoc);
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauHoiDTO cauHoi = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            cauHoiList.Add(cauHoi);
+                        }
+                    }
+                }
+            }
+            return cauHoiList;
+        }
+
+        public DataTable GetDataForPage(int startRecord, int recordsPerPage, long MaNguoiTao)
+        {
+            DataTable dt = new DataTable();
+
+            // Chuỗi kết nối tới cơ sở dữ liệu
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
+                string query = @"
+                SELECT MaCauHoi, NoiDung, NguoiTao AS MaNguoiTao,MaMonHoc,DoKho,TrangThai,is_delete, LoaiCauHoi 
+                FROM CauHoi
+                where is_delete=0 AND NguoiTao=@MaNguoiTao
+                ORDER BY MaCauHoi 
+                OFFSET @StartRecord ROWS 
+                FETCH NEXT @RecordsPerPage ROWS ONLY";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm các tham số cho OFFSET và FETCH NEXT
+                    cmd.Parameters.AddWithValue("@StartRecord", startRecord);
+                    cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
+                    cmd.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
+
+                    // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
 
         public int Add(CauHoiDTO cauHoi)
         {
@@ -66,20 +169,21 @@ namespace DAL
             }
         }
 
-        public List<CauHoiDTO> GetAll()
+        public List<CauHoiDTO> GetAll(long MaNguoiTao)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauHoi WHERE is_delete = 0";
+                string query = "SELECT * FROM CauHoi WHERE is_delete = 0 AND NguoiTao=@MaNguoiTao";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             CauHoiDTO cauHoi = new CauHoiDTO
-                            {
+                            {                            
                                 MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
                                 NoiDung = reader["NoiDung"].ToString(),
                                 LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
@@ -272,6 +376,39 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        public int GetAutoIncrement()//lay MaCauHoi
+        {
+            int result = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT MaCauHoi FROM CauHoi";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No data");
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
+                                    result = reader.GetInt32(0); // Lấy giá trị cột AUTO_INCREMENT
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result + 1;
         }
     }
 }

@@ -23,11 +23,13 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
-                        "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
+                    //string query = "INSERT INTO DeThi (MaMon, TenDe, ThoiGianTao, ThoiGianBatDau,ThoiGianKetThuc,NguoiTao,TrangThai,is_delete)" +
+                    //    "VALUES (@MaMon, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc,@NguoiTao,@TrangThai,@is_delete)";
+                    string query = "INSERT INTO DeThi (MaMonHoc, TenDe, ThoiGianTao, ThoiGianBatDau, ThoiGianKetThuc, NguoiTao, TrangThai, is_delete)" +
+                        " VALUES (@MaMonHoc, @TenDe, @ThoiGianTao, @ThoiGianBatDau, @ThoiGianKetThuc, @NguoiTao, @TrangThai, @is_delete)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaMon", dethi.MaMonHoc);
+                        command.Parameters.AddWithValue("@MaMonHoc", dethi.MaMonHoc);
                         command.Parameters.AddWithValue("@TenDe", dethi.TenDe);
                         command.Parameters.AddWithValue("@ThoiGianTao", dethi.ThoiGianTao);
                         command.Parameters.AddWithValue("@ThoiGianBatDau", dethi.ThoiGianBatDau);
@@ -108,7 +110,8 @@ namespace DAL
             List<DeThiDTO> dtList = new List<DeThiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM DeThi WHERE is_delete = 0 AND NguoiTao = " + maNguoiTao;
+                //string query = "SELECT * FROM DeThi WHERE is_delete = 0 AND NguoiTao = " + maNguoiTao;
+                string query = "SELECT DeThi.*, MonHoc.TenMonHoc FROM DeThi JOIN MonHoc ON DeThi.MaMonHoc = MonHoc.MaMonHoc WHERE DeThi.is_delete = 0 AND DeThi.NguoiTao = " + maNguoiTao;
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -125,7 +128,8 @@ namespace DAL
                                 ThoiGianKetThuc = Convert.ToDateTime(reader["ThoiGianKetThuc"]),
                                 NguoiTao = Convert.ToInt64(reader["NguoiTao"]),
                                 TrangThai = Convert.ToInt32(reader["TrangThai"]),
-                                is_delete = Convert.ToInt32(reader["is_delete"])
+                                is_delete = Convert.ToInt32(reader["is_delete"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
                             };
                             dtList.Add(dt);
                         }
@@ -284,6 +288,52 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        public List<MonHocDTO> LayTenMonHoc()
+        {
+            List<MonHocDTO> dtList = new List<MonHocDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM MonHoc WHERE is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("sai");
+                            MonHocDTO mh = new MonHocDTO
+                            {
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                TenMonHoc = reader["TenMonHoc"].ToString()
+                            };
+                            dtList.Add(mh);
+                        }
+                    }
+
+                }
+            }
+            return dtList;
+        }
+        public int CheckDeThiCoTrongLop(int MaDe, int MaLop)
+        {
+            int count = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(MaDe) FROM GiaoDeThi WHERE MaDe = " + MaDe + " and MaLop = " + MaLop;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        count = (int)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return count;
         }
     }
 }

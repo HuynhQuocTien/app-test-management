@@ -24,5 +24,19 @@ namespace BLL
             }
             return "that bai";
         }
+        public List<NguoiDungDTO> GetSV(int maLop)
+        {
+            //NguoiDungDTO nguoiDung = new NguoiDungDTO();
+            return chiTietLopDAL.GetSV(maLop);
+        }
+
+        public int xemSLDeThi(int maLop)
+        {
+            return chiTietLopDAL.XemSLDeThi(maLop);
+        }
+        public int xemSLDeThiHoatDong(int maLop)
+        {
+            return chiTietLopDAL.XemSLDeThiHoatDong(maLop);
+        }
     }
 }

@@ -27,7 +27,10 @@ namespace BLL
             }
             return 0;
         }
-
+        public List<CauTraLoiDTO> getByMaCauHoi(int id)
+        {
+            return CauTraLoiDAL.getByMaCauHoi(id);
+        }
         public CauTraLoiDTO GetCauTraLoiById(int maCauTraLoi)
         {
             CauTraLoiDTO CauTraLoi = new CauTraLoiDTO();

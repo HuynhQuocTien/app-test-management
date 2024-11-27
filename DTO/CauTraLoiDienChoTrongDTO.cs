@@ -30,5 +30,12 @@ namespace DTO
             DapAnText = dapAnText;
             IsDelete = isDelete;
         }
+        public CauTraLoiDienChoTrongDTO( int maCauHoi, int viTri, string dapAnText, int isDelete)
+        {
+            MaCauHoi = maCauHoi;
+            ViTri = viTri;
+            DapAnText = dapAnText;
+            IsDelete = isDelete;
+        }
     }
 }
