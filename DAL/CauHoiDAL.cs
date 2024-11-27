@@ -12,6 +12,36 @@ namespace DAL
         {
             return new CauHoiDAL();
         }
+        public List<CauHoiDTO> GetAll()
+        {
+            List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauHoi WHERE is_delete = 0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CauHoiDTO cauHoi = new CauHoiDTO
+                            {
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                MaNguoiTao = Convert.ToInt64(reader["NguoiTao"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                is_delete = Convert.ToInt32(reader["is_delete"])
+                            };
+                            cauHoiList.Add(cauHoi);
+                        }
+                    }
+                }
+            }
+            return cauHoiList;
+        }
         public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
