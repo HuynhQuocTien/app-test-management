@@ -63,7 +63,7 @@ namespace DAL
             List<NoiCauTraLoiDTO> noiCauTraLoiList = new List<NoiCauTraLoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT NCTL.* FROM NoiCauTraLoi NCTL  INNER JOIN NoiCau NC ON NC.MaNoiCau=NCTL.MaCauNoi WHERE NC.MaCauHoi=@MaCauHoi";
+                string query = "SELECT NCTL.* FROM NoiCauTraLoi NCTL  INNER JOIN NoiCau NC ON NC.MaNoiCau=NCTL.MaCauNoi WHERE NC.MaCauHoi=@MaCauHoi ORDER BY NCTL.MaCauTL ASC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@MaCauHoi", maCauHoi);

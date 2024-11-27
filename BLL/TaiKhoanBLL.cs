@@ -72,16 +72,16 @@ namespace BLL
 
         public string updateEmail(string old_email, string new_email, long maNguoiDung)
         {
-            if (new_email=="")
+            if (new_email == "")
             {
                 return "Vui lòng không để trống (Email)";
             }
 
-            if(taiKhoanDAL.checkEmail(new_email, maNguoiDung))
+            if (taiKhoanDAL.checkEmail(new_email, maNguoiDung))
             {
                 return "Email đã trùng với tài khoản khác!";
             }
-            
+
             return taiKhoanDAL.UpdateEmail(new_email, maNguoiDung) ? "1" : "2";
         }
     }

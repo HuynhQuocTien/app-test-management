@@ -40,7 +40,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxSDT = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -231,7 +231,7 @@
             this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.textBox2, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxSDT, 0, 5);
             this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.textBoxEmail, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.textBoxName, 0, 1);
@@ -254,19 +254,21 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(316, 456);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxSDT
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(16, 342);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(283, 29);
-            this.textBox2.TabIndex = 7;
+            this.textBoxSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSDT.Enabled = false;
+            this.textBoxSDT.Location = new System.Drawing.Point(16, 342);
+            this.textBoxSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSDT.Name = "textBoxSDT";
+            this.textBoxSDT.Size = new System.Drawing.Size(283, 29);
+            this.textBoxSDT.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(17, 212);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -276,6 +278,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(16, 147);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
@@ -285,6 +288,7 @@
             // textBoxName
             // 
             this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxName.Enabled = false;
             this.textBoxName.Location = new System.Drawing.Point(18, 82);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.Name = "textBoxName";
@@ -318,6 +322,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnHuy
             // 
@@ -330,6 +335,7 @@
             this.btnHuy.TabIndex = 1;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // panel1
             // 
@@ -346,6 +352,7 @@
             // RbNu
             // 
             this.RbNu.AutoSize = true;
+            this.RbNu.Enabled = false;
             this.RbNu.Location = new System.Drawing.Point(83, 0);
             this.RbNu.Margin = new System.Windows.Forms.Padding(2);
             this.RbNu.Name = "RbNu";
@@ -359,6 +366,7 @@
             // rbNam
             // 
             this.rbNam.AutoSize = true;
+            this.rbNam.Enabled = false;
             this.rbNam.Location = new System.Drawing.Point(2, 0);
             this.rbNam.Margin = new System.Windows.Forms.Padding(2);
             this.rbNam.Name = "rbNam";
@@ -377,6 +385,7 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(273, 29);
             this.textBoxID.TabIndex = 6;
+            this.textBoxID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxID_KeyDown);
             // 
             // label16
             // 
@@ -420,6 +429,7 @@
             this.label15.Size = new System.Drawing.Size(48, 17);
             this.label15.TabIndex = 10;
             this.label15.Text = "label15";
+            this.label15.Visible = false;
             // 
             // label14
             // 
@@ -430,6 +440,7 @@
             this.label14.Size = new System.Drawing.Size(48, 17);
             this.label14.TabIndex = 9;
             this.label14.Text = "label14";
+            this.label14.Visible = false;
             // 
             // label1
             // 
@@ -440,6 +451,7 @@
             this.label1.Size = new System.Drawing.Size(41, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // buttonImportUsers
             // 
@@ -448,9 +460,10 @@
             this.buttonImportUsers.Margin = new System.Windows.Forms.Padding(2);
             this.buttonImportUsers.Name = "buttonImportUsers";
             this.buttonImportUsers.Size = new System.Drawing.Size(239, 29);
-            this.buttonImportUsers.TabIndex = 7;
+            this.buttonImportUsers.TabIndex = 5;
             this.buttonImportUsers.Text = "Chọn file";
             this.buttonImportUsers.UseVisualStyleBackColor = true;
+            this.buttonImportUsers.Click += new System.EventHandler(this.buttonImportUsers_Click);
             // 
             // btnNhap
             // 
@@ -462,14 +475,16 @@
             this.btnNhap.TabIndex = 6;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // txtMkSl
             // 
             this.txtMkSl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMkSl.Location = new System.Drawing.Point(172, 170);
             this.txtMkSl.Name = "txtMkSl";
+            this.txtMkSl.PasswordChar = '*';
             this.txtMkSl.Size = new System.Drawing.Size(239, 29);
-            this.txtMkSl.TabIndex = 3;
+            this.txtMkSl.TabIndex = 4;
             // 
             // txtTkSL
             // 
@@ -550,7 +565,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxSDT;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxName;

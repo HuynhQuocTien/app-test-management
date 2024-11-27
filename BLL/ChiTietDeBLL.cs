@@ -31,6 +31,10 @@ namespace BLL
         {
             return chiTietDeDAL.GetCauHoiChuaThem(cauHoiDTO);
         }
+        public List<CauHoiDTO> layCauHoiChuaThem(CauHoiDTO cauhoiDTO, int maDeThi)
+        {
+            return chiTietDeDAL.layCauHoiChuaThem(cauhoiDTO, maDeThi);
+        }
         public List<CauHoiDTO> GetCauHoiByMaDe(int made)
         {
             return chiTietDeDAL.GetCauHoiListByMaDe(made);
@@ -38,6 +42,11 @@ namespace BLL
         public List<CauHoiDTO> GetAllCauHoiOfDeThi(DeThiDTO DeThi)
         {
             return chiTietDeDAL.GetAllCauHoiOfDeThi(DeThi);
+        }
+        //Write count SoCauHoi to DeThiDTO
+        public int CountSoCauHoi(DeThiDTO deThi)
+        {
+            return chiTietDeDAL.CountSoCauHoi(deThi);
         }
     }
 }

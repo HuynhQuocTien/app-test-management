@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DAL;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Office2010.CustomUI;
 using DocumentFormat.OpenXml.Presentation;
 using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml.VariantTypes;
@@ -12,12 +14,16 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static OfficeOpenXml.ExcelErrorValue;
 using Color = System.Drawing.Color;
 using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
+using GroupBox = System.Windows.Forms.GroupBox;
+using Size = System.Drawing.Size;
 
 namespace GUI
 {
@@ -33,10 +39,22 @@ namespace GUI
         private ChiTietDeBLL chiTietDeBLL;
         private MonHocBLL monHocBLL;
         private NguoiDungBLL nguoiDungBLL;
+
+        private ChiTietDeDaLamBLL chiTietDeDaLamBLL;
+        private CauHoiDaLamBLL cauHoiDaLamBLL;
+
         private CauTraLoiBLL cauTraLoiBLL;
+        private CauTraLoiDaLamBLL cauTraLoiDaLamBLL;
+        
+
         private CauTraLoiDienChoTrongBLL cauTraLoiDienChoTrongBLL;
-        NoiCauBLL noiCauBLL;
-        NoiCauTraLoiBLL noiCauTraLoiBLL;
+        private CauTraLoiDienChoTrongDaLamBLL cauTraLoiDienChoTrongDaLamBLL;
+
+        private NoiCauDaLamBLL noiCauDaLamBLL;
+        private NoiCauTraLoiDaLamBLL noiCauTraLoiDaLamBLL;
+
+        private NoiCauBLL noiCauBLL;
+        private NoiCauTraLoiBLL noiCauTraLoiBLL;
 
         private GroupBox[] groupBox;
         private Panel[] slide;
@@ -45,15 +63,19 @@ namespace GUI
         private int soCauChuaChon = 0;
         private Timer countdownTimer;
         private int remainingTimeInSeconds; // Số giây còn lại
-                                                                                                                                                                                                                                                                                                                                                                           
+
+        List<CauHoiDaLamDTO> cauHoiDaLamDTOs = new List<CauHoiDaLamDTO>();
         List<CauTraLoiDTO> cauTraLoiDTOs = new List<CauTraLoiDTO>();
         List<CauTraLoiDienChoTrongDTO> cauTraLoiDienChoTrongDTOs = new List<CauTraLoiDienChoTrongDTO>();
         List<NoiCauDTO> noiCauDTOs = new List<NoiCauDTO>();
         List<NoiCauTraLoiDTO> noiCauTraLoiDTOs = new List<NoiCauTraLoiDTO>();
+        List<ChiTietDeDaLamDTO> chiTietDeDaLamDTOs = new List<ChiTietDeDaLamDTO>();
         private int so_cau_hoi;
         private int flag = -1; // dat co dong form
         private int counter = 1;
-
+        Dictionary<int, List<string>> listAns;
+        Dictionary<string, string> noiCauNguoiDung;
+        List<CauHoiDTO> dsCauHoi;
         public fBaiThi(DeThiDTO deThi,LopDTO lop, fChiTietLop fChiTietLop)
         {
             this.deThi = deThi;
@@ -66,12 +88,21 @@ namespace GUI
             monHocBLL = new MonHocBLL();
             chiTietDeBLL = new ChiTietDeBLL();
             nguoiDungBLL = new NguoiDungBLL();
+
+            chiTietDeDaLamBLL = new ChiTietDeDaLamBLL();
+            cauHoiDaLamBLL = new CauHoiDaLamBLL();
             cauTraLoiBLL = new CauTraLoiBLL();
+            cauTraLoiDaLamBLL = new CauTraLoiDaLamBLL();
             cauTraLoiDienChoTrongBLL = new CauTraLoiDienChoTrongBLL();
+            cauTraLoiDienChoTrongDaLamBLL = new CauTraLoiDienChoTrongDaLamBLL();
+            noiCauDaLamBLL = new NoiCauDaLamBLL();
+            noiCauTraLoiDaLamBLL = new NoiCauTraLoiDaLamBLL();
             noiCauTraLoiBLL = new NoiCauTraLoiBLL();
             noiCauBLL = new NoiCauBLL();
 
-            List<CauHoiDTO> dsCauHoi = chiTietDeBLL.GetAllCauHoiOfDeThi(deThi);
+            listAns = new Dictionary<int, List<string>>();
+            noiCauNguoiDung = new Dictionary<string, string>();
+            dsCauHoi = chiTietDeBLL.GetAllCauHoiOfDeThi(deThi);
             so_cau_hoi = dsCauHoi.Count;
 
             Random random = new Random();
@@ -118,6 +149,7 @@ namespace GUI
                 countdownTimer.Stop();
                 NopBai();
             }
+
         }
         private void Load_pictureBox1()
         {
@@ -166,55 +198,200 @@ namespace GUI
             flag = 1;
             int d = 0;
             int s = 0;
-            for (int i = 0; i < so_cau_hoi; i++)
-            {
-                if (GetTagValue(groupBox[i]))
-                {
-                    d++;
-                }
-                else
-                {
-                    s++;
-                }
-            }
-            double diemCuaMotCauDung = (10.0f / so_cau_hoi);
-            double diem = d * diemCuaMotCauDung;
-            // check xem giáo viên đã làm bài chưa nếu có thì cập nhật lại kết quả
+            int DTNCDung = 0;
+            int DTNCSai = 0;
+            double diemDTNC = 0.00;
+            double diemCuaMotCauDung = (10.00f / so_cau_hoi);
+            double diem = 0.00;
+            int maKQ = 0;
             KetQuaDTO kq = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
+
+            AddCauHoiDaLamFull(kq, ref d, ref s);
+
+
+            GetDataFromRows(kq, ref DTNCDung, ref DTNCSai, ref diemDTNC, diemCuaMotCauDung);
+
+            diem = d * diemCuaMotCauDung;
+            d += DTNCDung;
+            s += DTNCSai;
+            diem += diemDTNC;
             if (kq == null)
             {
-                KetQuaDTO kqInsert = new KetQuaDTO(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
-                //if (ketQuaBLL.Add(kqInsert))
-                //{
+                maKQ = ketQuaBLL.GetAutoIncrement() == 0 ? 1 : ketQuaBLL.GetAutoIncrement();
+                KetQuaDTO kqInsert = new KetQuaDTO
+                {
+                    MaKetQua = maKQ,
+                    MaDe = deThi.MaDe,
+                    MaNguoiDung = fDangNhap.nguoiDungDTO.MaNguoiDung,
+                    Diem = Math.Round(Convert.ToDecimal(diem), 2),
+                    SoCauDung = d,
+                    SoCauSai = s,
+                    is_delete = 0,
+                    TrangThai = 1
+                };
+
+                if (ketQuaBLL.Add(kqInsert))
+                {
+                    foreach (var item in cauHoiDaLamDTOs)
+                    {
+                        ChiTietDeDaLamDTO ctddl = new ChiTietDeDaLamDTO
+                        {
+                            MaCauHoi = item.MaCauHoiDaLam,
+                            MaDe = deThi.MaDe,
+                            MaKetQua = maKQ
+                        };
+                        chiTietDeDaLamBLL.AddChiTietDeDaLam(ctddl);
+                    }
                     MessageBox.Show("Nộp bài thành công");
                     fKetQua f = new fKetQua(deThi, lop, kqInsert);
                     f.ShowDialog();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Nộp bài thất bại");
+                }
+                else
+                {
+                    MessageBox.Show("Nộp bài thất bại");
 
-                //}
+                }
+
             }
             else
             {
-                
-                KetQuaDTO kqUpdate = new KetQuaDTO(kq.MaKetQua, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
-                //if (ketQuaBLL.Update(kqUpdate))
-                //{             
+                KetQuaDTO kqUpdate = new KetQuaDTO
+                {
+                    MaKetQua = kq.MaKetQua,
+                    MaDe = deThi.MaDe,
+                    MaNguoiDung = fDangNhap.nguoiDungDTO.MaNguoiDung,
+                    Diem = Math.Round(Convert.ToDecimal(diem), 2),
+                    SoCauDung = d,
+                    SoCauSai = s,
+                    is_delete = 0,
+                    TrangThai = 1
+                };
+                if (ketQuaBLL.Update(kqUpdate))
+                {
+                    foreach (var item in cauHoiDaLamDTOs)
+                    {
+                        ChiTietDeDaLamDTO ctddl = new ChiTietDeDaLamDTO
+                        {
+                            MaCauHoi = item.MaCauHoiDaLam,
+                            MaDe = deThi.MaDe,
+                            MaKetQua = kq.MaKetQua
+                        };
+                        chiTietDeDaLamBLL.UpdateChiTietDeDaLam(ctddl);
+                    }
+                    MessageBox.Show("Nộp bài thành công");
                     fKetQua f = new fKetQua(deThi, lop, kqUpdate);
                     f.ShowDialog();
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("Nộp bài thất bại");
+                }
+                
             }
             this.Dispose();
             fChiTietLop.Dispose();
+        }
+        public void AddCauHoiDaLamFull(KetQuaDTO kq,ref int d,ref int s)
+        {
+            for (int i = 0; i < so_cau_hoi; i++)
+            {
+                int selectedIndex = -1; // Khởi tạo chỉ số RadioButton được chọn
+                int maKQ = -1;
+                CauHoiDaLamDTO cauHoiDaLamDTO = new CauHoiDaLamDTO
+                {
+
+                    MaCauHoiDaLam = cauHoiDaLamBLL.getAutoIncrement(),
+                    NoiDung = dsCauHoi[i].NoiDung,
+                    IdNguoiTao = dsCauHoi[i].MaNguoiTao,
+                    MaMonHoc = dsCauHoi[i].MaMonHoc,
+                    DoKho = dsCauHoi[i].DoKho,
+                    LoaiCauHoi = dsCauHoi[i].LoaiCauHoi,
+
+                };
+                List<CauTraLoiDTO> listCTLDto = cauTraLoiBLL.getByMaCauHoi(dsCauHoi[i].MaCauHoi);
+                if (kq == null)
+                {
+                    if (!cauHoiDaLamBLL.Add(cauHoiDaLamDTO))
+                    {
+                        MessageBox.Show("Lỗi Add CauHoiDaLam");
+                        return;
+                    }
+                    cauHoiDaLamDTOs.Add(cauHoiDaLamDTO);
+                }
+                else
+                {
+                    cauHoiDaLamDTO = chiTietDeDaLamBLL.GetAllCauHoiDaLamOfDeThi(deThi).FirstOrDefault(x => x.NoiDung == dsCauHoi[i].NoiDung &&
+                                                                                                                        x.IdNguoiTao == dsCauHoi[i].MaNguoiTao &&
+                                                                                                                        x.MaMonHoc == dsCauHoi[i].MaMonHoc);
+                    if(cauHoiDaLamBLL.Update(cauHoiDaLamDTO))
+                    {
+                        MessageBox.Show("Lỗi Update CauHoiDaLam");
+                        return;
+                    }
+                    cauHoiDaLamDTOs.Add(cauHoiDaLamDTO);
+
+                }
+                //Add Câu hỏi đã làm xong
+                if (GetTagValue(groupBox[i],ref selectedIndex))
+                {
+                    if (dsCauHoi[i].LoaiCauHoi == "Trắc nghiệm")
+                        d++;
+                    
+                }
+                else
+                {
+                    if (dsCauHoi[i].LoaiCauHoi == "Trắc nghiệm")
+                        s++;
+                }
+                //Bắt đầu add câu trả lời đã làm
+                if (kq == null)
+                {
+                    foreach (var item in listCTLDto)
+                    {
+                        CauTraLoiDaLamDTO ctldl = new CauTraLoiDaLamDTO
+                        {
+                            MaCauHoiDaLam = cauHoiDaLamBLL.getAutoIncrement()-1,
+                            NoiDung = dsCauHoi[i].NoiDung,
+                            IsDapAn = item.IsDapAn,
+                            IsChon = listCTLDto.IndexOf(item) == selectedIndex ? 1 : 0
+                        };
+                        if (!cauTraLoiDaLamBLL.AddCauTraLoi(ctldl))
+                        {
+                            MessageBox.Show("Lỗi Add CauTraLoiDaLam");
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    List<CauTraLoiDaLamDTO> dsCauTLDaLam = cauTraLoiDaLamBLL.GetCauTraLoiDaLamOfDeThi(deThi.MaDe).Where(x => x.MaCauHoiDaLam == cauHoiDaLamDTO.MaCauHoiDaLam).ToList();
+                    foreach (var item in dsCauTLDaLam)
+                    {
+                        CauTraLoiDaLamDTO ctldl = new CauTraLoiDaLamDTO
+                        {
+                            MaCauTraLoiDaLam = item.MaCauTraLoiDaLam,
+                            MaCauHoiDaLam = cauHoiDaLamDTO.MaCauHoiDaLam,
+                            NoiDung = dsCauHoi[i].NoiDung,
+                            IsDapAn = item.IsDapAn,
+                            IsChon =  dsCauTLDaLam.IndexOf(item) == selectedIndex ? 1 : 0
+                        };
+                        if (!cauTraLoiDaLamBLL.AddCauTraLoi(ctldl))
+                        {
+                            MessageBox.Show("Lỗi Add CauTraLoiDaLam");
+                            return;
+                        }
+                    }
+
+
+                }
+                
+            }
         }
         public void CreatePanelDienTu(string CauHoiName,int step, int sodapandien)
         {
             CreateRow(CauHoiName, 3, 3+ step,sodapandien);  // Tạo hàng đầu tiên
             //CreateRow("Điền từ", 3, 58); // Tạo hàng thứ hai +55
         }
-
         private void CreateRow(string title, int x, int y, int sodapandien)
         {
             TableLayoutPanel tableLayoutPanel = new TableLayoutPanel
@@ -256,52 +433,203 @@ namespace GUI
 
             this.flowLayoutPanel2.Controls.Add(tableLayoutPanel); // Thêm vào form hiện tại
         }
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        private Dictionary<int, List<string>> GetTextBoxValuesFromTableLayoutPanel(TableLayoutPanel tableLayoutPanel)
         {
-            //if (int.TryParse(textBoxSearch.Text, out int rowIndex))
-            //{
-            //    // Kiểm tra hàng nhập có hợp lệ không
-            //    if (rowIndex >= 1 && rowIndex <= flowLayoutPanel2.Controls.Count)
-            //    {
-            //        Control rowToScroll = flowLayoutPanel2.Controls[rowIndex - 1]; // Hàng bắt đầu từ 0
-            //        flowLayoutPanel2.ScrollControlIntoView(rowToScroll); // Cuộn tới hàng được chọn
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Không có hàng tương ứng với số đã nhập.");
-            //    }
-            //}
-        }
-        private void LayDuLieuCacTextBox(TableLayoutPanel tableLayoutPanel)
-        {
-            // Duyệt qua tất cả các câu (mỗi câu là 1 hàng trong TableLayoutPanel)
-            for (int row = 0; row < tableLayoutPanel.RowCount; row++)
+            int key = -1;
+            List<string> values = new List<string>();
+            foreach (Control control in tableLayoutPanel.Controls)
             {
-                // Lấy Title của câu (cột 0)
-                Label titleLabel = tableLayoutPanel.GetControlFromPosition(0, row) as Label;
-                if (titleLabel != null)
+                if (control is Panel panel) // Nếu là Panel, duyệt tiếp các Control bên trong Panel
                 {
-                    string title = titleLabel.Text; // Tiêu đề câu
-                    Console.WriteLine("Câu: " + title); // In ra câu (ví dụ: Câu 1, Câu 2, ...)
-
-                    // Duyệt qua các cột chứa đáp án (từ cột 1 trở đi)
-                    for (int col = 1; col < tableLayoutPanel.ColumnCount; col++)
+                    foreach (Control panelControl in panel.Controls)
                     {
-                        Panel panel = tableLayoutPanel.GetControlFromPosition(col, row) as Panel;
-                        if (panel != null)
+                        if (panelControl is TextBox textBox) // Nếu là TextBox, lấy giá trị
                         {
-                            // Tìm TextBox trong Panel
-                            TextBox textBox = panel.Controls.OfType<TextBox>().FirstOrDefault();
-                            if (textBox != null)
-                            {
-                                string dapAn = textBox.Text; // Dữ liệu từ TextBox
-                                Console.WriteLine($"Đáp án của {title}: {dapAn}"); // In ra đáp án của câu
-                            }
+                            values.Add(textBox.Text);
                         }
                     }
+                    
+                    listAns[key] = values;
+                }
+                if (control is Label labelCau)
+                {
+                    key = -1;
+                    values = new List<string>();
+                    if (labelCau.Text.ToLower().Contains("câu"))
+                    {
+                        key = ExtractNumberFromLabelText(labelCau.Text.Trim());
+                        listAns.Add(key, new List<string>());
+                    }
+                }
+
+            }
+
+            return listAns;
+        }
+        private void GetDataFromRows(KetQuaDTO kq,ref int d,ref int s,ref double diem,double diemcuamotcau)
+        {
+            Dictionary<int, List<string>> listTextBox = new Dictionary<int, List<string>>();
+            foreach (Control control in this.flowLayoutPanel2.Controls)
+            {
+                if (control is TableLayoutPanel tableLayoutPanel)
+                {
+                    // Lấy dữ liệu từ TableLayoutPanel
+                    Dictionary<int, List<string>> textBoxValues = GetTextBoxValuesFromTableLayoutPanel(tableLayoutPanel);
+
+                    // Xử lý dữ liệu lấy được
+                    foreach (var kvp in textBoxValues)
+                    {
+                        int key = kvp.Key; // Key là một số nguyên
+                        List<string> values = kvp.Value; // Value là danh sách các chuỗi
+
+                        Console.WriteLine($"Key: {key}");
+                        foreach (string value in values)
+                        {
+                            Console.WriteLine($" - Value: {value}"); // In từng giá trị trong danh sách
+                        } // In giá trị ra hoặc xử lý theo nhu cầu
+                    }
+                    listTextBox = textBoxValues;
                 }
             }
+            for (int i = 0; i < listTextBox.Count; i++)
+            {
+                int key = listTextBox.ElementAt(i).Key;
+                List<string> values = listTextBox.ElementAt(i).Value;
+                List<bool> listCheckDT = new List<bool>();
+                List<bool> listCheckNC = new List<bool>();
+                CauHoiDTO cauHoiTemp = dsCauHoi[key - 1];
+                int temp = 0;
+                if (cauHoiTemp.LoaiCauHoi.Contains("Điền từ"))
+                {
+                    int flagCount = 0;
+                    CauHoiDaLamDTO cauhoiSoSanh = cauHoiDaLamDTOs.FirstOrDefault(c => c.NoiDung == cauHoiTemp.NoiDung &&
+                                                                                       c.MaMonHoc == cauHoiTemp.MaMonHoc &&
+                                                                                       c.IdNguoiTao == cauHoiTemp.MaNguoiTao);
+                    for (int ans = 0; ans < values.Count; ans++)
+                    {
+                        double diemDT = 1.0 * diemcuamotcau / values.Count;
+                        Boolean isDapAn = false;
+                        CauTraLoiDienChoTrongDTO ctl = cauTraLoiDienChoTrongBLL.GetCauTraLoiByMaCauHoiAndViTri(cauHoiTemp.MaCauHoi, ans + 1);
+                        CauTraLoiDienChoTrongDaLamDTO cauTLDTT = new CauTraLoiDienChoTrongDaLamDTO
+                        {
+                            MaCauHoi = cauHoiTemp.MaCauHoi,
+                            ViTri = ans + 1,
+                            CauTraLoiText = values[ans],
+                            DapAnText = ctl.DapAnText,
+                            IsDelete = 0
+                        };
+                        isDapAn = !string.IsNullOrEmpty(values[ans]) && ctl.DapAnText.ToLower().Equals(values[ans].ToLower());
+
+                        if (isDapAn)
+                        {
+                            diem += diemDT;
+                            flagCount++;
+                        }
+                        if (kq == null)
+                        {
+                            cauTraLoiDienChoTrongDaLamBLL.Add(cauTLDTT);
+
+                        }
+                        else
+                        {
+                            cauTraLoiDienChoTrongDaLamBLL.Update(cauTLDTT);
+                        }
+                        //MessageBox.Show($"MaCauHoi: {cauTLDTT.MaCauHoi} Vt: {cauTLDTT.ViTri} CTL: {cauTLDTT.CauTraLoiText} DA: {cauTLDTT.DapAnText}");
+                        //cauTraLoiDienChoTrongDaLamBLL.Add(cauTLDTT);
+                    }
+                    if (flagCount == values.Count)
+                    {
+                        d++;
+                    }
+                    else
+                    {
+                        s++;
+                    }
+
+                }
+                else if (cauHoiTemp.LoaiCauHoi.Contains("Nối câu"))
+                {
+                    int flagCount = 0;
+                    CauHoiDaLamDTO cauhoiSoSanh = cauHoiDaLamDTOs.FirstOrDefault(c => c.NoiDung == cauHoiTemp.NoiDung &&
+                                                                                        c.MaMonHoc == cauHoiTemp.MaMonHoc &&
+                                                                                        c.IdNguoiTao == cauHoiTemp.MaNguoiTao);
+
+                    for (int ans = 0; ans < values.Count; ans++)
+                    {
+                        double diemNC = 1.0 * diemcuamotcau / values.Count;
+
+                        Boolean isDapAn = false;
+                        //List<NoiCauDaLamDTO> listNCDL =  noiCauDaLamBLL.GetAllNoiCauDaLam().Where(x => x.MaCauHoi == cauHoiTemp.MaCauHoi).ToList();
+                        //List<NoiCauTraLoiDaLamDTO> listNCTLDL = noiCauTraLoiDaLamBLL.GetAllNoiCauTraLoiDaLam().Where(x => x.MaCauNoi == listNCDL[ans].MaNoiCauDaLam).ToList();
+                        List<NoiCauDTO> listNC = noiCauBLL.GetAll(cauHoiTemp.MaCauHoi);
+                        List<NoiCauTraLoiDTO> listNCTLDL = noiCauTraLoiBLL.GetAll(cauHoiTemp.MaCauHoi);
+
+                        NoiCauDaLamDTO noicauInsert = new NoiCauDaLamDTO
+                        {
+                            MaCauHoi = cauhoiSoSanh.MaCauHoiDaLam,
+                            NoiDung = listNC[ans].NoiDung
+
+                        };
+                        noiCauDaLamBLL.AddNoiCauDaLam(noicauInsert);
+                        noicauInsert.MaNoiCauDaLam = noiCauDaLamBLL.GetAutoIncrement() > 1 ? noiCauDaLamBLL.GetAutoIncrement() - 1 : 1;
+                        NoiCauTraLoiDaLamDTO ncautraloi = new NoiCauTraLoiDaLamDTO
+                        {
+                            MaCauTLDaLam = 0, // Assign appropriate value
+                            MaCauNoi = noicauInsert.MaNoiCauDaLam,
+                            NoiDung = listNC[ans].NoiDung,
+                            DapAnNoi = listNCTLDL[ans].NoiDung,
+                            DapAnChon = values[ans],
+                        };
+                        string valueOfColB = noiCauNguoiDung.TryGetValue(ncautraloi.DapAnChon, out var value) ? value : null;
+
+                        isDapAn = valueOfColB != null && ncautraloi.DapAnNoi != null
+                                    ? ncautraloi.DapAnNoi.ToLower().Equals(valueOfColB.ToLower()) : false;
+                        listCheckNC.Add(isDapAn);
+
+                        if (isDapAn)
+                        {
+                            diem += diemNC;
+                            flagCount++;
+                        }
+
+                        if (kq == null)
+                        {
+                            noiCauTraLoiDaLamBLL.AddNoiCauTraLoiDaLam(ncautraloi);
+
+                        }
+                        else
+                        {
+                            noiCauTraLoiDaLamBLL.UpdateNoiCauTraLoiDaLam(ncautraloi);
+                        }
+                        //MessageBox.Show($"{ncautraloi.MaCauNoi}, NoiDung: {ncautraloi.NoiDung}, DapAnNoi: {ncautraloi.DapAnNoi}, DapAnChon: {ncautraloi.DapAnChon}.{valueOfColB}, check : {isDapAn}");
+                    }
+                    if (flagCount == values.Count)
+                    {
+                        d++;
+                    }
+                    else
+                    {
+                        s++;
+                    }
+
+                }
+            }
+
         }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = "";
+            // Chuyển ký tự nhập vào thành chữ hoa
+            e.KeyChar = char.ToUpper(e.KeyChar);
+
+            // Chỉ cho phép nhập các ký tự A, B, C, D, E, F và phím xóa (Backspace)
+            if (!"ABCDEFGHIJ\b".Contains(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho ký tự không hợp lệ xuất hiện trong textbox
+            }
+        }
+
 
         private TableLayoutPanel TaoPanelNoiCau(string title, int soLuongDapAn)
         {
@@ -350,7 +678,7 @@ namespace GUI
                     Location = new System.Drawing.Point(30, 5),
                     TextAlign = HorizontalAlignment.Center
                 };
-
+                 textBox.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
                 // Thêm Label và TextBox vào Panel
                 panel.Controls.Add(label);
                 panel.Controls.Add(textBox);
@@ -385,10 +713,10 @@ namespace GUI
                     rd[i - 1].Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     switch (i)
                     {
-                        case 1: rd[i - 1].Location = new Point(15, 63); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
-                        case 2: rd[i - 1].Location = new Point(15, 125); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
-                        case 3: rd[i - 1].Location = new Point(15, 185); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
-                        case 4: rd[i - 1].Location = new Point(15, 245); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
+                        case 1: rd[i - 1].Location = new Point(15, 58); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
+                        case 2: rd[i - 1].Location = new Point(15, 123); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
+                        case 3: rd[i - 1].Location = new Point(15, 183); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
+                        case 4: rd[i - 1].Location = new Point(15, 243); if (cauTraLoiList[i - 1].IsDapAn == 1) { rd[i - 1].Tag = "true"; } else { rd[i - 1].Tag = "false"; } break;
 
                     }
                     rd[i - 1].Size = new Size(14, 13);
@@ -408,6 +736,17 @@ namespace GUI
             }
 
 
+        }
+        private int ExtractNumberFromLabelText(string labelText)
+        {
+            // Giả sử Label.Text có dạng "|| Cau 7"
+            string[] parts = labelText.Split(' '); // Tách chuỗi theo khoảng trắng
+            if (parts.Length > 0 && int.TryParse(parts[1], out int number))
+            {
+                return number; // Trả về số đã chuyển đổi
+            }
+
+            return -1; // Trả về -1 nếu không lấy được số
         }
         private void TaoCauHoi(List<CauHoiDTO> list)
         {
@@ -429,7 +768,7 @@ namespace GUI
                 if(list[i - 1].LoaiCauHoi.Contains("Điền từ")){
                     List<CauTraLoiDienChoTrongDTO> dataDT = cauTraLoiDienChoTrongBLL.GetAll(list[i - 1].MaCauHoi);
                     int step = 0;
-                    CreatePanelDienTu("|| Câu "+i,step, dataDT.Count);
+                    CreatePanelDienTu("Câu "+i,step, dataDT.Count);
                     step += 55;
                 } else if (list[i - 1].LoaiCauHoi.Contains("Nối câu"))
                 {
@@ -500,7 +839,9 @@ namespace GUI
                     for(int m = 0; m < listNCTL.Count; m++)
                     {
                         char letter = (char)('A' + m); // Convert m to the corresponding letter starting from 'A'
+
                         NoiDungCotB += letter + "." + listNCTL[m].NoiDung + "\n";
+                        noiCauNguoiDung.Add(letter.ToString(), listNCTL[m].NoiDung);
                     }
                     // Tạo Label cho tiêu đề chính (Câu 7: Nối các từ lại với nhau)
                     Label lblTitle = new Label
@@ -610,34 +951,32 @@ namespace GUI
             }
 
         }
-        private bool GetTagValue(GroupBox grp)
+        private bool GetTagValue(GroupBox grp, ref int dem)
         {
-            bool isAnswer = false;
+            bool isAnswer = false; // Biến xác định đáp án đúng
+
             if (grp != null)
             {
                 try
                 {
-                    bool anyRadioButtonChecked = false; // Biến này để kiểm tra xem có RadioButton nào được chọn hay không
-                    foreach (Control ctl in grp.Controls) // Duyệt qua tất cả các control trong groupbox
+                    int index = 0; // Biến đếm để xác định vị trí của RadioButton
+
+                    foreach (Control ctl in grp.Controls) // Duyệt qua tất cả các control trong GroupBox
                     {
-                        if (ctl is RadioButton)
+                        if (ctl is RadioButton rbtn) // Kiểm tra nếu control là RadioButton
                         {
-                            RadioButton rbtn = (RadioButton)ctl; // Ép kiểu control thành radiobutton
                             if (rbtn.Checked)
                             {
-                                anyRadioButtonChecked = true;
-                                if (rbtn.Tag.ToString() == "true")
+                                dem = index; // Ghi nhận chỉ số của RadioButton được chọn
+
+                                if (rbtn.Tag != null && rbtn.Tag.ToString() == "true") // Kiểm tra Tag
                                 {
-                                    isAnswer = true;
-                                    break;
+                                    isAnswer = true; // Đáp án đúng
                                 }
+                                break; // Thoát vòng lặp khi tìm thấy RadioButton được chọn
                             }
+                            index++;
                         }
-                    }
-                    // Kiểm tra nếu không có RadioButton nào được chọn, tăng giá trị của soCauChuaChon
-                    if (!anyRadioButtonChecked)
-                    {
-                        soCauChuaChon++;
                     }
                 }
                 catch (Exception ex)
@@ -645,54 +984,17 @@ namespace GUI
                     Console.WriteLine(ex);
                 }
             }
-            else
-            {
-                isAnswer = false;
-            }
-            return isAnswer;
+
+            return isAnswer; // Trả về kết quả kiểm tra đáp án
         }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            flag = 1;
-            int d = 0;
-            int s = 0;
-            for (int i = 0; i < so_cau_hoi; i++)
-            {
-                if (GetTagValue(groupBox[i]))
-                {
-                    d++;
-                }
-                else
-                {
-                    s++;
-                }
 
-            }
             DialogResult result = MessageBox.Show("Xác nhận nộp bài", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                double diemCuaMotCauDung = (10.0f / so_cau_hoi);
-                double diem = Math.Round(d * diemCuaMotCauDung, 2);
-
-                // check xem giáo viên đã làm bài chưa nếu có thì cập nhật lại kết quả
-                KetQuaDTO kq = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-                if (kq == null)
-                {
-                    KetQuaDTO kqInsert = new KetQuaDTO(-1, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
-                    //ketQuaBLL.Add(kqInsert);
-                    fKetQua f = new fKetQua(deThi, lop, kqInsert);
-                    f.ShowDialog();
-                }
-                else
-                {
-                    KetQuaDTO kqUpdate = new KetQuaDTO(kq.MaKetQua, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToDecimal(diem), d, s - soCauChuaChon, 1, 0);
-                    //ketQuaBLL.Update(kqUpdate);
-                    fKetQua f = new fKetQua(deThi, lop, kqUpdate);
-                    f.ShowDialog();
-                }
-
-                this.Dispose();
-                fChiTietLop.Dispose();
+                NopBai();
             }
 
         }

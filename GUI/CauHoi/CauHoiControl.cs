@@ -372,7 +372,7 @@ namespace GUI.CauHoi
 
                 }
             }
-            
+
 
         }
         private void importDienTu(CauHoiDTO cauhoi, ExcelWorksheet sheet)
@@ -492,7 +492,7 @@ namespace GUI.CauHoi
                     };
                     break;
                 case "Nối câu":
-                     fCauHoiNoiCau fCauHoiNoiCau=new fCauHoiNoiCau(this.cauHoiDTO, 0);
+                    fCauHoiNoiCau fCauHoiNoiCau = new fCauHoiNoiCau(this.cauHoiDTO, 0);
                     fCauHoiNoiCau.Show();
                     fCauHoiNoiCau.FormClosed += (s, args) => {
                         render();
@@ -547,7 +547,7 @@ namespace GUI.CauHoi
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text,fDangNhap.taiKhoanDTO.Username);
+            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text, fDangNhap.taiKhoanDTO.Username);
             this.numericUpDown1.Enabled = false;
             this.label2.Text = "Trên tổng ... trang";
         }
@@ -564,22 +564,22 @@ namespace GUI.CauHoi
                 int DoKho = int.Parse(selectedRow.Cells["DoKho"].Value.ToString());
                 int trangThai = int.Parse(selectedRow.Cells["TrangThai"].Value.ToString());
                 int trangThaiXoa = int.Parse(selectedRow.Cells["is_delete"].Value.ToString());
-                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao,DoKho, trangThai, trangThaiXoa);
+                this.cauHoiDTO = new CauHoiDTO(MaCauHoi, NoiDung, LoaiCauHoi, MaMonHoc, MaNguoiTao, DoKho, trangThai, trangThaiXoa);
             }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            
+
         }
 
         private void textBoxTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            render(); 
+            render();
             phanTrang();
             this.numericUpDown1.Value = 1;
         }

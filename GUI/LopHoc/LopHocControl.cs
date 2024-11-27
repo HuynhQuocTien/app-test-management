@@ -160,7 +160,6 @@ namespace GUI.LopHoc
         }
         private void buttonXoa_Click(object sender, EventArgs e, LopDTO obj)
         {
-            lopBLL.Delete(obj);
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             Panel panelContain = (Panel)clickedButton.Parent;
 
@@ -168,6 +167,7 @@ namespace GUI.LopHoc
 
             if (result == DialogResult.Yes)
             {
+                lopBLL.Delete(obj);
                 flowLayoutPanel1.Controls.Remove(panelContain);
             }
         }

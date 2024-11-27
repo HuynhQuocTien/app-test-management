@@ -42,7 +42,7 @@ namespace DAL
             List<CauTraLoiDTO> cauTraLoiList = new List<CauTraLoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * from CauTraLoi where MaCauHoi = " + mch;
+                string query = "SELECT * from CauTraLoi where MaCauHoi = " + mch + " ORDER BY MaCauTL ASC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

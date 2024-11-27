@@ -18,16 +18,15 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO CauHoiDaLam (NoiDung, IdNguoiTao, MaMonHoc, DoKho, TrangThai, is_delete)" +
-                        "VALUES (@NoiDung, @IdNguoiTao, @MaMonHoc, @DoKho, @TrangThai, @is_delete);";
+                    string query = "INSERT INTO CauHoiDaLam (NoiDung, IdNguoiTao, MaMonHoc, DoKho,LoaiCauHoi)" +
+                        "VALUES (@NoiDung, @IdNguoiTao, @MaMonHoc, @DoKho,@LoaiCauHoi);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@NoiDung", cauHoi.NoiDung);
                         command.Parameters.AddWithValue("@IdNguoiTao", cauHoi.IdNguoiTao);
                         command.Parameters.AddWithValue("@MaMonHoc", cauHoi.MaMonHoc);
                         command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
-                        command.Parameters.AddWithValue("@TrangThai", 1);
-                        command.Parameters.AddWithValue("@is_delete", 0);
+                        command.Parameters.AddWithValue("@LoaiCauHoi", cauHoi.LoaiCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -81,7 +80,9 @@ namespace DAL
                                 NoiDung = reader["NoiDung"].ToString(),
                                 IdNguoiTao = Convert.ToInt64(reader["IdNguoiTao"]),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                DoKho = reader["DoKho"].ToString()
+                                DoKho = Convert.ToInt32(reader["DoKho"].ToString()),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+
                             };
                             cauHoiList.Add(cauHoi);
                         }
@@ -110,7 +111,9 @@ namespace DAL
                                 NoiDung = reader["NoiDung"].ToString(),
                                 IdNguoiTao = Convert.ToInt64(reader["IdNguoiTao"]),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                DoKho = reader["DoKho"].ToString()
+                                DoKho = Convert.ToInt32(reader["DoKho"].ToString()),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+
                             };
                         }
                     }
@@ -125,7 +128,7 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "UPDATE CauHoiDaLam SET NoiDung = @NoiDung, IdNguoiTao = @IdNguoiTao, MaMonHoc = @MaMonHoc, DoKho = @DoKho WHERE MaCauHoiDaLam = @MaCauHoiDaLam";
+                    string query = "UPDATE CauHoiDaLam SET NoiDung = @NoiDung, IdNguoiTao = @IdNguoiTao, MaMonHoc = @MaMonHoc, DoKho = @DoKho, LoaiCauHoi = @LoaiCauHoi WHERE MaCauHoiDaLam = @MaCauHoiDaLam";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaCauHoiDaLam", cauHoi.MaCauHoiDaLam);
@@ -133,6 +136,7 @@ namespace DAL
                         command.Parameters.AddWithValue("@IdNguoiTao", cauHoi.IdNguoiTao);
                         command.Parameters.AddWithValue("@MaMonHoc", cauHoi.MaMonHoc);
                         command.Parameters.AddWithValue("@DoKho", cauHoi.DoKho);
+                        command.Parameters.AddWithValue("@LoaiCauHoi", cauHoi.LoaiCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -143,6 +147,39 @@ namespace DAL
                 Console.WriteLine(ex.ToString());
                 return false;
             }
+        }
+        public int GetAutoIncrement()//lay MaCauHoiDaLam
+        {
+            int result = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT MaCauHoiDaLam FROM CauHoiDaLam";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No data");
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
+                                    result = reader.GetInt32(0); // Lấy giá trị cột AUTO_INCREMENT
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result + 1;
         }
     }
 }

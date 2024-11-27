@@ -87,6 +87,44 @@ namespace DAL
             return chiTietDeDaLamList;
         }
 
+        public List<CauHoiDaLamDTO> GetAllCauHoiDaLamOfDeThi(DeThiDTO deThi)
+        {
+            List<CauHoiDaLamDTO> list = new List<CauHoiDaLamDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT CauHoiDaLam.* FROM ChiTietDe" +
+                    " INNER JOIN CauHoiDaLam ON ChiTietDe.MaCauHoi = CauHoiDaLam.MaCauHoiDaLam" +
+                    " WHERE ChiTietDe.MaDe = " + deThi.MaDe;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //var enumDoKho = (EnumDoKho)Convert.ToInt32(reader["DoKho"].ToString());
+                            //DoKho = EnumHelper.GetEnumDescription(enumDoKho) ,
+
+                            CauHoiDaLamDTO cauHoi = new CauHoiDaLamDTO
+                            {
+                                MaCauHoiDaLam = Convert.ToInt32(reader["MaCauHoiDaLam"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                IdNguoiTao = Convert.ToInt64(reader["IdNguoiTao"]),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                DoKho = Convert.ToInt32(reader["DoKho"].ToString()),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+
+                            };
+                            list.Add(cauHoi);
+                        }
+                    }
+
+                }
+                connection.Close();
+            }
+            return list;
+
+        }
+
         public ChiTietDeDaLamDTO GetById(ChiTietDeDaLamDTO chiTietDeDaLam)
         {
             ChiTietDeDaLamDTO result = null;

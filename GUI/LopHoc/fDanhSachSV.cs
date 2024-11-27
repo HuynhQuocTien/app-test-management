@@ -1,4 +1,7 @@
-﻿using DTO;
+﻿using BLL;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +16,47 @@ namespace GUI.LopHoc
 {
     public partial class fDanhSachSV : Form
     {
-        public fDanhSachSV()
+        private LopDTO lopDTO;
+        private DataTable dt;
+
+        private NguoiDungBLL nguoiDungBLL;
+        private ChiTietLopBLL chiTietLopBLL;
+        private LopBLL lopBLL;
+
+        private List<NguoiDungDTO> lHocSinhTrongLop;
+        public fDanhSachSV(LopDTO lopDTO)
         {
+            nguoiDungBLL = new NguoiDungBLL();
+            chiTietLopBLL = new ChiTietLopBLL();
+            lopBLL = new LopBLL();
             InitializeComponent();
+            this.lopDTO = lopDTO;
+            lHocSinhTrongLop = chiTietLopBLL.GetSV(lopDTO.MaLop) ?? new List<NguoiDungDTO>();
+
+            dt = new DataTable();
+            dt.Columns.Add("STT", typeof(int));
+            dt.Columns.Add("Mã học sinh", typeof(long));
+            dt.Columns.Add("Họ và tên", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
+            loadDataGridView();
+        }
+        private void loadDataGridView()
+        {
+            dt.Clear();
+            int stt = 1;
+            foreach (NguoiDungDTO hs in lHocSinhTrongLop)
+            {
+                DataRow row = dt.NewRow();
+                row["STT"] = stt;
+                row["Mã học sinh"] = hs.MaNguoiDung;
+                row["Họ và tên"] = hs.HoTen;
+                row["SDT"] = hs.SDT;
+                dt.Rows.Add(row);
+                stt++;
+            }
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(242, 242, 242);
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.DataSource = dt;
         }
         private void cbDeThi_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -27,7 +68,43 @@ namespace GUI.LopHoc
         }
         private void btnXuatDSHS_Click(object sender, EventArgs e)
         {
-           
+            string tenLop = lopDTO.TenLop;
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Excel Workbook|*.xlsx";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (var workbook = new XLWorkbook())
+                        {
+                            DataTable dt = (DataTable)dataGridView1.DataSource;
+
+                            if (dt != null)
+                            {
+                                var worksheet = workbook.Worksheets.Add("Sheet1");
+                                var tenlop = worksheet.Cell(1, 1);
+                                tenlop.Value = "Tên lớp: " + tenLop;
+                                tenlop.Style.Font.Bold = true;
+
+                                worksheet.Cell(2, 1).InsertTable(dt.AsEnumerable());
+
+                                workbook.SaveAs(sfd.FileName);
+                                MessageBox.Show("Xuất thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không có dữ liệu để xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

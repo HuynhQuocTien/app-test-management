@@ -57,16 +57,16 @@ namespace GUI
                 Random random = new Random();
                 int otp = random.Next(1000, 10000);
                 //MessageBox.Show(otp + "", "Mã OTP", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                var fromAddress = new MailAddress("ptest8867@gmail.com"); //Mail dùng để gửi OTP
+                var fromAddress = new MailAddress("huynhtien1475@gmail.com"); //Mail dùng để gửi OTP
                 var toAddress = new MailAddress(email); // Mail Nhận
-                const string frompass = "wkytqnqfiymgdmyk";
+                const string frompass = "fcymecdswutrlsmf";
                 const string subject = "OTP code";
                 string body = otp.ToString();
 
                 var smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
-                    Port = 587,
+                    Port = 465,
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,

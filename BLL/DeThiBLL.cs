@@ -79,6 +79,10 @@ namespace BLL
             }
             return false;
         }
+        public bool UpdateTrangThaiKQByMaDe(DeThiDTO deThi)
+        {
+            return deThiDAL.UpdateTrangThaiKQByMaDe(deThi.MaDe);
+        }
 
     }
 }

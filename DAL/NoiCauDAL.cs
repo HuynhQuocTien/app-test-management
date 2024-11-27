@@ -64,7 +64,7 @@ namespace DAL
             List<NoiCauDTO> noiCauList = new List<NoiCauDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM NoiCau";
+                string query = "SELECT * FROM NoiCau ORDER BY MaNoiCau ASC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -90,7 +90,7 @@ namespace DAL
             List<NoiCauDTO> noiCauList = new List<NoiCauDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM NoiCau Where MaCauHoi = @MaCauHoi";
+                string query = "SELECT * FROM NoiCau Where MaCauHoi = @MaCauHoi ORDER BY MaNoiCau ASC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@MaCauHoi", MaCauHoi);

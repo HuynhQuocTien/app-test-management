@@ -66,7 +66,7 @@ namespace DAL
             List<GiaoDeThiDTO> giaoDeThiList = new List<GiaoDeThiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM GiaoDeThi";
+                string query = "SELECT * FROM GiaoDeThi WHERE is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

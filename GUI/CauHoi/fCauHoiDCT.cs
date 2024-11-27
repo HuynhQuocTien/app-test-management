@@ -136,20 +136,20 @@ namespace GUI.CauHoi
             string LoaiCauHoi = "Điền từ";
             int MaMonHoc = 0;
             long MaNguoiTao = Convert.ToInt64(Session.UserID);
-            string DoKho = "";
+            int DoKho = 0;
 
             string selectedValue = comboBox1.SelectedItem.ToString();
 
             switch (selectedValue)
             {
                 case "Dễ":
-                    DoKho = "1";
+                    DoKho = 1;
                     break;
                 case "Trung Bình":
-                    DoKho = "2";
+                    DoKho = 2;
                     break;
                 case "Khó":
-                    DoKho = "3";
+                    DoKho = 3;
                     break;
             }
             NoiDung = textBox1.Text;

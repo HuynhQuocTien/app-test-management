@@ -99,7 +99,7 @@ namespace GUI.LopHoc
                         //DeThi obj = new DeThi(deThiBLL.GetAutoIncrement(), deThiDTO.MaDeThi, lopDTO.MaLop, dtpThoiGianBatDau.Value, dtpThoiGianKetThuc.Value, 1);
                         deThi.ThoiGianBatDau = dtpThoiGianBatDau.Value;
                         deThi.ThoiGianKetThuc = dtpThoiGianKetThuc.Value;
-
+                        deThi.TrangThai = 0;
                         if (deThiBLL.Update(deThi))
                         {
                             GiaoDeThiDTO giaoDeThi = new GiaoDeThiDTO(lop.MaLop, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, 0);
@@ -128,8 +128,12 @@ namespace GUI.LopHoc
                     {
                         deThi.ThoiGianBatDau = dtpThoiGianBatDau.Value;
                         deThi.ThoiGianKetThuc = dtpThoiGianKetThuc.Value;
-                        deThiBLL.Update(deThi);
-                        MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        deThi.TrangThai = 0;
+                        if (deThiBLL.Update(deThi))
+                        {
+                            deThiBLL.UpdateTrangThaiKQByMaDe(deThi);
+                            MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         fCTL.RenderDeThi();
                         this.Dispose();
                         this.Close();

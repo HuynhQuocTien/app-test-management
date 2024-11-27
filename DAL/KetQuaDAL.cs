@@ -1,4 +1,4 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -304,7 +304,59 @@ namespace DAL
             return trangThai;
         }
 
+        public int GetAutoIncrement()//lay MaKetQua
+        {
+            int result = -1;
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT MaKetQua FROM KetQua";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                Console.WriteLine("No data");
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
+                                    result = reader.GetInt32(0); // Lấy giá trị cột AUTO_INCREMENT
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result + 1;
+        }
 
+        public bool checkDeThiInKetQua(DeThiDTO deThi)
+        {
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM KetQua WHERE MaDe = @MaDe";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", deThi.MaDe);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
 

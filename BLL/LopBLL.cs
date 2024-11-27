@@ -29,6 +29,14 @@ namespace BLL
         {
             return lopDAL.Update(t);
         }
+        public List<LopDTO> GetAll()
+        {
+            return lopDAL.GetAll();
+        }
+        public LopDTO GetById(LopDTO t)
+        {
+            return lopDAL.GetById(t);
+        }
         public List<LopDTO> getListLopByMaGV(long maGV)
         {
             return lopDAL.GetAllByMaGV(maGV);
