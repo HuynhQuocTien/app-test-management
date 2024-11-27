@@ -181,5 +181,33 @@ namespace DAL
             }
             return result + 1;
         }
+        public CauHoiDaLamDTO GetByMaCauHoi(int MaCauHoiDaLam)
+        {
+            CauHoiDaLamDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM CauHoiDaLam WHERE MaCauHoiDaLam = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", MaCauHoiDaLam);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = new CauHoiDaLamDTO
+                            {
+                                MaCauHoiDaLam = Convert.ToInt32(reader["MaCauHoiDaLam"]),
+                                NoiDung = reader["NoiDung"].ToString(),
+                                IdNguoiTao = Convert.ToInt64(reader["IdNguoiTao"]),
+                                MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                DoKho = reader["DoKho"].ToString(),
+                                LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

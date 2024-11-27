@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using DTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -56,6 +60,18 @@ namespace BLL
         public int getAutoIncrement()
         {
             return cauHoiDaLamDAL.GetAutoIncrement();
+        }
+        public CauHoiDaLamDTO GetCauHoiDaLamByMaCauHoi(int MaCauHoi)
+        {
+            try
+            {
+                return cauHoiDaLamDAL.GetByMaCauHoi(MaCauHoi);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetChiTietDeDaLamById: " + ex.Message);
+                return null;
+            }
         }
 
     }

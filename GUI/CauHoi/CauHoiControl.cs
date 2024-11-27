@@ -547,7 +547,7 @@ namespace GUI.CauHoi
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text, fDangNhap.taiKhoanDTO.Username);
+            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text,fDangNhap.taiKhoanDTO.Username);
             this.numericUpDown1.Enabled = false;
             this.label2.Text = "Trên tổng ... trang";
         }
@@ -579,7 +579,7 @@ namespace GUI.CauHoi
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            render();
+            render(); 
             phanTrang();
             this.numericUpDown1.Value = 1;
         }

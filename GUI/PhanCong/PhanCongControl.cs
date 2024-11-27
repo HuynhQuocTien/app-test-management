@@ -21,10 +21,9 @@ namespace GUI.PhanCong
         public PhanCongControl()
         {
             InitializeComponent();
-            phanTrang();
             LoadDataToGridView();
+            phanTrang();
         }
-
         public void phanTrang()
         {
             // Đặt giới hạn số trang cho NumericUpDown

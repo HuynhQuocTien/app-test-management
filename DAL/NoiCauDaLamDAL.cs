@@ -193,5 +193,33 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<NoiCauDaLamDTO> GetAllByMaCauHoi(int MaCauHoi)
+        {
+            List<NoiCauDaLamDTO> results = new List<NoiCauDaLamDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM NoiCauDaLam WHERE MaCauHoi = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", MaCauHoi);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            NoiCauDaLamDTO cautraloidalam = new NoiCauDaLamDTO
+                            {
+                                MaNoiCauDaLam = Convert.ToInt32(reader["MaNoiCauDaLam"]),
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                NoiDung = reader["NoiDung"].ToString()
+                            };
+
+                            results.Add(cautraloidalam); // Thêm đối tượng vào danh sách
+                        }
+                    }
+                }
+            }
+            return results;
+        }
     }
 }

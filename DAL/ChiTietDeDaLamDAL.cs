@@ -177,5 +177,35 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<ChiTietDeDaLamDTO> GetByMaDeANDMaKetQua(int MaDe, int MaKetQua)
+        {
+            List<ChiTietDeDaLamDTO> results = new List<ChiTietDeDaLamDTO>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM ChiTietDeThiDaLam WHERE MaDe = @MaDe AND MaKetQua = @MaKetQua";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", MaDe);
+                    command.Parameters.AddWithValue("@MaKetQua", MaKetQua);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ChiTietDeDaLamDTO chiTiet = new ChiTietDeDaLamDTO
+                            {
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaCauHoi = Convert.ToInt32(reader["MaCauHoi"]),
+                                MaChiTietDeDaLam = Convert.ToInt32(reader["MaCTDTDL"]),
+                                MaKetQua = Convert.ToInt32(reader["MaKetQua"]),
+                            };
+
+                            results.Add(chiTiet); // Thêm đối tượng vào danh sách
+                        }
+                    }
+                }
+            }
+            return results;
+        }
     }
 }

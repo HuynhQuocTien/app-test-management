@@ -82,5 +82,17 @@ namespace BLL
         {
             return _chiTietDeDaLamDAL.GetAllCauHoiDaLamOfDeThi(DeThi);
         }
+        public List<ChiTietDeDaLamDTO> GetChiTietDeDaLamByMaDeANDMaKetQua(int MaDe, int MaKetQua)
+        {
+            try
+            {
+                return _chiTietDeDaLamDAL.GetByMaDeANDMaKetQua(MaDe, MaKetQua);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetChiTietDeDaLamById: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

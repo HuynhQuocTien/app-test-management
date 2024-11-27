@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DAL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
-using DTO;
 
 namespace BLL
 {
@@ -13,7 +13,7 @@ namespace BLL
         private CauTraLoiDienChoTrongDaLamDAL cauTraLoiDienChoTrongDaLamDAL;
         public CauTraLoiDienChoTrongDaLamBLL()
         {
-            cauTraLoiDienChoTrongDaLamDAL = new CauTraLoiDienChoTrongDaLamDAL();
+            cauTraLoiDienChoTrongDaLamDAL = CauTraLoiDienChoTrongDaLamDAL.getInstance();
         }
         public List<CauTraLoiDienChoTrongDaLamDTO> GetAll(int MaCauHoi)
         {
@@ -39,7 +39,17 @@ namespace BLL
             return cauTraLoiDienChoTrongDaLamDAL.Update(cauTraLoiDienChoTrongDaLam);
             
         }
-
-
+        public List<CauTraLoiDienChoTrongDaLamDTO> GetCauTraLoiByMaCauHoi(int MaCauHoi)
+        {
+            try
+            {
+                return cauTraLoiDienChoTrongDaLamDAL.GetAllByMaCauHoi(MaCauHoi);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetChiTietDeDaLamById: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

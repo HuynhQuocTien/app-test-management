@@ -331,6 +331,12 @@
     <Compile Include="fThongKe.Designer.cs">
       <DependentUpon>fThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="fXemdapan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fXemdapan.Designer.cs">
+      <DependentUpon>fXemdapan.cs</DependentUpon>
+    </Compile>
     <Compile Include="LopHoc\fChiTietLop.cs">
       <SubType>Form</SubType>
     </Compile>
