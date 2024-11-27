@@ -101,6 +101,7 @@ namespace GUI.LopHoc
                 giaoDeThiDTO.MaLop = maLop;
                 giaoDeThiDTO.NguoiGiao = maNguoiDung;
                 giaoDeThiDTO.IsDelete = 0;
+                giaoDeThiDTO.TrangThai = 0;
                 if (giaoDeThiBLL.Add(giaoDeThiDTO) == true)
                 {
                     MessageBox.Show("Đã Giao. Mã Đề: " + selectedItem.MaDe + " Tên Đề: " + selectedItem.TenDe + " Thời Gian Bắt Đầu: " + selectedItem.ThoiGianBatDau);

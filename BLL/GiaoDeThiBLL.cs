@@ -27,6 +27,10 @@ namespace BLL
         {
             return giaoDeThiDAL.GetAll();
         }
+        public GiaoDeThiDTO GetByMaDeAndMaLop(GiaoDeThiDTO giaoDeThi)
+        {
+            return giaoDeThiDAL.GetByMaDeAndMaLop(giaoDeThi);
+        }
         public bool Update(GiaoDeThiDTO giaoDeThi)
         {
             return giaoDeThiDAL.Update(giaoDeThi);

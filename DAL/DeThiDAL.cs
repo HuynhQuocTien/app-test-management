@@ -216,7 +216,7 @@ namespace DAL
             DeThiDTO result = null;
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM DeThi WHERE MaDe = @MaDe";
+                string query = "SELECT * FROM DeThi WHERE MaDe = @MaDe AND is_delete = 0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@MaDe", dethi.MaDe);

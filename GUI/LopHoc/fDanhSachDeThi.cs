@@ -97,7 +97,7 @@ namespace GUI.LopHoc
             int maDe = Convert.ToInt32(obj.MaDe);
             int maLop = Convert.ToInt32(lop.MaLop);
             long maNguoiDung = Convert.ToInt64(fDangNhap.nguoiDungDTO.MaNguoiDung);
-            GiaoDeThiDTO giaoDeThiAdd = new GiaoDeThiDTO(maDe, maLop, maNguoiDung, 0);
+            GiaoDeThiDTO giaoDeThiAdd = new GiaoDeThiDTO(maDe, maLop, maNguoiDung, 0,0);
             GiaoDeThiBLL giaoDeThiBLL = new GiaoDeThiBLL();
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             Panel panelContain = (Panel)clickedButton.Parent;
@@ -167,7 +167,7 @@ namespace GUI.LopHoc
                 Name = "lblThoiGianLamBai",
                 Size = new Size(140, 13),
                 TabIndex = 2,
-                Text = $"Thời gian làm bài: {(int)(deThi.ThoiGianKetThuc - deThi.ThoiGianBatDau).TotalMinutes} phút",
+                Text = $"Thời gian làm bài: {deThi.ThoiGianLamBai} phút",
                 Font = new Font("Segoe UI", 10, FontStyle.Regular)
 
             };
@@ -187,11 +187,8 @@ namespace GUI.LopHoc
 
 
 
-            btnThem.Click += (s, ev) =>
-            {
-                buttonThem_Click(s, ev, deThi);
-            };
-
+            
+           
 
             System.Windows.Forms.Button btnXem = new System.Windows.Forms.Button
             {
@@ -206,45 +203,16 @@ namespace GUI.LopHoc
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
 
-            System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
+            btnThem.Click += (s, ev) =>
             {
-                Location = new Point(10, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Làm bài thi",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
-            };
-            System.Windows.Forms.Button btnXemKq = new System.Windows.Forms.Button
-            {
-                Location = new Point(145, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Kết quả",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = true,
+                buttonThem_Click(s, ev, deThi);
             };
 
-            System.Windows.Forms.Button btnDong = new System.Windows.Forms.Button
+            btnXem.Click += (s, ev) =>
             {
-                Location = new Point(280, 300),
-                Name = "button2",
-                Size = new Size(100, 41),
-                TabIndex = 2,
-                Text = "Đóng",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
+                btnXem_Click(s, ev, deThi);
             };
+
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
@@ -255,7 +223,8 @@ namespace GUI.LopHoc
         }
         private void btnXem_Click(object s, EventArgs ev, DeThiDTO obj)
         {
-
+            fXemDeThiCuaLop f = new fXemDeThiCuaLop(this, obj);
+            f.ShowDialog();
         }
 
         private void btnThem_Click(object s, EventArgs ev, DeThiDTO obj)

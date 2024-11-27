@@ -18,14 +18,15 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "INSERT INTO GiaoDeThi (MaDe, MaLop, NguoiGiao, is_delete)" +
-                        "VALUES (@MaDe, @MaLop, @NguoiGiao, @is_delete);";
+                    string query = "INSERT INTO GiaoDeThi (MaDe, MaLop, NguoiGiao, is_delete,TrangThai)" +
+                        "VALUES (@MaDe, @MaLop, @NguoiGiao, @is_delete,@TrangThai);";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaDe", giaoDeThi.MaDe);
                         command.Parameters.AddWithValue("@MaLop", giaoDeThi.MaLop);
                         command.Parameters.AddWithValue("@NguoiGiao", giaoDeThi.NguoiGiao);
                         command.Parameters.AddWithValue("@is_delete", giaoDeThi.IsDelete);
+                        command.Parameters.AddWithValue("@TrangThai", giaoDeThi.TrangThai);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -78,7 +79,8 @@ namespace DAL
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
                                 NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
-                                IsDelete = Convert.ToInt32(reader["IsDelete"])
+                                IsDelete = Convert.ToInt32(reader["is_delete"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"])    
                             };
                             giaoDeThiList.Add(giaoDeThi);
                         }
@@ -107,7 +109,8 @@ namespace DAL
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
                                 NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
-                                IsDelete = Convert.ToInt32(reader["IsDelete"])
+                                IsDelete = Convert.ToInt32(reader["is_delete"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"])
                             };
                         }
                     }
@@ -122,13 +125,14 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "UPDATE GiaoDeThi SET NguoiGiao = @NguoiGiao, IsDelete = @IsDelete WHERE MaDe = @MaDe AND MaLop = @MaLop";
+                    string query = "UPDATE GiaoDeThi SET NguoiGiao = @NguoiGiao, is_delete = @is_delete, TrangThai = @TrangThai WHERE MaDe = @MaDe AND MaLop = @MaLop";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaDe", giaoDeThi.MaDe);
                         command.Parameters.AddWithValue("@MaLop", giaoDeThi.MaLop);
                         command.Parameters.AddWithValue("@NguoiGiao", giaoDeThi.NguoiGiao);
-                        command.Parameters.AddWithValue("@IsDelete", giaoDeThi.IsDelete);
+                        command.Parameters.AddWithValue("@is_delete", giaoDeThi.IsDelete);
+                        command.Parameters.AddWithValue("@TrangThai", giaoDeThi.TrangThai);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
@@ -255,7 +259,8 @@ namespace DAL
                                 MaDe = Convert.ToInt32(reader["MaDe"]),
                                 MaLop = Convert.ToInt32(reader["MaLop"]),
                                 NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
-                                IsDelete = Convert.ToInt32(reader["is_delete"])
+                                IsDelete = Convert.ToInt32(reader["is_delete"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"])
                             };
                             dtList.Add(dt);
                         }
@@ -291,6 +296,35 @@ namespace DAL
                 }
             }
             return dtList;
+        }
+
+        public GiaoDeThiDTO GetByMaDeAndMaLop(GiaoDeThiDTO giaoDeThi)
+        {
+            GiaoDeThiDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM GiaoDeThi WHERE MaDe = @MaDe AND MaLop = @MaLop";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDe", giaoDeThi.MaDe);
+                    command.Parameters.AddWithValue("@MaLop", giaoDeThi.MaLop);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = new GiaoDeThiDTO
+                            {
+                                MaDe = Convert.ToInt32(reader["MaDe"]),
+                                MaLop = Convert.ToInt32(reader["MaLop"]),
+                                NguoiGiao = Convert.ToInt64(reader["NguoiGiao"]),
+                                IsDelete = Convert.ToInt32(reader["is_delete"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"])
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

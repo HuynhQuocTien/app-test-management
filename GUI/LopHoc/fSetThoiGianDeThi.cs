@@ -102,7 +102,7 @@ namespace GUI.LopHoc
                         deThi.TrangThai = 0;
                         if (deThiBLL.Update(deThi))
                         {
-                            GiaoDeThiDTO giaoDeThi = new GiaoDeThiDTO(lop.MaLop, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, 0);
+                            GiaoDeThiDTO giaoDeThi = new GiaoDeThiDTO(lop.MaLop, deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung, 0,0);
                             giaoDeThiBLL.Add(giaoDeThi);
                         }
                         MessageBox.Show("Thêm đề thi vào lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -138,7 +138,12 @@ namespace GUI.LopHoc
         }
         private void CreatePanel(DeThiDTO deThi)
         {
-            int trangthaiData =deThi.TrangThai; //
+            GiaoDeThiDTO request = new GiaoDeThiDTO
+            {
+                MaDe = deThi.MaDe,
+                MaLop = lopDTO.MaLop
+            };
+            GiaoDeThiDTO giaoDeThiDTO = giaoDeThiBLL.GetByMaDeAndMaLop(request) ?? null;
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
@@ -231,14 +236,14 @@ namespace GUI.LopHoc
 				//dtclBus.DeleteByMaLopAndMaDeThi(lop.MaLop, baiThi.MaDeThi);
 				deThi.TrangThai = -1;
 			}
-            if (deThi.TrangThai == 0)
+            if (deThi.TrangThai == 0 )
             {
                 lblTrangThai.Text = $"Trạng thái: Đang mở ({thoiGianText})";
             }
-            else if(deThi.TrangThai == 1)
+            else if(deThi.TrangThai == 1 && giaoDeThiDTO.TrangThai == 1 || giaoDeThiDTO.TrangThai == 0)
             {
                 lblTrangThai.Text = "Trạng thái: Đã đóng - Xem đáp án: Đóng";
-            } else if (deThi.TrangThai == 2)
+            } else if (deThi.TrangThai == 1 && giaoDeThiDTO.TrangThai == 2)
             {
                 lblTrangThai.Text = "Trạng thái: Đã đóng - Xem đáp án: Mở";
             }
@@ -272,7 +277,7 @@ namespace GUI.LopHoc
                 Name = "button2" + counter,
                 Size = new System.Drawing.Size(120, 41),
                 TabIndex = 2,
-                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Kết quả" : (ketQuaBLL.GetTrangThai(lopDTO.MaLop, deThi.MaDe) == 2? "Đóng đáp án" : "Mở đáp án") ,
+                Text = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? "Kết quả" : (giaoDeThiDTO.TrangThai == 2 ? "Đóng đáp án" : "Mở đáp án") ,
                 UseVisualStyleBackColor = true,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -300,12 +305,37 @@ namespace GUI.LopHoc
                 {
                     KetQuaBLL ketQuaBLL = new KetQuaBLL();
                     KetQuaDTO ketQuaDTO = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-                    fKetQua f = new fKetQua(deThi, lopDTO, ketQuaDTO);
-                    f.ShowDialog();
+                    if (ketQuaDTO == null)
+                    {
+                        MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        fKetQua f = new fKetQua(deThi, lopDTO, ketQuaDTO);
+                        f.ShowDialog();
+                    }
+                    
                 }
                 if (btnXemKq.Text.Contains("Mở đáp án") || btnXemKq.Text.Contains("Đóng đáp án"))
                 {
-                  btnXemKq_Click(s, ev, deThi);
+                    if (giaoDeThiDTO == null)
+                    {
+                        MessageBox.Show("Lớp này chưa được phân công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    } else if(giaoDeThiDTO.TrangThai == 1 || giaoDeThiDTO.TrangThai == 0)
+                    {   
+                        giaoDeThiDTO.TrangThai = 2;
+                        btnDongMoKQ_Click(s, ev, giaoDeThiDTO);
+                        MessageBox.Show("Đề thi được mở đáp án cho lớp này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    } else if (giaoDeThiDTO.TrangThai == 2)
+                    {
+                        giaoDeThiDTO.TrangThai = 1;
+                        btnDongMoKQ_Click(s, ev, giaoDeThiDTO);
+                        MessageBox.Show("Đề thi đã được đóng đáp án cho lớp này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
                 //btnXemKq_Click(s, ev,  deThi);
             };
@@ -316,28 +346,38 @@ namespace GUI.LopHoc
                 btnLamBai_Click(s, ev, deThi, lopDTO);
             };
 
-            
-            
 
-            if (btnDong.Text.Contains("Xem lại"))
+            btnDong.Click += (s, ev) =>
             {
-                btnDong.Click += (s, ev) =>
+                if (btnDong.Text.Contains("Xem lại"))
                 {
-                    btnXemlai_Click(s, ev, deThi, lopDTO, trangthaiData);
-                };
-            }
-            else
-            {
-                btnDong.Click += (s, ev) =>
-                {
-                    btnMoDapAn_Click(s, ev, deThi, lopDTO);
-                };
-
-                btnDong.Click += (s, ev) =>
+                    if (giaoDeThiDTO == null)
+                    {
+                        MessageBox.Show("Lớp này chưa được phân công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if (giaoDeThiDTO.TrangThai == 1)
+                    {
+                        MessageBox.Show("Bạn chưa được phép xem lại đáp án của bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if (giaoDeThiDTO.TrangThai == 2)
+                    {
+                        btnXemlai_Click(s, ev, deThi, lopDTO);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa được phép xem lại đáp án của bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                else
                 {
                     btnDong_Click(s, ev, deThi, lopDTO);
-                };
-            }
+                    return;
+                }
+            };
             panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, lblTrangThai });
 
             panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
@@ -354,35 +394,26 @@ namespace GUI.LopHoc
       
 
 
-        private void btnXemKq_Click(object s, EventArgs ev, DeThiDTO obj)
+        private void btnDongMoKQ_Click(object s, EventArgs ev, GiaoDeThiDTO req)
         {
-
-            int? trangThai = ketQuaBLL.GetTrangThai(lopDTO.MaLop, obj.MaDe);
-
-
-            bool isUpdated;
-            if (trangThai == 1)
-            {
-                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 2);
-            }
-            else
-            {
-                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 0);
-            }
-
-            if (isUpdated)
-            {
-                MessageBox.Show("Trạng thái đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật trạng thái không thành công. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            bool isUpdated = false;
+            isUpdated = giaoDeThiBLL.Update(req);
             RenderDeThi();
         }
 
         private void btnLamBai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
         {
+            GiaoDeThiDTO request = new GiaoDeThiDTO
+            {
+                MaDe = obj.MaDe,
+                MaLop = lopDTO.MaLop
+            };
+            GiaoDeThiDTO giaoDeThiDTO = giaoDeThiBLL.GetByMaDeAndMaLop(request) ?? null;
+            if(giaoDeThiDTO.TrangThai == -1)
+            {
+                MessageBox.Show("Đề thi đã được đóng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             // thực hiện chức năng mở đề thi khi de thi dang dong
             if (!fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
@@ -502,8 +533,9 @@ namespace GUI.LopHoc
         }
 
 
-        private void btnXemlai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop, int trangthaiData)
+        private void btnXemlai_Click(object s, EventArgs ev, DeThiDTO obj, LopDTO lop)
         {
+
             //xemkq
             KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
             if (kq == null)
@@ -511,125 +543,16 @@ namespace GUI.LopHoc
                 MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (kq.TrangThai != 2 && kq != null)
-            {
-                MessageBox.Show("Không được quyền xem đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (kq.TrangThai != 2 && kq != null)
+            //{
+            //    MessageBox.Show("Không được quyền xem đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
             if (kq != null)
             {
                 fXemdapan f = new fXemdapan(kq);
                 f.ShowDialog();
             }
-        }
-
-        private void CreatePanelSV()
-        {
-            Panel panelContain = new Panel
-            {
-                Location = new Point(3, 3),
-                Name = "panelContain",
-                Size = new Size(390, 350),
-                TabIndex = 0,
-                BorderStyle = BorderStyle.FixedSingle,
-                Margin = new Padding(10, 10, 10, 10),
-            };
-
-            Panel panelHead = new Panel
-            {
-                Location = new Point(0, 0),
-                Name = "panelHead",
-                Size = new Size(390, 290),
-                TabIndex = 1,
-                BackColor = GetRandomColor()
-            };
-
-            Label lblTenDeThi = new Label
-            {
-                AutoSize = false,
-                Font = new System.Drawing.Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0))),
-                Location = new Point(10, 9),
-                Name = "lblTenDeThi",
-                Size = new Size(300, 200),
-                TabIndex = 0,
-                Text = "Đề thi môn ABCxzy",
-                AutoEllipsis = true
-            };
-            toolTip.SetToolTip(lblTenDeThi, lblTenDeThi.Text);
-
-
-
-            Label lblMonHoc = new Label
-            {
-                AutoSize = true,
-                Location = new Point(20, 220),
-                Name = "lblMonHoc1",
-                Size = new Size(110, 13),
-                TabIndex = 1,
-                Text = "Môn học: AAA",
-                Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
-
-            };
-
-            Label lblThoiGianLamBai = new Label
-            {
-                AutoSize = true,
-                Location = new Point(20, 250),
-                Name = "lblThoiGianLamBai",
-                Size = new Size(140, 13),
-                TabIndex = 2,
-                Text = "Thời gian làm bài: 60 phút",
-                Font = new System.Drawing.Font("Segoe UI", 10, FontStyle.Regular)
-
-            };
-
-            System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
-            {
-                Location = new Point(10, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Làm bài thi",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
-            };
-            System.Windows.Forms.Button btnXemDa = new System.Windows.Forms.Button
-            {
-                Location = new Point(135, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Kết quả",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = true,
-            };
-            System.Windows.Forms.Button btnXemLai = new System.Windows.Forms.Button
-            {
-                Location = new Point(260, 300),
-                Name = "button2",
-                Size = new Size(120, 41),
-                TabIndex = 2,
-                Text = "Xem lại",
-                UseVisualStyleBackColor = true,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = true,
-                Visible = true,
-            };
-            panelHead.Controls.AddRange(new Control[] { lblThoiGianLamBai, lblMonHoc, lblTenDeThi, });
-
-            panelContain.Location = new Point(20, flowLayoutPanel1.Controls.Count * 150);
-            flowLayoutPanel1.Controls.Add(panelContain);
-            panelContain.Controls.AddRange(new Control[] { btnLamBai, panelHead, btnXemDa, btnXemLai });
-
-            flowLayoutPanel1.AutoScroll = true;
         }
         private void btnImport_Click(object sender, EventArgs e)
         {

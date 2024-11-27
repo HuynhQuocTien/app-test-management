@@ -34,7 +34,7 @@ namespace GUI
         private fChiTietLop fChiTietLop;
 
         private KetQuaBLL ketQuaBLL;
-        private DeThiBLL DeThiBLL;
+        private DeThiBLL deThiBLL;
         private CauHoiBLL cauHoiBLL;
         private ChiTietDeBLL chiTietDeBLL;
         private MonHocBLL monHocBLL;
@@ -83,7 +83,7 @@ namespace GUI
             this.fChiTietLop = fChiTietLop;
 
             ketQuaBLL = new KetQuaBLL();
-            DeThiBLL = new DeThiBLL();
+            deThiBLL = new DeThiBLL();
             cauHoiBLL = new CauHoiBLL();
             monHocBLL = new MonHocBLL();
             chiTietDeBLL = new ChiTietDeBLL();

@@ -12,13 +12,15 @@ namespace DTO
         public int MaLop { get; set; }
         public long NguoiGiao { get; set; }
         public int IsDelete { get; set; }
+        public int TrangThai { get; set; }
         public GiaoDeThiDTO() { }
-        public GiaoDeThiDTO(int maDe, int maLop, long nguoiGiao, int is_delete)
+        public GiaoDeThiDTO(int maDe, int maLop, long nguoiGiao, int is_delete, int trangThai)
         {
             MaDe = maDe;
             MaLop = maLop;
             NguoiGiao = nguoiGiao;
             this.IsDelete = is_delete;
+            TrangThai = trangThai;
         }
 
     }
