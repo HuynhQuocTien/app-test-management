@@ -200,7 +200,7 @@ namespace DAL
                                 NoiDung = reader["NoiDung"].ToString(),
                                 IdNguoiTao = Convert.ToInt64(reader["IdNguoiTao"]),
                                 MaMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
-                                DoKho = reader["DoKho"].ToString(),
+                                DoKho = Convert.ToInt32(reader["DoKho"].ToString()),
                                 LoaiCauHoi = reader["LoaiCauHoi"].ToString(),
                             };
                         }

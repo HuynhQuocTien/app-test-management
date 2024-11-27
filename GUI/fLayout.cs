@@ -42,6 +42,7 @@ namespace GUI
             AddColorChange(btnThongKe, hoverColor, hoverColor);
             AddColorChange(btnThoat, hoverColor, hoverColor);
             AddColorChange(btnPhanCong, hoverColor, hoverColor);
+            AddColorChange(btnLichSuDangNhap, hoverColor, hoverColor);
             LoadInfoOwner();
             //AddColorChange(btnPhanQuyen, hoverColor, hoverColor);
             infoPanelBox.Paint += (sender, e) =>
@@ -117,6 +118,7 @@ namespace GUI
             userPanel.Visible = false;
             phanCongPanel.Visible = false;
             nhomQuyenPanel.Visible = false;
+            fLichSuDangNhapPanel.Visible = false;
 
         }
         private void ShowUserControl(UserControl showControl)
@@ -155,35 +157,46 @@ namespace GUI
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
+            //fLandingPanel = new fLanding();
             ShowUserControl(fLandingPanel);
             this.Text = "Trang chủ";
         }
         private void btnLopHoc_Click(object sender, EventArgs e)
         {
+            //lopHocPanel = new LopHoc.LopHocControl();
             ShowUserControl(lopHocPanel);
             this.Text = "Lớp học";
         }
 
         private void btnMonHoc_Click(object sender, EventArgs e)
         {
+            //monHocPanel = new MonHoc.MonHocControl();
             ShowUserControl(monHocPanel);
             this.Text = "Môn học";
         }
 
         private void btnCauHoi_Click(object sender, EventArgs e)
         {
+            //cauHoiPanel = new CauHoi.CauHoiControl();
             ShowUserControl(cauHoiPanel);
             this.Text = "Câu hỏi";
         }
 
         private void btnDeThi_Click(object sender, EventArgs e)
         {
+            //deThiPanel = new DeThi.DeThiControl();
             ShowUserControl(deThiPanel);
             this.Text = "Đề thi";
         }
-
+        private void btnLichSuDangNhap_Click(object sender, EventArgs e)
+        {
+            //fLichSuDangNhapPanel = new fLichSuDangNhap();
+            ShowUserControl(fLichSuDangNhapPanel);
+            this.Text = "Lịch sử đăng nhập";
+        }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            //thongKePanel = new fThongKe();
             ShowUserControl(thongKePanel);
             this.Text = "Thống kê";
         }
@@ -270,7 +283,9 @@ namespace GUI
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            containerBtnPanel.Controls.Add(btnThoat, 0, 9);
+            containerBtnPanel.Controls.Add(btnLichSuDangNhap, 0, 10);
+            containerBtnPanel.RowStyles.Add(new RowStyle());
+            containerBtnPanel.Controls.Add(btnThoat, 0,11);
             containerBtnPanel.RowStyles.Add(new RowStyle());
 
         }

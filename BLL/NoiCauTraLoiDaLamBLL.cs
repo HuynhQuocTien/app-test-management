@@ -60,5 +60,18 @@ namespace BLL
             };
             return _noiCauTraLoiDaLamDAL.GetById(noiCauTraLoiDaLam);
         }
+
+        public NoiCauTraLoiDaLamDTO GetNoiCauTraLoiByMaNoiCau(int MaNoiCau)
+        {
+            try
+            {
+                return _noiCauTraLoiDaLamDAL.GetByMaNoiCau(MaNoiCau);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetChiTietDeDaLamById: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

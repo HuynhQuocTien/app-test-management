@@ -307,6 +307,12 @@
     <Compile Include="fLayout.Designer.cs">
       <DependentUpon>fLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="fLichSuDangNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fLichSuDangNhap.Designer.cs">
+      <DependentUpon>fLichSuDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMatKhauMoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fLayout.resx">
       <DependentUpon>fLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLichSuDangNhap.resx">
+      <DependentUpon>fLichSuDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fNhapOTP.resx">
       <DependentUpon>fNhapOTP.cs</DependentUpon>

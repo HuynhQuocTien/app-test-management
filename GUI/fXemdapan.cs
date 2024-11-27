@@ -318,7 +318,7 @@ namespace GUI
             int currentRow = 0;
             foreach (NoiCauDaLamDTO noiCau in dsNoiCau)
             {
-                NoiCauTraLoiBLLDaLam noiCauTraLoiBLL = new NoiCauTraLoiBLLDaLam();
+                NoiCauTraLoiDaLamBLL noiCauTraLoiBLL = new NoiCauTraLoiDaLamBLL();
                 NoiCauTraLoiDaLamDTO NoiCauTraLoi = noiCauTraLoiBLL.GetNoiCauTraLoiByMaNoiCau(noiCau.MaNoiCauDaLam);
 
                 // Thêm row mới cho mỗi cặp nối

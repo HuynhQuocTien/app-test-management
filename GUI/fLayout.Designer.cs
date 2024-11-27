@@ -54,10 +54,12 @@ namespace GUI
             this.btnNguoiDung = new System.Windows.Forms.Button();
             this.btnPhanCong = new System.Windows.Forms.Button();
             this.btnPhanQuyen = new System.Windows.Forms.Button();
+            this.btnLichSuDangNhap = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.containerPanel = new System.Windows.Forms.Panel();
             this.fLandingPanel = new GUI.fLanding();
+            this.fLichSuDangNhapPanel = new GUI.fLichSuDangNhap();
             this.phanCongPanel = new GUI.PhanCong.PhanCongControl();
             this.nhomQuyenPanel = new GUI.NhomQuyen.NhomQuyenControl();
             this.lopHocPanel = new GUI.LopHoc.LopHocControl();
@@ -238,7 +240,7 @@ namespace GUI
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThoat.Size = new System.Drawing.Size(310, 50);
-            this.btnThoat.TabIndex = 10;
+            this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "  Đăng xuất";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -407,7 +409,7 @@ namespace GUI
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThongKe.Size = new System.Drawing.Size(310, 50);
-            this.btnThongKe.TabIndex = 9;
+            this.btnThongKe.TabIndex = 10;
             this.btnThongKe.Text = "  Thống kê";
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -441,6 +443,7 @@ namespace GUI
             this.containerPanel.Controls.Add(this.cauHoiPanel);
             this.containerPanel.Controls.Add(this.deThiPanel);
             this.containerPanel.Controls.Add(this.userPanel);
+            this.containerPanel.Controls.Add(this.fLichSuDangNhapPanel);
             this.containerPanel.Controls.Add(this.thongKePanel);
             this.containerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerPanel.Location = new System.Drawing.Point(0, 0);
@@ -520,13 +523,26 @@ namespace GUI
             this.userPanel.Size = new System.Drawing.Size(1210, 845);
             this.userPanel.TabIndex = 8;
             // 
-            // thongKePanel
+            // btnLichSuDangNhap
             // 
-            this.thongKePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongKePanel.Location = new System.Drawing.Point(0, 0);
-            this.thongKePanel.Name = "thongKePanel";
-            this.thongKePanel.Size = new System.Drawing.Size(1210, 845);
-            this.thongKePanel.TabIndex = 9;
+            this.btnLichSuDangNhap.BackColor = System.Drawing.Color.White;
+            this.btnLichSuDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLichSuDangNhap.FlatAppearance.BorderSize = 0;
+            this.btnLichSuDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichSuDangNhap.Font = new System.Drawing.Font("Segoe UI", 13.2F);
+            this.btnLichSuDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSuDangNhap.Image")));
+            this.btnLichSuDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichSuDangNhap.Location = new System.Drawing.Point(10, 185);
+            this.btnLichSuDangNhap.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnLichSuDangNhap.MinimumSize = new System.Drawing.Size(117, 46);
+            this.btnLichSuDangNhap.Name = "btnLichSuDangNhap";
+            this.btnLichSuDangNhap.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLichSuDangNhap.Size = new System.Drawing.Size(310, 60);
+            this.btnLichSuDangNhap.TabIndex = 10;
+            this.btnLichSuDangNhap.Text = "  Lịch sử đăng nhập";
+            this.btnLichSuDangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichSuDangNhap.UseVisualStyleBackColor = false;
+            this.btnLichSuDangNhap.Click += new System.EventHandler(this.btnLichSuDangNhap_Click);
             // 
             // fLayout
             // 
@@ -566,7 +582,7 @@ namespace GUI
         private Button btnMonHoc;
         private Button btnPhanCong;
         private Button btnPhanQuyen;
-
+        private Button btnLichSuDangNhap;
 
         private Color hoverColor = ColorTranslator.FromHtml("#8eddf9");
         private Color defaultTitleBtnColor = ColorTranslator.FromHtml("#646568");
@@ -581,6 +597,7 @@ namespace GUI
         private MonHocControl monHocPanel;
         private CauHoiControl cauHoiPanel;
         private DeThiControl deThiPanel;
+        private fLichSuDangNhap fLichSuDangNhapPanel;
         private Panel containerPanel;
         private Button btnNguoiDung;
         private fThongKe thongKePanel;

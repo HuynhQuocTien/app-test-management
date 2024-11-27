@@ -1,21 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\huynh\\source\\repos\\app-test-management\\app-test-management\\",
+  "WorkspaceRootPath": "E:\\GitHub\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\cauhoicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|e:\\github\\app-test-management\\dto\\cauhoidalamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\cauhoicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fxemdapan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\cauhoi\\cauhoicontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fxemdapan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|e:\\github\\app-test-management\\dal\\cauhoidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|E:\\GitHub\\app-test-management\\gui\\lophoc\\fdanhsachsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|e:\\github\\app-test-management\\gui\\fxemdapan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,27 +26,11 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
             },
             {
               "$type": "Bookmark",
@@ -102,66 +83,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CauHoiControl.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ViewState": "AgIAAC4BAAAAAAAAAAAQwEsBAAAPAAAAAAAAAA==",
+              "Title": "CauHoiDaLamDTO.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DTO\\CauHoiDaLamDTO.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\CauHoiDaLamDTO.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\DTO\\CauHoiDaLamDTO.cs",
+              "RelativeToolTip": "..\\DTO\\CauHoiDaLamDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T07:32:31.478Z",
+              "WhenOpened": "2024-11-27T11:31:15.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CauHoiControl.cs [Design]",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.cs [Design]",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.cs [Design]",
+              "Title": "fXemdapan.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fXemdapan.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.cs",
+              "RelativeToolTip": "..\\GUI\\fXemdapan.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwEAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T07:32:29.618Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CauHoiControl.Designer.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.Designer.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\CauHoiControl.Designer.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\CauHoiControl.Designer.cs",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\CauHoiControl.Designer.cs",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAwwAcBAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T07:32:04.385Z",
+              "WhenOpened": "2024-11-27T11:30:34.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CauHoiDAL.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\DAL\\CauHoiDAL.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\CauHoiDAL.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\DAL\\CauHoiDAL.cs",
-              "RelativeToolTip": "..\\DAL\\CauHoiDAL.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA0wCUAAAAzAAAAAAAAAA==",
+              "Title": "fXemdapan.Designer.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.Designer.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fXemdapan.Designer.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.Designer.cs",
+              "RelativeToolTip": "..\\GUI\\fXemdapan.Designer.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T07:31:16.658Z",
+              "WhenOpened": "2024-11-27T11:28:58.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "fDanhSachSV.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fDanhSachSV.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fDanhSachSV.cs",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fDanhSachSV.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwEcAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "fXemdapan.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fXemdapan.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fXemdapan.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\fXemdapan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:43:56.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T11:28:52.935Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

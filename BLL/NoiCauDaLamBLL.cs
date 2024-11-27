@@ -80,7 +80,19 @@ namespace BLL
         {
             try
             {
-                return noiCauDaLamDAL.GetAllByMaCauHoi(MaCauHoi);
+                return _noiCauDaLamDAL.GetAllByMaCauHoi(MaCauHoi);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetChiTietDeDaLamById: " + ex.Message);
+                return null;
+            }
+        }
+        public NoiCauTraLoiDaLamDTO GetNoiCauTraLoiByMaNoiCau(int MaNoiCau)
+        {
+            try
+            {
+                return _noiCauDaLamDAL.GetByMaNoiCau(MaNoiCau);
             }
             catch (Exception ex)
             {
