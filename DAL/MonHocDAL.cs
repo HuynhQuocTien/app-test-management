@@ -64,6 +64,25 @@ namespace DAL
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+        }
+        public bool checkMaMonHoc(MonHocDTO monHoc)
+        {
+            try
+            {
+                using (SqlConnection conn = GetConnectionDb.GetConnection())
+                {
+                    string query = "SELECT COUNT(*) FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@MaMonHoc", monHoc.MaMonHoc);
+                        int count = (int)command.ExecuteScalar();
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
                 return false;
             }
         }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 using Excell = Microsoft.Office.Interop.Excel;
-using DAL;
+using System.Windows;
 
 namespace GUI.MonHoc
 {
@@ -40,10 +40,8 @@ namespace GUI.MonHoc
             dataGridView1.Columns["SoTietLT"].HeaderText = "Số tiết lý thuyết";
             dataGridView1.Columns["SoTietTH"].HeaderText = "Số tiết thực hành";
             dataGridView1.Columns["TrangThai"].HeaderText = "Trạng thái";
-            dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
+            //dataGridView1.Columns["is_delete"].HeaderText = "Trạng thái xóa";
             dataGridView1.Columns["is_delete"].Visible = false;
-            // Gắn sự kiện để tùy chỉnh hiển thị cột "Trạng thái"
-            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
         }
         private void loadDataGridView()
         {
@@ -146,8 +144,25 @@ namespace GUI.MonHoc
                     //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
 
                     // Add vào database
-                    string tb = monHocBLL.Import(monHoc);
+                    
+                    if (monHocBLL.checkMaMonHoc(monHoc))
+                    {
+                        DialogResult result = System.Windows.Forms.MessageBox.Show($" Bạn có muốn update Môn học có mã {monHoc.MaMonHoc}", "Thông báo", MessageBoxButtons.YesNo);
+                        if(result == DialogResult.Yes)
+                        {
+                            System.Windows.Forms.MessageBox.Show(monHocBLL.Update(monHoc), "Thông báo");
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        monHocBLL.Add(monHoc);
+                    }
 
+                    
                 }
 
                 // Gán DataTable cho DataGridView
@@ -241,7 +256,7 @@ namespace GUI.MonHoc
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn xóa môn học này ?", "Cảnh báo", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if(result == DialogResult.Yes)
             {
                 MonHocBLL monHocBLL = new MonHocBLL();
                 string thongBao = monHocBLL.Delete(this.monHocDTO);

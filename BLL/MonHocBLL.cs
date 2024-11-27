@@ -41,6 +41,10 @@ namespace BLL
             }
             return "Thêm thất bại";
         }
+        public bool checkMaMonHoc(MonHocDTO monHoc)
+        {
+            return monHocDAL.checkMaMonHoc(monHoc);
+        }
         public string Update(MonHocDTO monHoc) 
         {
             if (monHocDAL.Update(monHoc))
