@@ -12,24 +12,23 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using BLL;
 using DocumentFormat.OpenXml.Office.Word;
-using GUI.CauHoi;
 
 
 namespace GUI.PhanCong
 {
     public partial class PhanCongControl : UserControl
     {
-        private int Allrecord;
         public PhanCongControl()
         {
             InitializeComponent();
-            LoadDataToGridView();
             phanTrang();
+            LoadDataToGridView();
         }
+
         public void phanTrang()
         {
             // Đặt giới hạn số trang cho NumericUpDown
-            int totalRecords = Allrecord;  // Tổng số bản ghi
+            int totalRecords = countPC();  // Tổng số bản ghi
 
             int recordsPerPage = 10; // Số bản ghi trên mỗi trang
             int totalPages = (int)Math.Ceiling((double)totalRecords / recordsPerPage);
@@ -50,39 +49,127 @@ namespace GUI.PhanCong
 
             // Tải dữ liệu từ cơ sở dữ liệu hoặc danh sách, lấy các bản ghi từ startRecord đến startRecord + recordsPerPage
             // Ví dụ:
-            PhanCongBLL phanCongBLL = new PhanCongBLL();
-            DataTable pageData = phanCongBLL.GetDataForPage(startRecord, recordsPerPage);
+            DataTable pageData = GetDataForPage(startRecord, recordsPerPage);
+
             dataGridView1.DataSource = pageData;
         }
 
-        
+        private DataTable GetDataForPage(int startRecord, int recordsPerPage)
+        {
+            DataTable dt = new DataTable();
+
+            // Chuỗi kết nối tới cơ sở dữ liệu
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
+                string query = @"
+            SELECT ND.Ten as 'Tên Giáo viên', MH.TenMonHoc as 'Môn Học Phân Công' 
+            FROM PhanCong PC 
+            INNER JOIN NguoiDung ND ON ND.MaNguoiDung = PC.MaGV 
+            INNER JOIN MonHoC MH ON MH.MaMonHoc = PC.MaMonHoc 
+            ORDER BY ND.Ten 
+            OFFSET @StartRecord ROWS 
+            FETCH NEXT @RecordsPerPage ROWS ONLY";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm các tham số cho OFFSET và FETCH NEXT
+                    cmd.Parameters.AddWithValue("@StartRecord", startRecord);
+                    cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
+
+                    // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+
+        public int countPC()
+        {
+            // Kết nối đến cơ sở dữ liệu SQL Server
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                try
+                {
+                    // Truy vấn dữ liệu từ SQL Server
+                    string query = "SELECT COUNT(*) as 'all' FROM PhanCong PC INNER JOIN NguoiDung ND ON ND.MaNguoiDung=PC.MaGV  INNER JOIN MonHoC MH ON MH.MaMonHoc=PC.MaMonHoc";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
+                    return 0;
+                }
+            }
+        }
 
         private void LoadDataToGridView()
         {
             // Kết nối đến cơ sở dữ liệu SQL Server
-            PhanCongBLL phanCongBLL = new PhanCongBLL();
-            dataGridView1.DataSource = phanCongBLL.GetAll();
-            Allrecord=dataGridView1.RowCount ;
-            LoadPage(1, 10);
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                try
+                {
+                    // Truy vấn dữ liệu từ SQL Server
+                    string query = "SELECT ND.Ten as 'Tên Giáo viên', MH.TenMonHoc as 'Môn Học Phân Công' FROM PhanCong PC INNER JOIN NguoiDung ND ON ND.MaNguoiDung=PC.MaGV INNER JOIN MonHoC MH ON MH.MaMonHoc=PC.MaMonHoc"; 
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+
+                    // Đổ dữ liệu vào DataTable
+                    da.Fill(dt);
+
+                    // Gán dữ liệu vào DataGridView
+                    dataGridView1.DataSource = dt;
+
+                    // Đóng kết nối
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
+                }
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             fAddPhanCong fthemPhanCong = new fAddPhanCong();
             fthemPhanCong.Show();
-            fthemPhanCong.FormClosed += (s, args) => {
-                LoadDataToGridView();
-                phanTrang();
-                this.numericUpDown1.Value = 1;
-            };
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-               PhanCongBLL phanCongBLL = new PhanCongBLL();
-               dataGridView1.DataSource = phanCongBLL.GetTimKiem(textBoxTimKiem.Text);
-                this.numericUpDown1.Enabled = false;
-                this.numericUpDown1.Value = 1;
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                try
+                {
+                    // Truy vấn dữ liệu từ SQL Server
+                    string query = "SELECT ND.Ten as 'Tên Giáo viên', MH.TenMonHoc as 'Môn Học Phân Công' FROM PhanCong PC INNER JOIN NguoiDung ND ON ND.MaNguoiDung=PC.MaGV INNER JOIN MonHoC MH ON MH.MaMonHoc=PC.MaMonHoc WHERE ND.Ten LIKE @Ten OR MH.TenMonHoc LIKE @TenMonHoc";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Ten", "%" + textBoxTimKiem.Text + "%");
+                    cmd.Parameters.AddWithValue("@TenMonHoc", "%" + textBoxTimKiem.Text + "%");
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    // Đổ dữ liệu vào DataTable
+                    da.Fill(dt);
+
+                    // Gán dữ liệu vào DataGridView
+                    dataGridView1.DataSource = dt;
+
+                    // Đóng kết nối
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
+                }
+            }
+
         }
     }
 }

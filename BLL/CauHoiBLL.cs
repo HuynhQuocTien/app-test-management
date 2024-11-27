@@ -34,6 +34,16 @@ namespace BLL
         {
             return cauHoiDAL.GetDataForPage(startRecord, recordsPerPage, MaNguoiTao);
         }
+
+        public List<CauHoiDTO> GetTimKiem(string timkiem)
+        {
+            return cauHoiDAL.GetTimKiem(timkiem);
+        }
+
+        public DataTable GetDataForPage(int startRecord, int recordsPerPage)
+        {
+            return cauHoiDAL.GetDataForPage(startRecord,recordsPerPage);
+        }
         public int Add(CauHoiDTO cauhoi)
         {
             int MaCauHoi = cauHoiDAL.Add(cauhoi);

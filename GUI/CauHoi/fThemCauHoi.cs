@@ -98,7 +98,7 @@ namespace GUI.CauHoi
                         DoKho = 2;
                         break;
                     case "Khó":
-                        DoKho = 3;
+                        DoKho =3;
                         break;
                 }
                 NoiDung= txtNoiDung.Text;
@@ -115,7 +115,7 @@ namespace GUI.CauHoi
                         DoKho = 1;
                         break;
                     case "Trung Bình":
-                        DoKho = 2;
+                        DoKho =2;
                         break;
                     case "Khó":
                         DoKho = 3;
@@ -133,13 +133,13 @@ namespace GUI.CauHoi
                 switch (selectedValue)
                 {
                     case "Dễ":
-                        DoKho = 1;
+                        DoKho =1;
                         break;
                     case "Trung Bình":
-                        DoKho = 2;
+                        DoKho =2;
                         break;
                     case "Khó":
-                        DoKho = 3;
+                        DoKho =3;
                         break;
                 }
                 NoiDung = "Hãy nối hai cột lại với nhau:";
