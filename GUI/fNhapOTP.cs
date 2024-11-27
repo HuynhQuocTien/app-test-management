@@ -66,7 +66,7 @@ namespace GUI
                 var smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
-                    Port = 465,
+                    Port = 587,
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,

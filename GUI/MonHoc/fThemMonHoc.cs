@@ -41,20 +41,34 @@ namespace GUI.MonHoc
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(this.chucNang == "Add")
+            bool isSuccess = false;
+
+            if (this.chucNang == "Add")
             {
-                themMonHoc();
-                clearForm();
-                monHocControl.render();
-                this.Close();
-            }else if(this.chucNang == "Update")
-            {
-                suaMonHoc();
-                clearForm();
-                monHocControl.render();
-                this.Close();
+                if (checkValidate()) 
+                {
+                    themMonHoc();  
+                    isSuccess = true;
+                }
             }
+            else if (this.chucNang == "Update")
+            {
+                if (checkValidate()) 
+                {
+                    suaMonHoc(); 
+                    isSuccess = true;
+                }
+            }
+
+            if (isSuccess)
+            {
+                clearForm();          
+                monHocControl.render();   
+            }
+
         }
+
+
 
         private MonHocDTO getInfo()
         {
@@ -100,5 +114,35 @@ namespace GUI.MonHoc
             textBox3.Text = "";
             checkBox1.Checked = false;
         }
+        private bool checkValidate()
+        {
+            string errorMessage = "";
+
+            if (string.IsNullOrWhiteSpace(txtTenMonHoc.Text) || !txtTenMonHoc.Text.All(char.IsLetter))
+            {
+                errorMessage += "Tên môn học phải là chữ và không được để trống.\n";
+            }
+            if (!int.TryParse(textBox1.Text, out int soTinChi) || soTinChi < 1 || soTinChi > 4)
+            {
+                errorMessage += "Số tín chỉ phải là số từ 1 đến 4 và không được để trống.\n";
+            }
+            if (!int.TryParse(textBox2.Text, out int soTietLyThuyet) || soTietLyThuyet < 0)
+            {
+                errorMessage += "Số tiết lý thuyết phải là số nguyên và không được để trống.\n";
+            }
+            if (!int.TryParse(textBox3.Text, out int soTietThucHanh) || soTietThucHanh < 0)
+            {
+                errorMessage += "Số tiết thực hành phải là số nguyên và không được để trống.\n";
+            }
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Lỗi kiểm tra dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+
     }
 }
