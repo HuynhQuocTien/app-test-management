@@ -190,6 +190,12 @@ C:\Users\tnt96\Source\Repos\app-test-management\app-test-management\obj\Debug\ne
 C:\Users\tnt96\Source\Repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.pdb
 C:\Users\tnt96\Source\Repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.genruntimeconfig.cache
 C:\Users\tnt96\Source\Repos\app-test-management\app-test-management\obj\Debug\net8.0-windows\ref\app-test-management.dll
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.AssemblyReference.cache
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfoInputs.cache
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfo.cs
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.CoreCompileInputs.cache
+E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.sourcelink.json
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\app-test-management.exe
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\app-test-management.deps.json
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\app-test-management.runtimeconfig.json
@@ -244,12 +250,6 @@ E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Excel
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\ClosedXML.Parser.xml
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.Bcl.HashCode.xml
 E:\GitHub\app-test-management\app-test-management\bin\Debug\net8.0-windows\RBush.xml
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.AssemblyReference.cache
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.GeneratedMSBuildEditorConfig.editorconfig
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfoInputs.cache
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfo.cs
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.CoreCompileInputs.cache
-E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.sourcelink.json
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test.66A48E00.Up2Date
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.dll
 E:\GitHub\app-test-management\app-test-management\obj\Debug\net8.0-windows\refint\app-test-management.dll

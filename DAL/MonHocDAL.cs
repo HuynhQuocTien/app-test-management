@@ -65,6 +65,7 @@ namespace DAL
             {
                 Console.WriteLine(ex.ToString());
             }
+            return false;
         }
         public bool checkMaMonHoc(MonHocDTO monHoc)
         {
