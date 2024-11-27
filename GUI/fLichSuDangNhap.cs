@@ -26,7 +26,7 @@ namespace GUI
             dt = new DataTable();
             dt.Columns.Add("ID", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
-            dt.Columns.Add("Quyền", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
             dt.Columns.Add("Thời gian đăng nhập", typeof(string));
             dt.Columns.Add("Thời gian thoát", typeof(string));
             load();
@@ -76,29 +76,36 @@ namespace GUI
                 //}
                 for (int i = loginHistories.Count - 1; i >= 0; i--)
                 {
-                    DataRow row = dt.NewRow();
-                    row["ID"] = loginHistories[i].IdLogin.ToString();
-                    row["Họ tên"] = loginHistories[i].HoTen;
-                    row["SDT"] = loginHistories[i].SDT;
-                    if (loginHistories[i].TimeOut.ToString() == "01/01/0001 00:00:00")
+                    if (loginHistories[i].IdLogin.ToString().Contains(fDangNhap.nguoiDungDTO.MaNguoiDung.ToString()))
                     {
-                        row["Thời gian thoát"] = "";
-                    }
-                    else
-                    {
+                        DataRow row = dt.NewRow();
+                        row["ID"] = loginHistories[i].IdLogin.ToString();
+                        row["Họ tên"] = loginHistories[i].HoTen;
+                        row["SDT"] = loginHistories[i].SDT;
+                        if (loginHistories[i].TimeOut.ToString() == "01/01/0001 00:00:00")
+                        {
+                            row["Thời gian thoát"] = "";
+                        }
+                        else
+                        {
 
-                        row["Thời gian thoát"] = loginHistories[i].TimeOut.ToString();
+                            row["Thời gian thoát"] = loginHistories[i].TimeOut.ToString();
+                        }
+                        row["Thời gian đăng nhập"] = loginHistories[i].TimeIn.ToString();
+                        dt.Rows.Add(row);
                     }
-                    row["Thời gian đăng nhập"] = loginHistories[i].TimeIn.ToString();
-                    dt.Rows.Add(row);
                 }
                 dataGridView1.DataSource = dt;
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(242, 242, 242);
                 dataGridView1.EnableHeadersVisualStyles = false;
                 // setChieuCaoCuaTatCaCacDong
-                for (int i = 0; i < loginHistories.Count; i++)
+                for (int i = 0, rowIndex=0; i < loginHistories.Count; i++)
                 {
-                    dataGridView1.Rows[i].Height = 40;
+                    if (loginHistories[i].IdLogin.ToString().Contains(fDangNhap.nguoiDungDTO.MaNguoiDung.ToString()))
+                    {
+                        dataGridView1.Rows[rowIndex].Height = 40;
+                        rowIndex++;
+                    }
                 }
 
             }
@@ -111,7 +118,7 @@ namespace GUI
         {
             dataGridView1.Columns["Thời gian thoát"].Width = 250;
             dataGridView1.Columns["Thời gian đăng nhập"].Width = 250;
-            dataGridView1.Columns["Quyền"].Width = 200;
+            dataGridView1.Columns["SDT"].Width = 200;
             dataGridView1.Columns["ID"].Width = 200;
             dataGridView1.Columns["Họ tên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 

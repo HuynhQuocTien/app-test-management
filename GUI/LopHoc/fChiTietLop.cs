@@ -138,7 +138,7 @@ namespace GUI.LopHoc
         }
         private void CreatePanel(DeThiDTO deThi)
         {
-            int trangthaiData=deThi.TrangThai;
+            int trangthaiData =deThi.TrangThai; //
             Panel panelContain = new Panel
             {
                 Location = new Point(3, 3),
@@ -277,7 +277,7 @@ namespace GUI.LopHoc
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Visible = fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh") ? false : true,
+                Visible = true
             };
 
             System.Windows.Forms.Button btnDong = new System.Windows.Forms.Button
@@ -292,28 +292,38 @@ namespace GUI.LopHoc
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter // Đặt văn bản ở giữa theo cả hai chiều
             };
-               
+              
+
             btnXemKq.Click += (s, ev) =>
             {
-                btnXemKq_Click(s, ev,  deThi);
+                if (btnXemKq.Text.Contains("Kết quả"))
+                {
+                    KetQuaBLL ketQuaBLL = new KetQuaBLL();
+                    KetQuaDTO ketQuaDTO = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
+                    fKetQua f = new fKetQua(deThi, lopDTO, ketQuaDTO);
+                    f.ShowDialog();
+                }
+                if (btnXemKq.Text.Contains("Mở đáp án") || btnXemKq.Text.Contains("Đóng đáp án"))
+                {
+                  btnXemKq_Click(s, ev, deThi);
+                }
+                //btnXemKq_Click(s, ev,  deThi);
             };
 
-            
+            //DONE
             btnLamBai.Click += (s, ev) =>
             {
                 btnLamBai_Click(s, ev, deThi, lopDTO);
             };
 
-            if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
+            
+            
+
+            if (btnDong.Text.Contains("Xem lại"))
             {
                 btnDong.Click += (s, ev) =>
                 {
                     btnXemlai_Click(s, ev, deThi, lopDTO, trangthaiData);
-                };
-
-                btnXemKq.Click += (s, ev) =>
-                {
-                    btnXemKq_Click(s, ev, deThi);
                 };
             }
             else
@@ -357,7 +367,7 @@ namespace GUI.LopHoc
             }
             else
             {
-                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 1);
+                isUpdated = ketQuaBLL.UpdateTrangThai(lopDTO.MaLop, obj.MaDe, 0);
             }
 
             if (isUpdated)
@@ -496,19 +506,20 @@ namespace GUI.LopHoc
         {
             //xemkq
             KetQuaDTO kq = ketQuaBLL.Get(obj.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-            if (trangthaiData != 2)
+            if (kq == null)
             {
-                MessageBox.Show(obj.TrangThai.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (kq.TrangThai != 2 && kq != null)
+            {
+                MessageBox.Show("Không được quyền xem đáp án", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (kq != null)
             {
                 fXemdapan f = new fXemdapan(kq);
                 f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa làm bài thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

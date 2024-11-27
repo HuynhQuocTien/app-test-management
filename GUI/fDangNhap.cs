@@ -1,15 +1,21 @@
 ﻿using BLL;
+using DocumentFormat.OpenXml.Spreadsheet;
 using DTO;
 using GUI.Users;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Control = System.Windows.Forms.Control;
+using Font = System.Drawing.Font;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace GUI
 {
@@ -103,6 +109,7 @@ namespace GUI
                 fLayout formLayout = new fLayout();
                 formLayout.Show();
                 this.Visible = false;
+                SaveLoginHistory(fDangNhap.nguoiDungDTO.MaNguoiDung.ToString() + "_" + LoginTime.ToString());
             }
             else
             {
@@ -164,5 +171,33 @@ namespace GUI
         {
             Application.Exit();
         }
+        public void SaveLoginHistory(string idLogin)
+        {
+            List<NguoiDungDTO> loginHistories = new List<NguoiDungDTO>();
+
+            // Đọc dữ liệu từ tệp JSON nếu nó đã tồn tại
+            if (File.Exists("loginHistory.json"))
+            {
+                string json = File.ReadAllText("loginHistory.json");
+                loginHistories = JsonConvert.DeserializeObject<List<NguoiDungDTO>>(json);
+            }
+
+            NguoiDungDTO u = nguoiDungBLL.getUserLoginById(fDangNhap.nguoiDungDTO.MaNguoiDung);
+
+            // Check if loginHistories is null
+            if (loginHistories == null)
+            {
+                loginHistories = new List<NguoiDungDTO>();
+            }
+            u.TimeIn = LoginTime;
+            u.IdLogin = idLogin;
+            NguoiDungDTO userHistory = u;
+
+            loginHistories.Add(userHistory);
+            // Ghi lại danh sách vào tệp JSON
+            string updatedJson = JsonConvert.SerializeObject(loginHistories, Formatting.Indented);
+            File.WriteAllText("loginHistory.json", updatedJson);
+        }
+
     }
 }
