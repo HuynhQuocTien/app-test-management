@@ -42,10 +42,11 @@ namespace DAL
             {
                 using (SqlConnection connection = GetConnectionDb.GetConnection())
                 {
-                    string query = "DELETE FROM ChiTietDe WHERE MaChiTietDe = @MaChiTietDe";
+                    string query = "DELETE FROM ChiTietDe WHERE MaDe = @MaDe AND MaCauHoi = @MaCauHoi";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaChiTietDe", chiTietDe.MaChiTietDe);
+                        command.Parameters.AddWithValue("@MaDe", chiTietDe.MaDe);
+                        command.Parameters.AddWithValue("@MaCauHoi", chiTietDe.MaCauHoi);
                         int rowsChanged = command.ExecuteNonQuery();
                         return rowsChanged > 0;
                     }
