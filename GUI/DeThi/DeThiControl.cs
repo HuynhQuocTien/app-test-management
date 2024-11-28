@@ -179,6 +179,7 @@ namespace GUI.DeThi
         {
             fThemChiTietDeThi f = new fThemChiTietDeThi(obj);
             f.ShowDialog();
+            
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

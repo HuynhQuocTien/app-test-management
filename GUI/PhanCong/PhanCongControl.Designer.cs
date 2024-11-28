@@ -65,13 +65,13 @@ namespace GUI.PhanCong
             this.mainPanel.Controls.Add(this.dataGridView1, 0, 1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(17, 18, 17, 18);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(23, 22, 23, 22);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.RowCount = 3;
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.84987F));
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.42909F));
             this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.72104F));
-            this.mainPanel.Size = new System.Drawing.Size(1180, 671);
+            this.mainPanel.Size = new System.Drawing.Size(1573, 826);
             this.mainPanel.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -81,12 +81,13 @@ namespace GUI.PhanCong
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 587);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 724);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.4321F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.5679F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1174, 81);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1565, 98);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // panel1
@@ -95,18 +96,20 @@ namespace GUI.PhanCong
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(590, 3);
+            this.panel1.Location = new System.Drawing.Point(786, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 47);
+            this.panel1.Size = new System.Drawing.Size(775, 56);
             this.panel1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(153, 15);
+            this.label2.Location = new System.Drawing.Point(204, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.Size = new System.Drawing.Size(163, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "trên tổng ... trang";
             // 
@@ -114,18 +117,20 @@ namespace GUI.PhanCong
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.Size = new System.Drawing.Size(60, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trang";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(64, 12);
+            this.numericUpDown1.Location = new System.Drawing.Point(85, 15);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDown1.Size = new System.Drawing.Size(93, 34);
             this.numericUpDown1.TabIndex = 0;
             // 
             // headingPanel
@@ -137,12 +142,12 @@ namespace GUI.PhanCong
             this.headingPanel.Controls.Add(this.btnThem, 1, 0);
             this.headingPanel.Controls.Add(this.containerTimKiemPanel, 0, 0);
             this.headingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.headingPanel.Location = new System.Drawing.Point(8, 7);
-            this.headingPanel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.headingPanel.Location = new System.Drawing.Point(11, 9);
+            this.headingPanel.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.headingPanel.Name = "headingPanel";
             this.headingPanel.RowCount = 1;
             this.headingPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.headingPanel.Size = new System.Drawing.Size(1164, 58);
+            this.headingPanel.Size = new System.Drawing.Size(1551, 71);
             this.headingPanel.TabIndex = 0;
             // 
             // btnThem
@@ -154,10 +159,10 @@ namespace GUI.PhanCong
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnThem.Location = new System.Drawing.Point(970, 0);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.btnThem.Location = new System.Drawing.Point(1292, 0);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(192, 58);
+            this.btnThem.Size = new System.Drawing.Size(256, 71);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "THÊM";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -172,13 +177,13 @@ namespace GUI.PhanCong
             this.containerTimKiemPanel.Controls.Add(this.btnTimKiem, 1, 0);
             this.containerTimKiemPanel.Controls.Add(this.textBoxTimKiem, 0, 0);
             this.containerTimKiemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 5);
-            this.containerTimKiemPanel.Margin = new System.Windows.Forms.Padding(0, 5, 17, 5);
+            this.containerTimKiemPanel.Location = new System.Drawing.Point(0, 6);
+            this.containerTimKiemPanel.Margin = new System.Windows.Forms.Padding(0, 6, 23, 6);
             this.containerTimKiemPanel.Name = "containerTimKiemPanel";
             this.containerTimKiemPanel.RowCount = 1;
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.containerTimKiemPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.containerTimKiemPanel.Size = new System.Drawing.Size(953, 48);
+            this.containerTimKiemPanel.Size = new System.Drawing.Size(1269, 59);
             this.containerTimKiemPanel.TabIndex = 1;
             // 
             // btnTimKiem
@@ -188,10 +193,10 @@ namespace GUI.PhanCong
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(800, 0);
+            this.btnTimKiem.Location = new System.Drawing.Point(1065, 0);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(153, 48);
+            this.btnTimKiem.Size = new System.Drawing.Size(204, 59);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = " TÌM KIẾM";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -203,10 +208,10 @@ namespace GUI.PhanCong
             this.textBoxTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F);
-            this.textBoxTimKiem.Location = new System.Drawing.Point(15, 1);
-            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(15, 1, 22, 0);
+            this.textBoxTimKiem.Location = new System.Drawing.Point(20, 1);
+            this.textBoxTimKiem.Margin = new System.Windows.Forms.Padding(20, 1, 29, 0);
             this.textBoxTimKiem.Name = "textBoxTimKiem";
-            this.textBoxTimKiem.Size = new System.Drawing.Size(763, 36);
+            this.textBoxTimKiem.Size = new System.Drawing.Size(1016, 43);
             this.textBoxTimKiem.TabIndex = 0;
             // 
             // dataGridView1
@@ -236,23 +241,24 @@ namespace GUI.PhanCong
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 85);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(8, 13, 8, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 105);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(11, 16, 11, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1164, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(1551, 599);
             this.dataGridView1.TabIndex = 1;
             // 
             // PhanCongControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PhanCongControl";
-            this.Size = new System.Drawing.Size(1180, 671);
+            this.Size = new System.Drawing.Size(1573, 826);
             this.mainPanel.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

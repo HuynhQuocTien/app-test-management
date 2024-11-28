@@ -105,7 +105,7 @@ namespace GUI.PhanCong
 
                     foreach (DataRow row in phanCongBLL.loadListboxCPC(id).Rows)
                     {
-                            listBox1.Items.Add(new KeyValuePair<string, int>(
+                            lbCauHoi.Items.Add(new KeyValuePair<string, int>(
                             row["TenMonHoc"].ToString(),
                             Convert.ToInt32(row["MaMonHoc"])
                         ));
