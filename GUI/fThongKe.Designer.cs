@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThongKe));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -57,17 +57,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvSVThamGiaThi = new System.Windows.Forms.DataGridView();
+            this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
+            this.cartesianChart2 = new LiveCharts.Wpf.CartesianChart();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
+            this.btnSVTheoLop = new System.Windows.Forms.Button();
+            this.btnSvTheoMon = new System.Windows.Forms.Button();
+            this.cbLopTab1 = new System.Windows.Forms.ComboBox();
+            this.lopDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbMonHocTab1 = new System.Windows.Forms.ComboBox();
+            this.monHocDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -89,8 +89,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgvThongKeDiem = new System.Windows.Forms.DataGridView();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -101,9 +100,7 @@
             this.btnTheoTatCaLop = new System.Windows.Forms.Button();
             this.btnTheoTatCaMon = new System.Windows.Forms.Button();
             this.cbDiemTheoMon = new System.Windows.Forms.ComboBox();
-            this.monHocDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbDiemTheoLop = new System.Windows.Forms.ComboBox();
-            this.lopDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label22 = new System.Windows.Forms.Label();
@@ -119,6 +116,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lopDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.monHocDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -133,10 +131,11 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSVThamGiaThi)).BeginInit();
             this.tableLayoutPanel19.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -154,8 +153,6 @@
             this.tableLayoutPanel18.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel29.SuspendLayout();
@@ -164,6 +161,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -192,6 +190,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SV tham gia thi";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
             // mainPanel
             // 
@@ -464,8 +463,8 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel20, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.dtgvSVThamGiaThi, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.elementHost2, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(11, 311);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(11, 2, 11, 20);
@@ -475,48 +474,44 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1527, 357);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
-            // tableLayoutPanel20
+            // dtgvSVThamGiaThi
             // 
-            this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(766, 2);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 1;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 99.99999F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 353F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(758, 353);
-            this.tableLayoutPanel20.TabIndex = 2;
+            this.dtgvSVThamGiaThi.AllowUserToAddRows = false;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvSVThamGiaThi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            this.dtgvSVThamGiaThi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvSVThamGiaThi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgvSVThamGiaThi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvSVThamGiaThi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            this.dtgvSVThamGiaThi.ColumnHeadersHeight = 50;
+            this.dtgvSVThamGiaThi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtgvSVThamGiaThi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvSVThamGiaThi.Location = new System.Drawing.Point(3, 2);
+            this.dtgvSVThamGiaThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvSVThamGiaThi.Name = "dtgvSVThamGiaThi";
+            this.dtgvSVThamGiaThi.ReadOnly = true;
+            this.dtgvSVThamGiaThi.RowHeadersVisible = false;
+            this.dtgvSVThamGiaThi.RowHeadersWidth = 51;
+            this.dtgvSVThamGiaThi.RowTemplate.Height = 24;
+            this.dtgvSVThamGiaThi.Size = new System.Drawing.Size(757, 353);
+            this.dtgvSVThamGiaThi.TabIndex = 0;
             // 
-            // dataGridView1
+            // elementHost2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(757, 353);
-            this.dataGridView1.TabIndex = 0;
+            this.elementHost2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost2.Location = new System.Drawing.Point(766, 3);
+            this.elementHost2.Name = "elementHost2";
+            this.elementHost2.Size = new System.Drawing.Size(758, 351);
+            this.elementHost2.TabIndex = 1;
+            this.elementHost2.Text = "elementHost2";
+            this.elementHost2.Child = this.cartesianChart2;
             // 
             // tableLayoutPanel19
             // 
@@ -524,7 +519,6 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.panel6, 1, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(4, 210);
             this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(4);
@@ -536,8 +530,10 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.comboBox3);
-            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.btnSVTheoLop);
+            this.panel3.Controls.Add(this.btnSvTheoMon);
+            this.panel3.Controls.Add(this.cbLopTab1);
+            this.panel3.Controls.Add(this.cbMonHocTab1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(4, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
@@ -545,80 +541,57 @@
             this.panel3.Size = new System.Drawing.Size(762, 87);
             this.panel3.TabIndex = 4;
             // 
-            // comboBox3
+            // btnSVTheoLop
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Theo lớp"});
-            this.comboBox3.Location = new System.Drawing.Point(349, 25);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(309, 36);
-            this.comboBox3.TabIndex = 1;
+            this.btnSVTheoLop.Location = new System.Drawing.Point(326, 52);
+            this.btnSVTheoLop.Name = "btnSVTheoLop";
+            this.btnSVTheoLop.Size = new System.Drawing.Size(127, 34);
+            this.btnSVTheoLop.TabIndex = 5;
+            this.btnSVTheoLop.Text = "Tất cả lớp";
+            this.btnSVTheoLop.UseVisualStyleBackColor = true;
+            this.btnSVTheoLop.Click += new System.EventHandler(this.btnSVTheoLop_Click);
             // 
-            // comboBox4
+            // btnSvTheoMon
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Chọn môn học"});
-            this.comboBox4.Location = new System.Drawing.Point(24, 25);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(259, 36);
-            this.comboBox4.TabIndex = 0;
+            this.btnSvTheoMon.Location = new System.Drawing.Point(7, 52);
+            this.btnSvTheoMon.Name = "btnSvTheoMon";
+            this.btnSvTheoMon.Size = new System.Drawing.Size(127, 34);
+            this.btnSvTheoMon.TabIndex = 4;
+            this.btnSvTheoMon.Text = "Tất cả môn";
+            this.btnSvTheoMon.UseVisualStyleBackColor = true;
+            this.btnSvTheoMon.Click += new System.EventHandler(this.btnSvTheoMon_Click);
             // 
-            // panel6
+            // cbLopTab1
             // 
-            this.panel6.Controls.Add(this.dateTimePicker9);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.dateTimePicker10);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(774, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(763, 87);
-            this.panel6.TabIndex = 3;
+            this.cbLopTab1.DataSource = this.lopDTOBindingSource;
+            this.cbLopTab1.DisplayMember = "TenLop";
+            this.cbLopTab1.FormattingEnabled = true;
+            this.cbLopTab1.Location = new System.Drawing.Point(326, 9);
+            this.cbLopTab1.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLopTab1.Name = "cbLopTab1";
+            this.cbLopTab1.Size = new System.Drawing.Size(309, 36);
+            this.cbLopTab1.TabIndex = 1;
+            this.cbLopTab1.SelectedIndexChanged += new System.EventHandler(this.cbLopTab1_SelectedIndexChanged);
             // 
-            // dateTimePicker9
+            // lopDTOBindingSource
             // 
-            this.dateTimePicker9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker9.Location = new System.Drawing.Point(431, 18);
-            this.dateTimePicker9.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.Size = new System.Drawing.Size(295, 26);
-            this.dateTimePicker9.TabIndex = 3;
+            this.lopDTOBindingSource.DataSource = typeof(DTO.LopDTO);
             // 
-            // label20
+            // cbMonHocTab1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(381, 25);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 20);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Đến";
+            this.cbMonHocTab1.DataSource = this.monHocDTOBindingSource;
+            this.cbMonHocTab1.DisplayMember = "TenMonHoc";
+            this.cbMonHocTab1.FormattingEnabled = true;
+            this.cbMonHocTab1.Location = new System.Drawing.Point(7, 9);
+            this.cbMonHocTab1.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMonHocTab1.Name = "cbMonHocTab1";
+            this.cbMonHocTab1.Size = new System.Drawing.Size(259, 36);
+            this.cbMonHocTab1.TabIndex = 0;
+            this.cbMonHocTab1.SelectedIndexChanged += new System.EventHandler(this.cbMonHocTab1_SelectedIndexChanged);
             // 
-            // dateTimePicker10
+            // monHocDTOBindingSource
             // 
-            this.dateTimePicker10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker10.Location = new System.Drawing.Point(64, 18);
-            this.dateTimePicker10.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker10.Name = "dateTimePicker10";
-            this.dateTimePicker10.Size = new System.Drawing.Size(293, 26);
-            this.dateTimePicker10.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(25, 23);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(28, 20);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Từ";
+            this.monHocDTOBindingSource.DataSource = typeof(DTO.MonHocDTO);
             // 
             // tabPage2
             // 
@@ -632,6 +605,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Điểm số";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage2_Paint);
             // 
             // tableLayoutPanel9
             // 
@@ -907,7 +881,7 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 785F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel17.Controls.Add(this.dtgvThongKeDiem, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.elementHost1, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.cartesianChart1, 1, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(11, 311);
             this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(11, 2, 11, 20);
@@ -921,19 +895,19 @@
             // dtgvThongKeDiem
             // 
             this.dtgvThongKeDiem.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvThongKeDiem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvThongKeDiem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
             this.dtgvThongKeDiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvThongKeDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvThongKeDiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvThongKeDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvThongKeDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dtgvThongKeDiem.ColumnHeadersHeight = 50;
             this.dtgvThongKeDiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgvThongKeDiem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -948,15 +922,14 @@
             this.dtgvThongKeDiem.Size = new System.Drawing.Size(736, 353);
             this.dtgvThongKeDiem.TabIndex = 1;
             // 
-            // elementHost1
+            // cartesianChart1
             // 
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elementHost1.Location = new System.Drawing.Point(745, 3);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(779, 351);
-            this.elementHost1.TabIndex = 2;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.cartesianChart1;
+            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart1.Location = new System.Drawing.Point(745, 3);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(779, 351);
+            this.cartesianChart1.TabIndex = 2;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // tableLayoutPanel18
             // 
@@ -1046,7 +1019,7 @@
             this.btnTheoTatCaLop.Name = "btnTheoTatCaLop";
             this.btnTheoTatCaLop.Size = new System.Drawing.Size(127, 34);
             this.btnTheoTatCaLop.TabIndex = 3;
-            this.btnTheoTatCaLop.Text = "Tất cả môn";
+            this.btnTheoTatCaLop.Text = "Tất cả lớp";
             this.btnTheoTatCaLop.UseVisualStyleBackColor = true;
             this.btnTheoTatCaLop.Click += new System.EventHandler(this.btnTheoTatCaLop_Click);
             // 
@@ -1071,10 +1044,7 @@
             this.cbDiemTheoMon.Size = new System.Drawing.Size(309, 36);
             this.cbDiemTheoMon.TabIndex = 1;
             this.cbDiemTheoMon.ValueMember = "MaMonHoc";
-            // 
-            // monHocDTOBindingSource
-            // 
-            this.monHocDTOBindingSource.DataSource = typeof(DTO.MonHocDTO);
+            this.cbDiemTheoMon.SelectedIndexChanged += new System.EventHandler(this.cbDiemTheoMon_SelectedIndexChanged);
             // 
             // cbDiemTheoLop
             // 
@@ -1088,10 +1058,6 @@
             this.cbDiemTheoLop.TabIndex = 0;
             this.cbDiemTheoLop.ValueMember = "MaLop";
             this.cbDiemTheoLop.SelectedIndexChanged += new System.EventHandler(this.cbDiemTheoLop_SelectedIndexChanged);
-            // 
-            // lopDTOBindingSource
-            // 
-            this.lopDTOBindingSource.DataSource = typeof(DTO.LopDTO);
             // 
             // tabPage3
             // 
@@ -1158,19 +1124,19 @@
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridView3.ColumnHeadersHeight = 50;
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1292,6 +1258,10 @@
             // 
             this.lopDTOBindingSource1.DataSource = typeof(DTO.LopDTO);
             // 
+            // monHocDTOBindingSource1
+            // 
+            this.monHocDTOBindingSource1.DataSource = typeof(DTO.MonHocDTO);
+            // 
             // fThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1318,11 +1288,11 @@
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSVThamGiaThi)).EndInit();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
@@ -1345,8 +1315,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel21.PerformLayout();
@@ -1358,6 +1326,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lopDTOBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocDTOBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1403,8 +1372,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.DataGridView dtgvThongKeDiem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -1416,16 +1383,10 @@
         private System.Windows.Forms.ComboBox cbDiemTheoLop;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker10;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cbLopTab1;
+        private System.Windows.Forms.ComboBox cbMonHocTab1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        private System.Windows.Forms.DataGridView dtgvSVThamGiaThi;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Label label22;
@@ -1446,7 +1407,13 @@
         private System.Windows.Forms.BindingSource lopDTOBindingSource1;
         private System.Windows.Forms.Button btnTheoTatCaMon;
         private System.Windows.Forms.Button btnTheoTatCaLop;
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private LiveCharts.Wpf.CartesianChart cartesianChart1;
+        private System.Windows.Forms.BindingSource monHocDTOBindingSource1;
+        private System.Windows.Forms.Integration.ElementHost elementHost2;
+        private LiveCharts.Wpf.CartesianChart cartesianChart2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private System.Windows.Forms.DataGridView dtgvThongKeDiem;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Button btnSVTheoLop;
+        private System.Windows.Forms.Button btnSvTheoMon;
     }
 }

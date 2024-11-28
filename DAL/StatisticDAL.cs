@@ -176,5 +176,25 @@ namespace DAL
             }
             return list;
         }
+
+        public int SoLuongCauHoi()
+        {
+            int soLuongCauHoi = 0;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT COUNT(*) AS SoLuongCauHoi FROM CauHoi;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            soLuongCauHoi = Convert.ToInt32(reader["SoLuongCauHoi"]);
+                        }
+                    }
+                }
+            }
+            return soLuongCauHoi;
+        }
     }
 } 
