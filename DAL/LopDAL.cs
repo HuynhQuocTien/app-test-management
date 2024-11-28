@@ -71,7 +71,7 @@ namespace DAL
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
                 string query = "SELECT Lop.* FROM ChiTietLop as CTL" +
-                    " INNER JOIN Lop ON CTL.MaLop = Lop.MaLop AND CTL.MaSV = " + MaSV + "  AND Lop.is_delete = 0";
+                    " INNER JOIN Lop ON CTL.MaLop = Lop.MaLop AND CTL.MaSV = " + MaSV + "  AND CTL.is_delete = 0";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

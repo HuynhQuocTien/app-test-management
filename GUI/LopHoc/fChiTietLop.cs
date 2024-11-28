@@ -253,7 +253,6 @@ namespace GUI.LopHoc
             }
                 //lblTrangThai.Text = deThi.TrangThai == 1 ? $"Trạng thái: Đang mở ({thoiGianText})" : "Trạng thái: Đã đóng";
 			KetQuaDTO ketQua = ketQuaBLL.Get(deThi.MaDe, fDangNhap.nguoiDungDTO.MaNguoiDung);
-
             System.Windows.Forms.Button btnLamBai = new System.Windows.Forms.Button
             {
                 Location = new Point(10, 300),
@@ -265,7 +264,7 @@ namespace GUI.LopHoc
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 TextAlign = ContentAlignment.MiddleCenter, // Đặt văn bản ở giữa theo cả hai chiều
-                Enabled = deThi.TrangThai == 0 ? true : false, //Trang thai = 0 là được làm bài
+                Enabled = (giaoDeThiDTO.TrangThai == 0 || lopDTO.is_delete == 0) ? true : false, //Trang thai = 0 là được làm bài
             };
 
 
@@ -384,7 +383,7 @@ namespace GUI.LopHoc
             flowLayoutPanel1.Controls.Add(panelContain);
             panelContain.Controls.AddRange(new Control[] { btnDong, panelHead, btnLamBai, btnXemKq });
             flowLayoutPanel1.AutoScroll = true;
-            btnLamBai.Enabled = true;        
+            //btnLamBai.Enabled = true;        
             panelHead.BackColor = GetRandomColor();
             panelHead.Enabled = true;
             counter++;

@@ -157,7 +157,7 @@ namespace DAL
             {
                 using (SqlConnection conn = GetConnectionDb.GetConnection())
                 {
-                    string query = "SELECT ND.MaNguoiDung, ND.Ten, ND.NgaySinh, ND.GioiTinh, ND.SDT " +
+                    string query = "SELECT ND* " +
                                    "FROM ChiTietLop CTL " +
                                     "JOIN NguoiDung ND ON CTL.MaSV = ND.MaNguoiDung " +
                                     "WHERE CTL.MaLop = @MaLop AND CTL.is_delete = 0;";
@@ -173,9 +173,13 @@ namespace DAL
                                 {
                                     MaNguoiDung = Convert.ToInt64(reader["MaNguoiDung"]),
                                     HoTen = reader["Ten"].ToString(),
+                                    GioiTinh = Convert.ToInt32(reader["GioiTinh"]),
                                     NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
+                                    Avatar = reader["Avatar"].ToString(),
                                     SDT = reader["SDT"].ToString(),
-                                    GioiTinh = Convert.ToInt32(reader["GioiTinh"])
+                                    NgayTao = Convert.ToDateTime(reader["NgayTao"]),
+                                    TrangThai = Convert.ToInt32(reader["TrangThai"]),
+                                    is_delete = Convert.ToInt32(reader["is_delete"])
                                 };
                                 ctlList.Add(ctl);
                             }

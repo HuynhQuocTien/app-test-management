@@ -103,7 +103,7 @@ namespace GUI
                 {
                     if (loginHistories[i].IdLogin.ToString().Contains(fDangNhap.nguoiDungDTO.MaNguoiDung.ToString()))
                     {
-                        dataGridView1.Rows[rowIndex].Height = 40;
+                        dataGridView1.Rows[rowIndex].Height = 50;
                         rowIndex++;
                     }
                 }
