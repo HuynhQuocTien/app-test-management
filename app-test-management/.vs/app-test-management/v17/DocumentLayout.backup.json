@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\app-test-management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dal\\statisticdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\bll\\statisticbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\fthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkediemtheolopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkesvthamgiathitheolopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkediemtheomondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\app-test-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkesvthamgiathitheomondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkesvthamgiathi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkediemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\fthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E65FD58A-4DCD-4059-A9E5-FD606E6141AB}|..\\GUI\\GUI.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\gui\\thongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\bll\\statisticbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dal\\statisticdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0DC0B8B-6D7E-47F6-8D48-FF38B9EB5B51}|..\\DAL\\DAL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dal\\noicaudal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\bll\\monhocbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\thongkediemtheolopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{805DF0F9-6AFA-468E-A2EE-3A8EF3EE9AC8}|..\\DTO\\DTO.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\dto\\lopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3224FC6B-69E8-41F3-B65D-D128D95C005D}|..\\BLL\\BLL.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\bll\\lopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|c:\\users\\thuan\\ideaprojects\\app-test-management\\app-test-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3509AB25-5CD7-4D41-A01C-9F9EB9E13919}|app-test-management.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 28,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,46 +138,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ThongKeSVThamGiaThiTheoMonDTO.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThiTheoMonDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\ThongKeSVThamGiaThiTheoMonDTO.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThiTheoMonDTO.cs",
               "RelativeToolTip": "..\\DTO\\ThongKeSVThamGiaThiTheoMonDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T06:44:34.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T06:44:34.009Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ThongKeSVThamGiaThi.cs",
-              "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThi.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\ThongKeSVThamGiaThi.cs",
-              "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThi.cs",
-              "RelativeToolTip": "..\\DTO\\ThongKeSVThamGiaThi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ThongKeSVThamGiaThiTheoLopDTO.cs",
+              "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThiTheoLopDTO.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\ThongKeSVThamGiaThiTheoLopDTO.cs",
+              "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeSVThamGiaThiTheoLopDTO.cs",
+              "RelativeToolTip": "..\\DTO\\ThongKeSVThamGiaThiTheoLopDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T06:36:24.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "fThongKe.Designer.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.Designer.cs",
               "RelativeDocumentMoniker": "..\\GUI\\fThongKe.Designer.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.Designer.cs",
               "RelativeToolTip": "..\\GUI\\fThongKe.Designer.cs",
-              "ViewState": "AgIAAIEFAAAAAAAAAAAAAKAFAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T05:42:07.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "fThongKe.cs [Design]",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.cs",
               "RelativeDocumentMoniker": "..\\GUI\\fThongKe.cs",
@@ -189,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\app-test-management\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -201,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "MonHocBLL.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\BLL\\MonHocBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\MonHocBLL.cs",
@@ -213,20 +212,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ThongKeDiemTheoMonDTO.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeDiemTheoMonDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\ThongKeDiemTheoMonDTO.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeDiemTheoMonDTO.cs",
               "RelativeToolTip": "..\\DTO\\ThongKeDiemTheoMonDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T04:42:20.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "fThongKe.cs",
+              "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fThongKe.cs",
+              "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.cs",
+              "RelativeToolTip": "..\\GUI\\fThongKe.cs",
+              "ViewState": "AgIAAIABAAAAAAAAAAA6wI8BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:32:03.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ThongKeDiemTheoLopDTO.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeDiemTheoLopDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\ThongKeDiemTheoLopDTO.cs",
@@ -234,12 +246,11 @@
               "RelativeToolTip": "..\\DTO\\ThongKeDiemTheoLopDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T02:59:14.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T02:59:14.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LopBLL.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\BLL\\LopBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\LopBLL.cs",
@@ -251,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "LopDTO.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\LopDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\LopDTO.cs",
@@ -263,33 +274,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "StatisticDAL.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DAL\\StatisticDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\StatisticDAL.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DAL\\StatisticDAL.cs",
               "RelativeToolTip": "..\\DAL\\StatisticDAL.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAswH0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswC4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T15:11:22.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T15:11:22.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "StatisticBLL.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\BLL\\StatisticBLL.cs",
               "RelativeDocumentMoniker": "..\\BLL\\StatisticBLL.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\BLL\\StatisticBLL.cs",
               "RelativeToolTip": "..\\BLL\\StatisticBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAA7wCwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T19:54:46.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T19:54:46.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "NoiCauDAL.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DAL\\NoiCauDAL.cs",
               "RelativeDocumentMoniker": "..\\DAL\\NoiCauDAL.cs",
@@ -301,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ThongKeDiemDTO.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\DTO\\ThongKeDiemDTO.cs",
               "RelativeDocumentMoniker": "..\\DTO\\ThongKeDiemDTO.cs",
@@ -309,46 +318,30 @@
               "RelativeToolTip": "..\\DTO\\ThongKeDiemDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T19:41:08.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T19:41:08.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "ThongKe.cs",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\ThongKe.cs",
               "RelativeDocumentMoniker": "..\\GUI\\ThongKe.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\ThongKe.cs",
               "RelativeToolTip": "..\\GUI\\ThongKe.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wB0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T20:17:37.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T20:17:37.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "ThongKe.cs [Design]",
               "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\ThongKe.cs",
               "RelativeDocumentMoniker": "..\\GUI\\ThongKe.cs",
               "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\ThongKe.cs [Design]",
               "RelativeToolTip": "..\\GUI\\ThongKe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T20:17:12.291Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "fThongKe.cs",
-              "DocumentMoniker": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fThongKe.cs",
-              "ToolTip": "C:\\Users\\thuan\\IdeaProjects\\app-test-management\\GUI\\fThongKe.cs",
-              "RelativeToolTip": "..\\GUI\\fThongKe.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAA7wHoAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:32:03.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T20:17:12.291Z"
             }
           ]
         }
