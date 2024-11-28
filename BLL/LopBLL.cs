@@ -57,5 +57,10 @@ namespace BLL
         {
             return lopDAL.GetMaLopByMaMoi(text);
         }
+
+        public List<LopDTO> getAll()
+        {
+            return lopDAL.GetAll();
+        }
     }
 }

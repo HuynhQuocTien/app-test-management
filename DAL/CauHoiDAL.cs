@@ -346,5 +346,38 @@ namespace DAL
             }
             return result + 1;
         }
+
+        public int DemCauHoi()
+        {
+            int count = 0; // Biến lưu số lượng câu hỏi
+            try
+            {
+                // Tạo kết nối đến cơ sở dữ liệu
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    // Câu truy vấn để đếm số lượng câu hỏi
+                    string query = "SELECT COUNT(*) AS TONGSOCAUHOI FROM CauHoi";
+
+                    // Tạo SqlCommand với câu truy vấn và kết nối
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Mở kết nối
+                        connection.Open();
+
+                        // Thực thi truy vấn và lấy giá trị trả về
+                        count = (int)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ghi lại thông báo lỗi nếu xảy ra lỗi
+                Console.WriteLine("Lỗi khi đếm số câu hỏi: " + ex.Message);
+            }
+
+            // Trả về số lượng câu hỏi
+            return count;
+        }
+
     }
 }

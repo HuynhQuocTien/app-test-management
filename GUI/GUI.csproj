@@ -409,6 +409,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -550,6 +559,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\DTO.LopDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.ThongKeDiemDTO.datasource" />
     <None Include="Resources\add-button.png" />
   </ItemGroup>
   <ItemGroup>

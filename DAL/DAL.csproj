@@ -72,6 +72,8 @@
     <Compile Include="NoiCauTraLoiDaLamDAL.cs" />
     <Compile Include="PhanCongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticDAL.cs" />
+    <Compile Include="StudentScoreStats.cs" />
     <Compile Include="TaiKhoanDAL.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -263,13 +263,7 @@ C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\ne
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\DTO.pdb
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\EPPlus.xml
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\Newtonsoft.Json.xml
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.pdb
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.WinForms.xml
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.pdb
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.Wpf.xml
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.pdb
-C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\bin\Debug\net8.0-windows\LiveCharts.xml
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.csproj.AssemblyReference.cache
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\thuan\IdeaProjects\app-test-management\app-test-management\obj\Debug\net8.0-windows\app-test-management.AssemblyInfoInputs.cache

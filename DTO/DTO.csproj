@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AverageScore.cs" />
     <Compile Include="CauHoiDaLamDTO.cs" />
     <Compile Include="CauHoiDTO.cs" />
     <Compile Include="CauTraLoiDaLamDTO.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="DeThiDTO.cs" />
     <Compile Include="EnumDoKho.cs" />
     <Compile Include="EnumHelper.cs" />
+    <Compile Include="ExamScoreStats.cs" />
     <Compile Include="GiaoDeThiDTO.cs" />
     <Compile Include="KetQuaDTO.cs" />
     <Compile Include="EnumLoaiCauHoi.cs" />
@@ -70,6 +72,11 @@
     <Compile Include="PhanCongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
+    <Compile Include="ThongKeDiemDTO.cs" />
+    <Compile Include="ThongKeDiemTheoLopDTO.cs" />
+    <Compile Include="ThongKeDiemTheoMonDTO.cs" />
+    <Compile Include="ThongKeSVThamGiaThiTheoLopDTO.cs" />
+    <Compile Include="ThongKeSVThamGiaThiTheoMonDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -833,3 +833,4 @@ C:\Users\thuan\IdeaProjects\app-test-management\GUI\obj\Debug\GUI.csproj.CoreCom
 C:\Users\thuan\IdeaProjects\app-test-management\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\thuan\IdeaProjects\app-test-management\GUI\obj\Debug\GUI.dll
 C:\Users\thuan\IdeaProjects\app-test-management\GUI\obj\Debug\GUI.pdb
+C:\Users\thuan\IdeaProjects\app-test-management\GUI\obj\Debug\GUI.ThongKe.resources
