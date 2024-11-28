@@ -22,7 +22,7 @@ namespace GUI.DeThi
         private int maDeThi = 1;
         private long maNguoiDung;
         GiaoDeThiBLL giaoDeThiBLL = new GiaoDeThiBLL();
-
+        MonHocBLL monHocBLL = new MonHocBLL();
         ChiTietDeBLL chiTietDeThiBLL = new ChiTietDeBLL();
         List<int> maMonHocList = new List<int>();
         DeThiDTO deThi;
@@ -78,6 +78,7 @@ namespace GUI.DeThi
 
         private void cbMonHoc_SelectedValueChanged(object sender, EventArgs e)
         {
+            //COMBOBOX MON HOC
             xemlbCauHoi();
         }
 
@@ -136,6 +137,7 @@ namespace GUI.DeThi
             lbCauHoi.Items.Clear();
             lbCauHoi.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             CauHoiDTO cauHoi = new CauHoiDTO();
+            cbMonHoc.SelectedItem = monHocBLL.GetMonHocById(deThi.MaMonHoc).TenMonHoc;
             if (cbMonHoc.SelectedIndex == 0)
             {
                 cauHoi.MaMonHoc = 0;

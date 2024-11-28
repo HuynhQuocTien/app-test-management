@@ -84,5 +84,9 @@ namespace BLL
 
             return taiKhoanDAL.UpdateEmail(new_email, maNguoiDung) ? "1" : "2";
         }
+        public TaiKhoanDTO getTaiKhoanByEmail(string email)
+        {
+            return taiKhoanDAL.getTaiKhoanByEmail(email);
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace GUI
             List<MonHocDTO> monList = _monHocBLL.GetAll();
             listThongKeDiemTheoMon = _statisticBLL.ThongKeDiemTheoMon();
             listThongKeDiemTheoLop = _statisticBLL.ThongKeDiemTheoLop();
-            MessageBox.Show(listThongKeDiemTheoMon.Count().ToString());
+            //MessageBox.Show(listThongKeDiemTheoMon.Count().ToString());
             cbDiemTheoLop.DataSource = lopList;
             cbDiemTheoMon.DataSource = monList;
         }
