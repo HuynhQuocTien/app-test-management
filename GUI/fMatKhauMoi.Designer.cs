@@ -64,7 +64,6 @@
             this.txtNhapMK.Name = "txtNhapMK";
             this.txtNhapMK.Size = new System.Drawing.Size(238, 29);
             this.txtNhapMK.TabIndex = 1;
-            this.txtNhapMK.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNhapMK_KeyDown);
             // 
             // txtXacNhan
             // 
@@ -73,7 +72,6 @@
             this.txtXacNhan.Name = "txtXacNhan";
             this.txtXacNhan.Size = new System.Drawing.Size(238, 29);
             this.txtXacNhan.TabIndex = 1;
-            this.txtXacNhan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtXacNhan_KeyDown);
             // 
             // btnLuu
             // 

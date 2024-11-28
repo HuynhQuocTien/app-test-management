@@ -63,9 +63,9 @@ namespace BLL
             {
                 return "Mật khẩu mới không trùng Mật khẩu xác nhận";
             }
-            else if (matKhau.Length < 8)
+            else if (matKhau.Length < 6)
             {
-                return "Mật khẩu phải ít nhất 8 ký tự";
+                return "Mật khẩu phải ít nhất 6 ký tự";
             }
             return taiKhoanDAL.suaMatKhauNguoiDung(email, matKhau) ? "Oke" : "Lỗi DAL";
         }

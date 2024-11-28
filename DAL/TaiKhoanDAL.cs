@@ -282,6 +282,34 @@ namespace DAL
                 return false; // Trả về false nếu gặp lỗi
             }
         }
+
+        public TaiKhoanDTO getTaiKhoanByEmail(string email)
+        {
+            TaiKhoanDTO result = null;
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT * FROM TaiKhoan WHERE Email = @email";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result = new TaiKhoanDTO
+                            {
+                                Username = Convert.ToInt64(reader["Username"]),
+                                Password = reader["Password"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                MaNhomQuyen = Convert.ToInt32(reader["MaNhomQuyen"]),
+                                TrangThai = Convert.ToInt32(reader["TrangThai"])
+                            };
+                        }
+                    }
+                }
+            }
+            return result;
+        }
     }
 }
 

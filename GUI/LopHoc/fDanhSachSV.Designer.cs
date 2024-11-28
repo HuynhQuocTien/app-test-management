@@ -61,7 +61,7 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbbSV = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.cbDeThi = new System.Windows.Forms.ComboBox();
@@ -537,7 +537,7 @@
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.80593F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.19407F));
             this.tableLayoutPanel21.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.comboBox2, 1, 0);
+            this.tableLayoutPanel21.Controls.Add(this.cbbSV, 1, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(1009, 63);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -558,22 +558,21 @@
             this.label11.Size = new System.Drawing.Size(91, 28);
             this.label11.TabIndex = 3;
             this.label11.Text = "Sinh viên";
+            this.label11.Visible = false;
             // 
-            // comboBox2
+            // cbbSV
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Tất cả",
-            "Huỳnh Quốc Tiến",
-            "ABC"});
-            this.comboBox2.Location = new System.Drawing.Point(207, 17);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 15, 11, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(277, 36);
-            this.comboBox2.TabIndex = 1;
+            this.cbbSV.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbbSV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSV.FormattingEnabled = true;
+            this.cbbSV.Location = new System.Drawing.Point(207, 17);
+            this.cbbSV.Margin = new System.Windows.Forms.Padding(3, 15, 11, 2);
+            this.cbbSV.Name = "cbbSV";
+            this.cbbSV.Size = new System.Drawing.Size(277, 36);
+            this.cbbSV.TabIndex = 1;
+            this.cbbSV.Visible = false;
+            this.cbbSV.SelectedValueChanged += new System.EventHandler(this.cbbSV_SelectedValueChanged);
             // 
             // label4
             // 
@@ -841,7 +840,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1541, 1055);
             this.Controls.Add(this.tabThongKe);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fDanhSachSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách học sinh trong lớp";
@@ -940,6 +939,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbbSV;
     }
 }

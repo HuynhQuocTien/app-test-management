@@ -88,13 +88,12 @@ namespace DAL
             Dictionary<NguoiDungDTO, KetQuaDTO> list = new Dictionary<NguoiDungDTO, KetQuaDTO>();
             using (SqlConnection conn = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT TOP 5 NguoiDung.*,  Sum(KetQua.Diem) as TongDiem FROM NguoiDung " +
+                string query = "SELECT TOP 5 NguoiDung.*, KetQua.Diem FROM NguoiDung " +
                     "JOIN KetQua ON NguoiDung.MaNguoiDung = KetQua.MaND " +
                     "JOIN GiaoDeThi ON GiaoDeThi.MaDe = KetQua.MaDe " +
                     "JOIN Lop ON GiaoDeThi.MaLop = Lop.MaLop " +
                     "JOIN DeThi ON DeThi.MaDe = KetQua.MaDe " + 
-                    " GROUP BY NguoiDung.MaNguoiDung, NguoiDung.Ten, NguoiDung.GioiTinh, NguoiDung.NgaySinh, NguoiDung.Avatar, NguoiDung.SDT, NguoiDung.NgayTao, NguoiDung.TrangThai, NguoiDung.is_delete " +
-                        "ORDER BY TongDiem desc";
+                    "ORDER BY KetQua.Diem desc";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -115,7 +114,7 @@ namespace DAL
                             };
                             KetQuaDTO diemTBCuaHS = new KetQuaDTO
                             {
-                                Diem = Convert.ToDecimal(reader["TongDiem"].ToString()),
+                                Diem = Convert.ToDecimal(reader["Diem"].ToString()),
                             };
 
                             list.Add(HS,diemTBCuaHS);
@@ -134,7 +133,8 @@ namespace DAL
                 string query = "SELECT count(NguoiDung.MaNguoiDUng) as sLHSDaNopBai " +
                     "FROM NguoiDung JOIN KetQua ON NguoiDung.MaNguoiDung = KetQua.MaND " +
                     "JOIN DeThi ON KetQua.MaDe = DeThi.MaDe " +
-                    "JOIN Lop ON Lop.MaLop = KetQua.MaLop " +
+                    "JOIN GiaoDeThi ON KetQua.MaDe = GiaoDeThi.MaDe " +
+                    "JOIN Lop ON Lop.MaLop = GiaoDeThi.MaLop " +
                     "WHERE Lop.MaLop = " + maLop + " AND DeThi.MaDe = " + maDeThi;
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
@@ -151,10 +151,10 @@ namespace DAL
             using (SqlConnection conn = GetConnectionDb.GetConnection())
             {
                 string query = "SELECT TOP 5 NguoiDung.*, KetQua.Diem FROM NguoiDung " +
-               "JOIN GiaoDeThi ON GiaoDeThi.MaLop = @maLop " +
+               "JOIN KetQua ON NguoiDung.MaNguoiDung = KetQua.MaND " +
+               "JOIN GiaoDeThi ON KetQua.MaDe = GiaoDeThi.MaDe " +
                "JOIN Lop ON Lop.MaLop = GiaoDeThi.MaLop " +
-               "JOIN KetQua ON KetQua.MaDe = GiaoDeThi.MaDe " +
-               "JOIN DeThi ON DeThi.MaDe = KetQua.MaDe " +
+               "JOIN DeThi ON DeThi.MaDe = GiaoDeThi.MaDe " +
                "WHERE Lop.MaLop = @maLop AND DeThi.MaDe = @maDeThi " +
                "GROUP BY NguoiDung.MaNguoiDung, NguoiDung.Ten, NguoiDung.GioiTinh, NguoiDung.NgaySinh, NguoiDung.Avatar, NguoiDung.SDT, NguoiDung.NgayTao, NguoiDung.TrangThai, NguoiDung.is_delete, KetQua.Diem " +
                "ORDER BY KetQua.Diem DESC";

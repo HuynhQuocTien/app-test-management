@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ namespace GUI
     public partial class fMatKhauMoi : Form
     {
         private string email;
+        TaiKhoanBLL taiKhoanBLL;
         public fMatKhauMoi(string email)
         {
+            taiKhoanBLL = new TaiKhoanBLL();
             InitializeComponent();
             this.email = email;
             // display email
@@ -25,9 +28,19 @@ namespace GUI
         {
             //txtNhapMK.Text
             //txtXacNhan.Text
-            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+            TaiKhoanDTO taiKhoanDTO = taiKhoanBLL.getTaiKhoanByEmail(email) ?? new TaiKhoanDTO();
+            if (txtNhapMK.Text.Equals(txtXacNhan.Text))
+            {
+                MessageBox.Show("Mật khẩu xác nhận không giống nhau!", "Cảnh báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (taiKhoanDTO.Password.Equals(txtXacNhan.Text)){
+                MessageBox.Show("Mật khẩu trùng với mật khẩu cũ!", "Cảnh báo", MessageBoxButtons.OK);
+                return;
+
+            }
             string thongBao = taiKhoanBLL.suaMatKhauNguoiDung(email, txtNhapMK.Text, txtXacNhan.Text);
-            MessageBox.Show(thongBao, "Thông báo", MessageBoxButtons.OK);
+            MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
             if (thongBao.Equals("Oke"))
             {
                 this.Close();

@@ -48,5 +48,9 @@ namespace DTO
             TenMonHoc = tenMonHoc;
         }
 
+        public override string ToString()
+        {
+            return $"{MaDe} - {TenDe}";
+        }
     }
 }

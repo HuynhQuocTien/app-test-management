@@ -157,7 +157,7 @@ namespace DAL
             {
                 using (SqlConnection conn = GetConnectionDb.GetConnection())
                 {
-                    string query = "SELECT ND* " +
+                    string query = "SELECT ND.* " +
                                    "FROM ChiTietLop CTL " +
                                     "JOIN NguoiDung ND ON CTL.MaSV = ND.MaNguoiDung " +
                                     "WHERE CTL.MaLop = @MaLop AND CTL.is_delete = 0;";

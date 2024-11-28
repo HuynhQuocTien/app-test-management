@@ -35,5 +35,10 @@ namespace DTO
             TrangThai = trangThai;
             this.is_delete = is_delete;
         }
+
+        public override string ToString()
+        {
+            return $"{HoTen}";
+        }
     }
 }
