@@ -75,6 +75,8 @@
     <Compile Include="ThongKeDiemDTO.cs" />
     <Compile Include="ThongKeDiemTheoLopDTO.cs" />
     <Compile Include="ThongKeDiemTheoMonDTO.cs" />
+    <Compile Include="ThongKeDTBTheoLop.cs" />
+    <Compile Include="ThongKeDTBTheoMon.cs" />
     <Compile Include="ThongKeSVThamGiaThiTheoLopDTO.cs" />
     <Compile Include="ThongKeSVThamGiaThiTheoMonDTO.cs" />
   </ItemGroup>

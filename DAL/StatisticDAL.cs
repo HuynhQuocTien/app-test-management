@@ -177,6 +177,58 @@ namespace DAL
             return list;
         }
 
+        public List<ThongKeDTBTheoMon> ThongKeDTBTheoMon()
+        {
+            List<ThongKeDTBTheoMon> list = new List<ThongKeDTBTheoMon>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT mh.MaMonHoc, mh.TenMonHoc, AVG(kq.Diem) AS DiemTrungBinh\r\nFROM KetQua kq\r\nJOIN DeThi dt ON \r\ndt.MaDe = kq.MaDe\r\nJOIN MonHoc mh ON\r\nmh.MaMonHoc = dt.MaMonHoc\r\nGROUP BY mh.TenMonHoc, mh.MaMonHoc;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ThongKeDTBTheoMon thongKe = new ThongKeDTBTheoMon
+                            {
+                                maMonHoc = Convert.ToInt32(reader["MaMonHoc"]),
+                                tenMonHoc = reader["TenMonHoc"].ToString(),
+                                diemTrungBinh = Convert.ToDecimal(reader["DiemTrungBinh"])
+                            };
+                            list.Add(thongKe);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<ThongKeDTBTheoLop> ThongKeDTBTheoLop()
+        {
+            List<ThongKeDTBTheoLop> list = new List<ThongKeDTBTheoLop>();
+            using (SqlConnection connection = GetConnectionDb.GetConnection())
+            {
+                string query = "SELECT l.MaLop, l.TenLop, AVG(kq.dIEM) AS DiemTrungBinh\r\nFROM KetQua kq\r\nJOIN \r\n\tDeThi dt ON dt.MaDe = kq.MaDe\r\nJOIN \r\n    ChiTietLop ctl ON ctl.MaSV = kq.MaND\r\nJOIN \r\n    Lop l ON l.MaLop = ctl.MaLop\r\nGROUP BY l.TenLop, l.MaLop";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ThongKeDTBTheoLop thongKe = new ThongKeDTBTheoLop
+                            {
+                                maLop = Convert.ToInt32(reader["MaLop"]),
+                                tenLop = reader["TenLop"].ToString(),
+                                diemTrungBinh = Convert.ToDecimal(reader["DiemTrungBinh"])
+                            };
+                            list.Add(thongKe);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
         public int SoLuongCauHoi()
         {
             int soLuongCauHoi = 0;
