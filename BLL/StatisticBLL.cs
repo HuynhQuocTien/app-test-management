@@ -36,6 +36,16 @@ namespace BLL
             return _statistic.ThongKeSVThamGiaThiTheoMon();
         }
 
+        public List<ThongKeDTBTheoLop> ThongKeDTBTheoLop()
+        {
+            return _statistic.ThongKeDTBTheoLop();
+        }
+
+        public List<ThongKeDTBTheoMon> ThongKeDTBTheoMon()
+        {
+            return _statistic.ThongKeDTBTheoMon();
+        }
+
         public int SoLuongGiangVien()
         {
             return _statistic.TongTaiKhoan(2);
