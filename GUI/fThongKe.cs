@@ -66,6 +66,7 @@ namespace GUI
             int SoLuongSinhVien = _statisticBLL.SoLuongSinhVien();
             int SoLuongGiaoVien = _statisticBLL.SoLuongGiangVien();
             int SoLuongCauHoi = _statisticBLL.SoLuongCauHoi();
+            tabControl1.TabPages.Remove(tabPage3);
             // load cb 
             lblCountHS.Text = SoLuongSinhVien.ToString();
             lblCountGV.Text = SoLuongGiaoVien.ToString();

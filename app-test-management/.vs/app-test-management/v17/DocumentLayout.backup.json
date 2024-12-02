@@ -43,8 +43,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 18,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "fDangNhap.cs",
+              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
+              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAWwG8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T07:59:45.45Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
