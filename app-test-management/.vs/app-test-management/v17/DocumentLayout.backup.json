@@ -43,21 +43,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 15,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "fDangNhap.cs",
-              "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
-              "RelativeDocumentMoniker": "..\\GUI\\fDangNhap.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\fDangNhap.cs",
-              "RelativeToolTip": "..\\GUI\\fDangNhap.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAWwG8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:59:45.45Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
@@ -120,8 +107,8 @@
               "Title": "DeThiControl.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
               "RelativeDocumentMoniker": "..\\GUI\\DeThi\\DeThiControl.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs*",
-              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs*",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\DeThi\\DeThiControl.cs",
+              "RelativeToolTip": "..\\GUI\\DeThi\\DeThiControl.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAAD4v7UAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T17:52:49.138Z",
@@ -133,9 +120,9 @@
               "Title": "fChiTietLop.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs*",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs*",
-              "ViewState": "AgIAAJkBAAAAAAAAAAAMwKcBAAA1AAAAAAAAAA==",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs",
+              "ViewState": "AgIAAN4BAAAAAAAAAAAAAPMBAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T15:50:37.314Z",
               "EditorCaption": ""
@@ -170,8 +157,8 @@
               "Title": "fThemCauHoi.cs",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs*",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs*",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
+              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
               "ViewState": "AgIAACoIAAAAAAAAAAD4vzcIAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T15:45:52.857Z",
@@ -195,8 +182,8 @@
               "Title": "fChiTietLop.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs",
               "RelativeDocumentMoniker": "..\\GUI\\LopHoc\\fChiTietLop.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]*",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\LopHoc\\fChiTietLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T17:44:23.33Z",
               "EditorCaption": " [Design]"
@@ -241,8 +228,8 @@
               "Title": "fThemCauHoi.cs [Design]",
               "DocumentMoniker": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs",
               "RelativeDocumentMoniker": "..\\GUI\\CauHoi\\fThemCauHoi.cs",
-              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs [Design]*",
-              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs [Design]*",
+              "ToolTip": "E:\\GitHub\\app-test-management\\GUI\\CauHoi\\fThemCauHoi.cs [Design]",
+              "RelativeToolTip": "..\\GUI\\CauHoi\\fThemCauHoi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T15:45:49.19Z",
               "EditorCaption": " [Design]"
