@@ -559,6 +559,7 @@ namespace GUI
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.fLayout_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fLayout_FormClosed);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.containerBtnPanel.ResumeLayout(false);
             this.infoPanelBox.ResumeLayout(false);
             this.infoOwnerPanel.ResumeLayout(false);

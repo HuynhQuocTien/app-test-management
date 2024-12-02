@@ -299,5 +299,27 @@ namespace DAL
                 }
             }
         }
+
+        public bool checkPhanCongOfMonHoc(long maGV, int maMon)
+        {
+            using (SqlConnection conn = GetConnectionDb.GetConnection())
+            {
+                try
+                {
+                    string query = "SELECT COUNT(1) FROM PhanCong WHERE MaGV = @MaGV AND MaMonHoc = @MaMonHoc";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@MaGV", maGV);
+                    cmd.Parameters.AddWithValue("@MaMonHoc", maMon);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0; // Trả về true nếu có bản ghi tồn tại
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+            }
+        }
     }
 }

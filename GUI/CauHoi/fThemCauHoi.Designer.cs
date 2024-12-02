@@ -231,7 +231,7 @@ namespace GUI.CauHoi
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(3, 2);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1375, 889);
@@ -241,9 +241,9 @@ namespace GUI.CauHoi
             // 
             this.tabPage3.Controls.Add(this.mainThemThuCongPanel);
             this.tabPage3.Location = new System.Drawing.Point(4, 37);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1367, 848);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Trắc nghiệm";
@@ -258,7 +258,7 @@ namespace GUI.CauHoi
             this.mainThemThuCongPanel.Controls.Add(this.containerDapAnPanel, 0, 1);
             this.mainThemThuCongPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainThemThuCongPanel.Location = new System.Drawing.Point(4, 4);
-            this.mainThemThuCongPanel.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.mainThemThuCongPanel.Margin = new System.Windows.Forms.Padding(20);
             this.mainThemThuCongPanel.Name = "mainThemThuCongPanel";
             this.mainThemThuCongPanel.RowCount = 2;
             this.mainThemThuCongPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.50495F));
@@ -570,7 +570,7 @@ namespace GUI.CauHoi
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(4, 258);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 38);
             this.panel1.TabIndex = 3;
@@ -582,7 +582,7 @@ namespace GUI.CauHoi
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(153, 10);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(178, 32);
             this.checkBox1.TabIndex = 2;
@@ -652,10 +652,10 @@ namespace GUI.CauHoi
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 37);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage4.Size = new System.Drawing.Size(1365, 846);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(1367, 848);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Điền từ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -669,12 +669,12 @@ namespace GUI.CauHoi
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(20);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.50495F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.49505F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1357, 838);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1359, 840);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -691,7 +691,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.3796F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.6204F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1357, 414);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1359, 415);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -710,7 +710,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.47368F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.52632F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1351, 88);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1353, 88);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // label3
@@ -718,7 +718,7 @@ namespace GUI.CauHoi
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(678, 0);
+            this.label3.Location = new System.Drawing.Point(679, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 43);
             this.label3.TabIndex = 4;
@@ -736,7 +736,7 @@ namespace GUI.CauHoi
             "Dễ",
             "Trung Bình",
             "Khó"});
-            this.comboBox1.Location = new System.Drawing.Point(678, 48);
+            this.comboBox1.Location = new System.Drawing.Point(679, 48);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 36);
@@ -781,7 +781,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.71831F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.28169F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1335, 302);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1337, 303);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // label5
@@ -804,7 +804,7 @@ namespace GUI.CauHoi
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1329, 239);
+            this.textBox1.Size = new System.Drawing.Size(1331, 240);
             this.textBox1.TabIndex = 2;
             // 
             // tableLayoutPanel7
@@ -815,13 +815,13 @@ namespace GUI.CauHoi
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 416);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 417);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.87845F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.12154F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1351, 420);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1353, 421);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -832,7 +832,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel8.Controls.Add(this.button1, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 49);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 50);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 3;
@@ -840,7 +840,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.04055F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.04077F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1345, 369);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1347, 369);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
             // groupBox2
@@ -851,7 +851,7 @@ namespace GUI.CauHoi
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1345, 254);
+            this.groupBox2.Size = new System.Drawing.Size(1347, 254);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -880,7 +880,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1339, 223);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1341, 223);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // label17
@@ -993,7 +993,7 @@ namespace GUI.CauHoi
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(1179, 312);
+            this.button1.Location = new System.Drawing.Point(1181, 312);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 55);
@@ -1006,7 +1006,7 @@ namespace GUI.CauHoi
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(4, 258);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(540, 38);
             this.panel2.TabIndex = 3;
@@ -1018,7 +1018,7 @@ namespace GUI.CauHoi
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(153, 10);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(178, 32);
             this.checkBox2.TabIndex = 2;
@@ -1051,7 +1051,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1351, 49);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1353, 50);
             this.tableLayoutPanel10.TabIndex = 4;
             // 
             // label7
@@ -1062,7 +1062,7 @@ namespace GUI.CauHoi
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 49);
+            this.label7.Size = new System.Drawing.Size(169, 50);
             this.label7.TabIndex = 3;
             this.label7.Text = "Chọn số đáp án: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1079,7 +1079,7 @@ namespace GUI.CauHoi
             "3",
             "4",
             "5"});
-            this.comboBox3.Location = new System.Drawing.Point(223, 6);
+            this.comboBox3.Location = new System.Drawing.Point(224, 7);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(132, 36);
@@ -1090,10 +1090,10 @@ namespace GUI.CauHoi
             // 
             this.tabPage5.Controls.Add(this.tableLayoutPanel11);
             this.tabPage5.Location = new System.Drawing.Point(4, 37);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(1365, 846);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(1367, 848);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Nối câu";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1106,12 +1106,12 @@ namespace GUI.CauHoi
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel15, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(20);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.5F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.5F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(1357, 838);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(1359, 840);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // tableLayoutPanel12
@@ -1128,7 +1128,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.3796F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.6204F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(1357, 590);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(1359, 592);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // tableLayoutPanel13
@@ -1147,7 +1147,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.47368F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.52632F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(1351, 128);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(1353, 128);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // label8
@@ -1155,7 +1155,7 @@ namespace GUI.CauHoi
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(678, 0);
+            this.label8.Location = new System.Drawing.Point(679, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 63);
             this.label8.TabIndex = 4;
@@ -1173,7 +1173,7 @@ namespace GUI.CauHoi
             "Dễ",
             "Trung Bình",
             "Khó"});
-            this.comboBox4.Location = new System.Drawing.Point(678, 68);
+            this.comboBox4.Location = new System.Drawing.Point(679, 68);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(160, 36);
@@ -1219,17 +1219,17 @@ namespace GUI.CauHoi
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.71831F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.28169F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(1335, 438);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(1337, 440);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // textBox13
             // 
             this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox13.Location = new System.Drawing.Point(665, 88);
+            this.textBox13.Location = new System.Drawing.Point(666, 88);
             this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(667, 348);
+            this.textBox13.Size = new System.Drawing.Size(668, 350);
             this.textBox13.TabIndex = 5;
             this.textBox13.Text = "A.XYZ\r\nB. Python\r\nC.Nhúng\r\nD.123\r\nE.Hàm số";
             // 
@@ -1240,7 +1240,7 @@ namespace GUI.CauHoi
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(656, 348);
+            this.textBox12.Size = new System.Drawing.Size(657, 350);
             this.textBox12.TabIndex = 4;
             this.textBox12.Text = "1. Ngôn ngữ \r\n2. Lập trình\r\n3.ABC";
             // 
@@ -1264,13 +1264,13 @@ namespace GUI.CauHoi
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel18, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 592);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 594);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.36634F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.63367F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1351, 244);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(1353, 244);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // tableLayoutPanel16
@@ -1289,7 +1289,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.54839F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.19355F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(1345, 193);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(1347, 193);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
             // tableLayoutPanel17
@@ -1316,11 +1316,11 @@ namespace GUI.CauHoi
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tableLayoutPanel17.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(1337, 54);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(1339, 54);
             this.tableLayoutPanel17.TabIndex = 14;
             // 
             // panel12
@@ -1328,17 +1328,17 @@ namespace GUI.CauHoi
             this.panel12.Controls.Add(this.textBox10);
             this.panel12.Controls.Add(this.label18);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(1184, 4);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Location = new System.Drawing.Point(1191, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(149, 46);
+            this.panel12.Size = new System.Drawing.Size(144, 46);
             this.panel12.TabIndex = 16;
             // 
             // textBox10
             // 
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Location = new System.Drawing.Point(49, 7);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(37, 34);
             this.textBox10.TabIndex = 1;
@@ -1360,17 +1360,17 @@ namespace GUI.CauHoi
             this.panel10.Controls.Add(this.textBox8);
             this.panel10.Controls.Add(this.label19);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(1033, 4);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Location = new System.Drawing.Point(1039, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(143, 46);
+            this.panel10.Size = new System.Drawing.Size(144, 46);
             this.panel10.TabIndex = 14;
             // 
             // textBox8
             // 
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox8.Location = new System.Drawing.Point(49, 7);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(37, 34);
             this.textBox8.TabIndex = 1;
@@ -1392,17 +1392,17 @@ namespace GUI.CauHoi
             this.panel9.Controls.Add(this.textBox7);
             this.panel9.Controls.Add(this.label20);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(882, 4);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Location = new System.Drawing.Point(887, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(143, 46);
+            this.panel9.Size = new System.Drawing.Size(144, 46);
             this.panel9.TabIndex = 13;
             // 
             // textBox7
             // 
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Location = new System.Drawing.Point(49, 7);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(37, 34);
             this.textBox7.TabIndex = 1;
@@ -1424,17 +1424,17 @@ namespace GUI.CauHoi
             this.panel8.Controls.Add(this.textBox6);
             this.panel8.Controls.Add(this.label21);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(731, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Location = new System.Drawing.Point(735, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(143, 46);
+            this.panel8.Size = new System.Drawing.Size(144, 46);
             this.panel8.TabIndex = 12;
             // 
             // textBox6
             // 
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Location = new System.Drawing.Point(49, 7);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(37, 34);
             this.textBox6.TabIndex = 1;
@@ -1456,17 +1456,17 @@ namespace GUI.CauHoi
             this.panel7.Controls.Add(this.textBox9);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(580, 4);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Location = new System.Drawing.Point(583, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(143, 46);
+            this.panel7.Size = new System.Drawing.Size(144, 46);
             this.panel7.TabIndex = 11;
             // 
             // textBox9
             // 
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9.Location = new System.Drawing.Point(49, 7);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(37, 34);
             this.textBox9.TabIndex = 1;
@@ -1488,17 +1488,17 @@ namespace GUI.CauHoi
             this.panel6.Controls.Add(this.textBox14);
             this.panel6.Controls.Add(this.label23);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(429, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(431, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(143, 46);
+            this.panel6.Size = new System.Drawing.Size(144, 46);
             this.panel6.TabIndex = 10;
             // 
             // textBox14
             // 
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.Location = new System.Drawing.Point(49, 7);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(37, 34);
             this.textBox14.TabIndex = 1;
@@ -1521,16 +1521,16 @@ namespace GUI.CauHoi
             this.panel4.Controls.Add(this.label24);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(127, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(143, 46);
+            this.panel4.Size = new System.Drawing.Size(144, 46);
             this.panel4.TabIndex = 9;
             // 
             // textBox15
             // 
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox15.Location = new System.Drawing.Point(49, 7);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(37, 34);
             this.textBox15.TabIndex = 1;
@@ -1552,17 +1552,17 @@ namespace GUI.CauHoi
             this.panel5.Controls.Add(this.textBox16);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(278, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(279, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(143, 46);
+            this.panel5.Size = new System.Drawing.Size(144, 46);
             this.panel5.TabIndex = 8;
             // 
             // textBox16
             // 
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox16.Location = new System.Drawing.Point(49, 7);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(4);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(37, 34);
             this.textBox16.TabIndex = 1;
@@ -1597,7 +1597,7 @@ namespace GUI.CauHoi
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(1179, 136);
+            this.button2.Location = new System.Drawing.Point(1181, 136);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 55);
@@ -1613,9 +1613,9 @@ namespace GUI.CauHoi
             this.panel3.Controls.Add(this.label11);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(4, 66);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1337, 56);
+            this.panel3.Size = new System.Drawing.Size(1339, 56);
             this.panel3.TabIndex = 3;
             // 
             // checkBox4
@@ -1625,7 +1625,7 @@ namespace GUI.CauHoi
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox4.Location = new System.Drawing.Point(153, 15);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(178, 32);
             this.checkBox4.TabIndex = 2;
@@ -1639,7 +1639,7 @@ namespace GUI.CauHoi
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.Location = new System.Drawing.Point(153, 10);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(178, 32);
             this.checkBox3.TabIndex = 2;
@@ -1683,7 +1683,7 @@ namespace GUI.CauHoi
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(1351, 49);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(1353, 49);
             this.tableLayoutPanel18.TabIndex = 4;
             // 
             // label12
@@ -1714,7 +1714,7 @@ namespace GUI.CauHoi
             "6",
             "7",
             "8"});
-            this.comboBox6.Location = new System.Drawing.Point(276, 6);
+            this.comboBox6.Location = new System.Drawing.Point(277, 6);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(132, 36);

@@ -13,20 +13,19 @@ namespace BLL
     {
         private PhanCongDAL phanCongDAL;
 
-
+        public PhanCongBLL()
+        {
+            phanCongDAL = PhanCongDAL.getInstance();
+        }
         public bool Add(PhanCongDTO phancong)
         {
-            PhanCongDAL phanCongDAL = new PhanCongDAL();
             return phanCongDAL.Add(phancong);
         }
         public List<PhanCongDTO> GetAll()
         {
             return phanCongDAL.GetAll();
         }
-        public PhanCongBLL()
-        {
-            phanCongDAL = PhanCongDAL.getInstance();
-        }
+       
 
         public List<PhanCongDTO> GetTimKiem(string timkiem)
         {
@@ -62,8 +61,11 @@ namespace BLL
         public bool DeleteMAGV(string maGV)
         {
 
-            PhanCongDAL phanCongDAL = new PhanCongDAL();
             return phanCongDAL.DeleteMAGV(maGV);
+        }
+        public bool checkPhanCongOfMonHoc(long MaGV,int MaMon)
+        {
+            return phanCongDAL.checkPhanCongOfMonHoc(MaGV, MaMon);
         }
     }
 }

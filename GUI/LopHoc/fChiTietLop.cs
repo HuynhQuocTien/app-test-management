@@ -318,6 +318,11 @@ namespace GUI.LopHoc
                 }
                 if (btnXemKq.Text.Contains("Mở đáp án") || btnXemKq.Text.Contains("Đóng đáp án"))
                 {
+                    if (!phanCongBLL.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, deThi.MaMonHoc))
+                    {
+                        MessageBox.Show("Người dùng không được phân công dạy môn này");
+                        return;
+                    }
                     if (giaoDeThiDTO == null)
                     {
                         MessageBox.Show("Lớp này chưa được phân công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -416,6 +421,11 @@ namespace GUI.LopHoc
             // thực hiện chức năng mở đề thi khi de thi dang dong
             if (!fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Học sinh"))
             {
+                if(!phanCongBLL.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung,obj.MaMonHoc))
+                {
+                    MessageBox.Show("Bạn chưa được phân công môn này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 fSetThoiGianDeThi f = new fSetThoiGianDeThi(obj, lop, this, "edit");
                 f.ShowDialog();
             }
@@ -476,8 +486,14 @@ namespace GUI.LopHoc
         private void btnDong_Click(object s, EventArgs ev, DeThiDTO obj,LopDTO lop)
         {
             Button button = (Button)s;
+            
             if(button.Text.Contains("Đóng"))
             {
+                if (!phanCongBLL.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, obj.MaMonHoc))
+                {
+                    MessageBox.Show("người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                    return;
+                }
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn đóng đề này không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (DialogResult.OK == dialogResult)
                 {
@@ -495,6 +511,11 @@ namespace GUI.LopHoc
             }
             else if (button.Text.Contains("Xoá"))
             {
+                if (!phanCongBLL.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, obj.MaMonHoc))
+                {
+                    MessageBox.Show("người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                    return;
+                }
                 GiaoDeThiDTO giaoDTDelete = new GiaoDeThiDTO
                 {
                     MaDe = obj.MaDe,

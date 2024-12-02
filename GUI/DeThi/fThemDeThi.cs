@@ -84,6 +84,7 @@ namespace GUI.DeThi
             {
                 if (checkValidTenDeThi() && checkThoiGianLamBaiToiThieu())
                 {
+                    
                     try
                     {
                         string txtTendeValue = txtTenDeThi.Text;
@@ -92,8 +93,7 @@ namespace GUI.DeThi
                         int thoiGianLamBai = (int)numThoiGianLam.Value;
 
 
-
-                        DeThiDTO deThiAdd = new DeThiDTO(deThiBLL.GetAutoIncrement(), cbMonHocValue.MaMonHoc,
+                            DeThiDTO deThiAdd = new DeThiDTO(deThiBLL.GetAutoIncrement(), cbMonHocValue.MaMonHoc,
                             txtTendeValue, DateTime.Now, DateTime.Now, DateTime.Now, thoiGianLamBai,
                             fDangNhap.nguoiDungDTO.MaNguoiDung, -1, 0, cbMonHocValue.TenMonHoc);
                         deThiControl.AddDeThi(deThiAdd);
@@ -103,7 +103,8 @@ namespace GUI.DeThi
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show("Vui lòng chọn môn học mà bạn được phân công!");
+                        return;
                     }
                 }  
             }

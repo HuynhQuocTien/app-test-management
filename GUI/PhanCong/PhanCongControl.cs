@@ -135,8 +135,8 @@ namespace GUI.PhanCong
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            fAddPhanCong fthemPhanCong = new fAddPhanCong();
-            fthemPhanCong.Show();
+            fAddPhanCong fthemPhanCong = new fAddPhanCong(this);
+            fthemPhanCong.ShowDialog();
             LoadDataToGridView();
             phanTrang();
         }

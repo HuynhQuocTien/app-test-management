@@ -40,8 +40,10 @@ namespace GUI
         private Rectangle recTxt2;
         private Rectangle recCBox1;
 
+        TaiKhoanBLL taiKhoanBLL;
         public fDangNhap()
         {
+            taiKhoanBLL = new TaiKhoanBLL();
             InitializeComponent();
             this.Resize += Form1_Resiz;
             formOriginalSize = this.Size;
@@ -98,13 +100,33 @@ namespace GUI
         {
             string taiKhoan = textBox1.Text;
             string matKhau = textBox2.Text;
-            TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+            if (String.IsNullOrEmpty(taiKhoan)){
+                MessageBox.Show("Vui lòng nhập tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrEmpty(matKhau))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            TaiKhoanDTO taiKhoanTest= taiKhoanBLL.getTaiKhoanById(Convert.ToInt64(taiKhoan)) ?? null;
+            if(taiKhoanTest == null)
+            {
+                MessageBox.Show("Tài khoản không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (taiKhoanTest.TrangThai == 0)
+            {
+                MessageBox.Show("Tài khoản đã bị khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             string thongbBao = taiKhoanBLL.kiemTraTaiKhoan(taiKhoan, matKhau);
             if (thongbBao.Equals("Đăng nhập thành công!"))
             {
                 Session.UserID = taiKhoan;
                 nguoiDungDTO = nguoiDungBLL.getUserLoginById(Convert.ToInt64(taiKhoan));
-                taiKhoanDTO = taiKhoanBLL.getTaiKhoanById(Convert.ToInt64(taiKhoan));
+                taiKhoanDTO = taiKhoanTest;
                 nhomQuyenDTO = nhomQuyenBLL.getNhomQuyenById(taiKhoanDTO.MaNhomQuyen);
                 fLayout formLayout = new fLayout();
                 formLayout.Show();
@@ -114,8 +136,6 @@ namespace GUI
             else
             {
                 MessageBox.Show(thongbBao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBox1.Text = "";
-                textBox2.Text = "";
             }
         }
 

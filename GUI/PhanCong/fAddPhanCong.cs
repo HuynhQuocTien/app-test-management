@@ -21,10 +21,11 @@ namespace GUI.PhanCong
     public partial class fAddPhanCong : Form
     {
         private bool isDataBinding = false;
-        public fAddPhanCong()
+        private PhanCongControl phanCongControl;
+        public fAddPhanCong(PhanCongControl phanCongControl)
         {
             InitializeComponent();
-
+            this.phanCongControl = phanCongControl;
             //Data giáo viên
             loadComboBox();
             //Data LB
@@ -264,12 +265,16 @@ namespace GUI.PhanCong
 
                     }
 
-                    MessageBox.Show("Thêm dữ liệu thành công!");
-                    }
+                    MessageBox.Show("Thành công!");
+                    this.Close();
+                    this.Dispose();
+                }
                     else
                     {
-                        MessageBox.Show("Xóa thành công!");
-                    }
+                        MessageBox.Show("Thành công!");
+                        this.Close();
+                        this.Dispose();
+                }
 
                 }
                 catch (Exception ex)
@@ -277,6 +282,12 @@ namespace GUI.PhanCong
                     MessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
                 }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }

@@ -22,8 +22,10 @@ namespace GUI.CauHoi
 {
     public partial class fThemCauHoi : Form
     {
+        PhanCongBLL phancongbll;
         public fThemCauHoi()
         {
+            phancongbll = new PhanCongBLL();
             InitializeComponent();
             textBox15.MaxLength = 1;
             textBox16.MaxLength = 1;
@@ -244,14 +246,19 @@ namespace GUI.CauHoi
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int i = 0;
+            if(comboBoxMonHoc.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn môn học cần thêm cho câu hỏi", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if(!phancongbll.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToInt32(comboBoxMonHoc.SelectedValue)))
+            {
+                MessageBox.Show("Môn này người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (comboBoxDoKho.SelectedIndex == -1)
             {
                 MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-            if (comboBoxMonHoc.SelectedIndex == -1)
-            {
-                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
             if (cbSoDapAn.SelectedIndex == 2)  // 4 đáp án
@@ -374,16 +381,22 @@ namespace GUI.CauHoi
             int i = 0;
             int count = Regex.Matches(textBox1.Text, @"\(\d+\)").Count;
             // Kiểm tra theo số đáp án được chọn trong ComboBox
-            if (comboBox1.SelectedIndex == -1)
-            {
-                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
-                return;
-            }
             if (comboBox2.SelectedIndex == -1)
             {
                 MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
                 return;
             }
+            if (!phancongbll.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToInt32(comboBox2.SelectedValue)))
+            {
+                MessageBox.Show("Môn này người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn độ khó", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            
             if (comboBox3.SelectedIndex == 4)  // 5 đáp án
             {
                 if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox11.Text == "")
@@ -608,6 +621,16 @@ namespace GUI.CauHoi
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            if (comboBox5.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (!phancongbll.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToInt32(comboBox5.SelectedValue)))
+            {
+                MessageBox.Show("Môn này người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             if (comboBox6.SelectedIndex==-1)
             {
                 MessageBox.Show("Chưa chọn số đáp án", "Báo Lỗi", MessageBoxButtons.OK);
@@ -2073,6 +2096,21 @@ namespace GUI.CauHoi
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (cbMonhoc.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn môn học", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (!phancongbll.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, Convert.ToInt32(cbMonhoc.SelectedValue)))
+            {
+                MessageBox.Show("Môn này người dùng không được phân công dạy", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            if (cbbLoaiCH.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn loại câu hỏi", "Báo Lỗi", MessageBoxButtons.OK);
+                return;
+            }
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Import Câu Hỏi";
             // Đuôi file

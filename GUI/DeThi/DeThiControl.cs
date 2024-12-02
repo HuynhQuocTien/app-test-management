@@ -18,11 +18,13 @@ namespace GUI.DeThi
     {
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
         DeThiBLL deThiBLL;
+        PhanCongBLL phanCongBLL;
         List<DeThiDTO> listDeThi;
         public DeThiControl()
         {
             InitializeComponent();
             deThiBLL = new DeThiBLL();
+            phanCongBLL = new PhanCongBLL();
             listDeThi = new List<DeThiDTO>();
             renderDeThiDTO(deThiBLL.getDeThiByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung));
         }
@@ -177,14 +179,23 @@ namespace GUI.DeThi
         }
         private void btnThemCauHoiVaoDe_Click(object sender, EventArgs e, DeThiDTO obj)
         {
-            fThemChiTietDeThi f = new fThemChiTietDeThi(obj);
-            f.ShowDialog();
+            if (phanCongBLL.checkPhanCongOfMonHoc(fDangNhap.nguoiDungDTO.MaNguoiDung, obj.MaMonHoc))
+            {
+                fThemChiTietDeThi f = new fThemChiTietDeThi(obj);
+                f.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Rất tiếc...Bạn chưa được phân công dạy môn này!");
+                return;
+            }
+            
             
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Giáo viên") || fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Admin"))
             {
+                
                 fThemDeThi themDeThi = new fThemDeThi(this, "add");
                 themDeThi.ShowDialog();
             }

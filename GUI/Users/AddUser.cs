@@ -86,11 +86,11 @@ namespace GUI.Users
                 return false;
             }
 
-            if (id.Length != 10)
-            {
-                MessageBox.Show("Độ dài của ID là 10", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            //if (id.Length != 10)
+            //{
+            //    MessageBox.Show("Độ dài của ID là 10", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return false;
+            //}
 
             if (id.Any(char.IsLetter))
             {

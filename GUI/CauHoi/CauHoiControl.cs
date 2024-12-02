@@ -595,9 +595,14 @@ namespace GUI.CauHoi
                 {
                     return;
                 }
-
                 int DoKho = selectedItem.Value;  // Lấy giá trị Value
                 CauHoiBLL cauhoiBLL = new CauHoiBLL();
+                if(comboBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Vui lòng chọn môn học cần lọc");
+                    comboBox2.SelectedIndex = -1;
+                    return;
+                }
                 dataGridView1.DataSource = cauhoiBLL.GetTimKiemSelect(DoKho, comboBox1.SelectedValue.ToString(), fDangNhap.taiKhoanDTO.Username);
                 this.numericUpDown1.Enabled = false;
                 this.label2.Text = "Trên tổng ... trang";
