@@ -47,6 +47,7 @@
             this.lblChuThichMo = new System.Windows.Forms.Label();
             this.lblChuThichDong = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.headingPanel.SuspendLayout();
             this.containerlbl.SuspendLayout();
@@ -93,13 +94,15 @@
             // 
             // containerlbl
             // 
-            this.containerlbl.ColumnCount = 2;
-            this.containerlbl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.26316F));
-            this.containerlbl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.73684F));
+            this.containerlbl.ColumnCount = 3;
+            this.containerlbl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.16807F));
+            this.containerlbl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.5233F));
+            this.containerlbl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.40502F));
             this.containerlbl.Controls.Add(this.lblGV, 0, 0);
             this.containerlbl.Controls.Add(this.lblMM, 0, 1);
             this.containerlbl.Controls.Add(this.lblTenGV, 1, 0);
             this.containerlbl.Controls.Add(this.lblMaMoi, 1, 1);
+            this.containerlbl.Controls.Add(this.label1, 2, 1);
             this.containerlbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerlbl.Location = new System.Drawing.Point(700, 2);
             this.containerlbl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -115,9 +118,9 @@
             this.lblGV.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGV.AutoSize = true;
             this.lblGV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGV.Location = new System.Drawing.Point(3, 20);
+            this.lblGV.Location = new System.Drawing.Point(3, 24);
             this.lblGV.Name = "lblGV";
-            this.lblGV.Size = new System.Drawing.Size(103, 28);
+            this.lblGV.Size = new System.Drawing.Size(82, 21);
             this.lblGV.TabIndex = 0;
             this.lblGV.Text = "Giáo viên: ";
             // 
@@ -126,9 +129,9 @@
             this.lblMM.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMM.AutoSize = true;
             this.lblMM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMM.Location = new System.Drawing.Point(3, 90);
+            this.lblMM.Location = new System.Drawing.Point(3, 93);
             this.lblMM.Name = "lblMM";
-            this.lblMM.Size = new System.Drawing.Size(88, 28);
+            this.lblMM.Size = new System.Drawing.Size(71, 21);
             this.lblMM.TabIndex = 1;
             this.lblMM.Text = "Mã mời: ";
             // 
@@ -137,9 +140,9 @@
             this.lblTenGV.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTenGV.AutoSize = true;
             this.lblTenGV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenGV.Location = new System.Drawing.Point(143, 20);
+            this.lblTenGV.Location = new System.Drawing.Point(115, 24);
             this.lblTenGV.Name = "lblTenGV";
-            this.lblTenGV.Size = new System.Drawing.Size(65, 28);
+            this.lblTenGV.Size = new System.Drawing.Size(52, 21);
             this.lblTenGV.TabIndex = 2;
             this.lblTenGV.Text = "label1";
             // 
@@ -149,11 +152,11 @@
             this.lblMaMoi.AutoSize = true;
             this.lblMaMoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMaMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaMoi.Location = new System.Drawing.Point(143, 90);
+            this.lblMaMoi.Location = new System.Drawing.Point(115, 93);
             this.lblMaMoi.Name = "lblMaMoi";
-            this.lblMaMoi.Size = new System.Drawing.Size(65, 28);
+            this.lblMaMoi.Size = new System.Drawing.Size(110, 21);
             this.lblMaMoi.TabIndex = 3;
-            this.lblMaMoi.Text = "label1";
+            this.lblMaMoi.Text = "AAAAAAAAAA";
             this.lblMaMoi.Click += new System.EventHandler(this.lblMaMoi_Click);
             // 
             // containerBtn
@@ -238,10 +241,10 @@
             this.lblDt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDt.AutoSize = true;
             this.lblDt.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDt.Location = new System.Drawing.Point(3, 76);
+            this.lblDt.Location = new System.Drawing.Point(3, 82);
             this.lblDt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.lblDt.Name = "lblDt";
-            this.lblDt.Size = new System.Drawing.Size(384, 59);
+            this.lblDt.Size = new System.Drawing.Size(316, 47);
             this.lblDt.TabIndex = 6;
             this.lblDt.Text = "Đề thi có trong lớp";
             // 
@@ -255,7 +258,7 @@
             this.lblTenLop.Location = new System.Drawing.Point(11, 10);
             this.lblTenLop.Margin = new System.Windows.Forms.Padding(11, 10, 3, 0);
             this.lblTenLop.Name = "lblTenLop";
-            this.lblTenLop.Size = new System.Drawing.Size(388, 54);
+            this.lblTenLop.Size = new System.Drawing.Size(309, 45);
             this.lblTenLop.TabIndex = 5;
             this.lblTenLop.Text = "Kỹ thuật lập trình   ";
             this.lblTenLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,7 +290,7 @@
             this.lblChuThichMo.Location = new System.Drawing.Point(15, 0);
             this.lblChuThichMo.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.lblChuThichMo.Name = "lblChuThichMo";
-            this.lblChuThichMo.Size = new System.Drawing.Size(182, 28);
+            this.lblChuThichMo.Size = new System.Drawing.Size(145, 21);
             this.lblChuThichMo.TabIndex = 0;
             this.lblChuThichMo.Text = "     : Đề thi đang mở";
             // 
@@ -300,7 +303,7 @@
             this.lblChuThichDong.Location = new System.Drawing.Point(15, 34);
             this.lblChuThichDong.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.lblChuThichDong.Name = "lblChuThichDong";
-            this.lblChuThichDong.Size = new System.Drawing.Size(177, 28);
+            this.lblChuThichDong.Size = new System.Drawing.Size(139, 21);
             this.lblChuThichDong.TabIndex = 0;
             this.lblChuThichDong.Text = "     : Đề thi đã đóng";
             // 
@@ -312,6 +315,20 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1261, 527);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(262, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 70);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "             ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fChiTietLop
             // 
@@ -356,5 +373,6 @@
         private System.Windows.Forms.Label lblChuThichDong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -34,6 +34,7 @@ namespace GUI.LopHoc
         KetQuaBLL ketQuaBLL;
         NguoiDungBLL nguoiDungBLL;
         ChiTietDeBLL chiTietDeBLL;
+        LopBLL lopBLL;
 
         List<KetQuaDTO> listKetQua;
 
@@ -51,7 +52,9 @@ namespace GUI.LopHoc
             ketQuaBLL = new KetQuaBLL();
             nguoiDungBLL = new NguoiDungBLL();
             chiTietDeBLL = new ChiTietDeBLL();
-            
+            lopBLL = new LopBLL();
+
+
             RenderInfoLop();
             //Tạo Đề thi giả để xem
             //DeThiDTO temp = new DeThiDTO();
@@ -126,9 +129,9 @@ namespace GUI.LopHoc
             b += 128;
 
             // Đảm bảo rằng các thành phần màu không vượt quá 255
-            r = r > 255 ? 255 : r;
-            g = g > 255 ? 255 : g;
-            b = b > 255 ? 255 : b;
+            r = r >= 255 ? 220 : r;
+            g = g >= 255 ? 250 : g;
+            b = b >= 255 ? 250 : b;
 
             if (r == 134 && r == 142 && r == 150)
             {
@@ -578,6 +581,48 @@ namespace GUI.LopHoc
         {
             fThemSVvaoLop fAddSV = new fThemSVvaoLop(lopHocControl,lopDTO);
             fAddSV.ShowDialog();
+        }
+        private string GenerateRandomCode(int length)//randomMaMoi Còn lỗi
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789"; // Các ký tự và số có thể sử dụng
+            Random random = new Random();
+            StringBuilder code = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                // sinh số ngẫu nhiên dựa theo độ dài của mảng ký tự
+                int index = random.Next(chars.Length);
+                code.Append(chars[index]);
+            }
+            List<LopDTO> listlopRC = lopBLL.getListLopByMaGV(fDangNhap.nguoiDungDTO.MaNguoiDung) ?? new List<LopDTO>();
+            List<string> lMaMoi = new List<string>();
+            foreach (LopDTO item in listlopRC)
+            {
+                lMaMoi.Add(item.MaMoi.ToString());
+            }
+
+            foreach (string item in lMaMoi)
+            {
+                if (code.ToString().Equals(item))
+                {
+                    return GenerateRandomCode(10);
+                }
+            }
+            return code.ToString();
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            string newMaMoi = GenerateRandomCode(10);
+            this.lopDTO.MaMoi = newMaMoi;
+            if (lopBLL.UpdateMaMoi(this.lopDTO))
+            {
+                lblMaMoi.Text = newMaMoi;
+                MessageBox.Show("Cập nhật mã mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật mã mới không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

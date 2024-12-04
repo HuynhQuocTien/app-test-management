@@ -43,9 +43,9 @@ namespace GUI.LopHoc
 
         private string selectedTrangThai;
         private int selectedIdDeThi;
-        private long selectedIdND;
-        private int soLuongHsDaNopBai;
-        private int soLuongDeThiCoTrongLop;
+        private long selectedIdND = 0;
+        private int soLuongHsDaNopBai = 0;
+        private int soLuongDeThiCoTrongLop  = 0;
         private int soLuongDeThiDangMo = 0;
         public fDanhSachSV(LopDTO lopDTO)
         {
@@ -100,15 +100,20 @@ namespace GUI.LopHoc
                     soLuongDeThiDangMo++;
                 }
             }
-            foreach (var item in lDTB)
-            {
-                listHoTenHs.Add(item.Key.HoTen);
-                KetQuaDTO kq = new KetQuaDTO
-                {
-                    Diem = item.Value.Diem / soLuongDeThiCoTrongLop
-                };
-                listDiemTBCuaHs[item.Key] = kq;
-            }
+            //foreach (var item in lDTB)
+            //{
+            //    listHoTenHs.Add(item.Key.HoTen);
+            //    if (soLuongDeThiCoTrongLop == 0)
+            //    {
+            //        listDiemTBCuaHs[item.Key] = null;
+            //        continue;
+            //    }
+            //    KetQuaDTO kq = new KetQuaDTO
+            //    {
+            //        Diem = item.Value.Diem / soLuongDeThiCoTrongLop
+            //    };
+            //    listDiemTBCuaHs[item.Key] = kq;
+            //}
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("Mã học sinh", typeof(long));
@@ -121,15 +126,32 @@ namespace GUI.LopHoc
             dt1.Columns.Add("Họ và tên", typeof(string));
             dt1.Columns.Add("SDT", typeof(string));
             dt1.Columns.Add("Điểm", typeof(double));
-            load();
-            loadDataGridView();
-            loadCbTrangThai();
-            loadCBHocSinh();
-            loadCbDeThi();
-            loadChartTongQuan();
-            loadPieChart(soLuongHsDaNopBai);
-            loadChartTop5HsDiemCao();
-            StyleDataGridView();
+
+            if(!fDangNhap.nhomQuyenDTO.TenQuyen.Contains("Học sinh"))
+            {
+                load();
+                loadDataGridView();
+                loadCbTrangThai();
+                loadCBHocSinh();
+                loadCbDeThi();
+                loadChartTongQuan();
+                loadPieChart(soLuongHsDaNopBai);
+                loadChartTop5HsDiemCao();
+                StyleDataGridView();
+            } else
+            {
+                loadDataGridView();
+
+            }
+            //load();
+            //loadDataGridView();
+            //loadCbTrangThai();
+            //loadCBHocSinh();
+            //loadCbDeThi();
+            //loadChartTongQuan();
+            //loadPieChart(soLuongHsDaNopBai);
+            //loadChartTop5HsDiemCao();
+            //StyleDataGridView();
         }
         private void load()
         {
@@ -139,7 +161,7 @@ namespace GUI.LopHoc
         private void loadCbTrangThai()
         {
             cbTrangThai.DataSource = listTrangThai;
-            cbTrangThai.SelectedIndex = 0;
+            //cbTrangThai.SelectedIndex = 0;
         }
         private void loadCbDeThi()
         {
@@ -172,6 +194,7 @@ namespace GUI.LopHoc
         private void loadDataGridView()
         {
             dt.Clear();
+            dataGridView1.DataSource = null;
             int stt = 1;
             foreach (NguoiDungDTO hs in lHocSinhTrongLop)
             {
@@ -192,10 +215,13 @@ namespace GUI.LopHoc
         private void loadDataGridView2()
         {
             dt1.Clear();
+            dataGridView2.DataSource = null;
             int stt = 1;
             foreach (NguoiDungDTO hs in lHocSinhTrongLop)
             {
                 double diem = thongKeBLL.getDiemCuaDeThiByUserId(lopDTO.MaLop, selectedIdDeThi, hs.MaNguoiDung);
+                if (diem == -1)
+                    continue;
                 if (selectedTrangThai.Equals("Tất cả"))
                 {
                     DataRow row = dt1.NewRow();
@@ -310,9 +336,9 @@ namespace GUI.LopHoc
         }
         public void StyleDataGridView()
         {
-            dataGridView1.Columns["STT"].Width = 250;
+            dataGridView1.Columns["STT"].Width = 100;
             dataGridView1.Columns["Mã học sinh"].Width = 350;
-            dataGridView1.Columns["SDT"].Width = 100;
+            dataGridView1.Columns["SDT"].Width = 250;
             dataGridView1.Columns["Họ và tên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
@@ -329,7 +355,8 @@ namespace GUI.LopHoc
                 new ColumnSeries
                 {
                     Title = "Điểm trung bình",
-                    Values = listDiemTBCuaHs.Select(x => (decimal)x.Value.Diem).AsChartValues(),
+                    Values = listDiemTBCuaHs.Where(x => x.Value != null).Select(x => (decimal)x.Value.Diem).AsChartValues(),
+
                 }
             };
 
@@ -350,6 +377,8 @@ namespace GUI.LopHoc
 
         private void loadPieChart(int slhsdn)
         {
+            if (soLuongDeThiCoTrongLop == 0)
+                return;
             slhsdn = soLuongHsDaNopBai;
             Func<ChartPoint, string> labelPoint = chartPoint =>
         string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);

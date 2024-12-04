@@ -469,7 +469,11 @@ namespace GUI.CauHoi
         private void btnSua_Click(object sender, EventArgs e)
         {
             string LoaiCauHoi = this.cauHoiDTO.LoaiCauHoi;
-
+            if((fDangNhap.nguoiDungDTO.MaNguoiDung != this.cauHoiDTO.MaNguoiTao) && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Admin"))
+            {
+                MessageBox.Show($"Bạn không có quyền sửa câu hỏi của người {this.cauHoiDTO.MaNguoiTao} tạo");
+                return;
+            }
             switch (LoaiCauHoi)
             {
                 case "Trắc nghiệm":
@@ -534,6 +538,11 @@ namespace GUI.CauHoi
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if ((fDangNhap.nguoiDungDTO.MaNguoiDung != this.cauHoiDTO.MaNguoiTao) && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Admin"))
+            {
+                MessageBox.Show($"Bạn không có quyền xoá câu hỏi của người {this.cauHoiDTO.MaNguoiTao} tạo");
+                return;
+            }
             DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn xóa câu hỏi này ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {

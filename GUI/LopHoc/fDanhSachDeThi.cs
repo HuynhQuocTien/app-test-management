@@ -84,9 +84,9 @@ namespace GUI.LopHoc
             b += 128;
 
             // Đảm bảo rằng các thành phần màu không vượt quá 255
-            r = r > 255 ? 255 : r;
-            g = g > 255 ? 255 : g;
-            b = b > 255 ? 255 : b;
+            r = r >= 255 ? 220 : r;
+            g = g >= 255 ? 250 : g;
+            b = b >= 255 ? 250 : b;
 
             return Color.FromArgb(r, g, b);
         }

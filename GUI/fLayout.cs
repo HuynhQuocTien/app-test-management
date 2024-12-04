@@ -249,29 +249,31 @@ namespace GUI
             ////this.containerBtnPanel.Controls.Add(this.btnPhanQuyen, 0, 8);
             //this.containerBtnPanel.Controls.Add(this.btnThongKe, 0, 8);
             //this.containerBtnPanel.Controls.Add(this.btnThoat, 0, 9);
-            if (tenquyen.Contains("Admin") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Admin"))
             {
                 containerBtnPanel.Controls.Add(btnNguoiDung, 0, 6);
-                containerBtnPanel.RowStyles.Add(new RowStyle());
-                containerBtnPanel.Controls.Add(this.btnPhanCong, 0, 7);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
                 containerBtnPanel.Controls.Add(btnThongKe, 0, 8);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
-
+            if(tenquyen.Contains("GV Phân công") || tenquyen.Contains("Admin"))
+            {
+                containerBtnPanel.Controls.Add(this.btnPhanCong, 0, 7);
+                containerBtnPanel.RowStyles.Add(new RowStyle());
+            }
             if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("Học sinh") || tenquyen.Contains("GV Phân công"))
             {
                 containerBtnPanel.Controls.Add(btnLopHoc, 0, 2);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("Admin"))
             {
                 containerBtnPanel.Controls.Add(btnCauHoi, 0, 4);
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("GV Phân công"))
+            if (tenquyen.Contains("Giáo viên") )
             {
                 containerBtnPanel.Controls.Add(btnDeThi, 0, 5);
                 containerBtnPanel.RowStyles.Add(new RowStyle());

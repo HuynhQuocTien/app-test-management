@@ -265,5 +265,28 @@ namespace DAL
 
             return result;
         }
+
+        public bool UpdateMaMoi(LopDTO lop)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnectionDb.GetConnection())
+                {
+                    string query = "UPDATE Lop SET MaMoi = @MaMoi where MaLop = @MaLop";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaLop", lop.MaLop);
+                        command.Parameters.AddWithValue("@MaMoi", lop.MaMoi);
+                        int rowsChanged = command.ExecuteNonQuery();
+                        return rowsChanged > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
     }
 }

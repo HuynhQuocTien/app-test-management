@@ -80,7 +80,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(20);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.50495F));
@@ -417,7 +417,7 @@
             this.panel2.Controls.Add(this.checkBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(4, 287);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(540, 38);
             this.panel2.TabIndex = 3;
@@ -429,9 +429,9 @@
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(153, 10);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(178, 32);
+            this.checkBox2.Size = new System.Drawing.Size(141, 25);
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Đang hoạt động";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -473,7 +473,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 55);
+            this.label7.Size = new System.Drawing.Size(135, 55);
             this.label7.TabIndex = 3;
             this.label7.Text = "Chọn số đáp án: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

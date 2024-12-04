@@ -82,7 +82,7 @@ namespace GUI.PhanCong
             this.tableLayoutPanel6.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 724);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.4321F));
@@ -97,7 +97,7 @@ namespace GUI.PhanCong
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(786, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 56);
             this.panel1.TabIndex = 1;
@@ -128,7 +128,7 @@ namespace GUI.PhanCong
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.numericUpDown1.Location = new System.Drawing.Point(85, 15);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(93, 34);
             this.numericUpDown1.TabIndex = 0;
@@ -248,6 +248,7 @@ namespace GUI.PhanCong
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1551, 599);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -256,7 +257,7 @@ namespace GUI.PhanCong
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PhanCongControl";
             this.Size = new System.Drawing.Size(1573, 826);
             this.mainPanel.ResumeLayout(false);

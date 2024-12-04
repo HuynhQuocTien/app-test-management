@@ -66,7 +66,7 @@ namespace GUI
             int SoLuongSinhVien = _statisticBLL.SoLuongSinhVien();
             int SoLuongGiaoVien = _statisticBLL.SoLuongGiangVien();
             int SoLuongCauHoi = _statisticBLL.SoLuongCauHoi();
-            tabControl1.TabPages.Remove(tabPage3);
+            //tabControl1.TabPages.Remove(tabPage3);
             // load cb 
             lblCountHS.Text = SoLuongSinhVien.ToString();
             lblCountGV.Text = SoLuongGiaoVien.ToString();
@@ -98,8 +98,7 @@ namespace GUI
 
         private void LoadDtgvSVTheoLop(List<ThongKeSVThamGiaThiTheoLopDTO> list)
         {
-            dtgvSVThamGiaThi.Columns.Clear();
-
+            dtgvSVThamGiaThi.DataSource = null;
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvSVThamGiaThi.AutoGenerateColumns = true;
 
@@ -117,8 +116,7 @@ namespace GUI
 
         private void LoadDtgvSVTheoMon(List<ThongKeSVThamGiaThiTheoMonDTO> list)
         {
-            dtgvSVThamGiaThi.Columns.Clear();
-
+            dtgvSVThamGiaThi.DataSource = null;
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvSVThamGiaThi.AutoGenerateColumns = true;
 
@@ -128,16 +126,15 @@ namespace GUI
             // Điều chỉnh để các cột tự động "fill" vừa toàn bộ chiều rộng DataGridView
             dtgvSVThamGiaThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Đặt lại header text nếu cần (nếu muốn thay đổi tiêu đề mặc định của cột)
             dtgvSVThamGiaThi.Columns["maMonHoc"].HeaderText = "Mã môn";
             dtgvSVThamGiaThi.Columns["tenMonHoc"].HeaderText = "Tên môn học";
-            dtgvSVThamGiaThi.Columns["soLuongSV"].HeaderText = "Số Lượng Sinh Vien";
+            dtgvSVThamGiaThi.Columns["soLuongSV"].HeaderText = "Số Lượng Sinh Viên";
         }
 
 
         private void LoadDtgvTheoMon(List<ThongKeDiemTheoMonDTO> listThongKeDiemTheoMon)
         {
-            dtgvThongKeDiem.Columns.Clear();
+            dtgvThongKeDiem.DataSource = null;
 
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvThongKeDiem.AutoGenerateColumns = true;
@@ -149,7 +146,11 @@ namespace GUI
             dtgvThongKeDiem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Đặt lại header text nếu cần (nếu muốn thay đổi tiêu đề mặc định của cột)
-            dtgvThongKeDiem.Columns["maMonHoc"].HeaderText = "Mã môn";
+            if (dtgvThongKeDiem.Columns.Contains("maMonHoc"))
+            {
+                dtgvThongKeDiem.Columns["maMonHoc"].HeaderText = "Mã môn";
+            }
+
             dtgvThongKeDiem.Columns["tenMonHoc"].HeaderText = "Tên môn học";
             dtgvThongKeDiem.Columns["diemTrungBinh"].HeaderText = "Điểm trung bình";
             dtgvThongKeDiem.Columns["soBaiThi"].HeaderText = "Số bài thi";
@@ -157,7 +158,7 @@ namespace GUI
         }
         private void LoadDtgvTheoLop(List<ThongKeDiemTheoLopDTO> listThongKeDiemTheoLop)
         {
-            dtgvThongKeDiem.Columns.Clear();
+            dtgvThongKeDiem.DataSource = null;
 
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvThongKeDiem.AutoGenerateColumns = true;
@@ -178,7 +179,7 @@ namespace GUI
 
         private void LoaddtgvThongKeDTBTheoLop(List<ThongKeDTBTheoLop> list)
         {
-            dtgvThongKeDTB.Columns.Clear();
+            dtgvThongKeDTB.DataSource = null;
 
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvThongKeDTB.AutoGenerateColumns = true;
@@ -193,11 +194,13 @@ namespace GUI
             dtgvThongKeDTB.Columns["maLop"].HeaderText = "Mã lớp";
             dtgvThongKeDTB.Columns["tenLop"].HeaderText = "Tên lớp";
             dtgvThongKeDTB.Columns["diemTrungBinh"].HeaderText = "Điểm trung bình";
+            dtgvThongKeDTB.Columns["soBaiThi"].HeaderText = "Số bài thi";
+
         }
 
         private void LoaddtgvThongKeDTBTheoMon(List<ThongKeDTBTheoMon> list)
         {
-            dtgvThongKeDTB.Columns.Clear();
+            dtgvThongKeDTB.DataSource = null;
 
             // Đặt AutoGenerateColumns = true để tự động tạo cột
             dtgvThongKeDTB.AutoGenerateColumns = true;
@@ -212,6 +215,8 @@ namespace GUI
             dtgvThongKeDTB.Columns["maMonHoc"].HeaderText = "Mã môn học";
             dtgvThongKeDTB.Columns["tenMonHoc"].HeaderText = "Tên môn học";
             dtgvThongKeDTB.Columns["diemTrungBinh"].HeaderText = "Điểm trung bình";
+            dtgvThongKeDTB.Columns["soBaiThi"].HeaderText = "Số bài thi";
+
         }
 
         //LOAD DATA GRIDVIEW ;

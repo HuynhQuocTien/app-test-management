@@ -70,5 +70,10 @@ namespace BLL
         {
             return lopDAL.GetAll();
         }
+
+        public bool UpdateMaMoi(LopDTO lopDTO)
+        {
+            return lopDAL.UpdateMaMoi(lopDTO);
+        }
     }
 }

@@ -89,11 +89,12 @@ namespace DAL
             using (SqlConnection conn = GetConnectionDb.GetConnection())
             {
                 string query = "SELECT TOP 5 NguoiDung.*, KetQua.Diem FROM NguoiDung " +
-                    "JOIN KetQua ON NguoiDung.MaNguoiDung = KetQua.MaND " +
-                    "JOIN GiaoDeThi ON GiaoDeThi.MaDe = KetQua.MaDe " +
-                    "JOIN Lop ON GiaoDeThi.MaLop = Lop.MaLop " +
-                    "JOIN DeThi ON DeThi.MaDe = KetQua.MaDe " + 
-                    "ORDER BY KetQua.Diem desc";
+                    " JOIN KetQua ON NguoiDung.MaNguoiDung = KetQua.MaND " +
+                    " JOIN GiaoDeThi ON GiaoDeThi.MaDe = KetQua.MaDe " +
+                    " JOIN Lop ON GiaoDeThi.MaLop = Lop.MaLop " +
+                    " JOIN DeThi ON DeThi.MaDe = KetQua.MaDe " +
+                    " WHERE Lop.MaLop = " + maLop +
+                    " ORDER BY KetQua.Diem desc";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
