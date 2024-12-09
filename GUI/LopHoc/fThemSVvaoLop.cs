@@ -60,13 +60,12 @@ namespace GUI.LopHoc
             {
                 try
                 {
-                    errorProvider.SetError(textBoxID, string.Empty);
-                    ClearInput();
+                     errorProvider.SetError(textBoxID, string.Empty);
                     // Check if student exists
                     long maSV = long.Parse(textBoxID.Text.Trim());
                     // Check if student is already in class
                     bool IsStudentInClass = chiTietLopBLL.IsStudentInClass(maSV,lop.MaLop);
-                    if (IsStudentInClass)
+                    if (!IsStudentInClass)
                     {
                         NguoiDungDTO nguoiDungDTO = new NguoiDungDTO();
                         nguoiDungDTO = nguoiDungBLL.getUserLoginById(maSV);
@@ -83,6 +82,8 @@ namespace GUI.LopHoc
                     else
                     {
                         errorProvider.SetError(textBoxID, "Sinh viên này không tồn tại");
+                        ClearInput();
+
                     }
                     // Add student to class
                 }
@@ -90,6 +91,8 @@ namespace GUI.LopHoc
                 {
                     // Nếu lỗi định dạng
                     errorProvider.SetError(textBoxID, "Mã sinh viên phải là số.");
+                    ClearInput();
+
                 }
                 catch (Exception ex)
                 {

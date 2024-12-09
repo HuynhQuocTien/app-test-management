@@ -42,18 +42,20 @@ namespace DAL
             }
             return cauHoiList;
         }
-        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
+        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao,int OffSet)
         {
             List<CauHoiDTO> cauHoiList = new List<CauHoiDTO>();
             using (SqlConnection connection = GetConnectionDb.GetConnection())
             {
-                string query = "SELECT * FROM CauHoi WHERE (NoiDung LIKE @NoiDung OR LoaiCauHoi LIKE @LoaiCauHoi) AND NguoiTao=@MaNguoiTao AND is_delete = 0";
+                string query = "SELECT * FROM CauHoi WHERE (LOWER(NoiDung) LIKE LOWER(@NoiDung) OR LOWER(LoaiCauHoi) LIKE LOWER(@LoaiCauHoi)) AND is_delete = 0 " +
+                    " ORDER BY MaCauHoi OFFSET @Offset ROWS FETCH NEXT 10 ROWS ONLY;";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NoiDung", "%" + timkiem + "%");
                     command.Parameters.AddWithValue("@NguoiTao", "%" + timkiem + "%");
                     command.Parameters.AddWithValue("@LoaiCauHoi", "%" + timkiem + "%");
-                    command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+                    command.Parameters.AddWithValue("@Offset", OffSet);
+                    //command.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -120,8 +122,36 @@ namespace DAL
             // Chuỗi kết nối tới cơ sở dữ liệu
             using (SqlConnection conn = GetConnectionDb.GetConnection())
             {
-                // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
-                string query = @"
+                string query;
+                if (MaNguoiTao == -1)
+                {
+                    // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
+                    // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
+                    query = @"
+                SELECT MaCauHoi, NoiDung, NguoiTao AS MaNguoiTao,MaMonHoc,DoKho,TrangThai,is_delete, LoaiCauHoi 
+                FROM CauHoi
+                where is_delete=0
+                ORDER BY MaCauHoi 
+                OFFSET @StartRecord ROWS 
+                FETCH NEXT @RecordsPerPage ROWS ONLY";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Thêm các tham số cho OFFSET và FETCH NEXT
+                        cmd.Parameters.AddWithValue("@StartRecord", startRecord);
+                        cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
+                        //cmd.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+
+
+                        // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                    }
+                }
+                else
+                {
+                    // Truy vấn với OFFSET và FETCH NEXT để lấy dữ liệu theo trang
+                    query = @"
                 SELECT MaCauHoi, NoiDung, NguoiTao AS MaNguoiTao,MaMonHoc,DoKho,TrangThai,is_delete, LoaiCauHoi 
                 FROM CauHoi
                 where is_delete=0 AND NguoiTao=@MaNguoiTao
@@ -129,18 +159,21 @@ namespace DAL
                 OFFSET @StartRecord ROWS 
                 FETCH NEXT @RecordsPerPage ROWS ONLY";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    // Thêm các tham số cho OFFSET và FETCH NEXT
-                    cmd.Parameters.AddWithValue("@StartRecord", startRecord);
-                    cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
-                    cmd.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Thêm các tham số cho OFFSET và FETCH NEXT
+                        cmd.Parameters.AddWithValue("@StartRecord", startRecord);
+                        cmd.Parameters.AddWithValue("@RecordsPerPage", recordsPerPage);
+                        cmd.Parameters.AddWithValue("@MaNguoiTao", MaNguoiTao);
 
 
-                    // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
+                        // Khởi tạo SqlDataAdapter để lấy dữ liệu và đổ vào DataTable
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                    }
                 }
+
+                
             }
 
             return dt;

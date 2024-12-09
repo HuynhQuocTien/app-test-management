@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using DocumentFormat.OpenXml.Wordprocessing;
 using DTO;
 using OfficeOpenXml;
 using System;
@@ -21,9 +22,17 @@ namespace GUI.CauHoi
     {
         private CauHoiDTO cauHoiDTO;
         private int Allrecord;
+        int currentPage = 1;
+        int pageSize = 10;
+        CauHoiBLL cauhoiBLL;
+
+        List<CauHoiDTO> filteredData;
+
         public CauHoiControl()
         {
+            cauhoiBLL = new CauHoiBLL();
             InitializeComponent();
+            filteredData = cauhoiBLL.GetAll(fDangNhap.taiKhoanDTO.Username);
             List<KeyValuePair<string, int>> items = new List<KeyValuePair<string, int>>()
             {
                 new KeyValuePair<string, int>("Chọn độ khó", 0),
@@ -58,12 +67,11 @@ namespace GUI.CauHoi
 
         private void LoadPage(int pageNumber, int recordsPerPage)
         {
-            int startRecord = (pageNumber - 1) * recordsPerPage;
+            int startRecord = (pageNumber - 1) * recordsPerPage > 0 ? (pageNumber - 1) * recordsPerPage : 0 ;
 
             // Tải dữ liệu từ cơ sở dữ liệu hoặc danh sách, lấy các bản ghi từ startRecord đến startRecord + recordsPerPage
             // Ví dụ:
-            CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage, fDangNhap.taiKhoanDTO.Username);
+            DataTable pageData = cauhoiBLL.GetDataForPage(startRecord, recordsPerPage, fDangNhap.taiKhoanDTO.Username) ?? null;
 
             dataGridView1.DataSource = pageData;
         }
@@ -88,7 +96,6 @@ namespace GUI.CauHoi
         }
         private void loadDataGridView()
         {
-            CauHoiBLL cauhoiBLL = new CauHoiBLL();
             dataGridView1.DataSource = cauhoiBLL.GetAll(fDangNhap.taiKhoanDTO.Username);
             Allrecord = dataGridView1.RowCount;
             LoadPage(1, 10);
@@ -97,7 +104,9 @@ namespace GUI.CauHoi
         private void loadDataComboBoxMHView()
         {
             MonHocBLL monHocBLL = new MonHocBLL();
-            comboBox1.DataSource = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
+            var monHocList = monHocBLL.GetFromPhanCong(fDangNhap.nguoiDungDTO.MaNguoiDung);
+            monHocList.Insert(0, new MonHocDTO{ MaMonHoc = -1, TenMonHoc = "Chọn môn học" });
+            comboBox1.DataSource = monHocList;
             comboBox1.ValueMember = "MaMonHoc";    // Cột giá trị (ID)
             comboBox1.DisplayMember = "TenMonHoc"; // Cột hiển thị (Tên môn học)
         }
@@ -150,86 +159,6 @@ namespace GUI.CauHoi
             }
         }
 
-        //private void importExcell(string path)
-        //{
-        //    // Định nghĩa ánh xạ cột - tên thuộc tính
-        //    Dictionary<int, string> columnPropertyMapping = new Dictionary<int, string>
-        //    {
-        //        { 1, "NoiDung" },
-        //        { 2, "MaMonHoc" },
-        //        { 3, "DoKho" },
-        //        {4, "LoaiCauHoi" }
-        //    };
-        //    OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Thiết lập context phi thương mại
-        //    using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
-        //    {
-        //        ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
-        //        DataTable dt = new DataTable();
-        //        CauHoiBLL cauhoiBLL = new CauHoiBLL();
-        //        // Thêm các cột vào DataTable từ dòng đầu tiên của Excel (tên cột)
-        //        for (int i = excelWorksheet.Dimension.Start.Column; i <= excelWorksheet.Dimension.End.Column; i++)
-        //        {
-        //            dt.Columns.Add(excelWorksheet.Cells[1, i].Value.ToString());
-        //        }
-
-        //        // Duyệt qua các hàng trong Excel, bắt đầu từ hàng thứ 2
-        //        for (int row = excelWorksheet.Dimension.Start.Row + 1; row <= excelWorksheet.Dimension.End.Row; row++)
-        //        {
-        //            List<string> listRow = new List<string>();
-        //            CauHoiDTO cauhoi = new CauHoiDTO(); // Tạo đối tượng mới cho mỗi hàng
-
-        //            // Lấy thuộc tính của MonHocDTO bằng Reflection
-        //            PropertyInfo[] properties = typeof(CauHoiDTO).GetProperties();
-
-        //            // Duyệt qua từng cột trong một hàng
-        //            for (int col = excelWorksheet.Dimension.Start.Column; col <= excelWorksheet.Dimension.End.Column; col++)
-        //            {
-        //                try
-        //                {
-        //                    if (columnPropertyMapping.ContainsKey(col))
-        //                    {
-        //                        string propertyName = columnPropertyMapping[col];
-        //                        PropertyInfo property = typeof(CauHoiDTO).GetProperty(propertyName);
-        //                        //string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
-        //                        if (property != null)
-        //                        {
-        //                            string cellValue = excelWorksheet.Cells[row, col].Value?.ToString();
-        //                            if (cellValue != null)
-        //                            {
-        //                                object valueToSet = Convert.ChangeType(cellValue, property.PropertyType);
-        //                                property.SetValue(cauhoi, valueToSet);
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //                catch (InvalidCastException)
-        //                {
-        //                    Console.WriteLine($"Không thể chuyển đổi giá trị '{excelWorksheet.Cells[row, col].Value}' sang kiểu '{properties[col - 1].PropertyType.Name}'.");
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    Console.WriteLine($"Lỗi khi gán giá trị cho {properties[col - 1].Name}: {ex.Message}");
-        //                }
-        //            }
-
-        //            // Thêm đối tượng monHoc vào DataTable
-        //            //dt.Rows.Add(monHoc.MaMonHoc, monHoc.TenMonHoc, monHoc.SoTC, monHoc.SoTietLT, monHoc.SoTietTH, monHoc.TrangThai, monHoc.is_delete);
-        //            // Thiết lập các giá trị mặc định
-        //            cauhoi.TrangThai = 1; // Mặc định trạng thái là 1
-        //            cauhoi.is_delete = 0; // Mặc định is_delete là 0
-        //            cauhoi.MaNguoiTao = fDangNhap.nguoiDungDTO.MaNguoiDung; // Mặc định người tạo là người đang đăng nhập
-        //            // Add vào database
-        //            if (String.IsNullOrEmpty(cauhoi.NoiDung))
-        //            {
-        //                importTracNghiem(cauhoi, excelPackage.Workbook.Worksheets[1]);
-        //            }
-        //        }
-
-        //        render();
-        //        phanTrang();
-        //        this.numericUpDown1.Value = 1;
-        //    }
-        //}
         private void importExcell(string path)
         {
             // Định nghĩa ánh xạ cột - tên thuộc tính
@@ -262,7 +191,6 @@ namespace GUI.CauHoi
                     }
                 }
 
-                CauHoiBLL cauhoiBLL = new CauHoiBLL();
 
                 // Duyệt qua các hàng trong sheet chính
                 for (int row = mainSheet.Dimension.Start.Row + 1; row <= mainSheet.Dimension.End.Row; row++)
@@ -327,7 +255,6 @@ namespace GUI.CauHoi
                 { 3, "IsDapAn" }
             };
             CauTraLoiBLL cauTraLoiBLL = new CauTraLoiBLL();
-            CauHoiBLL cauHoiBLL = new CauHoiBLL();
             //for (int col = sheet.Dimension.Start.Column + 1; col < sheet.Dimension.End.Column; col++)
             //{
             //    string cauTraLoi = sheet.Cells[row, col].Value?.ToString();
@@ -538,6 +465,11 @@ namespace GUI.CauHoi
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if(cauHoiDTO == null)
+            {
+                MessageBox.Show($"Vui lòng chọn dòng để xoá");
+                return;
+            }
             if ((fDangNhap.nguoiDungDTO.MaNguoiDung != this.cauHoiDTO.MaNguoiTao) && !fDangNhap.nhomQuyenDTO.TenQuyen.Equals("Admin"))
             {
                 MessageBox.Show($"Bạn không có quyền xoá câu hỏi của người {this.cauHoiDTO.MaNguoiTao} tạo");
@@ -546,8 +478,7 @@ namespace GUI.CauHoi
             DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn xóa câu hỏi này ?", "Cảnh báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                CauHoiBLL cauHoiBLL = new CauHoiBLL();
-                string thongBao = cauHoiBLL.Delete(this.cauHoiDTO);
+                string thongBao = cauhoiBLL.Delete(this.cauHoiDTO);
                 System.Windows.Forms.MessageBox.Show(thongBao, "Thông báo");
                 render();
             }
@@ -555,11 +486,76 @@ namespace GUI.CauHoi
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            //int pageCurrent = (int) numericUpDown1.Value;
+            //int offset = (pageCurrent - 1) * 10;
+            //CauHoiBLL cauhoiBLL = new CauHoiBLL();
+            //dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text,fDangNhap.taiKhoanDTO.Username, offset);
+            //Allrecord = dataGridView1.RowCount;
+            //int totalPages = (int)Math.Ceiling((double) Allrecord / 10);
+            //this.numericUpDown1.Minimum = 1;
+            //this.numericUpDown1.Maximum = totalPages;
+            //this.label2.Text = "Trên tổng " + totalPages + " trang";
+            ////LoadPage(1, 10);
+            ////this.numericUpDown1.Enabled = false;
+            ////this.label2.Text = "Trên tổng ... trang";
+            
+
+            //int currentPage = 1;
+            //int pageSize = 10;
             CauHoiBLL cauhoiBLL = new CauHoiBLL();
-            dataGridView1.DataSource = cauhoiBLL.GetTimKiem(textBoxTimKiem.Text,fDangNhap.taiKhoanDTO.Username);
-            this.numericUpDown1.Enabled = false;
-            this.label2.Text = "Trên tổng ... trang";
+
+            string searchText = textBoxTimKiem.Text.ToLower().Trim();
+
+            int selectedMonHoc = ((MonHocDTO)comboBox1.SelectedItem).MaMonHoc;
+            // Lấy giá trị (Value) của phần tử đã chọn
+            int selectedValue = (int)comboBox2.SelectedValue;
+            //// Lấy toàn bộ đối tượng KeyValuePair (Key và Value)
+            //KeyValuePair<string, int> selectedItem = (KeyValuePair<string, int>)comboBox2.SelectedItem;
+
+            //// Lấy tên (Key) của phần tử đã chọn
+            //string selectedKey = selectedItem.Key;
+
+            //string selectedDoKho = selectedValue.ToString();
+
+            List<CauHoiDTO> allData = cauhoiBLL.GetAll(fDangNhap.taiKhoanDTO.Username);
+            //if (string.IsNullOrEmpty(searchText))
+            //{
+            //    filteredData = allData; // Hiển thị toàn bộ dữ liệu
+            //}
+            //else
+            //{
+                // Lọc dữ liệu theo các điều kiện
+                filteredData = allData
+                    .Where(item =>
+                        (string.IsNullOrEmpty(searchText) || item.NoiDung.ToLower().Contains(searchText)) &&
+                        (selectedMonHoc == 0 || item.MaMonHoc == selectedMonHoc) &&
+                        (selectedValue == 0 || item.DoKho == selectedValue)) // Điều chỉnh theo thuộc tính của bạn
+                    .ToList();
+            //}
+            // Tính tổng số trang
+            int totalPages = (int)Math.Ceiling((double)filteredData.Count / pageSize);
+
+            // Cập nhật giá trị tối đa của NumericUpDown
+            numericUpDown1.Minimum = 1;
+            numericUpDown1.Maximum = Math.Max(1, totalPages);
+            numericUpDown1.Value = 1; // Đặt về trang đầu tiên
+
+            // Hiển thị dữ liệu trang đầu tiên
+            DisplayPage(1);
         }
+        private void DisplayPage(int pageNumber)
+        {
+            // Tính toán số lượng dữ liệu trên trang hiện tại
+            int skip = (pageNumber - 1) * pageSize;
+            var pageData = filteredData.Skip(skip).Take(pageSize).ToList();
+
+            // Hiển thị dữ liệu trên DataGridView
+            dataGridView1.DataSource = pageData;
+
+            // Cập nhật trạng thái số trang
+            label2.Text = $"Trên tổng {Math.Ceiling((double)filteredData.Count / pageSize)} trang";        
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -606,15 +602,20 @@ namespace GUI.CauHoi
                 }
                 int DoKho = selectedItem.Value;  // Lấy giá trị Value
                 CauHoiBLL cauhoiBLL = new CauHoiBLL();
-                if(comboBox1.SelectedIndex == -1)
+                if(((MonHocDTO) comboBox1.SelectedItem).MaMonHoc == -1)
                 {
                     MessageBox.Show("Vui lòng chọn môn học cần lọc");
-                    comboBox2.SelectedIndex = -1;
+                    comboBox2.SelectedIndex = 0;
                     return;
                 }
-                dataGridView1.DataSource = cauhoiBLL.GetTimKiemSelect(DoKho, comboBox1.SelectedValue.ToString(), fDangNhap.taiKhoanDTO.Username);
-                this.numericUpDown1.Enabled = false;
-                this.label2.Text = "Trên tổng ... trang";
+                //dataGridView1.DataSource = cauhoiBLL.GetTimKiemSelect(DoKho, comboBox1.SelectedValue.ToString(), fDangNhap.taiKhoanDTO.Username);
+                ////this.numericUpDown1.Enabled = false;
+                //this.label2.Text = "Trên tổng ... trang";
+                // Lấy giá trị trang hiện tại
+                int selectedPage = (int)numericUpDown1.Value;
+
+                // Hiển thị dữ liệu cho trang được chọn
+                DisplayPage(selectedPage);
             }
 
         }

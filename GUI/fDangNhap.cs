@@ -98,8 +98,8 @@ namespace GUI
         // Đăng nhập btn
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string taiKhoan = textBox1.Text;
-            string matKhau = textBox2.Text;
+            string taiKhoan = textBox1.Text.Trim();
+            string matKhau = textBox2.Text.Trim();
             if (String.IsNullOrEmpty(taiKhoan)){
                 MessageBox.Show("Vui lòng nhập tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

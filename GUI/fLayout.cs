@@ -267,7 +267,7 @@ namespace GUI
                 containerBtnPanel.RowStyles.Add(new RowStyle());
             }
 
-            if (tenquyen.Contains("Giáo viên") || tenquyen.Contains("Admin"))
+            if (tenquyen.Contains("Giáo viên"))
             {
                 containerBtnPanel.Controls.Add(btnCauHoi, 0, 4);
                 containerBtnPanel.RowStyles.Add(new RowStyle());

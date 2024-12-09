@@ -23,7 +23,7 @@ namespace GUI.Users
 
         MonHocBLL monHocBLL;
         DeThiBLL deThiBLL;
-        DeThiBLL NguoiDungBLL;
+        NguoiDungBLL nguoiDungBLL;
         DeThiBLL TaiKhoanBLL;
         private string hanhDong;
         private DeThiDTO deThiUpdate;
@@ -35,7 +35,7 @@ namespace GUI.Users
 
 
 
-            NguoiDungBLL nguoiDungBLL = new NguoiDungBLL();
+            nguoiDungBLL = new NguoiDungBLL();
             TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
 
 
@@ -199,7 +199,7 @@ namespace GUI.Users
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
+            
             if (checkIdValid(textBoxID.Text) && checkHoTenValid() && checkEmailValid() && checkPasswordValid(txtPass.Text) && checkSdtValid() && checkNgaySinhValid()) {
                 string selectedRBGender = string.Empty;
                 string txtIDValue = textBoxID.Text;
@@ -250,6 +250,11 @@ namespace GUI.Users
                 NguoiDungDTO nguoiDungAdd = new NguoiDungDTO(maNguoiDung, txtNameValue, gioiTinh, selectedNgaySinh, "avatar", txtSdtValue, DateTime.Now, 1, 0);
                 TaiKhoanDTO taikhoanAdd = new TaiKhoanDTO(Convert.ToInt64(txtIDValue), txtPassValue, txtEmailValue, cbNhomQuyenValue.MaNhomQuyen, 1);
 
+                if(nguoiDungBLL.getUserLoginById(nguoiDungAdd.MaNguoiDung) != null)
+                {
+                    MessageBox.Show("ID đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 usersControl.AddNguoiDung(nguoiDungAdd, taikhoanAdd);
 
 

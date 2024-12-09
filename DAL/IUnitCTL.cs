@@ -14,6 +14,6 @@ namespace DAL
         int Add(T t);
         bool Update(T t);
         bool Delete(T t);
-        List<T> GetTimKiem(string timkiem, long MaNguoiTao);
+        List<T> GetTimKiem(string timkiem, long MaNguoiTao, int OffSet);
     }
 }

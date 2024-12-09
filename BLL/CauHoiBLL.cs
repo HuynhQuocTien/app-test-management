@@ -20,9 +20,13 @@ namespace BLL
         {
             return cauHoiDAL.GetAll(MaNguoiTao);
         }
-        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao)
+        public List<CauHoiDTO> GetAllFull()
         {
-            return cauHoiDAL.GetTimKiem(timkiem, MaNguoiTao);
+            return cauHoiDAL.GetAll();
+        }
+        public List<CauHoiDTO> GetTimKiem(string timkiem, long MaNguoiTao, int OffSet)
+        {
+            return cauHoiDAL.GetTimKiem(timkiem, MaNguoiTao,OffSet);
         }
 
         public List<CauHoiDTO> GetTimKiemSelect(int dokho, string MaMonHoc, long MaNguoiTao)

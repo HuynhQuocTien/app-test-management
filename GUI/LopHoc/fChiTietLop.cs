@@ -429,6 +429,7 @@ namespace GUI.LopHoc
                     MessageBox.Show("Bạn chưa được phân công môn này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
+                obj.TrangThai = 0;
                 fSetThoiGianDeThi f = new fSetThoiGianDeThi(obj, lop, this, "edit");
                 f.ShowDialog();
             }
